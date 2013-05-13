@@ -6,13 +6,13 @@
 //  Copyright (c) 2013年 Rabbit Wears Pants. All rights reserved.
 //
 
-#import "LTViewController.h"
+#import "LTNavigationController.h"
 
-@interface LTViewController ()
+@interface LTNavigationController ()
 
 @end
 
-@implementation LTViewController
+@implementation LTNavigationController
 
 - (void)viewDidLoad
 {

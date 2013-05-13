@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTViewController : UIViewController
+@interface LTNavigationController : UINavigationController
 
 @end
