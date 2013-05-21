@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="dRT-kA-tlz">
                             <connections>
-                                <segue destination="hj3-Ff-LGJ" kind="push" id="byE-kF-hE9"/>
+                                <segue destination="gXW-uL-cMp" kind="push" id="LeU-ZN-Eqc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,53 +107,121 @@
             </objects>
             <point key="canvasLocation" x="1887" y="633"/>
         </scene>
-        <!--Card Management Controller-->
-        <scene sceneID="6nF-oF-7hz">
+        <!--Navigation Controller - Database-->
+        <scene sceneID="ijq-J2-qzs">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="hj3-Ff-LGJ" customClass="LTCardManagementController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="bgs-oz-Crc">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                <navigationController definesPresentationContext="YES" id="F65-5x-juz" customClass="LTNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Database" id="qI8-Og-M1J"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JPy-eN-sNf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N13-uH-Xjf" kind="relationship" relationship="rootViewController" id="LOe-eR-ryR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iq1-Wr-spl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3130" y="-2706"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="P1N-Nh-Oxe">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="gXW-uL-cMp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZmF-1l-lz5"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="amn-vB-YpI">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="F65-5x-juz" kind="relationship" relationship="viewControllers" id="gjy-T8-UeF"/>
+                        <segue destination="dGk-e6-8az" kind="relationship" relationship="viewControllers" id="ZVL-s2-QsN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Arx-pH-6cL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="-2201"/>
+        </scene>
+        <!--Navigation Controller - Record-->
+        <scene sceneID="MYI-Zz-gc1">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="dGk-e6-8az" customClass="LTNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Record" id="PAe-ET-G40"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="K24-BK-VYl">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AWG-Zy-Den" kind="relationship" relationship="rootViewController" id="iRD-CE-mXs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TLd-tC-Js6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3130" y="-1773"/>
+        </scene>
+        <!--Database View Controller - Database-->
+        <scene sceneID="EG9-FA-gSx">
+            <objects>
+                <tableViewController id="N13-uH-Xjf" customClass="LTDatabaseViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ag1-sm-PiW">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x1d-un-bjS">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="VK6-X4-Ib7" customClass="LTCardCell">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YpN-CH-1BM">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2N-jt-IZD"/>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="l2N-jt-IZD" firstAttribute="trailing" secondItem="VK6-X4-Ib7" secondAttribute="trailing" type="default" id="EXA-dJ-BWQ"/>
-                                    <constraint firstItem="l2N-jt-IZD" firstAttribute="bottom" secondItem="VK6-X4-Ib7" secondAttribute="bottom" type="default" id="HwI-0y-MrI"/>
-                                    <constraint firstItem="l2N-jt-IZD" firstAttribute="top" secondItem="VK6-X4-Ib7" secondAttribute="top" type="default" id="J1K-cZ-a9J"/>
-                                    <constraint firstItem="l2N-jt-IZD" firstAttribute="leading" secondItem="VK6-X4-Ib7" secondAttribute="leading" type="default" id="aPP-fh-UXo"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="imageView" destination="l2N-jt-IZD" id="sx5-x1-BrF"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="hj3-Ff-LGJ" id="H0g-bE-cOd"/>
-                            <outlet property="delegate" destination="hj3-Ff-LGJ" id="mnU-rw-gQH"/>
+                            <outlet property="dataSource" destination="N13-uH-Xjf" id="Flh-07-B3Q"/>
+                            <outlet property="delegate" destination="N13-uH-Xjf" id="L8A-bW-yx8"/>
                         </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="dEE-aj-521"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-89-xDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Database" id="M9E-w6-oOZ"/>
+                    <navigationItem key="navigationItem" id="piI-kK-etf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ii9-6a-9r8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="-2003"/>
+            <point key="canvasLocation" x="4370" y="-2706"/>
+        </scene>
+        <!--Record View Controller - Record-->
+        <scene sceneID="PYJ-Kq-IWK">
+            <objects>
+                <tableViewController id="AWG-Zy-Den" customClass="LTRecordViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dpa-WR-1hi">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="655"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="csU-tM-mrl">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AWG-Zy-Den" id="CjH-o6-XaB"/>
+                            <outlet property="delegate" destination="AWG-Zy-Den" id="ayp-KE-QtH"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Record" id="Hwf-mk-L5i"/>
+                    <navigationItem key="navigationItem" id="Yq3-1Q-kB9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E8w-OQ-P7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4370" y="-1773"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZBX-yL-djr">
@@ -319,14 +387,8 @@
         <image name="flipcard-card-back.png" width="480" height="480"/>
     </resources>
     <classes>
-        <class className="LTCardCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="LTCardManagementController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardManagementController.h"/>
+        <class className="LTDatabaseViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTDatabaseViewController.h"/>
         </class>
         <class className="LTFlipcardCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTFlipcardCell.h"/>
@@ -346,6 +408,9 @@
         </class>
         <class className="LTNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTNavigationController.h"/>
+        </class>
+        <class className="LTRecordViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
