@@ -34,7 +34,7 @@
     }
 }
 
-#pragma mark - Navigation Bar Button Action
+#pragma mark - NavigationBar Button Action
 
 - (IBAction)pause:(id)sender
 {

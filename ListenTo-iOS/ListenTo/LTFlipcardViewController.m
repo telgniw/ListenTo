@@ -33,6 +33,6 @@
     return cell;
 }
 
-#pragma mark - Collection View Delegate
+#pragma mark - CollectionView Delegate
 
 @end
