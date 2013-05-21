@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
+		AA25B3F1174B097A00A88C82 /* LTFlipcardEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B3F0174B097A00A88C82 /* LTFlipcardEntryViewController.m */; };
+		AA25B3F8174B0C2300A88C82 /* LTFlipcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B3F7174B0C2300A88C82 /* LTFlipcardViewController.m */; };
+		AA25B403174B0EFA00A88C82 /* LTFlipcardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B402174B0EFA00A88C82 /* LTFlipcardCell.m */; };
+		AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AA25B40C174B122700A88C82 /* flipcard-card-back.png */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -24,6 +28,13 @@
 /* Begin PBXFileReference section */
 		5654E21E1EC1482695A9883E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AA25B3EF174B097A00A88C82 /* LTFlipcardEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFlipcardEntryViewController.h; sourceTree = "<group>"; };
+		AA25B3F0174B097A00A88C82 /* LTFlipcardEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTFlipcardEntryViewController.m; sourceTree = "<group>"; };
+		AA25B3F6174B0C2300A88C82 /* LTFlipcardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFlipcardViewController.h; sourceTree = "<group>"; };
+		AA25B3F7174B0C2300A88C82 /* LTFlipcardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTFlipcardViewController.m; sourceTree = "<group>"; };
+		AA25B401174B0EFA00A88C82 /* LTFlipcardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFlipcardCell.h; sourceTree = "<group>"; };
+		AA25B402174B0EFA00A88C82 /* LTFlipcardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTFlipcardCell.m; sourceTree = "<group>"; };
+		AA25B40C174B122700A88C82 /* flipcard-card-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flipcard-card-back.png"; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,6 +68,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA25B3EC174B094100A88C82 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				AA25B3EE174B094C00A88C82 /* Flipcared */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		AA25B3EE174B094C00A88C82 /* Flipcared */ = {
+			isa = PBXGroup;
+			children = (
+				AA25B3EF174B097A00A88C82 /* LTFlipcardEntryViewController.h */,
+				AA25B3F0174B097A00A88C82 /* LTFlipcardEntryViewController.m */,
+				AA25B3F6174B0C2300A88C82 /* LTFlipcardViewController.h */,
+				AA25B3F7174B0C2300A88C82 /* LTFlipcardViewController.m */,
+				AA25B401174B0EFA00A88C82 /* LTFlipcardCell.h */,
+				AA25B402174B0EFA00A88C82 /* LTFlipcardCell.m */,
+			);
+			name = Flipcared;
+			sourceTree = "<group>";
+		};
+		AA25B40B174B122700A88C82 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AA25B40C174B122700A88C82 /* flipcard-card-back.png */,
+			);
+			name = Images;
+			path = images;
+			sourceTree = "<group>";
+		};
 		AAACE182174124D700F143C3 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +130,8 @@
 		AAACE197174124D700F143C3 /* ListenTo */ = {
 			isa = PBXGroup;
 			children = (
+				AA25B40B174B122700A88C82 /* Images */,
+				AA25B3EC174B094100A88C82 /* Game */,
 				AAACE1A0174124D700F143C3 /* LTAppDelegate.h */,
 				AAACE1A1174124D700F143C3 /* LTAppDelegate.m */,
 				AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */,
@@ -172,6 +215,7 @@
 				AAACE1A6174124D700F143C3 /* Default@2x.png in Resources */,
 				AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */,
 				AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */,
+				AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +260,9 @@
 				AAACE19E174124D700F143C3 /* main.m in Sources */,
 				AAACE1A2174124D700F143C3 /* LTAppDelegate.m in Sources */,
 				AAACE1AE174124D700F143C3 /* LTNavigationController.m in Sources */,
+				AA25B3F1174B097A00A88C82 /* LTFlipcardEntryViewController.m in Sources */,
+				AA25B3F8174B0C2300A88C82 /* LTFlipcardViewController.m in Sources */,
+				AA25B403174B0EFA00A88C82 /* LTFlipcardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

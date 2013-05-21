@@ -80,11 +80,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="dRT-kA-tlz">
-                            <connections>
-                                <segue destination="Tb9-xd-bNn" kind="push" id="zae-Cg-9SV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="dRT-kA-tlz"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7R-tA-d4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,56 +103,6 @@
             </objects>
             <point key="canvasLocation" x="1887" y="633"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="6Xt-eJ-GtW">
-            <objects>
-                <tableViewController id="Tb9-xd-bNn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9kC-qX-5pe">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gWx-oI-cKE">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Tb9-xd-bNn" id="3Ma-07-WLx"/>
-                            <outlet property="delegate" destination="Tb9-xd-bNn" id="M5O-Os-MSj"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="v6y-Tl-N8e"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="IZg-2e-TSr" id="mi0-f1-JvK"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A4D-Vu-OPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="GEa-LX-Csp">
-                    <connections>
-                        <outlet property="delegate" destination="Tb9-xd-bNn" id="I5I-dG-AyA"/>
-                        <outlet property="searchContentsController" destination="Tb9-xd-bNn" id="aca-Nz-y0u"/>
-                        <outlet property="searchResultsDataSource" destination="Tb9-xd-bNn" id="azP-KP-581"/>
-                        <outlet property="searchResultsDelegate" destination="Tb9-xd-bNn" id="dNH-yQ-fTq"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="IZg-2e-TSr">
-                    <connections>
-                        <outlet property="delegate" destination="Tb9-xd-bNn" id="giD-kp-sWr"/>
-                        <outlet property="searchContentsController" destination="Tb9-xd-bNn" id="MhL-Q3-BXq"/>
-                        <outlet property="searchResultsDataSource" destination="Tb9-xd-bNn" id="z94-aA-zlC"/>
-                        <outlet property="searchResultsDelegate" destination="Tb9-xd-bNn" id="BfM-ZJ-UCV"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="1887" y="-2061"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="ZBX-yL-djr">
             <objects>
@@ -173,15 +119,15 @@
             </objects>
             <point key="canvasLocation" x="1887" y="-1102"/>
         </scene>
-        <!--View Controller-->
+        <!--Flipcard Entry View Controller-->
         <scene sceneID="MJq-9a-RUo">
             <objects>
-                <viewController id="yCb-t3-m1M" sceneMemberID="viewController">
+                <viewController id="yCb-t3-m1M" customClass="LTFlipcardEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UI6-C6-mhv">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLt-uH-AP4" customClass="OBShapedButton">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLt-uH-AP4" customClass="OBShapedButton">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -194,7 +140,7 @@
                                     <segue destination="LOt-VO-f7t" kind="push" id="Hgi-7c-qfP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K4-Ob-m24" customClass="OBShapedButton">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K4-Ob-m24" customClass="OBShapedButton">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -207,7 +153,7 @@
                                     <segue destination="LOt-VO-f7t" kind="push" id="gEU-CX-l7w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-Ez-9rG" customClass="OBShapedButton">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-Ez-9rG" customClass="OBShapedButton">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,7 +166,7 @@
                                     <segue destination="LOt-VO-f7t" kind="push" id="8dX-Ic-IfV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8B-xq-nDz" customClass="OBShapedButton">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8B-xq-nDz" customClass="OBShapedButton">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="10">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -233,7 +179,7 @@
                                     <segue destination="LOt-VO-f7t" kind="push" id="BGx-2F-Xdy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izY-38-qhr" customClass="OBShapedButton">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izY-38-qhr" customClass="OBShapedButton">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="1887" y="-237"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Flipcard View Controller-->
         <scene sceneID="SoZ-fh-AfE">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="LOt-VO-f7t" sceneMemberID="viewController">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="LOt-VO-f7t" customClass="LTFlipcardViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="3g1-AX-vVf">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +228,29 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlipcardCell" id="SGv-kE-5hI" customClass="LTFlipcardCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="flipcard-card-back.png" translatesAutoresizingMaskIntoConstraints="NO" id="6D1-6f-Q4W"/>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="6D1-6f-Q4W" firstAttribute="trailing" secondItem="SGv-kE-5hI" secondAttribute="trailing" type="default" id="F2S-x7-CXq"/>
+                                    <constraint firstItem="6D1-6f-Q4W" firstAttribute="bottom" secondItem="SGv-kE-5hI" secondAttribute="bottom" type="default" id="Sv7-Rm-bkI"/>
+                                    <constraint firstItem="6D1-6f-Q4W" firstAttribute="top" secondItem="SGv-kE-5hI" secondAttribute="top" type="default" id="XL6-Gn-kIT"/>
+                                    <constraint firstItem="6D1-6f-Q4W" firstAttribute="leading" secondItem="SGv-kE-5hI" secondAttribute="leading" type="default" id="fqg-1p-LAT"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="6D1-6f-Q4W" id="yAL-oU-8OL"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
                         <connections>
                             <outlet property="dataSource" destination="LOt-VO-f7t" id="xy6-u8-bsr"/>
                             <outlet property="delegate" destination="LOt-VO-f7t" id="vQg-5R-O20"/>
@@ -295,7 +263,22 @@
             <point key="canvasLocation" x="3130" y="-237"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flipcard-card-back.png" width="480" height="480"/>
+    </resources>
     <classes>
+        <class className="LTFlipcardCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTFlipcardCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LTFlipcardEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTFlipcardEntryViewController.h"/>
+        </class>
+        <class className="LTFlipcardViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTFlipcardViewController.h"/>
+        </class>
         <class className="LTNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTNavigationController.h"/>
         </class>
@@ -304,6 +287,12 @@
         </class>
         <class className="OBShapedButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OBShapedButton.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
         </class>
         <class className="UICollectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
@@ -321,6 +310,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gEU-CX-l7w"/>
+        <segue reference="Ivf-gC-kH6"/>
     </inferredMetricsTieBreakers>
 </document>
