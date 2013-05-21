@@ -14,6 +14,8 @@
 		AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AA25B40C174B122700A88C82 /* flipcard-card-back.png */; };
 		AA25B423174B1E3000A88C82 /* LTDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B422174B1E3000A88C82 /* LTDatabaseViewController.m */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
+		AA25B435174B2BCD00A88C82 /* LTGameResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B433174B2BCD00A88C82 /* LTGameResultViewController.m */; };
+		AA25B436174B2BCD00A88C82 /* LTGameResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA25B434174B2BCD00A88C82 /* LTGameResultViewController.xib */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -41,6 +43,9 @@
 		AA25B422174B1E3000A88C82 /* LTDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDatabaseViewController.m; sourceTree = "<group>"; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewController.h; sourceTree = "<group>"; };
 		AA25B430174B24E400A88C82 /* LTRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewController.m; sourceTree = "<group>"; };
+		AA25B432174B2BCD00A88C82 /* LTGameResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameResultViewController.h; sourceTree = "<group>"; };
+		AA25B433174B2BCD00A88C82 /* LTGameResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameResultViewController.m; sourceTree = "<group>"; };
+		AA25B434174B2BCD00A88C82 /* LTGameResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTGameResultViewController.xib; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				AA25B3EE174B094C00A88C82 /* Flipcared */,
+				AA25B432174B2BCD00A88C82 /* LTGameResultViewController.h */,
+				AA25B433174B2BCD00A88C82 /* LTGameResultViewController.m */,
+				AA25B434174B2BCD00A88C82 /* LTGameResultViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */,
 				AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */,
 				AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */,
+				AA25B436174B2BCD00A88C82 /* LTGameResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +308,7 @@
 				AA25B403174B0EFA00A88C82 /* LTFlipcardCell.m in Sources */,
 				AA25B423174B1E3000A88C82 /* LTDatabaseViewController.m in Sources */,
 				AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */,
+				AA25B435174B2BCD00A88C82 /* LTGameResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
