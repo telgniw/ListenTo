@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTCardManagementController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface LTCardManagementController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
+
+@property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, strong) UIBarButtonItem *searchBarItem;
 
 @property (nonatomic, strong) NSArray *cards;
 
