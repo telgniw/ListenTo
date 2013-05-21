@@ -12,6 +12,8 @@
 		AA25B3F8174B0C2300A88C82 /* LTFlipcardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B3F7174B0C2300A88C82 /* LTFlipcardViewController.m */; };
 		AA25B403174B0EFA00A88C82 /* LTFlipcardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B402174B0EFA00A88C82 /* LTFlipcardCell.m */; };
 		AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AA25B40C174B122700A88C82 /* flipcard-card-back.png */; };
+		AA25B423174B1E3000A88C82 /* LTCardManagementController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B422174B1E3000A88C82 /* LTCardManagementController.m */; };
+		AA25B426174B1EB000A88C82 /* LTCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B425174B1EB000A88C82 /* LTCardCell.m */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -35,6 +37,10 @@
 		AA25B401174B0EFA00A88C82 /* LTFlipcardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFlipcardCell.h; sourceTree = "<group>"; };
 		AA25B402174B0EFA00A88C82 /* LTFlipcardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTFlipcardCell.m; sourceTree = "<group>"; };
 		AA25B40C174B122700A88C82 /* flipcard-card-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flipcard-card-back.png"; sourceTree = "<group>"; };
+		AA25B421174B1E3000A88C82 /* LTCardManagementController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardManagementController.h; sourceTree = "<group>"; };
+		AA25B422174B1E3000A88C82 /* LTCardManagementController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardManagementController.m; sourceTree = "<group>"; };
+		AA25B424174B1EB000A88C82 /* LTCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardCell.h; sourceTree = "<group>"; };
+		AA25B425174B1EB000A88C82 /* LTCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardCell.m; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +104,33 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		AA25B41D174B1E1800A88C82 /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				AA25B420174B1E2400A88C82 /* Record */,
+				AA25B41F174B1E1E00A88C82 /* Card */,
+			);
+			name = Management;
+			sourceTree = "<group>";
+		};
+		AA25B41F174B1E1E00A88C82 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				AA25B421174B1E3000A88C82 /* LTCardManagementController.h */,
+				AA25B422174B1E3000A88C82 /* LTCardManagementController.m */,
+				AA25B424174B1EB000A88C82 /* LTCardCell.h */,
+				AA25B425174B1EB000A88C82 /* LTCardCell.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		AA25B420174B1E2400A88C82 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
 		AAACE182174124D700F143C3 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +163,7 @@
 		AAACE197174124D700F143C3 /* ListenTo */ = {
 			isa = PBXGroup;
 			children = (
+				AA25B41D174B1E1800A88C82 /* Management */,
 				AA25B40B174B122700A88C82 /* Images */,
 				AA25B3EC174B094100A88C82 /* Game */,
 				AAACE1A0174124D700F143C3 /* LTAppDelegate.h */,
@@ -263,6 +297,8 @@
 				AA25B3F1174B097A00A88C82 /* LTFlipcardEntryViewController.m in Sources */,
 				AA25B3F8174B0C2300A88C82 /* LTFlipcardViewController.m in Sources */,
 				AA25B403174B0EFA00A88C82 /* LTFlipcardCell.m in Sources */,
+				AA25B423174B1E3000A88C82 /* LTCardManagementController.m in Sources */,
+				AA25B426174B1EB000A88C82 /* LTCardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
