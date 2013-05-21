@@ -27,7 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    // Create and add navigation bar buttons.
+    self.pauseButton = [[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(pause:)];
+    self.retryButton = [[UIBarButtonItem alloc] initWithTitle:@"Retry" style:UIBarButtonItemStylePlain target:self action:@selector(retry:)];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:self.retryButton, self.pauseButton, nil]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +47,18 @@
         UIButton *button = (UIButton *)sender;
         controller.nCardPairs = [[[button titleLabel] text] intValue];
     }
+}
+
+#pragma mark - Navigation Bar Button Action
+
+- (IBAction)pause:(id)sender
+{
+    
+}
+
+- (IBAction)retry:(id)sender
+{
+    
 }
 
 @end

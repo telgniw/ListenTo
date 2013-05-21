@@ -10,4 +10,7 @@
 
 @interface LTFlipcardEntryViewController : UIViewController
 
+@property (nonatomic, strong) UIBarButtonItem *pauseButton;
+@property (nonatomic, strong) UIBarButtonItem *retryButton;
+
 @end
