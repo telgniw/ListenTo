@@ -75,6 +75,7 @@
 		AAED156017548EC80091C182 /* 8.桌子.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AAED152E17548EC80091C182 /* 8.桌子.JPG */; };
 		AAED156117548EC80091C182 /* 9.獅子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152F17548EC80091C182 /* 9.獅子.jpg */; };
 		AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED1563175490580091C182 /* LTRecordErrorImageCell.m */; };
+		AAED1568175493170091C182 /* LTDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED1567175493170091C182 /* LTDatabase.m */; };
 		AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF1EEFA17546565004420BA /* homescreen-enter.png */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,8 @@
 		AAED152F17548EC80091C182 /* 9.獅子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "9.獅子.jpg"; sourceTree = "<group>"; };
 		AAED1562175490580091C182 /* LTRecordErrorImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordErrorImageCell.h; sourceTree = "<group>"; };
 		AAED1563175490580091C182 /* LTRecordErrorImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordErrorImageCell.m; sourceTree = "<group>"; };
+		AAED1566175493170091C182 /* LTDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDatabase.h; sourceTree = "<group>"; };
+		AAED1567175493170091C182 /* LTDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDatabase.m; sourceTree = "<group>"; };
 		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +235,8 @@
 		AAACE197174124D700F143C3 /* ListenTo */ = {
 			isa = PBXGroup;
 			children = (
+				AAACE198174124D700F143C3 /* Supporting Files */,
+				AAED15651754925C0091C182 /* Database */,
 				AA25B41D174B1E1800A88C82 /* Management */,
 				AA25B40B174B122700A88C82 /* Images */,
 				AAACE1A0174124D700F143C3 /* LTAppDelegate.h */,
@@ -239,7 +244,6 @@
 				AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */,
 				AAACE1AC174124D700F143C3 /* LTNavigationController.h */,
 				AAACE1AD174124D700F143C3 /* LTNavigationController.m */,
-				AAACE198174124D700F143C3 /* Supporting Files */,
 				AAED14F7175488590091C182 /* LTMainViewController.h */,
 				AAED14F8175488590091C182 /* LTMainViewController.m */,
 			);
@@ -315,6 +319,15 @@
 				AAED152F17548EC80091C182 /* 9.獅子.jpg */,
 			);
 			path = cards;
+			sourceTree = "<group>";
+		};
+		AAED15651754925C0091C182 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				AAED1566175493170091C182 /* LTDatabase.h */,
+				AAED1567175493170091C182 /* LTDatabase.m */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +490,7 @@
 				AAED14F9175488590091C182 /* LTMainViewController.m in Sources */,
 				AAED14FC17548EAC0091C182 /* LTRecordCell.m in Sources */,
 				AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */,
+				AAED1568175493170091C182 /* LTDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
