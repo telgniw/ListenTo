@@ -20,6 +20,7 @@
 		AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A7174124D700F143C3 /* Default-568h@2x.png */; };
 		AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */; };
 		AAACE1AE174124D700F143C3 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE1AD174124D700F143C3 /* LTNavigationController.m */; };
+		AAED14F3175483EA0091C182 /* homescreen-enter-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AAED14F2175483EA0091C182 /* homescreen-enter-selected.png */; };
 		AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF1EEFA17546565004420BA /* homescreen-enter.png */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		AAACE1AA174124D700F143C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AAACE1AC174124D700F143C3 /* LTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTNavigationController.h; sourceTree = "<group>"; };
 		AAACE1AD174124D700F143C3 /* LTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTNavigationController.m; sourceTree = "<group>"; };
+		AAED14F2175483EA0091C182 /* homescreen-enter-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter-selected.png"; sourceTree = "<group>"; };
 		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 		AA25B40B174B122700A88C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AAED14F2175483EA0091C182 /* homescreen-enter-selected.png */,
 				AAF1EEFA17546565004420BA /* homescreen-enter.png */,
 			);
 			name = Images;
@@ -198,6 +201,7 @@
 				AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */,
 				AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */,
 				AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */,
+				AAED14F3175483EA0091C182 /* homescreen-enter-selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
