@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-498" y="-237"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="Foi-y2-UQ5">
             <objects>
-                <viewController id="e40-PV-pDb" sceneMemberID="viewController">
+                <viewController id="e40-PV-pDb" customClass="LTMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="The-FN-RrL">
                         <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,27 +51,183 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="dRT-kA-tlz"/>
+                        <barButtonItem key="rightBarButtonItem" image="icon-record.png" id="dRT-kA-tlz">
+                            <connections>
+                                <segue destination="Uob-iI-jog" kind="push" id="zwl-9p-ffb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recordButton" destination="dRT-kA-tlz" id="xVU-XU-gCN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7R-tA-d4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="642" y="-237"/>
         </scene>
+        <!--Record View Controller-->
+        <scene sceneID="qg9-wb-Nq6">
+            <objects>
+                <tableViewController id="Uob-iI-jog" customClass="LTRecordViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hYe-Es-kzj">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="cPO-Go-qDJ">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="聲音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTf-Jg-5cm">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="33T-8p-PoO"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="圖片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9b-xO-9E5">
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="Bz6-5d-fgg"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="d9b-xO-9E5" firstAttribute="leading" secondItem="cTf-Jg-5cm" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="WJT-hO-cEQ"/>
+                                <constraint firstItem="d9b-xO-9E5" firstAttribute="baseline" secondItem="cTf-Jg-5cm" secondAttribute="baseline" type="default" id="bix-AQ-rFm"/>
+                                <constraint firstItem="cTf-Jg-5cm" firstAttribute="leading" secondItem="cPO-Go-qDJ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dTy-qc-KdT"/>
+                                <constraint firstItem="cTf-Jg-5cm" firstAttribute="top" secondItem="cPO-Go-qDJ" secondAttribute="top" constant="11" id="tF4-gc-y5s"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LTRecordCell" rowHeight="160" id="8c1-1B-P5g" customClass="LTRecordCell">
+                                <rect key="frame" x="0.0" y="66" width="1024" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="159"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="包子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfW-in-igc">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="7qB-2t-Y7l"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qqw-nU-75q">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="119" id="Mqt-Ew-UYF"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NOY-vo-LmR">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LTErrorCell" id="fbI-GK-h0y" customClass="LTRecordErrorImageCell">
+                                                    <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="5.刀子.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-7l-fBK"/>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="2KI-7l-fBK" firstAttribute="top" secondItem="fbI-GK-h0y" secondAttribute="top" type="default" id="Jl1-bA-EbJ"/>
+                                                        <constraint firstItem="2KI-7l-fBK" firstAttribute="leading" secondItem="fbI-GK-h0y" secondAttribute="leading" type="default" id="MAF-mk-PcE"/>
+                                                        <constraint firstItem="2KI-7l-fBK" firstAttribute="trailing" secondItem="fbI-GK-h0y" secondAttribute="trailing" type="default" id="P64-KK-d0A"/>
+                                                        <constraint firstItem="2KI-7l-fBK" firstAttribute="bottom" secondItem="fbI-GK-h0y" secondAttribute="bottom" type="default" id="Xvq-uB-0PX"/>
+                                                    </constraints>
+                                                    <size key="customSize" width="119" height="119"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="OfW-in-igc" firstAttribute="centerY" secondItem="8c1-1B-P5g" secondAttribute="centerY" type="default" id="27T-2C-KD6"/>
+                                    <constraint firstItem="qqw-nU-75q" firstAttribute="leading" secondItem="OfW-in-igc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="RHA-6K-pEl"/>
+                                    <constraint firstAttribute="trailing" secondItem="qqw-nU-75q" secondAttribute="trailing" constant="20" type="default" id="Vcc-l2-p1y"/>
+                                    <constraint firstItem="OfW-in-igc" firstAttribute="leading" secondItem="8c1-1B-P5g" secondAttribute="leading" constant="20" type="default" id="W0S-ET-2sR"/>
+                                    <constraint firstItem="qqw-nU-75q" firstAttribute="top" secondItem="8c1-1B-P5g" secondAttribute="top" constant="20" type="default" id="f2l-Tt-wBS"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uob-iI-jog" id="Zyg-V5-JvG"/>
+                            <outlet property="delegate" destination="Uob-iI-jog" id="l3Z-Qx-BAD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gQN-hM-4oI">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="PCQ-vl-0Lr">
+                            <rect key="frame" x="307" y="7" width="409" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="今天"/>
+                                <segment title="本週"/>
+                                <segment title="全部"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61Q-V4-vId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="-237"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="5.刀子.jpg" width="600" height="600"/>
         <image name="homescreen-enter-hover.png" width="223" height="150"/>
         <image name="homescreen-enter.png" width="223" height="150"/>
+        <image name="icon-record.png" width="24" height="24"/>
     </resources>
     <classes>
+        <class className="LTMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
         <class className="LTNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTNavigationController.h"/>
+        </class>
+        <class className="LTRecordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordCell.h"/>
+        </class>
+        <class className="LTRecordErrorImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordErrorImageCell.h"/>
+        </class>
+        <class className="LTRecordViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="OBShapedButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OBShapedButton.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

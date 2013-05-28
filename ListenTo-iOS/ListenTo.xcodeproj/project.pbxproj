@@ -21,6 +21,60 @@
 		AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */; };
 		AAACE1AE174124D700F143C3 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE1AD174124D700F143C3 /* LTNavigationController.m */; };
 		AAED14F3175483EA0091C182 /* homescreen-enter-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = AAED14F2175483EA0091C182 /* homescreen-enter-hover.png */; };
+		AAED14F61754875D0091C182 /* icon-record.png in Resources */ = {isa = PBXBuildFile; fileRef = AAED14F51754875D0091C182 /* icon-record.png */; };
+		AAED14F9175488590091C182 /* LTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED14F8175488590091C182 /* LTMainViewController.m */; };
+		AAED14FC17548EAC0091C182 /* LTRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED14FB17548EAC0091C182 /* LTRecordCell.m */; };
+		AAED153017548EC80091C182 /* 1.蝦子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED14FE17548EC70091C182 /* 1.蝦子.jpg */; };
+		AAED153117548EC80091C182 /* 10.柿子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED14FF17548EC70091C182 /* 10.柿子.jpg */; };
+		AAED153217548EC80091C182 /* 11.兔子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150017548EC70091C182 /* 11.兔子.jpg */; };
+		AAED153317548EC80091C182 /* 12.褲子.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AAED150117548EC70091C182 /* 12.褲子.JPG */; };
+		AAED153417548EC80091C182 /* 13.老鼠.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AAED150217548EC70091C182 /* 13.老鼠.JPG */; };
+		AAED153517548EC80091C182 /* 14.老虎.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150317548EC70091C182 /* 14.老虎.jpg */; };
+		AAED153617548EC80091C182 /* 15.書.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150417548EC70091C182 /* 15.書.jpg */; };
+		AAED153717548EC80091C182 /* 16.豬.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150517548EC70091C182 /* 16.豬.jpg */; };
+		AAED153817548EC80091C182 /* 17.船.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150617548EC80091C182 /* 17.船.jpg */; };
+		AAED153917548EC80091C182 /* 18.床.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150717548EC80091C182 /* 18.床.jpg */; };
+		AAED153A17548EC80091C182 /* 19.雨.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150817548EC80091C182 /* 19.雨.jpg */; };
+		AAED153B17548EC80091C182 /* 2.鴨子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150917548EC80091C182 /* 2.鴨子.jpg */; };
+		AAED153C17548EC80091C182 /* 20.雲.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150A17548EC80091C182 /* 20.雲.jpg */; };
+		AAED153D17548EC80091C182 /* 21.魚.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150B17548EC80091C182 /* 21.魚.jpg */; };
+		AAED153E17548EC80091C182 /* 22.香腸.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150C17548EC80091C182 /* 22.香腸.jpg */; };
+		AAED153F17548EC80091C182 /* 23.香蕉.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150D17548EC80091C182 /* 23.香蕉.jpg */; };
+		AAED154017548EC80091C182 /* 24.傘.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150E17548EC80091C182 /* 24.傘.jpg */; };
+		AAED154117548EC80091C182 /* 25.扇子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED150F17548EC80091C182 /* 25.扇子.jpg */; };
+		AAED154217548EC80091C182 /* 26.烏鴉.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151017548EC80091C182 /* 26.烏鴉.jpg */; };
+		AAED154317548EC80091C182 /* 27.烏龜.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151117548EC80091C182 /* 27.烏龜.jpg */; };
+		AAED154417548EC80091C182 /* 28.蘿蔔.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151217548EC80091C182 /* 28.蘿蔔.jpg */; };
+		AAED154517548EC80091C182 /* 29.螺絲.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151317548EC80091C182 /* 29.螺絲.jpg */; };
+		AAED154617548EC80091C182 /* 3.箱子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151417548EC80091C182 /* 3.箱子.jpg */; };
+		AAED154717548EC80091C182 /* 30.大象.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151517548EC80091C182 /* 30.大象.jpg */; };
+		AAED154817548EC80091C182 /* 31.狗.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151617548EC80091C182 /* 31.狗.jpg */; };
+		AAED154917548EC80091C182 /* 32.水果.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151717548EC80091C182 /* 32.水果.jpg */; };
+		AAED154A17548EC80091C182 /* 33.番茄.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151817548EC80091C182 /* 33.番茄.jpg */; };
+		AAED154B17548EC80091C182 /* 34.茄子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151917548EC80091C182 /* 34.茄子.jpg */; };
+		AAED154C17548EC80091C182 /* 35.葡萄.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151A17548EC80091C182 /* 35.葡萄.jpg */; };
+		AAED154D17548EC80091C182 /* 36.橘子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151B17548EC80091C182 /* 36.橘子.jpg */; };
+		AAED154E17548EC80091C182 /* 37.蘋果.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151C17548EC80091C182 /* 37.蘋果.jpg */; };
+		AAED154F17548EC80091C182 /* 38.鳳梨.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151D17548EC80091C182 /* 38.鳳梨.jpg */; };
+		AAED155017548EC80091C182 /* 39.彈珠.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151E17548EC80091C182 /* 39.彈珠.jpg */; };
+		AAED155117548EC80091C182 /* 4.包子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED151F17548EC80091C182 /* 4.包子.jpg */; };
+		AAED155217548EC80091C182 /* 40.糖果.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152017548EC80091C182 /* 40.糖果.jpeg */; };
+		AAED155317548EC80091C182 /* 41.剪刀.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152117548EC80091C182 /* 41.剪刀.jpg */; };
+		AAED155417548EC80091C182 /* 42.報紙.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152217548EC80091C182 /* 42.報紙.jpg */; };
+		AAED155517548EC80091C182 /* 43.蝴蝶.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152317548EC80091C182 /* 43.蝴蝶.jpg */; };
+		AAED155617548EC80091C182 /* 44.螃蟹.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152417548EC80091C182 /* 44.螃蟹.jpg */; };
+		AAED155717548EC80091C182 /* 45.氣球.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152517548EC80091C182 /* 45.氣球.jpg */; };
+		AAED155817548EC80091C182 /* 46.梳子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152617548EC80091C182 /* 46.梳子.jpg */; };
+		AAED155917548EC80091C182 /* 47.刷子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152717548EC80091C182 /* 47.刷子.jpg */; };
+		AAED155A17548EC80091C182 /* 48.色紙.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152817548EC80091C182 /* 48.色紙.jpg */; };
+		AAED155B17548EC80091C182 /* 49.花.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152917548EC80091C182 /* 49.花.jpg */; };
+		AAED155C17548EC80091C182 /* 5.刀子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152A17548EC80091C182 /* 5.刀子.jpg */; };
+		AAED155D17548EC80091C182 /* 50.瓜.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152B17548EC80091C182 /* 50.瓜.jpg */; };
+		AAED155E17548EC80091C182 /* 6.鍋子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152C17548EC80091C182 /* 6.鍋子.jpg */; };
+		AAED155F17548EC80091C182 /* 7.櫃子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152D17548EC80091C182 /* 7.櫃子.jpg */; };
+		AAED156017548EC80091C182 /* 8.桌子.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AAED152E17548EC80091C182 /* 8.桌子.JPG */; };
+		AAED156117548EC80091C182 /* 9.獅子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152F17548EC80091C182 /* 9.獅子.jpg */; };
+		AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED1563175490580091C182 /* LTRecordErrorImageCell.m */; };
 		AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF1EEFA17546565004420BA /* homescreen-enter.png */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +100,63 @@
 		AAACE1AC174124D700F143C3 /* LTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTNavigationController.h; sourceTree = "<group>"; };
 		AAACE1AD174124D700F143C3 /* LTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTNavigationController.m; sourceTree = "<group>"; };
 		AAED14F2175483EA0091C182 /* homescreen-enter-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter-hover.png"; sourceTree = "<group>"; };
+		AAED14F51754875D0091C182 /* icon-record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-record.png"; sourceTree = "<group>"; };
+		AAED14F7175488590091C182 /* LTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMainViewController.h; sourceTree = "<group>"; };
+		AAED14F8175488590091C182 /* LTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMainViewController.m; sourceTree = "<group>"; };
+		AAED14FA17548EAC0091C182 /* LTRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordCell.h; sourceTree = "<group>"; };
+		AAED14FB17548EAC0091C182 /* LTRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordCell.m; sourceTree = "<group>"; };
+		AAED14FE17548EC70091C182 /* 1.蝦子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1.蝦子.jpg"; sourceTree = "<group>"; };
+		AAED14FF17548EC70091C182 /* 10.柿子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10.柿子.jpg"; sourceTree = "<group>"; };
+		AAED150017548EC70091C182 /* 11.兔子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11.兔子.jpg"; sourceTree = "<group>"; };
+		AAED150117548EC70091C182 /* 12.褲子.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "12.褲子.JPG"; sourceTree = "<group>"; };
+		AAED150217548EC70091C182 /* 13.老鼠.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "13.老鼠.JPG"; sourceTree = "<group>"; };
+		AAED150317548EC70091C182 /* 14.老虎.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "14.老虎.jpg"; sourceTree = "<group>"; };
+		AAED150417548EC70091C182 /* 15.書.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "15.書.jpg"; sourceTree = "<group>"; };
+		AAED150517548EC70091C182 /* 16.豬.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "16.豬.jpg"; sourceTree = "<group>"; };
+		AAED150617548EC80091C182 /* 17.船.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "17.船.jpg"; sourceTree = "<group>"; };
+		AAED150717548EC80091C182 /* 18.床.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "18.床.jpg"; sourceTree = "<group>"; };
+		AAED150817548EC80091C182 /* 19.雨.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "19.雨.jpg"; sourceTree = "<group>"; };
+		AAED150917548EC80091C182 /* 2.鴨子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2.鴨子.jpg"; sourceTree = "<group>"; };
+		AAED150A17548EC80091C182 /* 20.雲.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "20.雲.jpg"; sourceTree = "<group>"; };
+		AAED150B17548EC80091C182 /* 21.魚.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "21.魚.jpg"; sourceTree = "<group>"; };
+		AAED150C17548EC80091C182 /* 22.香腸.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "22.香腸.jpg"; sourceTree = "<group>"; };
+		AAED150D17548EC80091C182 /* 23.香蕉.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "23.香蕉.jpg"; sourceTree = "<group>"; };
+		AAED150E17548EC80091C182 /* 24.傘.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "24.傘.jpg"; sourceTree = "<group>"; };
+		AAED150F17548EC80091C182 /* 25.扇子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "25.扇子.jpg"; sourceTree = "<group>"; };
+		AAED151017548EC80091C182 /* 26.烏鴉.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "26.烏鴉.jpg"; sourceTree = "<group>"; };
+		AAED151117548EC80091C182 /* 27.烏龜.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "27.烏龜.jpg"; sourceTree = "<group>"; };
+		AAED151217548EC80091C182 /* 28.蘿蔔.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "28.蘿蔔.jpg"; sourceTree = "<group>"; };
+		AAED151317548EC80091C182 /* 29.螺絲.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "29.螺絲.jpg"; sourceTree = "<group>"; };
+		AAED151417548EC80091C182 /* 3.箱子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3.箱子.jpg"; sourceTree = "<group>"; };
+		AAED151517548EC80091C182 /* 30.大象.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "30.大象.jpg"; sourceTree = "<group>"; };
+		AAED151617548EC80091C182 /* 31.狗.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "31.狗.jpg"; sourceTree = "<group>"; };
+		AAED151717548EC80091C182 /* 32.水果.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "32.水果.jpg"; sourceTree = "<group>"; };
+		AAED151817548EC80091C182 /* 33.番茄.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "33.番茄.jpg"; sourceTree = "<group>"; };
+		AAED151917548EC80091C182 /* 34.茄子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "34.茄子.jpg"; sourceTree = "<group>"; };
+		AAED151A17548EC80091C182 /* 35.葡萄.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "35.葡萄.jpg"; sourceTree = "<group>"; };
+		AAED151B17548EC80091C182 /* 36.橘子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "36.橘子.jpg"; sourceTree = "<group>"; };
+		AAED151C17548EC80091C182 /* 37.蘋果.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "37.蘋果.jpg"; sourceTree = "<group>"; };
+		AAED151D17548EC80091C182 /* 38.鳳梨.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "38.鳳梨.jpg"; sourceTree = "<group>"; };
+		AAED151E17548EC80091C182 /* 39.彈珠.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "39.彈珠.jpg"; sourceTree = "<group>"; };
+		AAED151F17548EC80091C182 /* 4.包子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4.包子.jpg"; sourceTree = "<group>"; };
+		AAED152017548EC80091C182 /* 40.糖果.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "40.糖果.jpeg"; sourceTree = "<group>"; };
+		AAED152117548EC80091C182 /* 41.剪刀.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "41.剪刀.jpg"; sourceTree = "<group>"; };
+		AAED152217548EC80091C182 /* 42.報紙.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "42.報紙.jpg"; sourceTree = "<group>"; };
+		AAED152317548EC80091C182 /* 43.蝴蝶.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "43.蝴蝶.jpg"; sourceTree = "<group>"; };
+		AAED152417548EC80091C182 /* 44.螃蟹.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "44.螃蟹.jpg"; sourceTree = "<group>"; };
+		AAED152517548EC80091C182 /* 45.氣球.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "45.氣球.jpg"; sourceTree = "<group>"; };
+		AAED152617548EC80091C182 /* 46.梳子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "46.梳子.jpg"; sourceTree = "<group>"; };
+		AAED152717548EC80091C182 /* 47.刷子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "47.刷子.jpg"; sourceTree = "<group>"; };
+		AAED152817548EC80091C182 /* 48.色紙.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "48.色紙.jpg"; sourceTree = "<group>"; };
+		AAED152917548EC80091C182 /* 49.花.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "49.花.jpg"; sourceTree = "<group>"; };
+		AAED152A17548EC80091C182 /* 5.刀子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5.刀子.jpg"; sourceTree = "<group>"; };
+		AAED152B17548EC80091C182 /* 50.瓜.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "50.瓜.jpg"; sourceTree = "<group>"; };
+		AAED152C17548EC80091C182 /* 6.鍋子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "6.鍋子.jpg"; sourceTree = "<group>"; };
+		AAED152D17548EC80091C182 /* 7.櫃子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "7.櫃子.jpg"; sourceTree = "<group>"; };
+		AAED152E17548EC80091C182 /* 8.桌子.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "8.桌子.JPG"; sourceTree = "<group>"; };
+		AAED152F17548EC80091C182 /* 9.獅子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "9.獅子.jpg"; sourceTree = "<group>"; };
+		AAED1562175490580091C182 /* LTRecordErrorImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordErrorImageCell.h; sourceTree = "<group>"; };
+		AAED1563175490580091C182 /* LTRecordErrorImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordErrorImageCell.m; sourceTree = "<group>"; };
 		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +178,8 @@
 		AA25B40B174B122700A88C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AAED14FD17548EC70091C182 /* cards */,
+				AAED14F51754875D0091C182 /* icon-record.png */,
 				AAED14F2175483EA0091C182 /* homescreen-enter-hover.png */,
 				AAF1EEFA17546565004420BA /* homescreen-enter.png */,
 			);
@@ -79,6 +192,10 @@
 			children = (
 				AA25B42F174B24E400A88C82 /* LTRecordViewController.h */,
 				AA25B430174B24E400A88C82 /* LTRecordViewController.m */,
+				AAED14FA17548EAC0091C182 /* LTRecordCell.h */,
+				AAED14FB17548EAC0091C182 /* LTRecordCell.m */,
+				AAED1562175490580091C182 /* LTRecordErrorImageCell.h */,
+				AAED1563175490580091C182 /* LTRecordErrorImageCell.m */,
 			);
 			name = Management;
 			sourceTree = "<group>";
@@ -123,6 +240,8 @@
 				AAACE1AC174124D700F143C3 /* LTNavigationController.h */,
 				AAACE1AD174124D700F143C3 /* LTNavigationController.m */,
 				AAACE198174124D700F143C3 /* Supporting Files */,
+				AAED14F7175488590091C182 /* LTMainViewController.h */,
+				AAED14F8175488590091C182 /* LTMainViewController.m */,
 			);
 			path = ListenTo;
 			sourceTree = "<group>";
@@ -139,6 +258,63 @@
 				AAACE1A7174124D700F143C3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAED14FD17548EC70091C182 /* cards */ = {
+			isa = PBXGroup;
+			children = (
+				AAED14FE17548EC70091C182 /* 1.蝦子.jpg */,
+				AAED14FF17548EC70091C182 /* 10.柿子.jpg */,
+				AAED150017548EC70091C182 /* 11.兔子.jpg */,
+				AAED150117548EC70091C182 /* 12.褲子.JPG */,
+				AAED150217548EC70091C182 /* 13.老鼠.JPG */,
+				AAED150317548EC70091C182 /* 14.老虎.jpg */,
+				AAED150417548EC70091C182 /* 15.書.jpg */,
+				AAED150517548EC70091C182 /* 16.豬.jpg */,
+				AAED150617548EC80091C182 /* 17.船.jpg */,
+				AAED150717548EC80091C182 /* 18.床.jpg */,
+				AAED150817548EC80091C182 /* 19.雨.jpg */,
+				AAED150917548EC80091C182 /* 2.鴨子.jpg */,
+				AAED150A17548EC80091C182 /* 20.雲.jpg */,
+				AAED150B17548EC80091C182 /* 21.魚.jpg */,
+				AAED150C17548EC80091C182 /* 22.香腸.jpg */,
+				AAED150D17548EC80091C182 /* 23.香蕉.jpg */,
+				AAED150E17548EC80091C182 /* 24.傘.jpg */,
+				AAED150F17548EC80091C182 /* 25.扇子.jpg */,
+				AAED151017548EC80091C182 /* 26.烏鴉.jpg */,
+				AAED151117548EC80091C182 /* 27.烏龜.jpg */,
+				AAED151217548EC80091C182 /* 28.蘿蔔.jpg */,
+				AAED151317548EC80091C182 /* 29.螺絲.jpg */,
+				AAED151417548EC80091C182 /* 3.箱子.jpg */,
+				AAED151517548EC80091C182 /* 30.大象.jpg */,
+				AAED151617548EC80091C182 /* 31.狗.jpg */,
+				AAED151717548EC80091C182 /* 32.水果.jpg */,
+				AAED151817548EC80091C182 /* 33.番茄.jpg */,
+				AAED151917548EC80091C182 /* 34.茄子.jpg */,
+				AAED151A17548EC80091C182 /* 35.葡萄.jpg */,
+				AAED151B17548EC80091C182 /* 36.橘子.jpg */,
+				AAED151C17548EC80091C182 /* 37.蘋果.jpg */,
+				AAED151D17548EC80091C182 /* 38.鳳梨.jpg */,
+				AAED151E17548EC80091C182 /* 39.彈珠.jpg */,
+				AAED151F17548EC80091C182 /* 4.包子.jpg */,
+				AAED152017548EC80091C182 /* 40.糖果.jpeg */,
+				AAED152117548EC80091C182 /* 41.剪刀.jpg */,
+				AAED152217548EC80091C182 /* 42.報紙.jpg */,
+				AAED152317548EC80091C182 /* 43.蝴蝶.jpg */,
+				AAED152417548EC80091C182 /* 44.螃蟹.jpg */,
+				AAED152517548EC80091C182 /* 45.氣球.jpg */,
+				AAED152617548EC80091C182 /* 46.梳子.jpg */,
+				AAED152717548EC80091C182 /* 47.刷子.jpg */,
+				AAED152817548EC80091C182 /* 48.色紙.jpg */,
+				AAED152917548EC80091C182 /* 49.花.jpg */,
+				AAED152A17548EC80091C182 /* 5.刀子.jpg */,
+				AAED152B17548EC80091C182 /* 50.瓜.jpg */,
+				AAED152C17548EC80091C182 /* 6.鍋子.jpg */,
+				AAED152D17548EC80091C182 /* 7.櫃子.jpg */,
+				AAED152E17548EC80091C182 /* 8.桌子.JPG */,
+				AAED152F17548EC80091C182 /* 9.獅子.jpg */,
+			);
+			path = cards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +378,57 @@
 				AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */,
 				AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */,
 				AAED14F3175483EA0091C182 /* homescreen-enter-hover.png in Resources */,
+				AAED14F61754875D0091C182 /* icon-record.png in Resources */,
+				AAED153017548EC80091C182 /* 1.蝦子.jpg in Resources */,
+				AAED153117548EC80091C182 /* 10.柿子.jpg in Resources */,
+				AAED153217548EC80091C182 /* 11.兔子.jpg in Resources */,
+				AAED153317548EC80091C182 /* 12.褲子.JPG in Resources */,
+				AAED153417548EC80091C182 /* 13.老鼠.JPG in Resources */,
+				AAED153517548EC80091C182 /* 14.老虎.jpg in Resources */,
+				AAED153617548EC80091C182 /* 15.書.jpg in Resources */,
+				AAED153717548EC80091C182 /* 16.豬.jpg in Resources */,
+				AAED153817548EC80091C182 /* 17.船.jpg in Resources */,
+				AAED153917548EC80091C182 /* 18.床.jpg in Resources */,
+				AAED153A17548EC80091C182 /* 19.雨.jpg in Resources */,
+				AAED153B17548EC80091C182 /* 2.鴨子.jpg in Resources */,
+				AAED153C17548EC80091C182 /* 20.雲.jpg in Resources */,
+				AAED153D17548EC80091C182 /* 21.魚.jpg in Resources */,
+				AAED153E17548EC80091C182 /* 22.香腸.jpg in Resources */,
+				AAED153F17548EC80091C182 /* 23.香蕉.jpg in Resources */,
+				AAED154017548EC80091C182 /* 24.傘.jpg in Resources */,
+				AAED154117548EC80091C182 /* 25.扇子.jpg in Resources */,
+				AAED154217548EC80091C182 /* 26.烏鴉.jpg in Resources */,
+				AAED154317548EC80091C182 /* 27.烏龜.jpg in Resources */,
+				AAED154417548EC80091C182 /* 28.蘿蔔.jpg in Resources */,
+				AAED154517548EC80091C182 /* 29.螺絲.jpg in Resources */,
+				AAED154617548EC80091C182 /* 3.箱子.jpg in Resources */,
+				AAED154717548EC80091C182 /* 30.大象.jpg in Resources */,
+				AAED154817548EC80091C182 /* 31.狗.jpg in Resources */,
+				AAED154917548EC80091C182 /* 32.水果.jpg in Resources */,
+				AAED154A17548EC80091C182 /* 33.番茄.jpg in Resources */,
+				AAED154B17548EC80091C182 /* 34.茄子.jpg in Resources */,
+				AAED154C17548EC80091C182 /* 35.葡萄.jpg in Resources */,
+				AAED154D17548EC80091C182 /* 36.橘子.jpg in Resources */,
+				AAED154E17548EC80091C182 /* 37.蘋果.jpg in Resources */,
+				AAED154F17548EC80091C182 /* 38.鳳梨.jpg in Resources */,
+				AAED155017548EC80091C182 /* 39.彈珠.jpg in Resources */,
+				AAED155117548EC80091C182 /* 4.包子.jpg in Resources */,
+				AAED155217548EC80091C182 /* 40.糖果.jpeg in Resources */,
+				AAED155317548EC80091C182 /* 41.剪刀.jpg in Resources */,
+				AAED155417548EC80091C182 /* 42.報紙.jpg in Resources */,
+				AAED155517548EC80091C182 /* 43.蝴蝶.jpg in Resources */,
+				AAED155617548EC80091C182 /* 44.螃蟹.jpg in Resources */,
+				AAED155717548EC80091C182 /* 45.氣球.jpg in Resources */,
+				AAED155817548EC80091C182 /* 46.梳子.jpg in Resources */,
+				AAED155917548EC80091C182 /* 47.刷子.jpg in Resources */,
+				AAED155A17548EC80091C182 /* 48.色紙.jpg in Resources */,
+				AAED155B17548EC80091C182 /* 49.花.jpg in Resources */,
+				AAED155C17548EC80091C182 /* 5.刀子.jpg in Resources */,
+				AAED155D17548EC80091C182 /* 50.瓜.jpg in Resources */,
+				AAED155E17548EC80091C182 /* 6.鍋子.jpg in Resources */,
+				AAED155F17548EC80091C182 /* 7.櫃子.jpg in Resources */,
+				AAED156017548EC80091C182 /* 8.桌子.JPG in Resources */,
+				AAED156117548EC80091C182 /* 9.獅子.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +474,9 @@
 				AAACE1A2174124D700F143C3 /* LTAppDelegate.m in Sources */,
 				AAACE1AE174124D700F143C3 /* LTNavigationController.m in Sources */,
 				AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */,
+				AAED14F9175488590091C182 /* LTMainViewController.m in Sources */,
+				AAED14FC17548EAC0091C182 /* LTRecordCell.m in Sources */,
+				AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
