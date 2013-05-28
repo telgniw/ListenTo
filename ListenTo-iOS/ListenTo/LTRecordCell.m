@@ -18,8 +18,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    // TODO: implement this method
-    return nil;
+    return 1;
 }
 
 @end
