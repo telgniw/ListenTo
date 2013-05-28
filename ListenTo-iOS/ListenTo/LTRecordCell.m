@@ -10,20 +10,16 @@
 
 @implementation LTRecordCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    // TODO: implement this method
+    return nil;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    // TODO: implement this method
+    return nil;
 }
 
 @end
