@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) FMDatabase *database;
 
++ (LTDatabase *)instance;
+
 @end
