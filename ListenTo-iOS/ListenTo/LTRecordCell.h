@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTRecordCell : UITableViewCell
+@interface LTRecordCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

@@ -150,6 +150,10 @@
                                                     <size key="customSize" width="119" height="119"/>
                                                 </collectionViewCell>
                                             </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="8c1-1B-P5g" id="jPF-Lx-ahV"/>
+                                                <outlet property="delegate" destination="8c1-1B-P5g" id="L4f-AM-jus"/>
+                                            </connections>
                                         </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
