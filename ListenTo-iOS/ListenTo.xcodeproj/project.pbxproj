@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
-		AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */ = {isa = PBXBuildFile; fileRef = AA25B40C174B122700A88C82 /* flipcard-card-back.png */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
@@ -21,12 +20,12 @@
 		AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A7174124D700F143C3 /* Default-568h@2x.png */; };
 		AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */; };
 		AAACE1AE174124D700F143C3 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE1AD174124D700F143C3 /* LTNavigationController.m */; };
+		AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF1EEFA17546565004420BA /* homescreen-enter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5654E21E1EC1482695A9883E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		AA25B40C174B122700A88C82 /* flipcard-card-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flipcard-card-back.png"; sourceTree = "<group>"; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewController.h; sourceTree = "<group>"; };
 		AA25B430174B24E400A88C82 /* LTRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewController.m; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +44,7 @@
 		AAACE1AA174124D700F143C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AAACE1AC174124D700F143C3 /* LTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTNavigationController.h; sourceTree = "<group>"; };
 		AAACE1AD174124D700F143C3 /* LTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTNavigationController.m; sourceTree = "<group>"; };
+		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 		AA25B40B174B122700A88C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				AA25B40C174B122700A88C82 /* flipcard-card-back.png */,
+				AAF1EEFA17546565004420BA /* homescreen-enter.png */,
 			);
 			name = Images;
 			path = images;
@@ -197,7 +197,7 @@
 				AAACE1A6174124D700F143C3 /* Default@2x.png in Resources */,
 				AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */,
 				AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */,
-				AA25B40D174B122700A88C82 /* flipcard-card-back.png in Resources */,
+				AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
