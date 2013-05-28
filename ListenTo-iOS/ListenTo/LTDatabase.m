@@ -39,6 +39,8 @@
                 return nil;
             }
         }
+        
+        self.database = [[FMDatabase alloc] initWithPath:dbPath];
     }
     
     return self;
