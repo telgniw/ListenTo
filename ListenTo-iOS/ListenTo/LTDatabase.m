@@ -82,7 +82,7 @@
             return nil;
         }
         
-        // Insert fake records into database.
+        // Insert fake records into database for today.
         [self.database executeUpdate:@"INSERT INTO Records (type) VALUES (?)", @0];
         
         NSNumber *recordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
@@ -96,7 +96,28 @@
             @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @8,  @"count": @1},
             @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @6,  @"count": @3},
             @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @6,  @"count": @2},
-            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @8,  @"count": @2},
+            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @8,  @"count": @2},
+        ];
+        for(NSDictionary *record in records) {
+            [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image, count) VALUES (:id, :cid_voice, :cid_image, :count)"
+                 withParameterDictionary:record];
+        }
+        
+        // Insert fake records into database for last week.
+        [self.database executeUpdate:@"INSERT INTO Records (type, timestamp) VALUES (?, ?)", @0, [[[NSDate today] dateBySubtractingDays:2] stringWithSqliteFormat]];
+        
+        recordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
+        records = @[
+            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @16, @"count": @2},
+            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @15, @"count": @2},
+            @{@"id": recordId, @"cid_voice": @22, @"cid_image": @22, @"count": @4},
+            @{@"id": recordId, @"cid_voice": @9, @"cid_image":  @10, @"count": @3},
+            @{@"id": recordId, @"cid_voice": @9,  @"cid_image": @9,  @"count": @1},
+            @{@"id": recordId, @"cid_voice": @13, @"cid_image": @14, @"count": @2},
+            @{@"id": recordId, @"cid_voice": @13, @"cid_image": @13, @"count": @2},
+            @{@"id": recordId, @"cid_voice": @18, @"cid_image": @18, @"count": @4},
+            @{@"id": recordId, @"cid_voice": @3,  @"cid_image": @3,  @"count": @4},
+            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @4,  @"count": @4},
         ];
         for(NSDictionary *record in records) {
             [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image, count) VALUES (:id, :cid_voice, :cid_image, :count)"
