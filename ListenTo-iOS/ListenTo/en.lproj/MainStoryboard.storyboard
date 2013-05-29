@@ -182,8 +182,14 @@
                                 <segment title="本週"/>
                                 <segment title="全部"/>
                             </segments>
+                            <connections>
+                                <action selector="changeRange:" destination="Uob-iI-jog" eventType="touchDragInside" id="3YM-Vl-WMW"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="rangeControl" destination="PCQ-vl-0Lr" id="sKk-SW-AZf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61Q-V4-vId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +220,10 @@
         </class>
         <class className="LTRecordViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeRange:"/>
+                <relationship kind="outlet" name="rangeControl" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

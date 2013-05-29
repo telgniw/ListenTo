@@ -14,4 +14,14 @@
 
 + (LTDatabase *)instance;
 
+#pragma mark - Object Lifecycle
+
+- (id)init;
+- (id)initWithFakeRecords;
+
+#pragma mark - Data Interface
+
+- (NSDictionary *)cardForId:(int)cid;
+- (NSDictionary *)recordForId:(int)rid;
+
 @end

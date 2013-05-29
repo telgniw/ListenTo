@@ -10,4 +10,8 @@
 
 @interface LTRecordViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *rangeControl;
+
+- (IBAction)changeRange:(id)sender;
+
 @end

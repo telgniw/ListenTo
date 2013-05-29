@@ -8,11 +8,11 @@
 
 #import "LTRecordViewController.h"
 
-@interface LTRecordViewController ()
-
-@end
-
 @implementation LTRecordViewController
 
+- (IBAction)changeRange:(id)sender
+{
+    // TODO: implement this method.
+}
 
 @end

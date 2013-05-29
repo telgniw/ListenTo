@@ -12,13 +12,14 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: implement this method
+    // TODO: implement this method.
     return nil;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    // TODO: implement this method.
+    return 0;
 }
 
 @end

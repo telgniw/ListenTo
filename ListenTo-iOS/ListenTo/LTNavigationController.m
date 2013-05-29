@@ -7,10 +7,7 @@
 //
 
 #import "LTNavigationController.h"
-
-@interface LTNavigationController ()
-
-@end
+#import "LTDatabase.h"
 
 @implementation LTNavigationController
 
@@ -26,6 +23,10 @@
     [self.navigationBar setTranslucent:YES];
     [self.navigationBar setBackgroundImage:transparentImage forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    LTDatabase *db = [LTDatabase instance];
+    NSLog(@"card 1: %@", [db cardForId:1]);
+    NSLog(@"card 1: %@", [db recordForId:1]);
 }
 
 @end

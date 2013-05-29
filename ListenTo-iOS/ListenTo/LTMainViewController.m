@@ -8,10 +8,6 @@
 
 #import "LTMainViewController.h"
 
-@interface LTMainViewController ()
-
-@end
-
 @implementation LTMainViewController
 
 - (void)viewDidLoad

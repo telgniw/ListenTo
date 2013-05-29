@@ -76,6 +76,7 @@
 		AAED156117548EC80091C182 /* 9.獅子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAED152F17548EC80091C182 /* 9.獅子.jpg */; };
 		AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED1563175490580091C182 /* LTRecordErrorImageCell.m */; };
 		AAED1568175493170091C182 /* LTDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED1567175493170091C182 /* LTDatabase.m */; };
+		AAED15801755B30E0091C182 /* default.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = AAED157E1755B1260091C182 /* default.sqlite3 */; };
 		AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF1EEFA17546565004420BA /* homescreen-enter.png */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		AAED1563175490580091C182 /* LTRecordErrorImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordErrorImageCell.m; sourceTree = "<group>"; };
 		AAED1566175493170091C182 /* LTDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDatabase.h; sourceTree = "<group>"; };
 		AAED1567175493170091C182 /* LTDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDatabase.m; sourceTree = "<group>"; };
+		AAED157E1755B1260091C182 /* default.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite3; sourceTree = "<group>"; };
 		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 		AAACE197174124D700F143C3 /* ListenTo */ = {
 			isa = PBXGroup;
 			children = (
+				AAED157D1755B1260091C182 /* Resources */,
 				AAACE198174124D700F143C3 /* Supporting Files */,
 				AAED15651754925C0091C182 /* Database */,
 				AA25B41D174B1E1800A88C82 /* Management */,
@@ -330,6 +333,14 @@
 			name = Database;
 			sourceTree = "<group>";
 		};
+		AAED157D1755B1260091C182 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AAED157E1755B1260091C182 /* default.sqlite3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAED15801755B30E0091C182 /* default.sqlite3 in Resources */,
 				AAACE19C174124D700F143C3 /* InfoPlist.strings in Resources */,
 				AAACE1A4174124D700F143C3 /* Default.png in Resources */,
 				AAACE1A6174124D700F143C3 /* Default@2x.png in Resources */,
