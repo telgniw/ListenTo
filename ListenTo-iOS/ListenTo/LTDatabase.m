@@ -8,8 +8,6 @@
 
 #import "LTDatabase.h"
 
-#import "NSDate+Beginning.h"
-
 @implementation LTDatabase
 
 + (LTDatabase *)instance
@@ -166,13 +164,41 @@
     return [NSDictionary dictionaryWithDictionary:result];
 }
 
-- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)startDate
+- (NSArray *)arrayWithCardIdsAfterDate:(NSDate *)date
 {
     NSMutableArray *result = [NSMutableArray array];
     if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT id FROM Records WHERE timestamp >= DATETIME(?)", [startDate stringWithSqliteFormat]];
+        FMResultSet *s = [self.database executeQuery:@"SELECT DISTINCT cid_voice FROM RecordDetails WHERE id IN (SELECT id FROM Records WHERE timestamp >= DATETIME(?))", [date stringWithSqliteFormat]];
         while([s next]) {
             [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
+        }
+        
+        [self.database close];
+    }
+    return [NSArray arrayWithArray:result];
+}
+
+- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)date
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if([self.database open]) {
+        FMResultSet *s = [self.database executeQuery:@"SELECT id FROM Records WHERE timestamp >= DATETIME(?)", [date stringWithSqliteFormat]];
+        while([s next]) {
+            [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
+        }
+        
+        [self.database close];
+    }
+    return [NSArray arrayWithArray:result];
+}
+
+- (NSArray *)recordsForCardId:(int)cid afterDate:(NSDate *)date
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if([self.database open]) {
+        FMResultSet *s = [self.database executeQuery:@"SELECT cid_image, count FROM RecordDetails WHERE cid_voice = ? AND id IN (SELECT id FROM Records WHERE timestamp >= DATETIME(?))", [NSNumber numberWithInt:cid], [date stringWithSqliteFormat]];
+        while([s next]) {
+            [result addObject:[s resultDict]];
         }
         
         [self.database close];

@@ -10,4 +10,8 @@
 
 @interface LTRecordCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (strong, nonatomic) NSArray *cardIds;
+
+@property (strong, nonatomic) IBOutlet UILabel *cardVoiceLabel;
+
 @end

@@ -10,4 +10,7 @@
 
 @interface LTRecordErrorImageCell : UICollectionViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *countLabel;
+
 @end

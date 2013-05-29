@@ -7,6 +7,7 @@
 //
 
 #import "FMDatabase.h"
+#import "NSDate+Beginning.h"
 
 @interface LTDatabase: NSObject
 
@@ -24,6 +25,9 @@
 - (NSDictionary *)cardForId:(int)cid;
 - (NSDictionary *)recordForId:(int)rid;
 
-- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)startDate;
+- (NSArray *)arrayWithCardIdsAfterDate:(NSDate *)date;
+- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)date;
+
+- (NSArray *)recordsForCardId:(int)cid afterDate:(NSDate *)date;
 
 @end
