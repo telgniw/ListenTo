@@ -8,18 +8,20 @@
 
 #import "LTDatabase.h"
 
+#import "NSDate+Beginning.h"
+
 @implementation LTDatabase
 
 + (LTDatabase *)instance
 {
-    static LTDatabase *myInstance;
+    static LTDatabase *instance;
     
     static dispatch_once_t token;
     dispatch_once(&token, ^{
-        myInstance = [[LTDatabase alloc] initWithFakeRecords];
+        instance = [[LTDatabase alloc] initWithFakeRecords];
     });
     
-    return myInstance;
+    return instance;
 }
 
 #pragma mark - Object Lifecycle
@@ -45,8 +47,18 @@
         
         NSString *dbPath = [dirPath stringByAppendingPathComponent:@"lt-user.sqlite3"];
         
+        // DEBUG: remove after finished.
+        if([fileManager fileExistsAtPath:dbPath]) {
+            success = [fileManager removeItemAtPath:dbPath error:nil];
+            
+            // Failed to remove existing database file.
+            if(!success) {
+                return nil;
+            }
+        }
+        
         // Copy only if database does not exist.
-        if(YES && ![fileManager fileExistsAtPath:dbPath]) { // DEBUG: Remember to remove.
+        if(![fileManager fileExistsAtPath:dbPath]) {
             NSString *defaultPath = [[NSBundle mainBundle] pathForResource:@"default" ofType:@"sqlite3"];
             success = [fileManager copyItemAtPath:defaultPath toPath:dbPath error:nil];
             
@@ -131,6 +143,20 @@
         [self.database close];
     }
     return [NSDictionary dictionaryWithDictionary:result];
+}
+
+- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)startDate
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if([self.database open]) {
+        FMResultSet *s = [self.database executeQuery:@"SELECT id FROM Records WHERE timestamp >= DATETIME(?)", [startDate stringWithSqliteFormat]];
+        while([s next]) {
+            [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
+        }
+        
+        [self.database close];
+    }
+    return [NSArray arrayWithArray:result];
 }
 
 @end

@@ -24,4 +24,6 @@
 - (NSDictionary *)cardForId:(int)cid;
 - (NSDictionary *)recordForId:(int)rid;
 
+- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)startDate;
+
 @end

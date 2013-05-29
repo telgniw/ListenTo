@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
+		AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -85,6 +86,8 @@
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewController.h; sourceTree = "<group>"; };
 		AA25B430174B24E400A88C82 /* LTRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewController.m; sourceTree = "<group>"; };
+		AA448FD51755DE0D00877B06 /* NSDate+Beginning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Beginning.h"; sourceTree = "<group>"; };
+		AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Beginning.m"; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,8 +162,8 @@
 		AAED152F17548EC80091C182 /* 9.獅子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "9.獅子.jpg"; sourceTree = "<group>"; };
 		AAED1562175490580091C182 /* LTRecordErrorImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordErrorImageCell.h; sourceTree = "<group>"; };
 		AAED1563175490580091C182 /* LTRecordErrorImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordErrorImageCell.m; sourceTree = "<group>"; };
-		AAED1566175493170091C182 /* LTDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDatabase.h; sourceTree = "<group>"; };
-		AAED1567175493170091C182 /* LTDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDatabase.m; sourceTree = "<group>"; };
+		AAED1566175493170091C182 /* LTDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTDatabase.h; path = ../LTDatabase.h; sourceTree = "<group>"; };
+		AAED1567175493170091C182 /* LTDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTDatabase.m; path = ../LTDatabase.m; sourceTree = "<group>"; };
 		AAED157E1755B1260091C182 /* default.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite3; sourceTree = "<group>"; };
 		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +192,7 @@
 				AAF1EEFA17546565004420BA /* homescreen-enter.png */,
 			);
 			name = Images;
-			path = images;
+			path = ../images;
 			sourceTree = "<group>";
 		};
 		AA25B41D174B1E1800A88C82 /* Management */ = {
@@ -203,6 +206,15 @@
 				AAED1563175490580091C182 /* LTRecordErrorImageCell.m */,
 			);
 			name = Management;
+			sourceTree = "<group>";
+		};
+		AA448FD41755DCE900877B06 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AA448FD51755DE0D00877B06 /* NSDate+Beginning.h */,
+				AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		AAACE182174124D700F143C3 = {
@@ -237,11 +249,10 @@
 		AAACE197174124D700F143C3 /* ListenTo */ = {
 			isa = PBXGroup;
 			children = (
-				AAED157D1755B1260091C182 /* Resources */,
 				AAACE198174124D700F143C3 /* Supporting Files */,
-				AAED15651754925C0091C182 /* Database */,
+				AAED157D1755B1260091C182 /* DataSource */,
+				AA448FD41755DCE900877B06 /* Extension */,
 				AA25B41D174B1E1800A88C82 /* Management */,
-				AA25B40B174B122700A88C82 /* Images */,
 				AAACE1A0174124D700F143C3 /* LTAppDelegate.h */,
 				AAACE1A1174124D700F143C3 /* LTAppDelegate.m */,
 				AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */,
@@ -324,20 +335,15 @@
 			path = cards;
 			sourceTree = "<group>";
 		};
-		AAED15651754925C0091C182 /* Database */ = {
+		AAED157D1755B1260091C182 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				AA25B40B174B122700A88C82 /* Images */,
 				AAED1566175493170091C182 /* LTDatabase.h */,
 				AAED1567175493170091C182 /* LTDatabase.m */,
-			);
-			name = Database;
-			sourceTree = "<group>";
-		};
-		AAED157D1755B1260091C182 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
 				AAED157E1755B1260091C182 /* default.sqlite3 */,
 			);
+			name = DataSource;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -503,6 +509,7 @@
 				AAED14FC17548EAC0091C182 /* LTRecordCell.m in Sources */,
 				AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */,
 				AAED1568175493170091C182 /* LTDatabase.m in Sources */,
+				AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

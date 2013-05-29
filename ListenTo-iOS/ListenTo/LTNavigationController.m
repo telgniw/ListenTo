@@ -7,6 +7,8 @@
 //
 
 #import "LTNavigationController.h"
+
+#import "NSDate+Beginning.h"
 #import "LTDatabase.h"
 
 @implementation LTNavigationController
@@ -26,7 +28,8 @@
     
     LTDatabase *db = [LTDatabase instance];
     NSLog(@"card 1: %@", [db cardForId:1]);
-    NSLog(@"card 1: %@", [db recordForId:1]);
+    NSLog(@"record 1: %@", [db recordForId:1]);
+    NSLog(@"record today: %@", [db arrayWithRecordIdsAfterDate:[NSDate today]]);
 }
 
 @end
