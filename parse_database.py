@@ -29,8 +29,7 @@ c.execute("""
 c.execute("""
     CREATE TABLE Records (
         id          INTEGER PRIMARY KEY,
-        type        SHORT,
-        timestamp   DATETIME DEFAULT CURRENT_TIMESTAMP
+        type        SHORT
     )
 """)
 c.execute("""
@@ -38,7 +37,7 @@ c.execute("""
         id          INTEGER,
         cid_voice   INTEGER,
         cid_image   INTEGER,
-        count       INTEGER,
+        timestamp   DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (id) REFERENCES Records(id) ON DELETE CASCADE,
         FOREIGN KEY (cid_voice, cid_image) REFERENCES Cards(id, id)
     )

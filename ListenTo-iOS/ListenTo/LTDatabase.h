@@ -22,12 +22,13 @@
 
 #pragma mark - Data Interface
 
-- (NSDictionary *)cardForId:(int)cid;
-- (NSDictionary *)recordForId:(int)rid;
+- (NSDictionary *)cardForId:(NSNumber *)cid;
 
-- (NSArray *)arrayWithCardIdsAfterDate:(NSDate *)date;
-- (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)date;
+- (NSArray *)arrayWithCardAfterDate:(NSDate *)date;
+- (NSArray *)arrayWithErrorCardsForCard:(NSNumber *)cid afterDate:(NSDate *)date;
 
-- (NSArray *)recordsForCardId:(int)cid afterDate:(NSDate *)date;
+- (int)countForCard:(NSNumber *)cid afterDate:(NSDate *)date;
+- (int)errorForCard:(NSNumber *)cid afterDate:(NSDate *)date;
+- (int)errorForCard:(NSNumber *)cid withErrorCard:(NSNumber *)errorCid afterDate:(NSDate *)date;
 
 @end

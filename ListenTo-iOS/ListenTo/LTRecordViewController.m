@@ -27,21 +27,18 @@
     static NSString *cellIdentifier = @"LTRecordCell";
     
     NSNumber *cid = self.cardIds[indexPath.row];
-    NSMutableArray *errorCardIds = [NSMutableArray array];
-    for(NSDictionary *record in self.recordsByCardId[cid]) {
-        if(![cid isEqualToNumber:record[@"cid_image"]]) {
-            [errorCardIds addObject:record];
-        }
-    }
-    
-    LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSDictionary *errorCards = self.errorCards[cid];
     
     LTDatabase *db = [LTDatabase instance];
-    NSDictionary *card = [db cardForId:[cid intValue]];
+    
+    LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSDictionary *card = [db cardForId:cid];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [cell setCardIds:[NSArray arrayWithArray:errorCardIds]];
         [cell.cardVoiceLabel setText:card[@"name"]];
+        
+        [cell setCardIds:errorCards[@"ids"]];
+        [cell setCardErrors:errorCards[@"errors"]];
         
         [cell.collectionView reloadData];
     });
@@ -82,7 +79,7 @@
                 date = [NSDate firstDayOfTheWeek];
                 break;
             default:
-                date = nil;
+                date = [NSDate dateWithTimeIntervalSince1970:0];
                 break;
         }
         
@@ -94,39 +91,34 @@
 
 - (void)fetchDataSetAfter:(NSDate *)date {
     LTDatabase *db = [LTDatabase instance];
-    NSArray *unsortedIds = [db arrayWithCardIdsAfterDate:date];
+    NSArray *unsortedIds = [db arrayWithCardAfterDate:date];
     
-    NSMutableDictionary *mapping = [NSMutableDictionary dictionary];
-    NSMutableDictionary *errorCounts = [NSMutableDictionary dictionary];
-    NSMutableDictionary *correctCounts = [NSMutableDictionary dictionary];
+    int nCards = [unsortedIds count];
+    NSMutableDictionary *mappings = [NSMutableDictionary dictionaryWithCapacity:nCards];
+    NSMutableDictionary *errorRates = [NSMutableDictionary dictionaryWithCapacity:nCards];
+    
     for(NSNumber *cid in unsortedIds) {
-        NSArray *records = [db recordsForCardId:[cid intValue] afterDate:date];
-        int correctCount = 0, errorCount = 0;
-        for(NSDictionary *record in records) {
-            int count = [record[@"count"] intValue];
-            if([cid isEqualToNumber:record[@"cid_image"]]) {
-                correctCount += count;
-            }
-            else {
-                errorCount += count;
-            }
+        NSArray *ids = [db arrayWithErrorCardsForCard:cid afterDate:date];
+        NSMutableArray *errors = [NSMutableArray arrayWithCapacity:[ids count]];
+        for(NSNumber *errorCid in ids) {
+            [errors addObject:[NSNumber numberWithInt:[db errorForCard:cid withErrorCard:errorCid afterDate:date]]];
         }
-        [mapping setObject:records forKey:cid];
-        [errorCounts setObject:[NSNumber numberWithInt:errorCount] forKey:cid];
-        [correctCounts setObject:[NSNumber numberWithInt:correctCount] forKey:cid];
+        
+        [mappings setObject:@{@"ids": ids, @"errors": [NSArray arrayWithArray:errors]} forKey:cid];
+        
+        int count = [db errorForCard:cid afterDate:date],
+            error = [db errorForCard:cid afterDate:date];
+        [errorRates setObject:[NSNumber numberWithDouble:((double)error / (error + count))] forKey:cid];
     }
     
     // Reload data immediately after data set is updated.
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.recordsByCardId = [NSDictionary dictionaryWithDictionary:mapping];
+        self.errorCards = [NSDictionary dictionaryWithDictionary:mappings];
         self.cardIds = [unsortedIds sortedArrayUsingComparator:^NSComparisonResult(id cid1, id cid2) {
-            int errorCount1 = [errorCounts[cid1] intValue], correctCount1 = [correctCounts[cid1] intValue],
-            errorCount2 = [errorCounts[cid2] intValue], correctCount2 = [correctCounts[cid2] intValue];
-            double rate1 = (double)errorCount1 / (errorCount1 + correctCount1),
-            rate2 = (double)errorCount2 / (errorCount2 + correctCount2);
-            
+            NSNumber *rate1 = errorRates[cid1], *rate2 = errorRates[cid2];
+                        
             // Sorted with descending order.
-            return [[NSNumber numberWithDouble:rate2] compare:[NSNumber numberWithDouble:rate1]];
+            return [rate2 compare:rate1];
         }];
         
         [self.tableView reloadData];

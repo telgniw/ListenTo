@@ -11,6 +11,7 @@
 @interface LTRecordCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) NSArray *cardIds;
+@property (strong, nonatomic) NSArray *cardErrors;
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UILabel *cardVoiceLabel;

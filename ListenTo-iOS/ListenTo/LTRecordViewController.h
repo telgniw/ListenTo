@@ -11,7 +11,7 @@
 @interface LTRecordViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *cardIds;
-@property (strong, nonatomic) NSDictionary *recordsByCardId;
+@property (strong, nonatomic) NSDictionary *errorCards;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *rangeControl;
 
