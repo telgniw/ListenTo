@@ -51,8 +51,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
-                        <barButtonItem key="rightBarButtonItem" image="icon-record.png" style="plain" id="dRT-kA-tlz">
-                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <barButtonItem key="rightBarButtonItem" image="icon-record.png" id="dRT-kA-tlz">
                             <connections>
                                 <segue destination="Uob-iI-jog" kind="push" id="zwl-9p-ffb"/>
                             </connections>
@@ -76,8 +75,7 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOL-qt-Ytd">
                                 <items>
-                                    <barButtonItem style="plain" systemItem="done" id="j6x-9h-hWS">
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <barButtonItem systemItem="done" id="j6x-9h-hWS">
                                         <connections>
                                             <action selector="close:" destination="VYB-L8-AF3" id="1bA-2J-5MY"/>
                                         </connections>
