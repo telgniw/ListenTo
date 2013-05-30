@@ -7,6 +7,7 @@
 //
 
 #import "LTNavigationController.h"
+#import "LTUtility.h"
 
 @implementation LTNavigationController
 
@@ -15,13 +16,9 @@
     [super viewDidLoad];
 
     // Set the background of navigation bar transparent.
-    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
-    UIImage *img = [[UIImage alloc] init];
-    UIImage *transparentImage = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(img.CGImage, colorMask)];
-
     [self.navigationBar setTranslucent:YES];
-    [self.navigationBar setBackgroundImage:transparentImage forBarMetrics:UIBarMetricsDefault];
-    [self.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.navigationBar setBackgroundImage:[LTUtility transparentImage] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setShadowImage:[LTUtility emptyImage]];
 }
 
 @end

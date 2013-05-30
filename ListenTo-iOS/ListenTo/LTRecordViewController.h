@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *rangeControl;
 
+#pragma mark - IBActions
+
 - (IBAction)changeRange:(id)sender;
 
 @end
