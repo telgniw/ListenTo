@@ -17,39 +17,7 @@
     [super viewDidLoad];
     
     NSDate *today = [NSDate today];
-    
-    LTDatabase *db = [LTDatabase instance];
-    NSArray *unsortedIds = [db arrayWithCardIdsAfterDate:today];
-
-    NSMutableDictionary *mapping = [NSMutableDictionary dictionary];
-    NSMutableDictionary *errorCounts = [NSMutableDictionary dictionary];
-    NSMutableDictionary *correctCounts = [NSMutableDictionary dictionary];
-    for(NSNumber *cid in unsortedIds) {
-        NSArray *records = [db recordsForCardId:[cid intValue] afterDate:today];
-        int correctCount = 0, errorCount = 0;
-        for(NSDictionary *record in records) {
-            int count = [record[@"count"] intValue];
-            if([cid isEqualToNumber:record[@"cid_image"]]) {
-                correctCount += count;
-            }
-            else {
-                errorCount += count;
-            }
-        }
-        [mapping setObject:records forKey:cid];
-        [errorCounts setObject:[NSNumber numberWithInt:errorCount] forKey:cid];
-        [correctCounts setObject:[NSNumber numberWithInt:correctCount] forKey:cid];
-    }
-    self.recordsByCardId = [NSDictionary dictionaryWithDictionary:mapping];
-    self.cardIds = [unsortedIds sortedArrayUsingComparator:^NSComparisonResult(id cid1, id cid2) {
-        int errorCount1 = [errorCounts[cid1] intValue], correctCount1 = [correctCounts[cid1] intValue],
-            errorCount2 = [errorCounts[cid2] intValue], correctCount2 = [correctCounts[cid2] intValue];
-        double rate1 = (double)errorCount1 / (errorCount1 + correctCount1),
-               rate2 = (double)errorCount2 / (errorCount2 + correctCount2);
-        
-        // Sorted with descending order.
-        return [[NSNumber numberWithDouble:rate2] compare:[NSNumber numberWithDouble:rate1]];
-    }];
+    [self fetchDataSetAfter:today];
 }
 
 #pragma mark - Data Source
@@ -57,10 +25,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"LTRecordCell";
-    LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil) {
-        cell = [[LTRecordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
     
     NSNumber *cid = self.cardIds[indexPath.row];
     NSMutableArray *errorCardIds = [NSMutableArray array];
@@ -69,11 +33,18 @@
             [errorCardIds addObject:record];
         }
     }
-    cell.cardIds = [NSArray arrayWithArray:errorCardIds];
+    
+    LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     LTDatabase *db = [LTDatabase instance];
     NSDictionary *card = [db cardForId:[cid intValue]];
-    [cell.cardVoiceLabel setText:card[@"name"]];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [cell setCardIds:[NSArray arrayWithArray:errorCardIds]];
+        [cell.cardVoiceLabel setText:card[@"name"]];
+        
+        [cell.collectionView reloadData];
+    });
     
     return cell;
 }
@@ -99,7 +70,67 @@
 
 - (IBAction)changeRange:(id)sender
 {
-    // TODO: implement this method.
+    if([sender isKindOfClass:[UISegmentedControl class]]) {
+        NSDate *date;
+        
+        UISegmentedControl *control = sender;
+        switch([control selectedSegmentIndex]) {
+            case 0:
+                date = [NSDate today];
+                break;
+            case 1:
+                date = [NSDate firstDayOfTheWeek];
+                break;
+            default:
+                date = nil;
+                break;
+        }
+        
+        [self fetchDataSetAfter:date];
+    }
+}
+
+#pragma mark - Utility Methods
+
+- (void)fetchDataSetAfter:(NSDate *)date {
+    LTDatabase *db = [LTDatabase instance];
+    NSArray *unsortedIds = [db arrayWithCardIdsAfterDate:date];
+    
+    NSMutableDictionary *mapping = [NSMutableDictionary dictionary];
+    NSMutableDictionary *errorCounts = [NSMutableDictionary dictionary];
+    NSMutableDictionary *correctCounts = [NSMutableDictionary dictionary];
+    for(NSNumber *cid in unsortedIds) {
+        NSArray *records = [db recordsForCardId:[cid intValue] afterDate:date];
+        int correctCount = 0, errorCount = 0;
+        for(NSDictionary *record in records) {
+            int count = [record[@"count"] intValue];
+            if([cid isEqualToNumber:record[@"cid_image"]]) {
+                correctCount += count;
+            }
+            else {
+                errorCount += count;
+            }
+        }
+        [mapping setObject:records forKey:cid];
+        [errorCounts setObject:[NSNumber numberWithInt:errorCount] forKey:cid];
+        [correctCounts setObject:[NSNumber numberWithInt:correctCount] forKey:cid];
+    }
+    
+    // Reload data immediately after data set is updated.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.recordsByCardId = [NSDictionary dictionaryWithDictionary:mapping];
+        self.cardIds = [unsortedIds sortedArrayUsingComparator:^NSComparisonResult(id cid1, id cid2) {
+            int errorCount1 = [errorCounts[cid1] intValue], correctCount1 = [correctCounts[cid1] intValue],
+            errorCount2 = [errorCounts[cid2] intValue], correctCount2 = [correctCounts[cid2] intValue];
+            double rate1 = (double)errorCount1 / (errorCount1 + correctCount1),
+            rate2 = (double)errorCount2 / (errorCount2 + correctCount2);
+            
+            // Sorted with descending order.
+            return [[NSNumber numberWithDouble:rate2] compare:[NSNumber numberWithDouble:rate1]];
+        }];
+        
+        [self.tableView reloadData];
+    });
 }
 
 @end

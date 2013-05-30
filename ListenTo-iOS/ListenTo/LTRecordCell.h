@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSArray *cardIds;
 
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UILabel *cardVoiceLabel;
 
 @end

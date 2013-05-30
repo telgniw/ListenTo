@@ -183,6 +183,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="cardVoiceLabel" destination="OfW-in-igc" id="6Qx-rx-VYz"/>
+                                    <outlet property="collectionView" destination="qqw-nU-75q" id="nli-ev-FDS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -202,7 +203,7 @@
                                 <segment title="全部"/>
                             </segments>
                             <connections>
-                                <action selector="changeRange:" destination="Uob-iI-jog" eventType="touchDragInside" id="3YM-Vl-WMW"/>
+                                <action selector="changeRange:" destination="Uob-iI-jog" eventType="valueChanged" id="XNs-nf-I9x"/>
                             </connections>
                         </segmentedControl>
                     </navigationItem>
@@ -235,6 +236,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="cardVoiceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
             </relationships>
         </class>
         <class className="LTRecordErrorImageCell" superclassName="UICollectionViewCell">

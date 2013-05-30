@@ -17,18 +17,15 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"LTErrorCell";
-    LTRecordErrorImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    if(cell == nil) {
-        // TODO: handle cell nil.
-    }
     
     NSDictionary *errorCard = self.cardIds[indexPath.row];
     NSNumber *cid = errorCard[@"cid_image"];
     
     LTDatabase *db = [LTDatabase instance];
     NSDictionary *card = [db cardForId:[cid intValue]];
-    [cell.imageView setImage:[UIImage imageNamed:card[@"image"]]];
     
+    LTRecordErrorImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    [cell.imageView setImage:[UIImage imageNamed:card[@"image"]]];
     [cell.countLabel setText:[errorCard[@"count"] stringValue]];
     
     return cell;

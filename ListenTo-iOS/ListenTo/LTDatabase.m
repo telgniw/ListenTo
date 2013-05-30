@@ -166,39 +166,56 @@
 
 - (NSArray *)arrayWithCardIdsAfterDate:(NSDate *)date
 {
-    NSMutableArray *result = [NSMutableArray array];
-    if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT DISTINCT cid_voice FROM RecordDetails WHERE id IN (SELECT id FROM Records WHERE timestamp >= DATETIME(?))", [date stringWithSqliteFormat]];
-        while([s next]) {
-            [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
-        }
-        
-        [self.database close];
-    }
-    return [NSArray arrayWithArray:result];
+    NSString *statement;
+    
+    if(date == nil)
+        statement = @"SELECT DISTINCT cid_voice FROM RecordDetails";
+    else
+        statement = @"SELECT DISTINCT cid_voice FROM RecordDetails WHERE id IN (SELECT id FROM Records WHERE timestamp >= DATETIME(?))";
+    
+    return [self arrayWithIdsForStatement:statement afterDate:date];
 }
 
 - (NSArray *)arrayWithRecordIdsAfterDate:(NSDate *)date
 {
-    NSMutableArray *result = [NSMutableArray array];
-    if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT id FROM Records WHERE timestamp >= DATETIME(?)", [date stringWithSqliteFormat]];
-        while([s next]) {
-            [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
-        }
-        
-        [self.database close];
-    }
-    return [NSArray arrayWithArray:result];
+    return [self arrayWithIdsForStatement:@"SELECT id FROM Records WHERE timestamp >= DATETIME(?)" afterDate:date];
 }
 
 - (NSArray *)recordsForCardId:(int)cid afterDate:(NSDate *)date
 {
     NSMutableArray *result = [NSMutableArray array];
     if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT cid_image, count FROM RecordDetails WHERE cid_voice = ? AND id IN (SELECT id FROM Records WHERE timestamp >= DATETIME(?))", [NSNumber numberWithInt:cid], [date stringWithSqliteFormat]];
+        FMResultSet *s;
+        
+        if(date == nil)
+            s = [self.database executeQuery:@"SELECT cid_image, count FROM RecordDetails WHERE cid_voice = ?", [NSNumber numberWithInt:cid]];
+        else
+            s = [self.database executeQuery:@"SELECT cid_image, count FROM RecordDetails WHERE cid_voice = ? AND id IN (SELECT id FROM Records WHERE timestamp >= DATETIME(?))", [NSNumber numberWithInt:cid], [date stringWithSqliteFormat]];
+        
         while([s next]) {
             [result addObject:[s resultDict]];
+        }
+        
+        [self.database close];
+    }
+    return [NSArray arrayWithArray:result];
+}
+
+#pragma mark - Utility Methods
+
+- (NSArray *)arrayWithIdsForStatement:(NSString *)statement afterDate:(NSDate *)date
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if([self.database open]) {
+        FMResultSet *s;
+        
+        if(date == nil)
+            s = [self.database executeQuery:statement];
+        else
+            s = [self.database executeQuery:statement, [date stringWithSqliteFormat]];
+        
+        while([s next]) {
+            [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
         }
         
         [self.database close];
