@@ -18,6 +18,32 @@ import sqlite3
 conn = sqlite3.connect(dbPath)
 c = conn.cursor()
 
+c.execute("""
+    CREATE TABLE Cards (
+        id          INTEGER PRIMARY KEY,
+        name        TEXT,
+        image       TEXT,
+        voice       TEXT
+    )
+""")
+c.execute("""
+    CREATE TABLE Records (
+        id          INTEGER PRIMARY KEY,
+        type        SHORT,
+        timestamp   DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+""")
+c.execute("""
+    CREATE TABLE RecordDetails (
+        id          INTEGER,
+        cid_voice   INTEGER,
+        cid_image   INTEGER,
+        count       INTEGER,
+        FOREIGN KEY (id) REFERENCES Records(id) ON DELETE CASCADE,
+        FOREIGN KEY (cid_voice, cid_image) REFERENCES Cards(id, id)
+    )
+""")
+
 for f in files:
     name = f.split('.')[1]
     c.execute("""
