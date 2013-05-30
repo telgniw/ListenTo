@@ -86,15 +86,12 @@
         NSNumber *recordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
         NSArray *records = @[
             @{@"id": recordId, @"cid_voice": @11, @"cid_image": @12},
+            @{@"id": recordId, @"cid_voice": @11, @"cid_image": @12},
+            @{@"id": recordId, @"cid_voice": @11, @"cid_image": @12},
             @{@"id": recordId, @"cid_voice": @11, @"cid_image": @11},
             @{@"id": recordId, @"cid_voice": @19, @"cid_image": @20},
             @{@"id": recordId, @"cid_voice": @19, @"cid_image": @21},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @4},
-            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @8},
-            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @6},
-            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @6},
-            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @8},
+            @{@"id": recordId, @"cid_voice": @19, @"cid_image": @21},
         ];
         for(NSDictionary *record in records) {
             [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image) VALUES (:id, :cid_voice, :cid_image)"
@@ -106,19 +103,23 @@
         
         recordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
         records = @[
-            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @16},
-            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @15},
-            @{@"id": recordId, @"cid_voice": @22, @"cid_image": @22},
-            @{@"id": recordId, @"cid_voice": @9, @"cid_image":  @10},
-            @{@"id": recordId, @"cid_voice": @9,  @"cid_image": @9},
-            @{@"id": recordId, @"cid_voice": @13, @"cid_image": @14},
-            @{@"id": recordId, @"cid_voice": @13, @"cid_image": @13},
-            @{@"id": recordId, @"cid_voice": @18, @"cid_image": @18},
-            @{@"id": recordId, @"cid_voice": @3,  @"cid_image": @3},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @4},
+            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @16, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @15, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @22, @"cid_image": @22, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @9, @"cid_image":  @10, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @9, @"cid_image":  @10, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @9,  @"cid_image": @9,  @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @4,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @8,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @6,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @6,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
+            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @8,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
         ];
         for(NSDictionary *record in records) {
-            [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image) VALUES (:id, :cid_voice, :cid_image)"
+            [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image, timestamp) VALUES (:id, :cid_voice, :cid_image, :timestamp)"
                  withParameterDictionary:record];
         }
         

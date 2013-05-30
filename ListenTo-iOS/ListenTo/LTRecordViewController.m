@@ -34,6 +34,7 @@
     LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSDictionary *card = [db cardForId:cid];
     
+    // Reload data immediately after data set is updated.
     dispatch_async(dispatch_get_main_queue(), ^{
         [cell.cardVoiceLabel setText:card[@"name"]];
         
@@ -108,7 +109,7 @@
         
         int count = [db errorForCard:cid afterDate:date],
             error = [db errorForCard:cid afterDate:date];
-        [errorRates setObject:[NSNumber numberWithDouble:((double)error / (error + count))] forKey:cid];
+        [errorRates setObject:[NSNumber numberWithDouble:((double)error / count)] forKey:cid];
     }
     
     // Reload data immediately after data set is updated.
