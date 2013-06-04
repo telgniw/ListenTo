@@ -81,8 +81,9 @@
 		AAED1568175493170091C182 /* LTDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED1567175493170091C182 /* LTDatabase.m */; };
 		AAED15801755B30E0091C182 /* default.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = AAED157E1755B1260091C182 /* default.sqlite3 */; };
 		AAF1EEFB17546565004420BA /* homescreen-enter.png in Resources */ = {isa = PBXBuildFile; fileRef = AAF1EEFA17546565004420BA /* homescreen-enter.png */; };
-		F48F64E4175CD3B600A021CB /* LTWordCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F48F64E2175CD3B600A021CB /* LTWordCardViewController.m */; };
-		F48F64E5175CD3B600A021CB /* LTWordCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48F64E3175CD3B600A021CB /* LTWordCardViewController.xib */; };
+		AAFA57F7175DB77800743430 /* AppIcon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA57F6175DB77700743430 /* AppIcon-1024x1024.png */; };
+		AAFA57FA175DB7C700743430 /* AppIcon-72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA57F9175DB7C700743430 /* AppIcon-72x72.png */; };
+		AAFA57FC175DB7E000743430 /* AppIcon-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA57FB175DB7E000743430 /* AppIcon-144x144.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,9 +175,9 @@
 		AAED1567175493170091C182 /* LTDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTDatabase.m; path = ../LTDatabase.m; sourceTree = "<group>"; };
 		AAED157E1755B1260091C182 /* default.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.sqlite3; sourceTree = "<group>"; };
 		AAF1EEFA17546565004420BA /* homescreen-enter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter.png"; sourceTree = "<group>"; };
-		F48F64E1175CD3B600A021CB /* LTWordCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTWordCardViewController.h; sourceTree = "<group>"; };
-		F48F64E2175CD3B600A021CB /* LTWordCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTWordCardViewController.m; sourceTree = "<group>"; };
-		F48F64E3175CD3B600A021CB /* LTWordCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTWordCardViewController.xib; sourceTree = "<group>"; };
+		AAFA57F6175DB77700743430 /* AppIcon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-1024x1024.png"; sourceTree = "<group>"; };
+		AAFA57F9175DB7C700743430 /* AppIcon-72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-72x72.png"; path = "../AppIcon-72x72.png"; sourceTree = "<group>"; };
+		AAFA57FB175DB7E000743430 /* AppIcon-144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-144x144.png"; path = "../AppIcon-144x144.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +284,9 @@
 		AAACE198174124D700F143C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAFA57FB175DB7E000743430 /* AppIcon-144x144.png */,
+				AAFA57F9175DB7C700743430 /* AppIcon-72x72.png */,
+				AAFA57F6175DB77700743430 /* AppIcon-1024x1024.png */,
 				AAACE199174124D700F143C3 /* ListenTo-Info.plist */,
 				AAACE19A174124D700F143C3 /* InfoPlist.strings */,
 				AAACE19D174124D700F143C3 /* main.m */,
@@ -486,7 +490,9 @@
 				AAED155F17548EC80091C182 /* 7.櫃子.jpg in Resources */,
 				AAED156017548EC80091C182 /* 8.桌子.JPG in Resources */,
 				AAED156117548EC80091C182 /* 9.獅子.jpg in Resources */,
-				F48F64E5175CD3B600A021CB /* LTWordCardViewController.xib in Resources */,
+				AAFA57F7175DB77800743430 /* AppIcon-1024x1024.png in Resources */,
+				AAFA57FA175DB7C700743430 /* AppIcon-72x72.png in Resources */,
+				AAFA57FC175DB7E000743430 /* AppIcon-144x144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
