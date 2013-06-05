@@ -155,12 +155,30 @@
         
         UIButton *childView =sender;
         childView.transform = CGAffineTransformMakeScale(1.5, 1.5);
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-        [UIView setAnimationDuration:1];
-        [UIView setAnimationDelegate:self];//動畫委配
-        childView.transform = CGAffineTransformMakeScale(1, 1);
-        [UIView commitAnimations];
+        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            childView.transform = CGAffineTransformMakeScale(1, 1);
+        } completion:^(BOOL finished){
+        }];
+        
+        //過關
+        if(anserPoint == pointArray.count) {
+            UIImage *image = [UIImage imageNamed:@"end-3"];
+            UIImageView *passView = [[UIImageView alloc] initWithImage:image];
+            passView.frame = CGRectMake(0, 0, 1024, 768);
+            [self.view addSubview:passView];
+            
+            passView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+            [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                passView.transform = CGAffineTransformMakeScale(1, 1);
+            } completion:^(BOOL finished){
+                //disabled all cards buttom
+                UIScrollView *tempView = [self.view.subviews objectAtIndex:0];
+                for (UIButton *cards in tempView.subviews) {
+                    [cards setEnabled:NO];
+                }
+                NSLog(@"%@",tempView.subviews);
+            }];
+        }
         
     }
     //答錯,將錯誤記錄到資料庫,並秀出錯誤訊息
@@ -169,6 +187,18 @@
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_image];
         
         [self playAudio:@"error" fileType:@"mp3"];
+        
+        //play animation
+        UIImage *image = [UIImage imageNamed:@"error"];
+        UIImageView *errorView = [[UIImageView alloc] initWithImage:image];
+        [self.view addSubview:errorView];
+        errorView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            errorView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        } completion:^(BOOL finished){
+            [errorView removeFromSuperview];
+        }];
+
     }
 }
 

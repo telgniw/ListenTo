@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013EA06D175F9DDD00AFDFD3 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06C175F9DDD00AFDFD3 /* error.png */; };
+		013EA071175F9E1600AFDFD3 /* end-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06E175F9E1600AFDFD3 /* end-3.png */; };
+		013EA072175F9E1600AFDFD3 /* end-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06F175F9E1600AFDFD3 /* end-2.png */; };
+		013EA073175F9E1600AFDFD3 /* end-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA070175F9E1600AFDFD3 /* end-1.png */; };
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
 		AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */; };
@@ -147,6 +151,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		013EA06C175F9DDD00AFDFD3 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		013EA06E175F9E1600AFDFD3 /* end-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-3.png"; sourceTree = "<group>"; };
+		013EA06F175F9E1600AFDFD3 /* end-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-2.png"; sourceTree = "<group>"; };
+		013EA070175F9E1600AFDFD3 /* end-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-1.png"; sourceTree = "<group>"; };
 		5654E21E1EC1482695A9883E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewController.h; sourceTree = "<group>"; };
@@ -359,6 +367,10 @@
 			children = (
 				AA4D3FF6175F751A00C418BC /* start.png */,
 				AA4D3FEC175F690200C418BC /* level-1.png */,
+				013EA06C175F9DDD00AFDFD3 /* error.png */,
+				013EA06E175F9E1600AFDFD3 /* end-3.png */,
+				013EA06F175F9E1600AFDFD3 /* end-2.png */,
+				013EA070175F9E1600AFDFD3 /* end-1.png */,
 			);
 			name = ConnectDots;
 			path = ListenTo/Images/ConnectDots;
@@ -782,6 +794,10 @@
 				AA4D3FF7175F751A00C418BC /* start.png in Resources */,
 				AA4D3FF9175F8BCD00C418BC /* homescreen-background.png in Resources */,
 				AA4D4000175F8DF600C418BC /* homescreen-rabbit.png in Resources */,
+				013EA06D175F9DDD00AFDFD3 /* error.png in Resources */,
+				013EA071175F9E1600AFDFD3 /* end-3.png in Resources */,
+				013EA072175F9E1600AFDFD3 /* end-2.png in Resources */,
+				013EA073175F9E1600AFDFD3 /* end-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
