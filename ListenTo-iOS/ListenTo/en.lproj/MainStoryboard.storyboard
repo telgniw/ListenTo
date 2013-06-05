@@ -12,19 +12,56 @@
                         <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NgJ-uD-Qw7" customClass="OBShapedButton">
-                                <rect key="frame" x="422" y="302" width="180" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x6-Eq-bQc" customClass="OBShapedButton">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="2Y1-KH-PW2"/>
+                                    <constraint firstAttribute="width" constant="86" id="j41-m9-GDe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="homescreen-enter.png">
+                                <state key="normal" backgroundImage="icon-record.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="homescreen-enter-hover.png">
+                                <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Uob-iI-jog" kind="push" id="HEP-qq-ocW"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homescreen-rabbit.png" translatesAutoresizingMaskIntoConstraints="NO" id="iZ2-U5-KAw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="wvf-Li-P7Z"/>
+                                    <constraint firstAttribute="height" constant="270" id="xmV-OV-4MC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5P-mg-nWl" customClass="OBShapedButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="DZ6-CY-Vj2"/>
+                                    <constraint firstAttribute="height" constant="253" id="Fx5-38-tZ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="homescreen-enter.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="NxP-62-vW3" kind="push" id="Om5-PR-ahF"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6x6-Eq-bQc" firstAttribute="top" secondItem="The-FN-RrL" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1G2-Xf-qc9"/>
+                            <constraint firstAttribute="trailing" secondItem="D5P-mg-nWl" secondAttribute="trailing" constant="102" id="Dvy-eB-Kqf"/>
+                            <constraint firstItem="D5P-mg-nWl" firstAttribute="top" secondItem="The-FN-RrL" secondAttribute="top" constant="305" id="IQh-js-03a"/>
+                            <constraint firstAttribute="trailing" secondItem="6x6-Eq-bQc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Mdg-Gz-HvW"/>
+                            <constraint firstItem="iZ2-U5-KAw" firstAttribute="leading" secondItem="The-FN-RrL" secondAttribute="leading" constant="461" id="Yti-nm-ubB"/>
+                            <constraint firstAttribute="bottom" secondItem="iZ2-U5-KAw" secondAttribute="bottom" constant="64" id="t8o-b2-epI"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
@@ -36,7 +73,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="recordButton" destination="dRT-kA-tlz" id="xVU-XU-gCN"/>
+                        <outlet property="recordButton" destination="6x6-Eq-bQc" id="oZv-gi-lPq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7R-tA-d4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,7 +196,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61Q-V4-vId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="-237"/>
+            <point key="canvasLocation" x="1887" y="-237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rPI-TE-tqi">
@@ -337,7 +374,7 @@
         <class className="LTMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTMainViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="LTNavigationController" superclassName="UINavigationController">
@@ -369,6 +406,9 @@
                 <relationship kind="outlet" name="rangeControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
         <class className="OBShapedButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OBShapedButton.h"/>
         </class>
@@ -387,4 +427,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="QER-8R-tp8"/>
+    </inferredMetricsTieBreakers>
 </document>
