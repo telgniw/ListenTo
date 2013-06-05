@@ -10,6 +10,6 @@
 
 @interface LTMainViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *recordButton;
+@property (nonatomic, strong) IBOutlet UIButton *recordButton;
 
 @end
