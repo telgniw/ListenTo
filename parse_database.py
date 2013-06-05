@@ -45,9 +45,10 @@ c.execute("""
 
 for f in files:
     name = f.split('.')[1]
+    voice = '%s.mp3' % name
     c.execute("""
-        INSERT INTO Cards (name, image) VALUES (?,?)
-    """, (name, f))
+        INSERT INTO Cards (name, image, voice) VALUES (?,?,?)
+    """, (name, f, voice))
 
 conn.commit()
 conn.close()
