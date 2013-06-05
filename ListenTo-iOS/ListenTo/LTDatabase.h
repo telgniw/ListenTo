@@ -12,6 +12,7 @@
 @interface LTDatabase: NSObject
 
 @property (nonatomic, strong) FMDatabase *database;
+@property (nonatomic, strong) NSNumber *currentRecordId;
 
 + (LTDatabase *)instance;
 
@@ -30,5 +31,10 @@
 - (int)countForCard:(NSNumber *)cid afterDate:(NSDate *)date;
 - (int)errorForCard:(NSNumber *)cid afterDate:(NSDate *)date;
 - (int)errorForCard:(NSNumber *)cid withErrorCard:(NSNumber *)errorCid afterDate:(NSDate *)date;
+
+- (NSArray *)statisticsForCard:(NSNumber *)cid withNumberOfDays:(int)nDays;
+
+- (void)newRecordWithType:(int)type;
+- (void)insertRowWithVoiceCard:(NSNumber *)cid_voice andImageCard:(NSNumber *)cid_image;
 
 @end
