@@ -84,6 +84,7 @@
         [self insertRowWithVoiceCard:@19 andImageCard:@20];
         [self insertRowWithVoiceCard:@19 andImageCard:@21];
         [self insertRowWithVoiceCard:@19 andImageCard:@21];
+        [self insertRowWithVoiceCard:@9 andImageCard:@10];
         
         // Insert fake records into database for last week.
         [self newRecordWithType:0];
@@ -104,6 +105,8 @@
         [self insertRowWithVoiceCard:@6 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
         [self insertRowWithVoiceCard:@8 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
         [self insertRowWithVoiceCard:@8 andImageCard:@6 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
+    
+        NSLog(@"%@", [self statisticsForCard:@9 withNumberOfDays:7]);
     }
     return self;
 }
@@ -114,7 +117,8 @@
 {
     NSDictionary *result;
     if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT * FROM Cards WHERE id = ?", cid];
+        NSString *stmt = @"SELECT * FROM Cards WHERE id = ? ";
+        FMResultSet *s = [self.database executeQuery:stmt, cid];
         if([s next]) {
             result = [s resultDict];
         }
@@ -128,7 +132,9 @@
 {
     NSMutableArray *result = [NSMutableArray array];
     if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT DISTINCT cid_voice FROM RecordDetails WHERE timestamp >= DATETIME(?)", [date stringWithSqliteFormat]];
+        NSString *stmt = @"SELECT DISTINCT cid_voice FROM RecordDetails "
+                          "WHERE timestamp >= DATETIME(?) ";
+        FMResultSet *s = [self.database executeQuery:stmt, [date stringWithSqliteFormat]];
         while([s next]) {
             [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
         }
@@ -142,7 +148,9 @@
 {
     NSMutableArray *result = [NSMutableArray array];
     if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT DISTINCT cid_image AS count FROM RecordDetails WHERE cid_voice = ? AND cid_voice != cid_image AND timestamp >= DATETIME(?)", cid, [date stringWithSqliteFormat]];
+        NSString *stmt = @"SELECT DISTINCT cid_image AS count FROM RecordDetails "
+                          "WHERE cid_voice = ? AND cid_voice != cid_image AND timestamp >= DATETIME(?) ";
+        FMResultSet *s = [self.database executeQuery:stmt, cid, [date stringWithSqliteFormat]];
         while([s next]) {
             [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
         }
@@ -154,19 +162,25 @@
 
 - (int)countForCard:(NSNumber *)cid afterDate:(NSDate *)date
 {
-    return [self queryWithStatement:@"SELECT COUNT(*) FROM RecordDetails WHERE cid_voice = ? AND timestamp >= DATETIME(?)" forCard:cid afterDate:date];
+    NSString *stmt = @"SELECT COUNT(*) FROM RecordDetails "
+                      "WHERE cid_voice = ? AND timestamp >= DATETIME(?) ";
+    return [self queryWithStatement:stmt forCard:cid afterDate:date];
 }
 
 - (int)errorForCard:(NSNumber *)cid afterDate:(NSDate *)date
 {
-    return [self queryWithStatement:@"SELECT COUNT(*) FROM RecordDetails WHERE cid_voice = ? AND cid_voice != cid_image AND timestamp >= DATETIME(?)" forCard:cid afterDate:date];
+    NSString *stmt = @"SELECT COUNT(*) FROM RecordDetails "
+                      "WHERE cid_voice = ? AND cid_voice != cid_image AND timestamp >= DATETIME(?) ";
+    return [self queryWithStatement:stmt forCard:cid afterDate:date];
 }
 
 - (int)errorForCard:(NSNumber *)cid withErrorCard:(NSNumber *)errorCid afterDate:(NSDate *)date
 {
     int result;
     if([self.database open]) {
-        FMResultSet *s = [self.database executeQuery:@"SELECT COUNT(*) FROM RecordDetails WHERE cid_voice = ? AND cid_image = ? AND timestamp >= DATETIME(?)", cid, errorCid, [date stringWithSqliteFormat]];
+        NSString *stmt = @"SELECT COUNT(*) FROM RecordDetails "
+                          "WHERE cid_voice = ? AND cid_image = ? AND timestamp >= DATETIME(?) ";
+        FMResultSet *s = [self.database executeQuery:stmt, cid, errorCid, [date stringWithSqliteFormat]];
         if([s next]) {
             result = [s intForColumnIndex:0];
         }
@@ -176,10 +190,57 @@
     return result;
 }
 
+- (NSArray *)statisticsForCard:(NSNumber *)cid withNumberOfDays:(int)nDays
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if([self.database open]) {
+        NSString *stmtCount = @"SELECT COUNT(*) AS count, strftime('%Y-%m-%d', timestamp) AS date "
+                               "FROM RecordDetails "
+                               "WHERE cid_voice = :cid AND cid_voice = cid_image "
+                               "GROUP BY date "
+                               "ORDER BY date DESC "
+                               "limit :limit ";
+        NSString *stmtError = @"SELECT COUNT(*) as error, strftime('%Y-%m-%d', timestamp) AS date "
+                               "FROM RecordDetails "
+                               "WHERE cid_voice = :cid AND cid_voice != cid_image "
+                               "GROUP BY date "
+                               "ORDER BY date DESC "
+                               "limit :limit ";
+        NSDictionary *params = @{
+            @"cid": cid,
+            @"limit": [NSNumber numberWithInt:nDays]
+        };
+        NSMutableDictionary *mappings = [NSMutableDictionary dictionary];
+        FMResultSet *s = [self.database executeQuery:stmtCount withParameterDictionary:params];
+        while([s next]) {
+            NSDictionary *row = [s resultDict];
+            [mappings setObject:[NSMutableDictionary dictionaryWithDictionary:row] forKey:row[@"date"]];
+            [mappings[row[@"date"]] setObject:@0 forKey:@"error"];
+        }
+        s = [self.database executeQuery:stmtError withParameterDictionary:params];
+        while([s next]) {
+            NSDictionary *row = [s resultDict];
+            if([mappings objectForKey:row[@"date"]] != nil)
+                [mappings[row[@"date"]] setObject:row[@"error"] forKey:@"error"];
+            else {
+                [mappings setObject:[NSMutableDictionary dictionaryWithDictionary:row] forKey:row[@"date"]];
+                [mappings[row[@"date"]] setObject:@0 forKey:@"count"];
+            }
+        }
+        for(NSString *key in mappings) {
+            NSMutableDictionary *row = mappings[key];
+            [result addObject:[NSDictionary dictionaryWithDictionary:row]];
+        }
+        [self.database close];
+    }
+    return [NSArray arrayWithArray:result];
+}
+
 - (void)newRecordWithType:(int)type
 {
     if([self.database open]) {
-        [self.database executeUpdate:@"INSERT INTO Records (type) VALUES (?)", [NSNumber numberWithInt:type]];
+        NSString *stmt = @"INSERT INTO Records (type) VALUES (?) ";
+        [self.database executeUpdate:stmt, [NSNumber numberWithInt:type]];
         self.currentRecordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
         [self.database close];
     }
@@ -188,8 +249,14 @@
 - (void)insertRowWithVoiceCard:(NSNumber *)cid_voice andImageCard:(NSNumber *)cid_image
 {
     if([self.database open]) {
-        [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image) VALUES (:id, :cid_voice, :cid_image)"
-             withParameterDictionary:@{@"id" : self.currentRecordId, @"cid_voice": cid_voice, @"cid_image": cid_image}];
+        NSString *stmt = @"INSERT INTO RecordDetails (id, cid_voice, cid_image) "
+                          "VALUES (:id, :cid_voice, :cid_image) ";
+        NSDictionary *params = @{
+            @"id" : self.currentRecordId,
+            @"cid_voice": cid_voice,
+            @"cid_image": cid_image
+        };
+        [self.database executeUpdate:stmt withParameterDictionary:params];
         [self.database close];
     }
 }
@@ -197,8 +264,15 @@
 - (void)insertRowWithVoiceCard:(NSNumber *)cid_voice andImageCard:(NSNumber *)cid_image andTimestamp:(NSDate *)date
 {
     if([self.database open]) {
-        [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image, timestamp) VALUES (:id, :cid_voice, :cid_image, :timestamp)"
-             withParameterDictionary:@{@"id" : self.currentRecordId, @"cid_voice": cid_voice, @"cid_image": cid_image, @"timestamp": [date stringWithSqliteFormat]}];
+        NSString *stmt = @"INSERT INTO RecordDetails (id, cid_voice, cid_image, timestamp) "
+                          "VALUES (:id, :cid_voice, :cid_image, :timestamp) ";
+        NSDictionary *params = @{
+            @"id" : self.currentRecordId,
+            @"cid_voice": cid_voice,
+            @"cid_image": cid_image,
+            @"timestamp": [date stringWithSqliteFormat]
+        };
+        [self.database executeUpdate:stmt withParameterDictionary:params];
         [self.database close];
     }
 }

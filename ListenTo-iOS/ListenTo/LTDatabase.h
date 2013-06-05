@@ -32,6 +32,8 @@
 - (int)errorForCard:(NSNumber *)cid afterDate:(NSDate *)date;
 - (int)errorForCard:(NSNumber *)cid withErrorCard:(NSNumber *)errorCid afterDate:(NSDate *)date;
 
+- (NSArray *)statisticsForCard:(NSNumber *)cid withNumberOfDays:(int)nDays;
+
 - (void)newRecordWithType:(int)type;
 - (void)insertRowWithVoiceCard:(NSNumber *)cid_voice andImageCard:(NSNumber *)cid_image;
 
