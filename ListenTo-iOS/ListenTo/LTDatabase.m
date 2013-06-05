@@ -105,8 +105,6 @@
         [self insertRowWithVoiceCard:@6 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
         [self insertRowWithVoiceCard:@8 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
         [self insertRowWithVoiceCard:@8 andImageCard:@6 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
-    
-        NSLog(@"%@", [self statisticsForCard:@9 withNumberOfDays:7]);
     }
     return self;
 }
@@ -194,44 +192,28 @@
 {
     NSMutableArray *result = [NSMutableArray array];
     if([self.database open]) {
-        NSString *stmtCount = @"SELECT COUNT(*) AS count, strftime('%Y-%m-%d', timestamp) AS date "
-                               "FROM RecordDetails "
-                               "WHERE cid_voice = :cid AND cid_voice = cid_image "
-                               "GROUP BY date "
-                               "ORDER BY date DESC "
-                               "limit :limit ";
-        NSString *stmtError = @"SELECT COUNT(*) as error, strftime('%Y-%m-%d', timestamp) AS date "
-                               "FROM RecordDetails "
-                               "WHERE cid_voice = :cid AND cid_voice != cid_image "
-                               "GROUP BY date "
-                               "ORDER BY date DESC "
-                               "limit :limit ";
+        NSString *stmt = @"SELECT MAX(count) AS count, MAX(error) AS error, date FROM ( "
+                          "    SELECT COUNT(*) AS count, 0 AS error, strftime('%Y-%m-%d', timestamp) AS date "
+                          "    FROM RecordDetails "
+                          "    WHERE cid_voice = :cid AND cid_voice = cid_image "
+                          "    GROUP BY date "
+                          "    UNION "
+                          "    SELECT 0 AS count, COUNT(*) AS error, strftime('%Y-%m-%d', timestamp) AS date "
+                          "    FROM RecordDetails "
+                          "    WHERE cid_voice = :cid AND cid_voice != cid_image "
+                          "    GROUP BY date "
+                          ") "
+                          "GROUP BY date "
+                          "ORDER BY date "
+                          "LIMIT :limit ";
         NSDictionary *params = @{
             @"cid": cid,
             @"limit": [NSNumber numberWithInt:nDays]
         };
-        NSMutableDictionary *mappings = [NSMutableDictionary dictionary];
-        FMResultSet *s = [self.database executeQuery:stmtCount withParameterDictionary:params];
+        FMResultSet *s = [self.database executeQuery:stmt withParameterDictionary:params];
         while([s next]) {
-            NSDictionary *row = [s resultDict];
-            [mappings setObject:[NSMutableDictionary dictionaryWithDictionary:row] forKey:row[@"date"]];
-            [mappings[row[@"date"]] setObject:@0 forKey:@"error"];
+            [result addObject:[s resultDict]];
         }
-        s = [self.database executeQuery:stmtError withParameterDictionary:params];
-        while([s next]) {
-            NSDictionary *row = [s resultDict];
-            if([mappings objectForKey:row[@"date"]] != nil)
-                [mappings[row[@"date"]] setObject:row[@"error"] forKey:@"error"];
-            else {
-                [mappings setObject:[NSMutableDictionary dictionaryWithDictionary:row] forKey:row[@"date"]];
-                [mappings[row[@"date"]] setObject:@0 forKey:@"count"];
-            }
-        }
-        for(NSString *key in mappings) {
-            NSMutableDictionary *row = mappings[key];
-            [result addObject:[NSDictionary dictionaryWithDictionary:row]];
-        }
-        [self.database close];
     }
     return [NSArray arrayWithArray:result];
 }
