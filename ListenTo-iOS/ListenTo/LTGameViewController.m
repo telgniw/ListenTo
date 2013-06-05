@@ -23,6 +23,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Create a new record when each time the game is started.
+    LTDatabase *db = [LTDatabase instance];
+    [db newRecordWithType:0];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     anserRight = false;
     int cardTag = 0;
@@ -33,7 +38,6 @@
     pointArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
     plistPath = [[NSBundle mainBundle] pathForResource:@"connect-level-1-fuzzy" ofType:@"plist"];
     errorPointArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
-    LTDatabase *db = [LTDatabase instance];
     cardsArray = [db arrayWithAllCards];
 
     //create correct cards list
@@ -41,7 +45,7 @@
         UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeCustom];
         ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
         [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
-        ImageCard.tag = [pointArray indexOfObject:point];
+        ImageCard.tag = cardTag;
         if(ImageCard.tag == 0) {
             [ImageCard setImage:[UIImage imageNamed:@"start.png"]
                        forState:UIControlStateNormal];
@@ -122,8 +126,15 @@
         return;
     }
     
+    LTDatabase *db = [LTDatabase instance];
+    NSNumber *cid_voice = cardsArray[anserPoint];
+    NSNumber *cid_image = cardsArray[[sender tag]];
+    
     //答對
     if ([sender tag] == anserPoint) {
+        // Insert a row into database.
+        [db insertRowWithVoiceCard:cid_voice andImageCard:cid_voice];
+        
         anserRight = true;
         if ([sender tag]==4) {
             [self.GameView setContentOffset:CGPointMake(0, 0) animated:YES];
@@ -154,6 +165,9 @@
     }
     //答錯,將錯誤記錄到資料庫,並秀出錯誤訊息
     else {
+        // Insert a row into database.
+        [db insertRowWithVoiceCard:cid_voice andImageCard:cid_image];
+        
         [self playAudio:@"error" fileType:@"mp3"];
     }
 }

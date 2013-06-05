@@ -16,7 +16,7 @@
     
     static dispatch_once_t token;
     dispatch_once(&token, ^{
-        instance = [[LTDatabase alloc] initWithFakeRecords];
+        instance = [[LTDatabase alloc] init];
     });
     
     return instance;
@@ -45,7 +45,7 @@
         
         NSString *dbPath = [dirPath stringByAppendingPathComponent:@"lt-user.sqlite3"];
         
-        // DEBUG: remove after finished.
+        // DEBUG: replace the database with the old one everytime.
         if([fileManager fileExistsAtPath:dbPath]) {
             success = [fileManager removeItemAtPath:dbPath error:nil];
             
