@@ -38,19 +38,25 @@
 
     //create correct cards list
     for (NSDictionary *point in pointArray) {
-        UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeCustom];
         ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
         [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
         ImageCard.tag = [pointArray indexOfObject:point];
-        NSDictionary *card = [db cardForId:cardsArray[ImageCard.tag]];
-        [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
-                   forState:UIControlStateNormal];
+        if(ImageCard.tag == 0) {
+            [ImageCard setImage:[UIImage imageNamed:@"start.png"]
+                       forState:UIControlStateNormal];
+        }
+        else {
+            NSDictionary *card = [db cardForId:cardsArray[ImageCard.tag]];
+            [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
+                       forState:UIControlStateNormal];
+        }
         [self.GameView addSubview:ImageCard];
         cardTag++;
     }
     //create error cards list
     for (NSDictionary *point in errorPointArray) {
-        UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeCustom];
         ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
         [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
         ImageCard.tag = cardTag;
