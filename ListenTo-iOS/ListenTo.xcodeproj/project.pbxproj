@@ -10,7 +10,6 @@
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
 		AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */; };
-		AA448FE31756ECE700877B06 /* LTStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FE21756ECE700877B06 /* LTStatisticViewController.m */; };
 		AA448FE61756EEE800877B06 /* LTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FE51756EEE800877B06 /* LTUtility.m */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
@@ -93,8 +92,6 @@
 		AA25B430174B24E400A88C82 /* LTRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewController.m; sourceTree = "<group>"; };
 		AA448FD51755DE0D00877B06 /* NSDate+Beginning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Beginning.h"; sourceTree = "<group>"; };
 		AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Beginning.m"; sourceTree = "<group>"; };
-		AA448FE11756ECE700877B06 /* LTStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTStatisticViewController.h; sourceTree = "<group>"; };
-		AA448FE21756ECE700877B06 /* LTStatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTStatisticViewController.m; sourceTree = "<group>"; };
 		AA448FE41756EEE800877B06 /* LTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUtility.h; sourceTree = "<group>"; };
 		AA448FE51756EEE800877B06 /* LTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUtility.m; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,8 +213,6 @@
 				AAED14FB17548EAC0091C182 /* LTRecordCell.m */,
 				AAED1562175490580091C182 /* LTRecordErrorImageCell.h */,
 				AAED1563175490580091C182 /* LTRecordErrorImageCell.m */,
-				AA448FE11756ECE700877B06 /* LTStatisticViewController.h */,
-				AA448FE21756ECE700877B06 /* LTStatisticViewController.m */,
 			);
 			name = Management;
 			sourceTree = "<group>";
@@ -532,7 +527,6 @@
 				AAED1564175490580091C182 /* LTRecordErrorImageCell.m in Sources */,
 				AAED1568175493170091C182 /* LTDatabase.m in Sources */,
 				AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */,
-				AA448FE31756ECE700877B06 /* LTStatisticViewController.m in Sources */,
 				AA448FE61756EEE800877B06 /* LTUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
