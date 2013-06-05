@@ -9,6 +9,10 @@
 #import "FMDatabase.h"
 #import "NSDate+Beginning.h"
 
+static NSString *LT_DB_KEY_CARD_NAME = @"name";
+static NSString *LT_DB_KEY_CARD_IMAGE = @"image";
+static NSString *LT_DB_KEY_CARD_VOICE = @"voice";
+
 @interface LTDatabase: NSObject
 
 @property (nonatomic, strong) FMDatabase *database;
@@ -23,6 +27,7 @@
 
 #pragma mark - Data Interface
 
+- (NSArray *)arrayWithAllCards;
 - (NSDictionary *)cardForId:(NSNumber *)cid;
 
 - (NSArray *)arrayWithCardAfterDate:(NSDate *)date;

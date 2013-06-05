@@ -111,6 +111,20 @@
 
 #pragma mark - Data Interface
 
+- (NSArray *)arrayWithAllCards
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if([self.database open]) {
+        NSString *stmt = @"SELECT id FROM Cards ";
+        FMResultSet *s = [self.database executeQuery:stmt];
+        while([s next]) {
+            [result addObject:[NSNumber numberWithInt:[s intForColumnIndex:0]]];
+        }
+        [self.database close];
+    }
+    return [NSArray arrayWithArray:result];
+}
+
 - (NSDictionary *)cardForId:(NSNumber *)cid
 {
     NSDictionary *result;

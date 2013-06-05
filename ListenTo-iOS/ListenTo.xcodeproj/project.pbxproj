@@ -11,6 +11,7 @@
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
 		AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */; };
 		AA448FE61756EEE800877B06 /* LTUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FE51756EEE800877B06 /* LTUtility.m */; };
+		AA4D3FED175F690200C418BC /* level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4D3FEC175F690200C418BC /* level-1.png */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -22,6 +23,64 @@
 		AAACE1A8174124D700F143C3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A7174124D700F143C3 /* Default-568h@2x.png */; };
 		AAACE1AB174124D700F143C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAACE1A9174124D700F143C3 /* MainStoryboard.storyboard */; };
 		AAACE1AE174124D700F143C3 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAACE1AD174124D700F143C3 /* LTNavigationController.m */; };
+		AAD52E13175F62550016B70A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD52E12175F62550016B70A /* AVFoundation.framework */; };
+		AAD52E1A175F62EC0016B70A /* SPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD52E17175F62EC0016B70A /* SPLine.m */; };
+		AAD52E1B175F62EC0016B70A /* SPLockOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD52E19175F62EC0016B70A /* SPLockOverlay.m */; };
+		AAD52E1F175F63550016B70A /* LTGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD52E1E175F63550016B70A /* LTGameViewController.m */; };
+		AAD52E2A175F65A80016B70A /* connect-level-1-fuzzy.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E28175F65A80016B70A /* connect-level-1-fuzzy.plist */; };
+		AAD52E2B175F65A80016B70A /* connect-level-1.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E29175F65A80016B70A /* connect-level-1.plist */; };
+		AAD52E63175F67850016B70A /* 傘.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E2F175F67850016B70A /* 傘.mp3 */; };
+		AAD52E64175F67850016B70A /* 兔子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E30175F67850016B70A /* 兔子.mp3 */; };
+		AAD52E65175F67850016B70A /* 刀子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E31175F67850016B70A /* 刀子.mp3 */; };
+		AAD52E66175F67850016B70A /* 刷子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E32175F67850016B70A /* 刷子.mp3 */; };
+		AAD52E67175F67850016B70A /* 剪刀.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E33175F67850016B70A /* 剪刀.mp3 */; };
+		AAD52E68175F67850016B70A /* 包子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E34175F67850016B70A /* 包子.mp3 */; };
+		AAD52E69175F67850016B70A /* 報紙.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E35175F67850016B70A /* 報紙.mp3 */; };
+		AAD52E6A175F67850016B70A /* 大象.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E36175F67850016B70A /* 大象.mp3 */; };
+		AAD52E6B175F67850016B70A /* 床.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E37175F67850016B70A /* 床.mp3 */; };
+		AAD52E6C175F67850016B70A /* 彈珠.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E38175F67850016B70A /* 彈珠.mp3 */; };
+		AAD52E6D175F67850016B70A /* 扇子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E39175F67850016B70A /* 扇子.mp3 */; };
+		AAD52E6E175F67850016B70A /* 書.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E3A175F67850016B70A /* 書.mp3 */; };
+		AAD52E6F175F67850016B70A /* 柿子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E3B175F67850016B70A /* 柿子.mp3 */; };
+		AAD52E70175F67850016B70A /* 桌子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E3C175F67850016B70A /* 桌子.mp3 */; };
+		AAD52E71175F67850016B70A /* 梳子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E3D175F67850016B70A /* 梳子.mp3 */; };
+		AAD52E72175F67850016B70A /* 橘子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E3E175F67850016B70A /* 橘子.mp3 */; };
+		AAD52E73175F67850016B70A /* 櫃子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E3F175F67850016B70A /* 櫃子.mp3 */; };
+		AAD52E74175F67850016B70A /* 氣球.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E40175F67850016B70A /* 氣球.mp3 */; };
+		AAD52E75175F67850016B70A /* 水果.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E41175F67850016B70A /* 水果.mp3 */; };
+		AAD52E76175F67850016B70A /* 烏鴉.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E42175F67850016B70A /* 烏鴉.mp3 */; };
+		AAD52E77175F67850016B70A /* 烏龜.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E43175F67850016B70A /* 烏龜.mp3 */; };
+		AAD52E78175F67850016B70A /* 狗.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E44175F67850016B70A /* 狗.mp3 */; };
+		AAD52E79175F67850016B70A /* 獅子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E45175F67850016B70A /* 獅子.mp3 */; };
+		AAD52E7A175F67850016B70A /* 瓜.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E46175F67850016B70A /* 瓜.mp3 */; };
+		AAD52E7B175F67850016B70A /* 番茄.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E47175F67850016B70A /* 番茄.mp3 */; };
+		AAD52E7C175F67850016B70A /* 箱子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E48175F67850016B70A /* 箱子.mp3 */; };
+		AAD52E7D175F67850016B70A /* 糖果.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E49175F67850016B70A /* 糖果.mp3 */; };
+		AAD52E7E175F67850016B70A /* 老虎.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E4A175F67850016B70A /* 老虎.mp3 */; };
+		AAD52E7F175F67850016B70A /* 老鼠.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E4B175F67850016B70A /* 老鼠.mp3 */; };
+		AAD52E80175F67850016B70A /* 船.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E4C175F67850016B70A /* 船.mp3 */; };
+		AAD52E81175F67850016B70A /* 色紙.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E4D175F67850016B70A /* 色紙.mp3 */; };
+		AAD52E82175F67850016B70A /* 花.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E4E175F67850016B70A /* 花.mp3 */; };
+		AAD52E83175F67850016B70A /* 茄子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E4F175F67850016B70A /* 茄子.mp3 */; };
+		AAD52E84175F67850016B70A /* 葡萄.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E50175F67850016B70A /* 葡萄.mp3 */; };
+		AAD52E85175F67850016B70A /* 蘋果.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E51175F67850016B70A /* 蘋果.mp3 */; };
+		AAD52E86175F67850016B70A /* 蘿蔔.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E52175F67850016B70A /* 蘿蔔.mp3 */; };
+		AAD52E87175F67850016B70A /* 蝦子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E53175F67850016B70A /* 蝦子.mp3 */; };
+		AAD52E88175F67850016B70A /* 蝴蝶.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E54175F67850016B70A /* 蝴蝶.mp3 */; };
+		AAD52E89175F67850016B70A /* 螃蟹.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E55175F67850016B70A /* 螃蟹.mp3 */; };
+		AAD52E8A175F67850016B70A /* 螺絲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E56175F67850016B70A /* 螺絲.mp3 */; };
+		AAD52E8B175F67850016B70A /* 褲子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E57175F67850016B70A /* 褲子.mp3 */; };
+		AAD52E8C175F67850016B70A /* 豬.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E58175F67850016B70A /* 豬.mp3 */; };
+		AAD52E8D175F67850016B70A /* 鍋子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E59175F67850016B70A /* 鍋子.mp3 */; };
+		AAD52E8E175F67850016B70A /* 雨.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E5A175F67850016B70A /* 雨.mp3 */; };
+		AAD52E8F175F67850016B70A /* 雲.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E5B175F67850016B70A /* 雲.mp3 */; };
+		AAD52E90175F67850016B70A /* 香腸.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E5C175F67850016B70A /* 香腸.mp3 */; };
+		AAD52E91175F67850016B70A /* 香蕉.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E5D175F67850016B70A /* 香蕉.mp3 */; };
+		AAD52E92175F67850016B70A /* 魚.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E5E175F67850016B70A /* 魚.mp3 */; };
+		AAD52E93175F67850016B70A /* 鳳梨.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E5F175F67850016B70A /* 鳳梨.mp3 */; };
+		AAD52E94175F67850016B70A /* 鴨子.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E60175F67850016B70A /* 鴨子.mp3 */; };
+		AAD52E95175F67850016B70A /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E61175F67850016B70A /* correct.mp3 */; };
+		AAD52E96175F67850016B70A /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAD52E62175F67850016B70A /* error.mp3 */; };
 		AAED14F3175483EA0091C182 /* homescreen-enter-hover.png in Resources */ = {isa = PBXBuildFile; fileRef = AAED14F2175483EA0091C182 /* homescreen-enter-hover.png */; };
 		AAED14F61754875D0091C182 /* icon-record.png in Resources */ = {isa = PBXBuildFile; fileRef = AAED14F51754875D0091C182 /* icon-record.png */; };
 		AAED14F9175488590091C182 /* LTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAED14F8175488590091C182 /* LTMainViewController.m */; };
@@ -94,6 +153,7 @@
 		AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Beginning.m"; sourceTree = "<group>"; };
 		AA448FE41756EEE800877B06 /* LTUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUtility.h; sourceTree = "<group>"; };
 		AA448FE51756EEE800877B06 /* LTUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUtility.m; sourceTree = "<group>"; };
+		AA4D3FEC175F690200C418BC /* level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-1.png"; sourceTree = "<group>"; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +170,67 @@
 		AAACE1AA174124D700F143C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AAACE1AC174124D700F143C3 /* LTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTNavigationController.h; sourceTree = "<group>"; };
 		AAACE1AD174124D700F143C3 /* LTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTNavigationController.m; sourceTree = "<group>"; };
+		AAD52E12175F62550016B70A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AAD52E16175F62EC0016B70A /* SPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLine.h; sourceTree = "<group>"; };
+		AAD52E17175F62EC0016B70A /* SPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLine.m; sourceTree = "<group>"; };
+		AAD52E18175F62EC0016B70A /* SPLockOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLockOverlay.h; sourceTree = "<group>"; };
+		AAD52E19175F62EC0016B70A /* SPLockOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockOverlay.m; sourceTree = "<group>"; };
+		AAD52E1D175F63550016B70A /* LTGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameViewController.h; sourceTree = "<group>"; };
+		AAD52E1E175F63550016B70A /* LTGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameViewController.m; sourceTree = "<group>"; };
+		AAD52E28175F65A80016B70A /* connect-level-1-fuzzy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-1-fuzzy.plist"; sourceTree = "<group>"; };
+		AAD52E29175F65A80016B70A /* connect-level-1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-1.plist"; sourceTree = "<group>"; };
+		AAD52E2F175F67850016B70A /* 傘.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "傘.mp3"; sourceTree = "<group>"; };
+		AAD52E30175F67850016B70A /* 兔子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "兔子.mp3"; sourceTree = "<group>"; };
+		AAD52E31175F67850016B70A /* 刀子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "刀子.mp3"; sourceTree = "<group>"; };
+		AAD52E32175F67850016B70A /* 刷子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "刷子.mp3"; sourceTree = "<group>"; };
+		AAD52E33175F67850016B70A /* 剪刀.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "剪刀.mp3"; sourceTree = "<group>"; };
+		AAD52E34175F67850016B70A /* 包子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "包子.mp3"; sourceTree = "<group>"; };
+		AAD52E35175F67850016B70A /* 報紙.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "報紙.mp3"; sourceTree = "<group>"; };
+		AAD52E36175F67850016B70A /* 大象.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "大象.mp3"; sourceTree = "<group>"; };
+		AAD52E37175F67850016B70A /* 床.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "床.mp3"; sourceTree = "<group>"; };
+		AAD52E38175F67850016B70A /* 彈珠.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "彈珠.mp3"; sourceTree = "<group>"; };
+		AAD52E39175F67850016B70A /* 扇子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "扇子.mp3"; sourceTree = "<group>"; };
+		AAD52E3A175F67850016B70A /* 書.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "書.mp3"; sourceTree = "<group>"; };
+		AAD52E3B175F67850016B70A /* 柿子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "柿子.mp3"; sourceTree = "<group>"; };
+		AAD52E3C175F67850016B70A /* 桌子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "桌子.mp3"; sourceTree = "<group>"; };
+		AAD52E3D175F67850016B70A /* 梳子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "梳子.mp3"; sourceTree = "<group>"; };
+		AAD52E3E175F67850016B70A /* 橘子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "橘子.mp3"; sourceTree = "<group>"; };
+		AAD52E3F175F67850016B70A /* 櫃子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "櫃子.mp3"; sourceTree = "<group>"; };
+		AAD52E40175F67850016B70A /* 氣球.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "氣球.mp3"; sourceTree = "<group>"; };
+		AAD52E41175F67850016B70A /* 水果.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "水果.mp3"; sourceTree = "<group>"; };
+		AAD52E42175F67850016B70A /* 烏鴉.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "烏鴉.mp3"; sourceTree = "<group>"; };
+		AAD52E43175F67850016B70A /* 烏龜.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "烏龜.mp3"; sourceTree = "<group>"; };
+		AAD52E44175F67850016B70A /* 狗.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "狗.mp3"; sourceTree = "<group>"; };
+		AAD52E45175F67850016B70A /* 獅子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "獅子.mp3"; sourceTree = "<group>"; };
+		AAD52E46175F67850016B70A /* 瓜.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "瓜.mp3"; sourceTree = "<group>"; };
+		AAD52E47175F67850016B70A /* 番茄.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "番茄.mp3"; sourceTree = "<group>"; };
+		AAD52E48175F67850016B70A /* 箱子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "箱子.mp3"; sourceTree = "<group>"; };
+		AAD52E49175F67850016B70A /* 糖果.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "糖果.mp3"; sourceTree = "<group>"; };
+		AAD52E4A175F67850016B70A /* 老虎.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "老虎.mp3"; sourceTree = "<group>"; };
+		AAD52E4B175F67850016B70A /* 老鼠.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "老鼠.mp3"; sourceTree = "<group>"; };
+		AAD52E4C175F67850016B70A /* 船.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "船.mp3"; sourceTree = "<group>"; };
+		AAD52E4D175F67850016B70A /* 色紙.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "色紙.mp3"; sourceTree = "<group>"; };
+		AAD52E4E175F67850016B70A /* 花.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "花.mp3"; sourceTree = "<group>"; };
+		AAD52E4F175F67850016B70A /* 茄子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "茄子.mp3"; sourceTree = "<group>"; };
+		AAD52E50175F67850016B70A /* 葡萄.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "葡萄.mp3"; sourceTree = "<group>"; };
+		AAD52E51175F67850016B70A /* 蘋果.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "蘋果.mp3"; sourceTree = "<group>"; };
+		AAD52E52175F67850016B70A /* 蘿蔔.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "蘿蔔.mp3"; sourceTree = "<group>"; };
+		AAD52E53175F67850016B70A /* 蝦子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "蝦子.mp3"; sourceTree = "<group>"; };
+		AAD52E54175F67850016B70A /* 蝴蝶.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "蝴蝶.mp3"; sourceTree = "<group>"; };
+		AAD52E55175F67850016B70A /* 螃蟹.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "螃蟹.mp3"; sourceTree = "<group>"; };
+		AAD52E56175F67850016B70A /* 螺絲.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "螺絲.mp3"; sourceTree = "<group>"; };
+		AAD52E57175F67850016B70A /* 褲子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "褲子.mp3"; sourceTree = "<group>"; };
+		AAD52E58175F67850016B70A /* 豬.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "豬.mp3"; sourceTree = "<group>"; };
+		AAD52E59175F67850016B70A /* 鍋子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "鍋子.mp3"; sourceTree = "<group>"; };
+		AAD52E5A175F67850016B70A /* 雨.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "雨.mp3"; sourceTree = "<group>"; };
+		AAD52E5B175F67850016B70A /* 雲.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "雲.mp3"; sourceTree = "<group>"; };
+		AAD52E5C175F67850016B70A /* 香腸.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "香腸.mp3"; sourceTree = "<group>"; };
+		AAD52E5D175F67850016B70A /* 香蕉.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "香蕉.mp3"; sourceTree = "<group>"; };
+		AAD52E5E175F67850016B70A /* 魚.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "魚.mp3"; sourceTree = "<group>"; };
+		AAD52E5F175F67850016B70A /* 鳳梨.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "鳳梨.mp3"; sourceTree = "<group>"; };
+		AAD52E60175F67850016B70A /* 鴨子.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "鴨子.mp3"; sourceTree = "<group>"; };
+		AAD52E61175F67850016B70A /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct.mp3; path = ListenTo/Voices/correct.mp3; sourceTree = SOURCE_ROOT; };
+		AAD52E62175F67850016B70A /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = error.mp3; path = ListenTo/Voices/error.mp3; sourceTree = SOURCE_ROOT; };
 		AAED14F2175483EA0091C182 /* homescreen-enter-hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homescreen-enter-hover.png"; sourceTree = "<group>"; };
 		AAED14F51754875D0091C182 /* icon-record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-record.png"; sourceTree = "<group>"; };
 		AAED14F7175488590091C182 /* LTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMainViewController.h; sourceTree = "<group>"; };
@@ -182,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD52E13175F62550016B70A /* AVFoundation.framework in Frameworks */,
 				AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */,
 				AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */,
 				AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */,
@@ -195,6 +317,7 @@
 		AA25B40B174B122700A88C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA4D3FEB175F690200C418BC /* ConnectDots */,
 				AAED14FD17548EC70091C182 /* cards */,
 				AAED14F51754875D0091C182 /* icon-record.png */,
 				AAED14F2175483EA0091C182 /* homescreen-enter-hover.png */,
@@ -226,9 +349,19 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
+		AA4D3FEB175F690200C418BC /* ConnectDots */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D3FEC175F690200C418BC /* level-1.png */,
+			);
+			name = ConnectDots;
+			path = ListenTo/Images/ConnectDots;
+			sourceTree = SOURCE_ROOT;
+		};
 		AAACE182174124D700F143C3 = {
 			isa = PBXGroup;
 			children = (
+				AAD52E12175F62550016B70A /* AVFoundation.framework */,
 				AAACE197174124D700F143C3 /* ListenTo */,
 				AAACE190174124D700F143C3 /* Frameworks */,
 				AAACE18E174124D700F143C3 /* Products */,
@@ -260,6 +393,7 @@
 			children = (
 				AAACE198174124D700F143C3 /* Supporting Files */,
 				AAED157D1755B1260091C182 /* DataSource */,
+				AAD52E14175F62860016B70A /* Game */,
 				AA448FD41755DCE900877B06 /* Extension */,
 				AA25B41D174B1E1800A88C82 /* Management */,
 				AAACE1A0174124D700F143C3 /* LTAppDelegate.h */,
@@ -291,6 +425,112 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		AAD52E14175F62860016B70A /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				AAD52E15175F62A70016B70A /* 3rd-Party Lib */,
+				AAD52E1C175F63450016B70A /* ConnectDots */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		AAD52E15175F62A70016B70A /* 3rd-Party Lib */ = {
+			isa = PBXGroup;
+			children = (
+				AAD52E16175F62EC0016B70A /* SPLine.h */,
+				AAD52E17175F62EC0016B70A /* SPLine.m */,
+				AAD52E18175F62EC0016B70A /* SPLockOverlay.h */,
+				AAD52E19175F62EC0016B70A /* SPLockOverlay.m */,
+			);
+			name = "3rd-Party Lib";
+			sourceTree = "<group>";
+		};
+		AAD52E1C175F63450016B70A /* ConnectDots */ = {
+			isa = PBXGroup;
+			children = (
+				AAD52E1D175F63550016B70A /* LTGameViewController.h */,
+				AAD52E1E175F63550016B70A /* LTGameViewController.m */,
+			);
+			name = ConnectDots;
+			sourceTree = "<group>";
+		};
+		AAD52E27175F65A80016B70A /* ConnectDots */ = {
+			isa = PBXGroup;
+			children = (
+				AAD52E28175F65A80016B70A /* connect-level-1-fuzzy.plist */,
+				AAD52E29175F65A80016B70A /* connect-level-1.plist */,
+			);
+			path = ConnectDots;
+			sourceTree = "<group>";
+		};
+		AAD52E2D175F65AF0016B70A /* Voices */ = {
+			isa = PBXGroup;
+			children = (
+				AAD52E2E175F67850016B70A /* cards */,
+				AAD52E61175F67850016B70A /* correct.mp3 */,
+				AAD52E62175F67850016B70A /* error.mp3 */,
+			);
+			name = Voices;
+			sourceTree = "<group>";
+		};
+		AAD52E2E175F67850016B70A /* cards */ = {
+			isa = PBXGroup;
+			children = (
+				AAD52E2F175F67850016B70A /* 傘.mp3 */,
+				AAD52E30175F67850016B70A /* 兔子.mp3 */,
+				AAD52E31175F67850016B70A /* 刀子.mp3 */,
+				AAD52E32175F67850016B70A /* 刷子.mp3 */,
+				AAD52E33175F67850016B70A /* 剪刀.mp3 */,
+				AAD52E34175F67850016B70A /* 包子.mp3 */,
+				AAD52E35175F67850016B70A /* 報紙.mp3 */,
+				AAD52E36175F67850016B70A /* 大象.mp3 */,
+				AAD52E37175F67850016B70A /* 床.mp3 */,
+				AAD52E38175F67850016B70A /* 彈珠.mp3 */,
+				AAD52E39175F67850016B70A /* 扇子.mp3 */,
+				AAD52E3A175F67850016B70A /* 書.mp3 */,
+				AAD52E3B175F67850016B70A /* 柿子.mp3 */,
+				AAD52E3C175F67850016B70A /* 桌子.mp3 */,
+				AAD52E3D175F67850016B70A /* 梳子.mp3 */,
+				AAD52E3E175F67850016B70A /* 橘子.mp3 */,
+				AAD52E3F175F67850016B70A /* 櫃子.mp3 */,
+				AAD52E40175F67850016B70A /* 氣球.mp3 */,
+				AAD52E41175F67850016B70A /* 水果.mp3 */,
+				AAD52E42175F67850016B70A /* 烏鴉.mp3 */,
+				AAD52E43175F67850016B70A /* 烏龜.mp3 */,
+				AAD52E44175F67850016B70A /* 狗.mp3 */,
+				AAD52E45175F67850016B70A /* 獅子.mp3 */,
+				AAD52E46175F67850016B70A /* 瓜.mp3 */,
+				AAD52E47175F67850016B70A /* 番茄.mp3 */,
+				AAD52E48175F67850016B70A /* 箱子.mp3 */,
+				AAD52E49175F67850016B70A /* 糖果.mp3 */,
+				AAD52E4A175F67850016B70A /* 老虎.mp3 */,
+				AAD52E4B175F67850016B70A /* 老鼠.mp3 */,
+				AAD52E4C175F67850016B70A /* 船.mp3 */,
+				AAD52E4D175F67850016B70A /* 色紙.mp3 */,
+				AAD52E4E175F67850016B70A /* 花.mp3 */,
+				AAD52E4F175F67850016B70A /* 茄子.mp3 */,
+				AAD52E50175F67850016B70A /* 葡萄.mp3 */,
+				AAD52E51175F67850016B70A /* 蘋果.mp3 */,
+				AAD52E52175F67850016B70A /* 蘿蔔.mp3 */,
+				AAD52E53175F67850016B70A /* 蝦子.mp3 */,
+				AAD52E54175F67850016B70A /* 蝴蝶.mp3 */,
+				AAD52E55175F67850016B70A /* 螃蟹.mp3 */,
+				AAD52E56175F67850016B70A /* 螺絲.mp3 */,
+				AAD52E57175F67850016B70A /* 褲子.mp3 */,
+				AAD52E58175F67850016B70A /* 豬.mp3 */,
+				AAD52E59175F67850016B70A /* 鍋子.mp3 */,
+				AAD52E5A175F67850016B70A /* 雨.mp3 */,
+				AAD52E5B175F67850016B70A /* 雲.mp3 */,
+				AAD52E5C175F67850016B70A /* 香腸.mp3 */,
+				AAD52E5D175F67850016B70A /* 香蕉.mp3 */,
+				AAD52E5E175F67850016B70A /* 魚.mp3 */,
+				AAD52E5F175F67850016B70A /* 鳳梨.mp3 */,
+				AAD52E60175F67850016B70A /* 鴨子.mp3 */,
+			);
+			name = cards;
+			path = ListenTo/Voices/cards;
+			sourceTree = SOURCE_ROOT;
 		};
 		AAED14FD17548EC70091C182 /* cards */ = {
 			isa = PBXGroup;
@@ -353,6 +593,8 @@
 			isa = PBXGroup;
 			children = (
 				AA25B40B174B122700A88C82 /* Images */,
+				AAD52E2D175F65AF0016B70A /* Voices */,
+				AAD52E27175F65A80016B70A /* ConnectDots */,
 				AAED1566175493170091C182 /* LTDatabase.h */,
 				AAED1567175493170091C182 /* LTDatabase.m */,
 				AAED157E1755B1260091C182 /* default.sqlite3 */,
@@ -477,6 +719,61 @@
 				AAFA57F7175DB77800743430 /* AppIcon-1024x1024.png in Resources */,
 				AAFA57FA175DB7C700743430 /* AppIcon-72x72.png in Resources */,
 				AAFA57FC175DB7E000743430 /* AppIcon-144x144.png in Resources */,
+				AAD52E2A175F65A80016B70A /* connect-level-1-fuzzy.plist in Resources */,
+				AAD52E2B175F65A80016B70A /* connect-level-1.plist in Resources */,
+				AAD52E63175F67850016B70A /* 傘.mp3 in Resources */,
+				AAD52E64175F67850016B70A /* 兔子.mp3 in Resources */,
+				AAD52E65175F67850016B70A /* 刀子.mp3 in Resources */,
+				AAD52E66175F67850016B70A /* 刷子.mp3 in Resources */,
+				AAD52E67175F67850016B70A /* 剪刀.mp3 in Resources */,
+				AAD52E68175F67850016B70A /* 包子.mp3 in Resources */,
+				AAD52E69175F67850016B70A /* 報紙.mp3 in Resources */,
+				AAD52E6A175F67850016B70A /* 大象.mp3 in Resources */,
+				AAD52E6B175F67850016B70A /* 床.mp3 in Resources */,
+				AAD52E6C175F67850016B70A /* 彈珠.mp3 in Resources */,
+				AAD52E6D175F67850016B70A /* 扇子.mp3 in Resources */,
+				AAD52E6E175F67850016B70A /* 書.mp3 in Resources */,
+				AAD52E6F175F67850016B70A /* 柿子.mp3 in Resources */,
+				AAD52E70175F67850016B70A /* 桌子.mp3 in Resources */,
+				AAD52E71175F67850016B70A /* 梳子.mp3 in Resources */,
+				AAD52E72175F67850016B70A /* 橘子.mp3 in Resources */,
+				AAD52E73175F67850016B70A /* 櫃子.mp3 in Resources */,
+				AAD52E74175F67850016B70A /* 氣球.mp3 in Resources */,
+				AAD52E75175F67850016B70A /* 水果.mp3 in Resources */,
+				AAD52E76175F67850016B70A /* 烏鴉.mp3 in Resources */,
+				AAD52E77175F67850016B70A /* 烏龜.mp3 in Resources */,
+				AAD52E78175F67850016B70A /* 狗.mp3 in Resources */,
+				AAD52E79175F67850016B70A /* 獅子.mp3 in Resources */,
+				AAD52E7A175F67850016B70A /* 瓜.mp3 in Resources */,
+				AAD52E7B175F67850016B70A /* 番茄.mp3 in Resources */,
+				AAD52E7C175F67850016B70A /* 箱子.mp3 in Resources */,
+				AAD52E7D175F67850016B70A /* 糖果.mp3 in Resources */,
+				AAD52E7E175F67850016B70A /* 老虎.mp3 in Resources */,
+				AAD52E7F175F67850016B70A /* 老鼠.mp3 in Resources */,
+				AAD52E80175F67850016B70A /* 船.mp3 in Resources */,
+				AAD52E81175F67850016B70A /* 色紙.mp3 in Resources */,
+				AAD52E82175F67850016B70A /* 花.mp3 in Resources */,
+				AAD52E83175F67850016B70A /* 茄子.mp3 in Resources */,
+				AAD52E84175F67850016B70A /* 葡萄.mp3 in Resources */,
+				AAD52E85175F67850016B70A /* 蘋果.mp3 in Resources */,
+				AAD52E86175F67850016B70A /* 蘿蔔.mp3 in Resources */,
+				AAD52E87175F67850016B70A /* 蝦子.mp3 in Resources */,
+				AAD52E88175F67850016B70A /* 蝴蝶.mp3 in Resources */,
+				AAD52E89175F67850016B70A /* 螃蟹.mp3 in Resources */,
+				AAD52E8A175F67850016B70A /* 螺絲.mp3 in Resources */,
+				AAD52E8B175F67850016B70A /* 褲子.mp3 in Resources */,
+				AAD52E8C175F67850016B70A /* 豬.mp3 in Resources */,
+				AAD52E8D175F67850016B70A /* 鍋子.mp3 in Resources */,
+				AAD52E8E175F67850016B70A /* 雨.mp3 in Resources */,
+				AAD52E8F175F67850016B70A /* 雲.mp3 in Resources */,
+				AAD52E90175F67850016B70A /* 香腸.mp3 in Resources */,
+				AAD52E91175F67850016B70A /* 香蕉.mp3 in Resources */,
+				AAD52E92175F67850016B70A /* 魚.mp3 in Resources */,
+				AAD52E93175F67850016B70A /* 鳳梨.mp3 in Resources */,
+				AAD52E94175F67850016B70A /* 鴨子.mp3 in Resources */,
+				AAD52E95175F67850016B70A /* correct.mp3 in Resources */,
+				AAD52E96175F67850016B70A /* error.mp3 in Resources */,
+				AA4D3FED175F690200C418BC /* level-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +825,9 @@
 				AAED1568175493170091C182 /* LTDatabase.m in Sources */,
 				AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */,
 				AA448FE61756EEE800877B06 /* LTUtility.m in Sources */,
+				AAD52E1A175F62EC0016B70A /* SPLine.m in Sources */,
+				AAD52E1B175F62EC0016B70A /* SPLockOverlay.m in Sources */,
+				AAD52E1F175F63550016B70A /* LTGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
