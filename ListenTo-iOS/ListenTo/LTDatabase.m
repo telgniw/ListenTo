@@ -75,55 +75,35 @@
 - (id)initWithFakeRecords
 {
     if(self = [self init]) {
-        // Failed to open database.
-        if(![self.database open]) {
-            return nil;
-        }
-        
         // Insert fake records into database for today.
-        [self.database executeUpdate:@"INSERT INTO Records (type) VALUES (?)", @0];
-        
-        NSNumber *recordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
-        NSArray *records = @[
-            @{@"id": recordId, @"cid_voice": @11, @"cid_image": @12},
-            @{@"id": recordId, @"cid_voice": @11, @"cid_image": @12},
-            @{@"id": recordId, @"cid_voice": @11, @"cid_image": @12},
-            @{@"id": recordId, @"cid_voice": @11, @"cid_image": @11},
-            @{@"id": recordId, @"cid_voice": @19, @"cid_image": @20},
-            @{@"id": recordId, @"cid_voice": @19, @"cid_image": @21},
-            @{@"id": recordId, @"cid_voice": @19, @"cid_image": @21},
-        ];
-        for(NSDictionary *record in records) {
-            [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image) VALUES (:id, :cid_voice, :cid_image)"
-                 withParameterDictionary:record];
-        }
+        [self newRecordWithType:0];
+        [self insertRowWithVoiceCard:@11 andImageCard:@12];
+        [self insertRowWithVoiceCard:@11 andImageCard:@12];
+        [self insertRowWithVoiceCard:@11 andImageCard:@12];
+        [self insertRowWithVoiceCard:@11 andImageCard:@11];
+        [self insertRowWithVoiceCard:@19 andImageCard:@20];
+        [self insertRowWithVoiceCard:@19 andImageCard:@21];
+        [self insertRowWithVoiceCard:@19 andImageCard:@21];
         
         // Insert fake records into database for last week.
-        [self.database executeUpdate:@"INSERT INTO Records (type) VALUES (?)", @0];
+        [self newRecordWithType:0];
+        [self insertRowWithVoiceCard:@15 andImageCard:@16 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@15 andImageCard:@15 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@22 andImageCard:@22 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@9 andImageCard:@10 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@9 andImageCard:@10 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@9 andImageCard:@9 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@4 andImageCard:@5 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@4 andImageCard:@5 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@4 andImageCard:@5 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@4 andImageCard:@4 andTimestamp:[NSDate firstDayOfTheWeek]];
         
-        recordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
-        records = @[
-            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @16, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @15, @"cid_image": @15, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @22, @"cid_image": @22, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @9, @"cid_image":  @10, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @9, @"cid_image":  @10, @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @9,  @"cid_image": @9,  @"timestamp": [[NSDate firstDayOfTheWeek] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @5,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @4,  @"cid_image": @4,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @8,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @6,  @"cid_image": @6,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @6,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-            @{@"id": recordId, @"cid_voice": @8,  @"cid_image": @8,  @"timestamp": [[[NSDate firstDayOfTheWeek] dateBySubtractingDays:5] stringWithSqliteFormat]},
-        ];
-        for(NSDictionary *record in records) {
-            [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image, timestamp) VALUES (:id, :cid_voice, :cid_image, :timestamp)"
-                 withParameterDictionary:record];
-        }
-        
-        [self.database close];
+        // Insert fake records into database for two weeks ago.
+        [self newRecordWithType:0];
+        [self insertRowWithVoiceCard:@6 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
+        [self insertRowWithVoiceCard:@6 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
+        [self insertRowWithVoiceCard:@8 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
+        [self insertRowWithVoiceCard:@8 andImageCard:@6 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
     }
     return self;
 }
@@ -194,6 +174,33 @@
         [self.database close];
     }
     return result;
+}
+
+- (void)newRecordWithType:(int)type
+{
+    if([self.database open]) {
+        [self.database executeUpdate:@"INSERT INTO Records (type) VALUES (?)", [NSNumber numberWithInt:type]];
+        self.currentRecordId = [NSNumber numberWithInt:[self.database lastInsertRowId]];
+        [self.database close];
+    }
+}
+
+- (void)insertRowWithVoiceCard:(NSNumber *)cid_voice andImageCard:(NSNumber *)cid_image
+{
+    if([self.database open]) {
+        [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image) VALUES (:id, :cid_voice, :cid_image)"
+             withParameterDictionary:@{@"id" : self.currentRecordId, @"cid_voice": cid_voice, @"cid_image": cid_image}];
+        [self.database close];
+    }
+}
+
+- (void)insertRowWithVoiceCard:(NSNumber *)cid_voice andImageCard:(NSNumber *)cid_image andTimestamp:(NSDate *)date
+{
+    if([self.database open]) {
+        [self.database executeUpdate:@"INSERT INTO RecordDetails (id, cid_voice, cid_image, timestamp) VALUES (:id, :cid_voice, :cid_image, :timestamp)"
+             withParameterDictionary:@{@"id" : self.currentRecordId, @"cid_voice": cid_voice, @"cid_image": cid_image, @"timestamp": [date stringWithSqliteFormat]}];
+        [self.database close];
+    }
 }
 
 #pragma mark - Utility Methods
