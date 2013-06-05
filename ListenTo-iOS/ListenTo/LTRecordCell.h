@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LTRecordCellDelegate <NSObject>
+
+- (void)onCellItemSelectedWithIdentity:(NSNumber*)theID;
+
+@end
+
 @interface LTRecordCell : UITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) NSArray *cardIds;
 @property (strong, nonatomic) NSArray *cardErrors;
+@property (strong, nonatomic) NSDictionary *card;
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UILabel *cardVoiceLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *cardImage;
+@property (weak,   nonatomic) id<LTRecordCellDelegate> delegate;
 
 @end

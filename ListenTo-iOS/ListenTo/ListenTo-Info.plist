@@ -16,6 +16,8 @@
 			<array>
 				<string>AppIcon-72x72.png</string>
 				<string>AppIcon-144x144.png</string>
+				<string>AppIcon@2x.png</string>
+				<string>AppIcon.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
@@ -43,6 +45,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden~ipad</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

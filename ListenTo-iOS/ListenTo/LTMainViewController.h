@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTMainViewController : UIViewController
+@interface LTMainViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *recordButton;
 
