@@ -560,7 +560,7 @@
     </scenes>
     <resources>
         <image name="11.兔子.jpg" width="752" height="752"/>
-        <image name="homescreen-enter.png" width="16" height="16"/>
+        <image name="homescreen-enter.png" width="444" height="512"/>
         <image name="homescreen-rabbit.png" width="402" height="542"/>
         <image name="icon-record.png" width="173" height="173"/>
         <image name="play.png" width="195" height="195"/>
@@ -634,6 +634,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
