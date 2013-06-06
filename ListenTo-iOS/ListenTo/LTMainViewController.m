@@ -7,6 +7,7 @@
 //
 
 #import "LTMainViewController.h"
+#import "LTUtility.h"
 
 @implementation LTMainViewController
 
@@ -15,6 +16,7 @@
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"homescreen-background.png"]]];
+    [self.navigationController.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
 }
 
 @end

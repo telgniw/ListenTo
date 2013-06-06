@@ -9,6 +9,14 @@
 #import "LTRecordViewController.h"
 #import "LTRecordCell.h"
 #import "LTDatabase.h"
+#import "LTCardViewController.h"
+
+
+@interface LTRecordViewController ()
+
+@end
+
+
 
 @implementation LTRecordViewController
 
@@ -18,12 +26,32 @@
     
     NSDate *today = [NSDate today];
     [self fetchDataSetAfter:today];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
+    [_imgCard addGestureRecognizer:tap];
+    [_imgCard setUserInteractionEnabled:YES];
+//
+
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    [self.myTableView setBackgroundView:background];
+    
+
+//    UIView *iv = [[UIView alloc] initWithFrame:CGRectMake(0,0, 1200, 88)];
+//    [iv setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bar.png"]]];
+//    self.navigationItem.titleView = iv;
+
+    
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    self.selectedID = nil;
+    
 }
 
 #pragma mark - Data Source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *cellIdentifier = @"LTRecordCell";
     
     NSNumber *cid = self.cardIds[indexPath.row];
@@ -34,18 +62,37 @@
     LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSDictionary *card = [db cardForId:cid];
     
+    cell.delegate = self;
+    
     // Reload data immediately after data set is updated.
     dispatch_async(dispatch_get_main_queue(), ^{
         [cell.cardVoiceLabel setText:card[@"name"]];
-        
+        UIImage *image = [UIImage imageNamed:card[@"image"]];
+        cell.cardImage.image = image;
         [cell setCardIds:errorCards[@"ids"]];
         [cell setCardErrors:errorCards[@"errors"]];
-        
+        cell.cardImage.tag = [cid intValue];
+
         [cell.collectionView reloadData];
     });
     
     return cell;
 }
+
+- (IBAction)openCard:(id)sender{
+    
+    [self performSegueWithIdentifier:@"displayCard" sender:self];
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    NSUInteger row = indexPath.row;
+//    
+//    [self performSegueWithIdentifier:@"showCard" sender:self];  
+//    
+//    
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -57,11 +104,29 @@
     return 1;
 }
 
-#pragma mark - Delegate
+#pragma mark - Delegate4
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 160;
+    return 188;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    NSUInteger row = indexPath.row;
+    
+    if ([segue.identifier isEqualToString:@"displayCard"]) {
+
+        if (sender != self) return;
+//        UITabBarController  *tabBarController = segue.destinationViewController;
+        LTCardViewController *detailPage = segue.destinationViewController;
+//        LTCardViewController *detailPage = (LTCardViewController *)[[tabBarController customizableViewControllers] objectAtIndex:0];
+        detailPage.cid = self.selectedID;
+        [self.navigationController pushViewController:detailPage animated:YES];
+    }
+    
 }
 
 #pragma mark - IBActions
@@ -87,6 +152,8 @@
         [self fetchDataSetAfter:date];
     }
 }
+
+
 
 #pragma mark - Utility Methods
 
@@ -122,8 +189,22 @@
             return [rate2 compare:rate1];
         }];
         
-        [self.tableView reloadData];
+        [self.myTableView reloadData];
     });
 }
+
+
+#pragma mark - LTRecordCell Delegate
+
+
+- (void)onCellItemSelectedWithIdentity:(NSNumber*)theID
+{
+    // TODO: perform seque here\
+    
+    [self setSelectedID:theID];
+    [self performSegueWithIdentifier:@"displayCard" sender:self];
+}
+
+
 
 @end
