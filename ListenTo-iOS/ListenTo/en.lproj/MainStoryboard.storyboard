@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W88-f0-Uyp" customClass="OBShapedButton">
-                                <rect key="frame" x="710" y="241" width="222" height="257"/>
+                                <rect key="frame" x="700" y="338" width="222" height="257"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="homescreen-enter.png">
@@ -572,7 +572,6 @@
             <relationships>
                 <relationship kind="action" name="changeRange:"/>
                 <relationship kind="action" name="openCard:"/>
-                <relationship kind="outlet" name="imgCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="navigationController" candidateClass="UINavigationController"/>
                 <relationship kind="outlet" name="rangeControl" candidateClass="UISegmentedControl"/>
@@ -589,6 +588,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
