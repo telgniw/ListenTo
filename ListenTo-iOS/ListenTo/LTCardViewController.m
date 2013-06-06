@@ -8,6 +8,7 @@
 
 #import "LTCardViewController.h"
 #import "LTDatabase.h"
+#import "LTChartViewController.h"
 
 @interface LTCardViewController ()
 
@@ -31,6 +32,11 @@
     [self fetchCardInfo:cardId ];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"chart.png"]]];
+    
+    LTChartViewController *chart = [LTChartViewController alloc];
+    
+    
+    
 
 }
 

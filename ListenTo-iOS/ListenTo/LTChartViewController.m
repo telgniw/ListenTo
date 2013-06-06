@@ -23,6 +23,15 @@
     return self;
 }
 
+- (id)initWithData:(NSDIctionary)data
+{
+    self = [super initWithNibName:@"LTChartViewController" bundle:nil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

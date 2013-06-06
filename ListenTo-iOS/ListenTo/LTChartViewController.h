@@ -32,6 +32,7 @@
     NSDictionary *horizontalLinesProperties;
     NSDictionary *verticalLinesProperties;
     
+    NSDictionary *data;
     
     DataManager *dataManager_;
 

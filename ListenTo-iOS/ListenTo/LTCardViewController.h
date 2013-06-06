@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) NSDictionary *card;
 @property (strong, nonatomic) NSNumber *cid;
+@property (strong, nonatomic) IBOutlet UIPageControl *paging;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollview;
 
 - (IBAction)playSound:(id)sender;
 @end

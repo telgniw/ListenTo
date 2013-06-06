@@ -11,5 +11,6 @@
 @interface LTMainViewController : UIViewController <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *recordButton;
+@property (strong, nonatomic) IBOutlet UINavigationItem *mainNavigation;
 
 @end
