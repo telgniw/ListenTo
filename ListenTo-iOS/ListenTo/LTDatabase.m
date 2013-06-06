@@ -209,7 +209,7 @@
         NSString *stmt = @"SELECT MAX(count) AS count, MAX(error) AS error, date FROM ( "
                           "    SELECT COUNT(*) AS count, 0 AS error, strftime('%Y-%m-%d', timestamp) AS date "
                           "    FROM RecordDetails "
-                          "    WHERE cid_voice = :cid AND cid_voice = cid_image "
+                          "    WHERE cid_voice = :cid "
                           "    GROUP BY date "
                           "    UNION "
                           "    SELECT 0 AS count, COUNT(*) AS error, strftime('%Y-%m-%d', timestamp) AS date "
@@ -226,7 +226,10 @@
         };
         FMResultSet *s = [self.database executeQuery:stmt withParameterDictionary:params];
         while([s next]) {
-            [result addObject:[s resultDict]];
+            NSString *dateString = [s stringForColumn:@"date"];
+            NSMutableDictionary *row = [NSMutableDictionary dictionaryWithDictionary:[s resultDict]];
+            [row setObject:[NSDate dateFromString:dateString WithFormat:@"yyyy-mm-dd"] forKey:@"date"];
+            [result addObject:[NSDictionary dictionaryWithDictionary:row]];
         }
     }
     return [NSArray arrayWithArray:result];

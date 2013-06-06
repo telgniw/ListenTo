@@ -34,6 +34,13 @@
     return [calendar dateFromComponents:components];
 }
 
++ (NSDate *)dateFromString:(NSString *)dateString WithFormat:(NSString *)format
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    return [formatter dateFromString:dateString];
+}
+
 - (NSString *)stringWithSqliteFormat
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
