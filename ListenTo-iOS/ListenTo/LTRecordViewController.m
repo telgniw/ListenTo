@@ -26,22 +26,10 @@
     
     NSDate *today = [NSDate today];
     [self fetchDataSetAfter:today];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
-    [_imgCard addGestureRecognizer:tap];
-    [_imgCard setUserInteractionEnabled:YES];
-//
 
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     [self.myTableView setBackgroundView:background];
     
-
-//    UIView *iv = [[UIView alloc] initWithFrame:CGRectMake(0,0, 1200, 88)];
-//    [iv setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bar.png"]]];
-//    self.navigationItem.titleView = iv;
-
-    
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar.png"] forBarMetrics:UIBarMetricsDefault];
     
     self.selectedID = nil;
     
@@ -94,7 +82,7 @@
     return 1;
 }
 
-#pragma mark - Delegate4
+#pragma mark - Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
