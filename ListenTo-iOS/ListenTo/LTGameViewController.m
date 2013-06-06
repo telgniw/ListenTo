@@ -81,8 +81,14 @@
 	[self.GameView addSubview:self.overLay];
     
     anserPoint = 1;
-    [self playAudio:[db cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
     [myPlayer setDelegate:self];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self playAudio:[[LTDatabase instance] cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
 }
 
 - (IBAction)btnSetLocation:(id)sender

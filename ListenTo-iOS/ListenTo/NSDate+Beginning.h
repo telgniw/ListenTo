@@ -14,6 +14,7 @@
 + (NSDate *)yesterday;
 + (NSDate *)firstDayOfTheWeek;
 
++ (NSDate *)dateFromString:(NSString *)dateString WithFormat:(NSString *)format;
 - (NSString *)stringWithSqliteFormat;
 
 - (NSDate *)dateByAddingDays:(NSInteger)nDays;

@@ -36,9 +36,9 @@
     [self.myTableView setBackgroundView:background];
     
 
-    UIView *iv = [[UIView alloc] initWithFrame:CGRectMake(0,0, 1200, 88)];
-    [iv setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bar.png"]]];
-    self.navigationItem.titleView = iv;
+//    UIView *iv = [[UIView alloc] initWithFrame:CGRectMake(0,0, 1200, 88)];
+//    [iv setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bar.png"]]];
+//    self.navigationItem.titleView = iv;
 
     
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar.png"] forBarMetrics:UIBarMetricsDefault];
@@ -81,7 +81,6 @@
 
 - (IBAction)openCard:(id)sender{
     
-    NSLog(@"Tap: %@", sender);
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
 
@@ -203,7 +202,6 @@
     // TODO: perform seque here\
     
     [self setSelectedID:theID];
-    NSLog(@"selected id = %d \n theID = %d", [self.selectedID intValue], [theID intValue]);
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
 
