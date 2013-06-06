@@ -11,13 +11,6 @@
 #import "LTDatabase.h"
 #import "LTCardViewController.h"
 
-
-@interface LTRecordViewController ()
-
-@end
-
-
-
 @implementation LTRecordViewController
 
 - (void)viewDidLoad
@@ -60,6 +53,9 @@
         [cell setCardIds:errorCards[@"ids"]];
         [cell setCardErrors:errorCards[@"errors"]];
         cell.cardImage.tag = [cid intValue];
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
+        [cell.cardImage addGestureRecognizer:tapGesture];
 
         [cell.collectionView reloadData];
     });
@@ -69,6 +65,8 @@
 
 - (IBAction)openCard:(id)sender
 {
+    UIGestureRecognizer *gesture = (UIGestureRecognizer *)sender;
+    [self setSelectedID:[NSNumber numberWithInt:[gesture.view tag]]];
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
 
@@ -171,8 +169,7 @@
 
 - (void)onCellItemSelectedWithIdentity:(NSNumber*)theID
 {
-    // TODO: perform seque here\
-    
+    // TODO: perform seque here
     [self setSelectedID:theID];
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
