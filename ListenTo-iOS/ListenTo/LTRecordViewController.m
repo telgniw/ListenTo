@@ -79,20 +79,10 @@
     return cell;
 }
 
-- (IBAction)openCard:(id)sender{
-    
+- (IBAction)openCard:(id)sender
+{
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    NSUInteger row = indexPath.row;
-//    
-//    [self performSegueWithIdentifier:@"showCard" sender:self];  
-//    
-//    
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -111,18 +101,12 @@
     return 188;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    NSUInteger row = indexPath.row;
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"displayCard"]) {
 
         if (sender != self) return;
-//        UITabBarController  *tabBarController = segue.destinationViewController;
         LTCardViewController *detailPage = segue.destinationViewController;
-//        LTCardViewController *detailPage = (LTCardViewController *)[[tabBarController customizableViewControllers] objectAtIndex:0];
         detailPage.cid = self.selectedID;
         [self.navigationController pushViewController:detailPage animated:YES];
     }
