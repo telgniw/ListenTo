@@ -8,6 +8,7 @@
 
 #import "LTGameViewController.h"
 #import "LTDatabase.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define imageCard_width     175
 #define imageCard_height    175
@@ -59,6 +60,11 @@
             NSDictionary *card = [db cardForId:cardsArray[ImageCard.tag]];
             [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
                        forState:UIControlStateNormal];
+            //add cards Border
+            [ImageCard.layer setBorderColor: [[UIColor grayColor] CGColor]];
+            [ImageCard.layer setCornerRadius:87.5f];
+            [ImageCard.layer setBorderWidth: 5.0];
+            [ImageCard.layer setMasksToBounds:YES];
         }
         [self.GameView addSubview:ImageCard];
         cardTag++;
@@ -72,6 +78,11 @@
         NSDictionary *card = [db cardForId:cardsArray[ImageCard.tag]];
         [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
                    forState:UIControlStateNormal];
+        //add cards Border
+        [ImageCard.layer setBorderColor: [[UIColor grayColor] CGColor]];
+        [ImageCard.layer setCornerRadius:87.5f];
+        [ImageCard.layer setBorderWidth: 5.0];
+        [ImageCard.layer setMasksToBounds:YES];
         [self.GameView addSubview:ImageCard];
         cardTag++;
     }
