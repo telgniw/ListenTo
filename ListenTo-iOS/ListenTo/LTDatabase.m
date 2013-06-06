@@ -228,7 +228,7 @@
         while([s next]) {
             NSString *dateString = [s stringForColumn:@"date"];
             NSMutableDictionary *row = [NSMutableDictionary dictionaryWithDictionary:[s resultDict]];
-            [row setObject:[NSDate dateFromString:dateString WithFormat:@"yyyy-mm-dd"] forKey:@"date"];
+            [row setObject:[NSDate dateFromString:dateString WithFormat:@"yyyy-MM-dd"] forKey:@"date"];
             [result addObject:[NSDictionary dictionaryWithDictionary:row]];
         }
     }

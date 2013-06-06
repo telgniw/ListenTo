@@ -24,8 +24,6 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"%@", [[LTDatabase instance] statisticsForCard:@2 withNumberOfDays:7]);
-    
     NSDate *today = [NSDate today];
     [self fetchDataSetAfter:today];
     
