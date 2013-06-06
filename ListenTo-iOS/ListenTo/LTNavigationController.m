@@ -16,11 +16,9 @@
     [super viewDidLoad];
 
     // Set the background of navigation bar transparent.
-//    UIImage *barImage = [UIImage imageNamed:@"bar.png"];
-//    [self.navigationBar setTranslucent:YES];
-//    [self.navigationBar setBackgroundImage:[LTUtility transparentImage] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationBar setBackgroundImage:barImage forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationBar setShadowImage:[LTUtility emptyImage]];
+    [self.navigationBar setTranslucent:YES];
+    [self.navigationBar setBackgroundImage:[LTUtility transparentImage] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setShadowImage:[LTUtility emptyImage]];
 }
 
 @end
