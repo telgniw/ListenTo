@@ -11,6 +11,19 @@
 		013EA071175F9E1600AFDFD3 /* end-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06E175F9E1600AFDFD3 /* end-3.png */; };
 		013EA072175F9E1600AFDFD3 /* end-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06F175F9E1600AFDFD3 /* end-2.png */; };
 		013EA073175F9E1600AFDFD3 /* end-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA070175F9E1600AFDFD3 /* end-1.png */; };
+		013EA075175FA8FC00AFDFD3 /* level-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA074175FA8FC00AFDFD3 /* level-2.png */; };
+		013EA077175FA96700AFDFD3 /* connect-level-2-fuzzy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013EA076175FA96600AFDFD3 /* connect-level-2-fuzzy.plist */; };
+		013EA079175FA97D00AFDFD3 /* connect-level-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013EA078175FA97D00AFDFD3 /* connect-level-2.plist */; };
+		013EA07B175FACC400AFDFD3 /* level-settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013EA07A175FACC400AFDFD3 /* level-settings.plist */; };
+		013EA07D175FAECA00AFDFD3 /* level-1-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA07C175FAEC900AFDFD3 /* level-1-pass.png */; };
+		013EA080175FB27500AFDFD3 /* LTGameLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013EA07F175FB27500AFDFD3 /* LTGameLevelViewController.m */; };
+		013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA081175FC09900AFDFD3 /* level-2-pass.png */; };
+		013EA084175FC34400AFDFD3 /* level-2-final.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA083175FC34300AFDFD3 /* level-2-final.png */; };
+		013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA085175FC69C00AFDFD3 /* connectdots-background.png */; };
+		013EA08A175FC6A000AFDFD3 /* connectdots-level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA086175FC69D00AFDFD3 /* connectdots-level-1.png */; };
+		013EA08B175FC6A000AFDFD3 /* connectdots-level-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA087175FC69E00AFDFD3 /* connectdots-level-2.png */; };
+		013EA08C175FC6A000AFDFD3 /* connectdots-level-others.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA088175FC69F00AFDFD3 /* connectdots-level-others.png */; };
+		013EA08E175FC83100AFDFD3 /* game-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA08D175FC83100AFDFD3 /* game-start.png */; };
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewController.m */; };
 		AA448FD71755DE0D00877B06 /* NSDate+Beginning.m in Sources */ = {isa = PBXBuildFile; fileRef = AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */; };
@@ -155,6 +168,20 @@
 		013EA06E175F9E1600AFDFD3 /* end-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-3.png"; sourceTree = "<group>"; };
 		013EA06F175F9E1600AFDFD3 /* end-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-2.png"; sourceTree = "<group>"; };
 		013EA070175F9E1600AFDFD3 /* end-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-1.png"; sourceTree = "<group>"; };
+		013EA074175FA8FC00AFDFD3 /* level-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-2.png"; sourceTree = "<group>"; };
+		013EA076175FA96600AFDFD3 /* connect-level-2-fuzzy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-2-fuzzy.plist"; sourceTree = "<group>"; };
+		013EA078175FA97D00AFDFD3 /* connect-level-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-2.plist"; sourceTree = "<group>"; };
+		013EA07A175FACC400AFDFD3 /* level-settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "level-settings.plist"; sourceTree = "<group>"; };
+		013EA07C175FAEC900AFDFD3 /* level-1-pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-1-pass.png"; sourceTree = "<group>"; };
+		013EA07E175FB27400AFDFD3 /* LTGameLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameLevelViewController.h; sourceTree = "<group>"; };
+		013EA07F175FB27500AFDFD3 /* LTGameLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameLevelViewController.m; sourceTree = "<group>"; };
+		013EA081175FC09900AFDFD3 /* level-2-pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-2-pass.png"; sourceTree = "<group>"; };
+		013EA083175FC34300AFDFD3 /* level-2-final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-2-final.png"; sourceTree = "<group>"; };
+		013EA085175FC69C00AFDFD3 /* connectdots-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-background.png"; sourceTree = "<group>"; };
+		013EA086175FC69D00AFDFD3 /* connectdots-level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-level-1.png"; sourceTree = "<group>"; };
+		013EA087175FC69E00AFDFD3 /* connectdots-level-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-level-2.png"; sourceTree = "<group>"; };
+		013EA088175FC69F00AFDFD3 /* connectdots-level-others.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-level-others.png"; sourceTree = "<group>"; };
+		013EA08D175FC83100AFDFD3 /* game-start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-start.png"; sourceTree = "<group>"; };
 		5654E21E1EC1482695A9883E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewController.h; sourceTree = "<group>"; };
@@ -365,8 +392,17 @@
 		AA4D3FEB175F690200C418BC /* ConnectDots */ = {
 			isa = PBXGroup;
 			children = (
+				013EA085175FC69C00AFDFD3 /* connectdots-background.png */,
+				013EA086175FC69D00AFDFD3 /* connectdots-level-1.png */,
+				013EA087175FC69E00AFDFD3 /* connectdots-level-2.png */,
+				013EA088175FC69F00AFDFD3 /* connectdots-level-others.png */,
 				AA4D3FF6175F751A00C418BC /* start.png */,
 				AA4D3FEC175F690200C418BC /* level-1.png */,
+				013EA07C175FAEC900AFDFD3 /* level-1-pass.png */,
+				013EA081175FC09900AFDFD3 /* level-2-pass.png */,
+				013EA074175FA8FC00AFDFD3 /* level-2.png */,
+				013EA083175FC34300AFDFD3 /* level-2-final.png */,
+				013EA08D175FC83100AFDFD3 /* game-start.png */,
 				013EA06C175F9DDD00AFDFD3 /* error.png */,
 				013EA06E175F9E1600AFDFD3 /* end-3.png */,
 				013EA06F175F9E1600AFDFD3 /* end-2.png */,
@@ -469,6 +505,8 @@
 			children = (
 				AAD52E1D175F63550016B70A /* LTGameViewController.h */,
 				AAD52E1E175F63550016B70A /* LTGameViewController.m */,
+				013EA07E175FB27400AFDFD3 /* LTGameLevelViewController.h */,
+				013EA07F175FB27500AFDFD3 /* LTGameLevelViewController.m */,
 			);
 			name = ConnectDots;
 			sourceTree = "<group>";
@@ -477,7 +515,10 @@
 			isa = PBXGroup;
 			children = (
 				AAD52E28175F65A80016B70A /* connect-level-1-fuzzy.plist */,
+				013EA076175FA96600AFDFD3 /* connect-level-2-fuzzy.plist */,
 				AAD52E29175F65A80016B70A /* connect-level-1.plist */,
+				013EA078175FA97D00AFDFD3 /* connect-level-2.plist */,
+				013EA07A175FACC400AFDFD3 /* level-settings.plist */,
 			);
 			path = ConnectDots;
 			sourceTree = "<group>";
@@ -798,6 +839,18 @@
 				013EA071175F9E1600AFDFD3 /* end-3.png in Resources */,
 				013EA072175F9E1600AFDFD3 /* end-2.png in Resources */,
 				013EA073175F9E1600AFDFD3 /* end-1.png in Resources */,
+				013EA075175FA8FC00AFDFD3 /* level-2.png in Resources */,
+				013EA077175FA96700AFDFD3 /* connect-level-2-fuzzy.plist in Resources */,
+				013EA079175FA97D00AFDFD3 /* connect-level-2.plist in Resources */,
+				013EA07B175FACC400AFDFD3 /* level-settings.plist in Resources */,
+				013EA07D175FAECA00AFDFD3 /* level-1-pass.png in Resources */,
+				013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */,
+				013EA084175FC34400AFDFD3 /* level-2-final.png in Resources */,
+				013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */,
+				013EA08A175FC6A000AFDFD3 /* connectdots-level-1.png in Resources */,
+				013EA08B175FC6A000AFDFD3 /* connectdots-level-2.png in Resources */,
+				013EA08C175FC6A000AFDFD3 /* connectdots-level-others.png in Resources */,
+				013EA08E175FC83100AFDFD3 /* game-start.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +905,7 @@
 				AAD52E1A175F62EC0016B70A /* SPLine.m in Sources */,
 				AAD52E1B175F62EC0016B70A /* SPLockOverlay.m in Sources */,
 				AAD52E1F175F63550016B70A /* LTGameViewController.m in Sources */,
+				013EA080175FB27500AFDFD3 /* LTGameLevelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +990,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListenTo/ListenTo-Prefix.pch";
 				INFOPLIST_FILE = "ListenTo/ListenTo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -948,6 +1003,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ListenTo/ListenTo-Prefix.pch";
 				INFOPLIST_FILE = "ListenTo/ListenTo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

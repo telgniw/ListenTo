@@ -27,16 +27,23 @@
     // Create a new record when each time the game is started.
     LTDatabase *db = [LTDatabase instance];
     [db newRecordWithType:0];
+    NSLog(@"level:%i",_level.intValue);
     
 	// Do any additional setup after loading the view, typically from a nib.
+    levelSettingArray = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
+    NSLog(@"%@",[levelSettingArray objectAtIndex:_level.intValue-1]);
     anserRight = false;
     int cardTag = 0;
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"level-1.png"]];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"background"]]];
     self.GameView.delegate = self;
     
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"connect-level-1" ofType:@"plist"];
+    NSString *plistPath = [[NSBundle mainBundle]
+                           pathForResource:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"connect"] ofType:@"plist"];
+    
     pointArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
-    plistPath = [[NSBundle mainBundle] pathForResource:@"connect-level-1-fuzzy" ofType:@"plist"];
+    plistPath = [[NSBundle mainBundle]
+                 pathForResource:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"connect-fuzzy"]  ofType:@"plist"];
     errorPointArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
     cardsArray = [db arrayWithAllCards];
 
@@ -74,15 +81,28 @@
     [self.GameView insertSubview:imageView atIndex:0];
     //[self.GameView setContentSize:imageView.frame.size];
     [self.GameView setContentSize:imageView.frame.size];
-    [self.GameView setContentOffset:CGPointMake(0, 1105/2) animated:YES];
+    
+    float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"x"] floatValue];
+    float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"y"] floatValue];
+    [self.GameView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
     
     self.overLay = [[SPLockOverlay alloc]initWithFrame:imageView.frame];
 	[self.overLay setUserInteractionEnabled:NO];
 	[self.GameView addSubview:self.overLay];
     
     anserPoint = 1;
-    [self playAudio:[db cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
-    [myPlayer setDelegate:self];
+    //play game start animation
+    UIImage *image = [UIImage imageNamed:@"game-start"];
+    UIImageView *startView = [[UIImageView alloc] initWithImage:image];
+    [self.view addSubview:startView];
+    startView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        startView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    } completion:^(BOOL finished){
+        [startView removeFromSuperview];
+        [self playAudio:[db cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
+        [myPlayer setDelegate:self];
+    }];    
 }
 
 - (IBAction)btnSetLocation:(id)sender
@@ -125,10 +145,11 @@
     if ([sender tag]==0) {
         return;
     }
-    
+    NSLog(@"[sender tag]:%d",[sender tag]);
     LTDatabase *db = [LTDatabase instance];
     NSNumber *cid_voice = cardsArray[anserPoint];
     NSNumber *cid_image = cardsArray[[sender tag]];
+    NSLog(@"[self.GameView.subviews objectAtIndex:0]:%@",[self.GameView.subviews objectAtIndex:0]);
     
     //答對
     if ([sender tag] == anserPoint) {
@@ -136,8 +157,12 @@
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_voice];
         
         anserRight = true;
-        if ([sender tag]==4) {
-            [self.GameView setContentOffset:CGPointMake(0, 0) animated:YES];
+        int tag=[[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"tag"] intValue];
+        float t_x = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"x"] floatValue];
+        float t_y = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"y"] floatValue];
+        //level-1:4, level-2:7
+        if ([sender tag]==tag) {
+            [self.GameView setContentOffset:CGPointMake(t_x, t_y) animated:YES];
         }
         anserPoint++;
         float prev_point_x= [[[pointArray objectAtIndex:[sender tag]-1]objectForKey:@"x"]floatValue];
@@ -148,7 +173,6 @@
         SPLine *aLine = [[SPLine alloc]initWithFromPoint:CGPointMake(prev_point_x+imageCard_width/2, prev_point_y+imageCard_height/2)
                                                  toPoint:CGPointMake(curr_point_x+imageCard_width/2, curr_point_y+imageCard_height/2)
                                          AndIsFullLength:NO];
-        //[self.overLay.pointsToDraw removeAllObjects];
         [self.overLay.pointsToDraw addObject:aLine];
         [self.overLay setNeedsDisplay];
         [self playAudio:@"correct" fileType:@"mp3"];
@@ -162,21 +186,32 @@
         
         //過關
         if(anserPoint == pointArray.count) {
-            UIImage *image = [UIImage imageNamed:@"end-3"];
-            UIImageView *passView = [[UIImageView alloc] initWithImage:image];
+            UIImage *passimage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"pass-image"]];
+            UIImageView *passView = [[UIImageView alloc] initWithImage:passimage];
             passView.frame = CGRectMake(0, 0, 1024, 768);
             [self.view addSubview:passView];
             
             passView.transform = CGAffineTransformMakeScale(0.01, 0.01);
-            [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 passView.transform = CGAffineTransformMakeScale(1, 1);
             } completion:^(BOOL finished){
-                //disabled all cards buttom
-                UIScrollView *tempView = [self.view.subviews objectAtIndex:0];
-                for (UIButton *cards in tempView.subviews) {
-                    [cards setEnabled:NO];
-                }
-                NSLog(@"%@",tempView.subviews);
+                
+                UIImage *image = [UIImage imageNamed:@"end-3"];
+                UIImageView *passView = [[UIImageView alloc] initWithImage:image];
+                passView.frame = CGRectMake(0, 0, 1024, 768);
+                [self.view addSubview:passView];
+                
+                passView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+                [UIView animateWithDuration:0.4 delay:1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    passView.transform = CGAffineTransformMakeScale(1, 1);
+                } completion:^(BOOL finished){
+                    //disabled all cards buttom
+                    UIScrollView *tempView = [self.view.subviews objectAtIndex:0];
+                    for (UIButton *cards in tempView.subviews) {
+                        [cards setEnabled:NO];
+                    }
+                }];
+
             }];
         }
         
@@ -211,6 +246,9 @@
         [self playAudio:[[LTDatabase instance] cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
         anserRight = false;
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 }
 
 @end

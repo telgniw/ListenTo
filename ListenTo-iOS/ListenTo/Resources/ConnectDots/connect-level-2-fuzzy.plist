@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>x</key>
+		<integer>628</integer>
+		<key>y</key>
+		<integer>38</integer>
+	</dict>
+	<dict>
+		<key>x</key>
+		<integer>823</integer>
+		<key>y</key>
+		<integer>38</integer>
+	</dict>
+	<dict>
+		<key>x</key>
+		<integer>838</integer>
+		<key>y</key>
+		<integer>315</integer>
+	</dict>
+	<dict>
+		<key>x</key>
+		<integer>813</integer>
+		<key>y</key>
+		<integer>813</integer>
+	</dict>
+	<dict>
+		<key>x</key>
+		<integer>21</integer>
+		<key>y</key>
+		<integer>1013</integer>
+	</dict>
+	<dict>
+		<key>x</key>
+		<integer>63</integer>
+		<key>y</key>
+		<integer>743</integer>
+	</dict>
+</array>
+</plist>

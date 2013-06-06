@@ -14,6 +14,7 @@
 {
     NSMutableArray *pointArray;
     NSMutableArray *errorPointArray;
+    NSMutableArray *levelSettingArray;
     NSArray *cardsArray;
     int anserPoint;
     BOOL anserRight;
@@ -21,6 +22,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *GameView;
+@property (weak,readwrite) NSNumber *level;
 
 - (IBAction)btnSetLocation:(id)sender;
 - (IBAction)btnRestart:(id)sender;

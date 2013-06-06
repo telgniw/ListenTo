@@ -7,6 +7,7 @@
 //
 
 #import "LTGameLevelViewController.h"
+#import "LTGameViewController.h"
 
 @interface LTGameLevelViewController ()
 
@@ -33,6 +34,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSNumber *level;
+    if ([[segue identifier] isEqualToString:@"level1"]) {
+        level=[NSNumber numberWithInt:1];
+    }
+    if ([[segue identifier] isEqualToString:@"level2"]) {
+        level=[NSNumber numberWithInt:2];
+    }
+    LTGameViewController *gvc = (LTGameViewController *)[segue destinationViewController];
+    gvc.level=level;
+    
 }
 
 @end
