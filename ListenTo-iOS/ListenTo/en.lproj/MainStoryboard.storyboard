@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Xsv-z5-rhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Xsv-z5-rhV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -195,7 +195,7 @@
             <objects>
                 <viewController id="NxP-62-vW3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZA-99-GeM">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdt-SE-1Ac">
@@ -373,7 +373,7 @@
             <objects>
                 <viewController id="LY1-b3-gAl" customClass="LTGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BSM-le-cvY">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQj-q8-Prl"/>
@@ -417,7 +417,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zs-Y1-oyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-611" y="-253"/>
+            <point key="canvasLocation" x="-607" y="-237"/>
         </scene>
         <!--Card View Controller - 圖卡-->
         <scene sceneID="7La-mn-mGv">
@@ -555,21 +555,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMm-p7-Amv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250" y="-229"/>
+            <point key="canvasLocation" x="3153" y="-191"/>
         </scene>
     </scenes>
     <resources>
-        <image name="5.刀子.jpg" width="600" height="600"/>
+        <image name="11.兔子.jpg" width="752" height="752"/>
         <image name="homescreen-enter.png" width="444" height="512"/>
         <image name="homescreen-rabbit.png" width="402" height="542"/>
         <image name="icon-record.png" width="173" height="173"/>
-        <image name="11.兔子.jpg" width="752" height="752"/>
-        <image name="homescreen-enter-hover.png" width="223" height="150"/>
-        <image name="homescreen-enter.png" width="223" height="150"/>
-        <image name="icon-record.png" width="24" height="24"/>
         <image name="play.png" width="195" height="195"/>
     </resources>
     <classes>
+        <class className="LTCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playSound:"/>
+                <relationship kind="outlet" name="btnPlayStound" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblCardName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="LTGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTGameViewController.h"/>
             <relationships>
@@ -578,15 +583,6 @@
                 <relationship kind="action" name="btnRestart:"/>
                 <relationship kind="action" name="btnSetLocation:"/>
                 <relationship kind="outlet" name="GameView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="LTCardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="playSound:"/>
-                <relationship kind="outlet" name="btnPlayStound" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imgCard" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lblCardName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="LTMainViewController" superclassName="UIViewController">
@@ -646,6 +642,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="smk-Bs-YR5"/>
         <segue reference="QER-8R-tp8"/>
     </inferredMetricsTieBreakers>
 </document>
