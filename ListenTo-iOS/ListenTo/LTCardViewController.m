@@ -8,6 +8,7 @@
 
 #import "LTCardViewController.h"
 #import "LTDatabase.h"
+#import "LTUtility.h"
 
 @interface LTCardViewController ()
 
@@ -58,5 +59,14 @@
 }
 
 - (IBAction)playSound:(id)sender {
+    NSString *audioName = [self.card valueForKey:@"name"];
+    NSURL* url = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"]];
+    NSError* error = nil;
+    self.myPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (!url || error) {
+        //錯誤處理常式
+    }
+    [self.myPlayer prepareToPlay]; //This is not always needed, but good to include
+    [self.myPlayer play];
 }
 @end

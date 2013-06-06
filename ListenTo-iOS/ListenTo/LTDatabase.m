@@ -140,6 +140,11 @@
     return result;
 }
 
+- (NSString *)cardNameForId:(NSNumber *)cid
+{
+    return [[self cardForId:cid] objectForKey:LT_DB_KEY_CARD_NAME];
+}
+
 - (NSArray *)arrayWithCardAfterDate:(NSDate *)date
 {
     NSMutableArray *result = [NSMutableArray array];

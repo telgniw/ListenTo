@@ -20,7 +20,6 @@
     static NSString *cellIdentifier = @"LTErrorCell";
     
     NSNumber *cid = self.cardIds[indexPath.row];
-    NSLog(@"cid: %@", cid);
     
     LTDatabase *db = [LTDatabase instance];
     self.card = [db cardForId:cid];
@@ -40,7 +39,6 @@
 
     if (self.delegate){
         NSNumber *cid = self.cardIds[indexPath.row];
-        NSLog(@"card id: %@",cid);
         [self.delegate onCellItemSelectedWithIdentity: cid];
     }
     

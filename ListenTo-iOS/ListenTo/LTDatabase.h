@@ -29,6 +29,7 @@ static NSString *LT_DB_KEY_CARD_VOICE = @"voice";
 
 - (NSArray *)arrayWithAllCards;
 - (NSDictionary *)cardForId:(NSNumber *)cid;
+- (NSString *)cardNameForId:(NSNumber *)cid;
 
 - (NSArray *)arrayWithCardAfterDate:(NSDate *)date;
 - (NSArray *)arrayWithErrorCardsForCard:(NSNumber *)cid afterDate:(NSDate *)date;
