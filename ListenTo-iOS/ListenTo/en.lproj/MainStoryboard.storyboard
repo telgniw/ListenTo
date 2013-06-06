@@ -25,9 +25,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Uob-iI-jog" kind="push" id="HEP-qq-ocW"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homescreen-rabbit.png" translatesAutoresizingMaskIntoConstraints="NO" id="iZ2-U5-KAw">
                                 <constraints>
@@ -48,8 +45,39 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CrN-aj-ARd" customClass="OBShapedButton">
+                                <rect key="frame" x="918" y="20" width="86" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="icon-record.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="NxP-62-vW3" kind="push" id="Om5-PR-ahF"/>
+                                    <segue destination="Uob-iI-jog" kind="push" id="Mjo-wo-WUj"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homescreen-rabbit.png" id="ART-J2-TZo">
+                                <rect key="frame" x="412" y="372" width="201" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W88-f0-Uyp" customClass="OBShapedButton">
+                                <rect key="frame" x="710" y="241" width="222" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="homescreen-enter.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="NxP-62-vW3" kind="push" id="HUv-sI-07n"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,11 +86,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
                         <barButtonItem key="backBarButtonItem" title="首頁" id="3XV-cQ-Q8Q"/>
-                        <barButtonItem key="rightBarButtonItem" image="icon-record.png" id="dRT-kA-tlz">
-                            <connections>
-                                <segue destination="Uob-iI-jog" kind="push" id="smk-Bs-YR5"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recordButton" destination="6x6-Eq-bQc" id="oZv-gi-lPq"/>
@@ -198,11 +221,9 @@
                         <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdt-SE-1Ac">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="NFz-Cw-Nog"/>
-                                    <constraint firstAttribute="width" constant="176" id="QPY-FB-Xw5"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EDX-8R-fah">
+                                <rect key="frame" x="59" y="183" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 1">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -212,13 +233,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LY1-b3-gAl" kind="push" id="QER-8R-tp8"/>
+                                    <segue destination="LY1-b3-gAl" kind="push" id="nrw-8S-oVt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Os8-H4-DmY">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="DyY-Ly-wDz"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g2h-af-pKv">
+                                <rect key="frame" x="242" y="183" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 2">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -227,14 +247,10 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="LY1-b3-gAl" kind="push" id="1cU-MH-riM"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaA-Rj-Idk">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="LZv-YX-YhC"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pXq-Pg-puS">
+                                <rect key="frame" x="425" y="183" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 3">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -244,10 +260,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-pL-srs">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="otV-Sj-QlR"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Hs-5g-0Vs">
+                                <rect key="frame" x="608" y="183" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 4">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -257,10 +272,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCc-CN-hnu">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="5gn-og-2k8"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zbb-y7-mB2">
+                                <rect key="frame" x="791" y="183" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 5">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,10 +284,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcb-y0-oPf">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="SMa-bM-LUC"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5l6-Qd-OS3">
+                                <rect key="frame" x="59" y="366" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 6">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,7 +296,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUm-iq-PNv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B36-9M-5T6">
+                                <rect key="frame" x="242" y="366" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 7">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -293,7 +308,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sy-wd-oDG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mR7-bx-VPc">
+                                <rect key="frame" x="425" y="366" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 8">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -303,7 +320,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXA-bo-QnB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ySB-oW-b3g">
+                                <rect key="frame" x="608" y="366" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 9">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,7 +332,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbr-9n-5sP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zwl-4V-zhF">
+                                <rect key="frame" x="791" y="366" width="175" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Level 10">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -325,41 +346,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3sy-wd-oDG" firstAttribute="bottom" secondItem="gXA-bo-QnB" secondAttribute="bottom" type="default" id="3WJ-d6-zTj"/>
-                            <constraint firstItem="yUm-iq-PNv" firstAttribute="bottom" secondItem="3sy-wd-oDG" secondAttribute="bottom" type="default" id="FRD-5R-AX3"/>
-                            <constraint firstItem="QaA-Rj-Idk" firstAttribute="leading" secondItem="Os8-H4-DmY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="JD5-qO-igO"/>
-                            <constraint firstItem="yUm-iq-PNv" firstAttribute="top" secondItem="Os8-H4-DmY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MHh-dX-MdP"/>
-                            <constraint firstItem="Cbr-9n-5sP" firstAttribute="top" secondItem="nCc-CN-hnu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="O7q-dt-sLp"/>
-                            <constraint firstItem="tcb-y0-oPf" firstAttribute="leading" secondItem="Bdt-SE-1Ac" secondAttribute="leading" type="default" id="Oy4-5Q-hGN"/>
-                            <constraint firstItem="7Vh-pL-srs" firstAttribute="top" secondItem="QaA-Rj-Idk" secondAttribute="top" type="default" id="PIJ-Lc-ueC"/>
-                            <constraint firstItem="3sy-wd-oDG" firstAttribute="top" secondItem="QaA-Rj-Idk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PLB-So-Tzc"/>
-                            <constraint firstItem="tcb-y0-oPf" firstAttribute="top" secondItem="Bdt-SE-1Ac" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Pxk-7P-05R"/>
-                            <constraint firstItem="Os8-H4-DmY" firstAttribute="baseline" secondItem="Bdt-SE-1Ac" secondAttribute="baseline" type="default" id="REW-xK-E3d"/>
-                            <constraint firstItem="yUm-iq-PNv" firstAttribute="bottom" secondItem="tcb-y0-oPf" secondAttribute="bottom" type="default" id="REk-fB-6x4"/>
-                            <constraint firstItem="Os8-H4-DmY" firstAttribute="top" secondItem="Bdt-SE-1Ac" secondAttribute="top" type="default" id="RcR-cs-3sy"/>
-                            <constraint firstItem="7Vh-pL-srs" firstAttribute="baseline" secondItem="nCc-CN-hnu" secondAttribute="baseline" type="default" id="SOE-Cv-WjZ"/>
-                            <constraint firstItem="Bdt-SE-1Ac" firstAttribute="top" secondItem="QZA-99-GeM" secondAttribute="top" constant="173" id="V1r-ot-bWG"/>
-                            <constraint firstItem="3sy-wd-oDG" firstAttribute="leading" secondItem="yUm-iq-PNv" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="VWH-K9-G55"/>
-                            <constraint firstItem="yUm-iq-PNv" firstAttribute="leading" secondItem="tcb-y0-oPf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="XDE-F1-eqR"/>
-                            <constraint firstItem="Cbr-9n-5sP" firstAttribute="leading" secondItem="nCc-CN-hnu" secondAttribute="leading" type="default" id="YKp-yH-qRx"/>
-                            <constraint firstItem="gXA-bo-QnB" firstAttribute="bottom" secondItem="Cbr-9n-5sP" secondAttribute="bottom" type="default" id="ZSz-E9-9JP"/>
-                            <constraint firstItem="QaA-Rj-Idk" firstAttribute="leading" secondItem="3sy-wd-oDG" secondAttribute="leading" type="default" id="fSu-4e-lqv"/>
-                            <constraint firstItem="gXA-bo-QnB" firstAttribute="top" secondItem="7Vh-pL-srs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fX1-gj-tQD"/>
-                            <constraint firstItem="Os8-H4-DmY" firstAttribute="baseline" secondItem="QaA-Rj-Idk" secondAttribute="baseline" type="default" id="gHv-c6-GXH"/>
-                            <constraint firstItem="QaA-Rj-Idk" firstAttribute="top" secondItem="Os8-H4-DmY" secondAttribute="top" type="default" id="hmr-zz-ZGz"/>
-                            <constraint firstItem="QaA-Rj-Idk" firstAttribute="centerX" secondItem="QZA-99-GeM" secondAttribute="centerX" type="default" id="lJI-1y-0TW"/>
-                            <constraint firstItem="gXA-bo-QnB" firstAttribute="leading" secondItem="3sy-wd-oDG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="m29-6z-UI6"/>
-                            <constraint firstItem="7Vh-pL-srs" firstAttribute="baseline" secondItem="QaA-Rj-Idk" secondAttribute="baseline" type="default" id="q7X-AZ-bp4"/>
-                            <constraint firstItem="7Vh-pL-srs" firstAttribute="leading" secondItem="gXA-bo-QnB" secondAttribute="leading" type="default" id="rID-7D-eJO"/>
-                            <constraint firstItem="Cbr-9n-5sP" firstAttribute="leading" secondItem="gXA-bo-QnB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="reb-x7-wiY"/>
-                            <constraint firstItem="nCc-CN-hnu" firstAttribute="leading" secondItem="7Vh-pL-srs" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rms-wp-wSg"/>
-                            <constraint firstItem="nCc-CN-hnu" firstAttribute="top" secondItem="7Vh-pL-srs" secondAttribute="top" type="default" id="szj-Ck-SB1"/>
-                            <constraint firstItem="7Vh-pL-srs" firstAttribute="leading" secondItem="QaA-Rj-Idk" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tP6-At-Eyj"/>
-                            <constraint firstItem="yUm-iq-PNv" firstAttribute="leading" secondItem="Os8-H4-DmY" secondAttribute="leading" type="default" id="uxA-WZ-fHu"/>
-                            <constraint firstItem="Os8-H4-DmY" firstAttribute="leading" secondItem="Bdt-SE-1Ac" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wwU-WI-ChO"/>
-                            <constraint firstItem="Cbr-9n-5sP" firstAttribute="trailing" secondItem="nCc-CN-hnu" secondAttribute="trailing" type="default" id="yuF-fX-E6h"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="sZH-N7-94b"/>
@@ -376,15 +362,12 @@
                         <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQj-q8-Prl"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jTD-uv-vM1">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="EQj-q8-Prl" firstAttribute="trailing" secondItem="BSM-le-cvY" secondAttribute="trailing" type="default" id="G07-f6-nf7"/>
-                            <constraint firstItem="EQj-q8-Prl" firstAttribute="leading" secondItem="BSM-le-cvY" secondAttribute="leading" type="default" id="OyV-Tt-Xb4"/>
-                            <constraint firstItem="EQj-q8-Prl" firstAttribute="bottom" secondItem="BSM-le-cvY" secondAttribute="bottom" type="default" id="idx-mj-50m"/>
-                            <constraint firstItem="EQj-q8-Prl" firstAttribute="top" secondItem="BSM-le-cvY" secondAttribute="top" type="default" id="u3H-mV-y3S"/>
-                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="H1f-fU-vl9">
@@ -395,7 +378,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="GameView" destination="EQj-q8-Prl" id="Py0-y7-kgG"/>
+                        <outlet property="GameView" destination="jTD-uv-vM1" id="PPn-mZ-Aj9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5J-uw-PHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,17 +618,10 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="smk-Bs-YR5"/>
-        <segue reference="QER-8R-tp8"/>
-    </inferredMetricsTieBreakers>
 </document>
