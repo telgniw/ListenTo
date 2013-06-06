@@ -212,8 +212,6 @@
 		F4A07E03175E850C00F76C5F /* YAxisBand.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE3175E850100F76C5F /* YAxisBand.m */; };
 		F4A07E04175E850C00F76C5F /* MIMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE6175E850300F76C5F /* MIMColor.m */; };
 		F4A07E05175E850C00F76C5F /* MIMColorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE8175E850300F76C5F /* MIMColorClass.m */; };
-		F4A07E06175E850C00F76C5F /* data3.csv in Resources */ = {isa = PBXBuildFile; fileRef = F4A07DE9175E850300F76C5F /* data3.csv */; };
-		F4A07E07175E850C00F76C5F /* data4.csv in Resources */ = {isa = PBXBuildFile; fileRef = F4A07DEA175E850700F76C5F /* data4.csv */; };
 		F4A07E08175E850C00F76C5F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DEC175E850900F76C5F /* DataManager.m */; };
 /* End PBXBuildFile section */
 
@@ -464,8 +462,6 @@
 		F4A07DE6175E850300F76C5F /* MIMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMColor.m; sourceTree = "<group>"; };
 		F4A07DE7175E850300F76C5F /* MIMColorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMColorClass.h; sourceTree = "<group>"; };
 		F4A07DE8175E850300F76C5F /* MIMColorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMColorClass.m; sourceTree = "<group>"; };
-		F4A07DE9175E850300F76C5F /* data3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data3.csv; sourceTree = "<group>"; };
-		F4A07DEA175E850700F76C5F /* data4.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data4.csv; sourceTree = "<group>"; };
 		F4A07DEB175E850700F76C5F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		F4A07DEC175E850900F76C5F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,6 +484,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA05523017605C0900BD1B2B /* 3rd-party Lib */ = {
+			isa = PBXGroup;
+			children = (
+				F4A07DC5175E84FF00F76C5F /* Accessories */,
+				F4A07DE4175E850100F76C5F /* Colors */,
+				F43E3336175E930C00E71490 /* Wall Graph */,
+				F4A07DEB175E850700F76C5F /* DataManager.h */,
+				F4A07DEC175E850900F76C5F /* DataManager.m */,
+			);
+			name = "3rd-party Lib";
+			sourceTree = "<group>";
+		};
+		AA05523117605C5600BD1B2B /* Card & Chart */ = {
+			isa = PBXGroup;
+			children = (
+				F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */,
+				F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */,
+				F43E3343175E999100E71490 /* LTChartViewController.h */,
+				F43E3344175E999100E71490 /* LTChartViewController.m */,
+				F43E3345175E999200E71490 /* LTChartViewController.xib */,
+			);
+			name = "Card & Chart";
+			sourceTree = "<group>";
+		};
 		AA25B40B174B122700A88C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,17 +526,14 @@
 		AA25B41D174B1E1800A88C82 /* Management */ = {
 			isa = PBXGroup;
 			children = (
+				AA05523017605C0900BD1B2B /* 3rd-party Lib */,
+				AA05523117605C5600BD1B2B /* Card & Chart */,
 				AA25B42F174B24E400A88C82 /* LTRecordViewController.h */,
 				AA25B430174B24E400A88C82 /* LTRecordViewController.m */,
 				AAED14FA17548EAC0091C182 /* LTRecordCell.h */,
 				AAED14FB17548EAC0091C182 /* LTRecordCell.m */,
 				AAED1562175490580091C182 /* LTRecordErrorImageCell.h */,
 				AAED1563175490580091C182 /* LTRecordErrorImageCell.m */,
-				F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */,
-				F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */,
-				F43E3343175E999100E71490 /* LTChartViewController.h */,
-				F43E3344175E999100E71490 /* LTChartViewController.m */,
-				F43E3345175E999200E71490 /* LTChartViewController.xib */,
 			);
 			name = Management;
 			sourceTree = "<group>";
@@ -590,13 +607,6 @@
 		AAACE197174124D700F143C3 /* ListenTo */ = {
 			isa = PBXGroup;
 			children = (
-				F43E3336175E930C00E71490 /* Wall Graph */,
-				F4A07DC5175E84FF00F76C5F /* Accessories */,
-				F4A07DE4175E850100F76C5F /* Colors */,
-				F4A07DE9175E850300F76C5F /* data3.csv */,
-				F4A07DEA175E850700F76C5F /* data4.csv */,
-				F4A07DEB175E850700F76C5F /* DataManager.h */,
-				F4A07DEC175E850900F76C5F /* DataManager.m */,
 				AAACE198174124D700F143C3 /* Supporting Files */,
 				AAED157D1755B1260091C182 /* DataSource */,
 				AAD52E14175F62860016B70A /* Game */,
@@ -1096,8 +1106,6 @@
 				013EA08B175FC6A000AFDFD3 /* connectdots-level-2.png in Resources */,
 				013EA08C175FC6A000AFDFD3 /* connectdots-level-others.png in Resources */,
 				013EA08E175FC83100AFDFD3 /* game-start.png in Resources */,
-				F4A07E06175E850C00F76C5F /* data3.csv in Resources */,
-				F4A07E07175E850C00F76C5F /* data4.csv in Resources */,
 				F43E3342175E930C00E71490 /* WallTestClass.xib in Resources */,
 				F43E3347175E999200E71490 /* LTChartViewController.xib in Resources */,
 				F4066740175F6AF000A35BA9 /* 1.png in Resources */,
