@@ -27,11 +27,9 @@
     // Create a new record when each time the game is started.
     LTDatabase *db = [LTDatabase instance];
     [db newRecordWithType:0];
-    NSLog(@"level:%i",_level.intValue);
     
 	// Do any additional setup after loading the view, typically from a nib.
     levelSettingArray = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
-    NSLog(@"%@",[levelSettingArray objectAtIndex:_level.intValue-1]);
     anserRight = false;
     int cardTag = 0;
     
@@ -145,11 +143,9 @@
     if ([sender tag]==0) {
         return;
     }
-    NSLog(@"[sender tag]:%d",[sender tag]);
     LTDatabase *db = [LTDatabase instance];
     NSNumber *cid_voice = cardsArray[anserPoint];
     NSNumber *cid_image = cardsArray[[sender tag]];
-    NSLog(@"[self.GameView.subviews objectAtIndex:0]:%@",[self.GameView.subviews objectAtIndex:0]);
     
     //答對
     if ([sender tag] == anserPoint) {
