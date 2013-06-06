@@ -61,7 +61,7 @@
             [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
                        forState:UIControlStateNormal];
             //add cards Border
-            [ImageCard.layer setBorderColor: [[UIColor grayColor] CGColor]];
+            [ImageCard.layer setBorderColor:[[UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.7] CGColor]];
             [ImageCard.layer setCornerRadius:87.5f];
             [ImageCard.layer setBorderWidth: 5.0];
             [ImageCard.layer setMasksToBounds:YES];
@@ -79,7 +79,7 @@
         [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
                    forState:UIControlStateNormal];
         //add cards Border
-        [ImageCard.layer setBorderColor: [[UIColor grayColor] CGColor]];
+        [ImageCard.layer setBorderColor:[[UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.7] CGColor]];
         [ImageCard.layer setCornerRadius:87.5f];
         [ImageCard.layer setBorderWidth: 5.0];
         [ImageCard.layer setMasksToBounds:YES];
