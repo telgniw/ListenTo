@@ -11,4 +11,6 @@
 
 @interface LTMainViewController : UIViewController <UINavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *rabbitImgView;
+
 @end

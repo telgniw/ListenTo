@@ -27,5 +27,9 @@
     gvc.level=level;
     
 }
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
 
 @end

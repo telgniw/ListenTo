@@ -108,6 +108,7 @@
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         startView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     } completion:^(BOOL finished){
+        [NSThread sleepForTimeInterval:0.7];
         [startView removeFromSuperview];
         [self playAudio:[db cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
         [myPlayer setDelegate:self];
@@ -193,33 +194,38 @@
         
         //過關
         if(anserPoint == pointArray.count) {
+            self.overLay.transform = CGAffineTransformMakeScale(1.0, 1.0);
             UIImage *passimage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"pass-image"]];
             UIImageView *passView = [[UIImageView alloc] initWithImage:passimage];
             passView.frame = CGRectMake(0, 0, 1024, 768);
+            passView.transform = CGAffineTransformMakeScale(1.5, 1.5);
             [self.view addSubview:passView];
-            
-            passView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+            [passView addSubview:self.overLay];
+
             [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                self.overLay.transform = CGAffineTransformMakeScale(0.5, 0.5);
                 passView.transform = CGAffineTransformMakeScale(1, 1);
+                self.overLay.frame = CGRectMake(270,100, self.overLay.frame.size.width, self.overLay.frame.size.height);
+            
             } completion:^(BOOL finished){
                 
+                [NSThread sleepForTimeInterval:2.0];
+                [self.overLay removeFromSuperview];
+                passView.alpha = 0.9;
+                passView.backgroundColor = [UIColor blackColor];
                 UIImage *image = [UIImage imageNamed:@"end-3"];
                 UIImageView *passView = [[UIImageView alloc] initWithImage:image];
                 passView.frame = CGRectMake(0, 0, 1024, 768);
                 [self.view addSubview:passView];
                 
-                passView.transform = CGAffineTransformMakeScale(0.01, 0.01);
-                [UIView animateWithDuration:0.4 delay:1 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    passView.transform = CGAffineTransformMakeScale(1, 1);
-                } completion:^(BOOL finished){
-                    //disabled all cards buttom
-                    UIScrollView *tempView = [self.view.subviews objectAtIndex:0];
-                    for (UIButton *cards in tempView.subviews) {
-                        [cards setEnabled:NO];
-                    }
-                }];
-
+                //disabled all cards buttom
+                UIScrollView *tempView = [self.view.subviews objectAtIndex:0];
+                for (UIButton *cards in tempView.subviews) {
+                    [cards setEnabled:NO];
+                }
+                
             }];
+
         }
         
     }
