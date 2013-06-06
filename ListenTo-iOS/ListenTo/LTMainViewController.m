@@ -18,10 +18,4 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"homescreen-background.png"]]];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    NSLog(@"%lf %lf", [self.enterButton frame].size.width, [self.enterButton frame].size.height);
-    NSLog(@"%lf %lf", [self.recordButton frame].size.width, [self.recordButton frame].size.height);
-}
-
 @end

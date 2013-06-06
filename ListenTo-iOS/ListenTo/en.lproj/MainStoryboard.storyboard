@@ -53,10 +53,6 @@
                     <navigationItem key="navigationItem" id="Ej0-wv-RBf">
                         <barButtonItem key="backBarButtonItem" title="首頁" id="3XV-cQ-Q8Q"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="enterButton" destination="W88-f0-Uyp" id="3oj-cP-IAq"/>
-                        <outlet property="recordButton" destination="CrN-aj-ARd" id="PEr-zM-O7A"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7R-tA-d4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,10 +548,6 @@
         </class>
         <class className="LTMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTMainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="enterButton" candidateClass="OBShapedButton"/>
-                <relationship kind="outlet" name="recordButton" candidateClass="OBShapedButton"/>
-            </relationships>
         </class>
         <class className="LTNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTNavigationController.h"/>

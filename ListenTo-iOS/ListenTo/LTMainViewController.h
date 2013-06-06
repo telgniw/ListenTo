@@ -10,7 +10,5 @@
 #import <OBShapedButton/OBShapedButton.h>
 
 @interface LTMainViewController : UIViewController <UINavigationControllerDelegate>
-@property (strong, nonatomic) IBOutlet OBShapedButton *enterButton;
-@property (strong, nonatomic) IBOutlet OBShapedButton *recordButton;
 
 @end
