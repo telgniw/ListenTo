@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSDictionary *errorCards;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *rangeControl;
 @property (strong, nonatomic) NSNumber *selectedID;
-@property (strong, nonatomic) IBOutlet UIImageView *imgCard;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;

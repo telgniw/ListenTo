@@ -11,13 +11,6 @@
 #import "LTDatabase.h"
 #import "LTCardViewController.h"
 
-
-@interface LTRecordViewController ()
-
-@end
-
-
-
 @implementation LTRecordViewController
 
 - (void)viewDidLoad
@@ -26,22 +19,10 @@
     
     NSDate *today = [NSDate today];
     [self fetchDataSetAfter:today];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
-    [_imgCard addGestureRecognizer:tap];
-    [_imgCard setUserInteractionEnabled:YES];
-//
 
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     [self.myTableView setBackgroundView:background];
     
-
-//    UIView *iv = [[UIView alloc] initWithFrame:CGRectMake(0,0, 1200, 88)];
-//    [iv setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bar.png"]]];
-//    self.navigationItem.titleView = iv;
-
-    
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar.png"] forBarMetrics:UIBarMetricsDefault];
     
     self.selectedID = nil;
     
@@ -72,6 +53,9 @@
         [cell setCardIds:errorCards[@"ids"]];
         [cell setCardErrors:errorCards[@"errors"]];
         cell.cardImage.tag = [cid intValue];
+        
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
+        [cell.cardImage addGestureRecognizer:tapGesture];
 
         [cell.collectionView reloadData];
     });
@@ -79,20 +63,12 @@
     return cell;
 }
 
-- (IBAction)openCard:(id)sender{
-    
+- (IBAction)openCard:(id)sender
+{
+    UIGestureRecognizer *gesture = (UIGestureRecognizer *)sender;
+    [self setSelectedID:[NSNumber numberWithInt:[gesture.view tag]]];
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    NSUInteger row = indexPath.row;
-//    
-//    [self performSegueWithIdentifier:@"showCard" sender:self];  
-//    
-//    
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -104,25 +80,19 @@
     return 1;
 }
 
-#pragma mark - Delegate4
+#pragma mark - Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 188;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    NSUInteger row = indexPath.row;
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"displayCard"]) {
 
         if (sender != self) return;
-//        UITabBarController  *tabBarController = segue.destinationViewController;
         LTCardViewController *detailPage = segue.destinationViewController;
-//        LTCardViewController *detailPage = (LTCardViewController *)[[tabBarController customizableViewControllers] objectAtIndex:0];
         detailPage.cid = self.selectedID;
         [self.navigationController pushViewController:detailPage animated:YES];
     }
@@ -199,8 +169,7 @@
 
 - (void)onCellItemSelectedWithIdentity:(NSNumber*)theID
 {
-    // TODO: perform seque here\
-    
+    // TODO: perform seque here
     [self setSelectedID:theID];
     [self performSegueWithIdentifier:@"displayCard" sender:self];
 }
