@@ -18,6 +18,10 @@
 @property (strong, nonatomic) NSDictionary *errorCards;
 @property (strong, nonatomic) NSNumber *selectedID;
 
+#pragma mark - RecordCell Delegate
+
+- (void)cellSelectedWithIdentity:(NSNumber*)theID;
+
 #pragma mark - IBActions
 
 - (IBAction)openCard:(id)sender;

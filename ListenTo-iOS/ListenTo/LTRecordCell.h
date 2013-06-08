@@ -10,7 +10,7 @@
 
 @protocol LTRecordCellDelegate <NSObject>
 
-- (void)onCellItemSelectedWithIdentity:(NSNumber*)theID;
+- (void)cellSelectedWithIdentity:(NSNumber*)theID;
 
 @end
 

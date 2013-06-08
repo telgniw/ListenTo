@@ -116,6 +116,7 @@
                                                             <connections>
                                                                 <outlet property="countLabel" destination="sY8-CT-oOo" id="dOx-jN-NcO"/>
                                                                 <outlet property="imageView" destination="WFw-aG-cdv" id="Z4g-Kn-xTK"/>
+                                                                <segue destination="10w-V6-t63" kind="modal" identifier="displayCard" id="1cJ-ot-wvv"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -156,7 +157,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klA-fg-VpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3132" y="-1016"/>
+            <point key="canvasLocation" x="3153" y="-154"/>
         </scene>
         <!--Record View Controller-->
         <scene sceneID="E5I-6C-Yae">
@@ -451,6 +452,7 @@
         <!--Card View Controller-->
         <scene sceneID="7La-mn-mGv">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMm-p7-Amv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="10w-V6-t63" customClass="LTCardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TiD-Xh-fsE">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="675"/>
@@ -583,9 +585,8 @@
                         <outlet property="scrollview" destination="svX-Cj-B7a" id="1lq-IX-Gdr"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AMm-p7-Amv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3132" y="-191"/>
+            <point key="canvasLocation" x="4452" y="-191"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,8 @@
 #import "LTDatabase.h"
 #import "LTCardViewController.h"
 
+static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
+
 @implementation LTRecordViewTableController
 
 - (void)viewDidLoad
@@ -19,6 +21,28 @@
     
     [self setOddRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-odd-row-background.png"]]];
     [self setEvenRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-even-row-background.png"]]];
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([identifier isEqualToString:SEGUE_DISPLAY_CARD_ID]) {
+        return self.selectedID != nil;
+    }
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:SEGUE_DISPLAY_CARD_ID]) {
+        if(self.selectedID == nil)
+            return;
+        
+        LTCardViewController *detailPage = segue.destinationViewController;
+        [detailPage setCid:self.selectedID];
+        [self setSelectedID:nil];
+        [self.navigationController pushViewController:detailPage animated:YES];
+    }
+    
 }
 
 #pragma mark - Data Source
@@ -78,38 +102,23 @@
     return 188;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"displayCard"]) {
-
-        if (sender != self) return;
-        LTCardViewController *detailPage = segue.destinationViewController;
-        detailPage.cid = self.selectedID;
-        [self.navigationController pushViewController:detailPage animated:YES];
-    }
-    
-}
-
 #pragma mark - IBActions
 
 - (IBAction)openCard:(id)sender
 {
     UIGestureRecognizer *gesture = (UIGestureRecognizer *)sender;
     [self setSelectedID:[NSNumber numberWithInt:[gesture.view tag]]];
-    [self performSegueWithIdentifier:@"displayCard" sender:self];
+    [self performSegueWithIdentifier:SEGUE_DISPLAY_CARD_ID sender:self];
 }
 
 
-#pragma mark - LTRecordCell Delegate
+#pragma mark - RecordCell Delegate
 
-
-- (void)onCellItemSelectedWithIdentity:(NSNumber*)theID
+- (void)cellSelectedWithIdentity:(NSNumber*)cid
 {
-    // TODO: perform seque here
-    [self setSelectedID:theID];
-    [self performSegueWithIdentifier:@"displayCard" sender:self];
+    [self setSelectedID:cid];
+    [self performSegueWithIdentifier:SEGUE_DISPLAY_CARD_ID sender:self];
 }
-
 
 
 @end

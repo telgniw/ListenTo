@@ -34,14 +34,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-//    NSUInteger row = indexPath.row;
-
     if (self.delegate){
         NSNumber *cid = self.cardIds[indexPath.row];
-        [self.delegate onCellItemSelectedWithIdentity: cid];
+        [self.delegate cellSelectedWithIdentity:cid];
     }
-    
 }
 
 
@@ -54,19 +50,5 @@
 {
     return 1;
 }
-
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    NSIndexPath *indexPath = [self.collectionView indexPathForCell:sender];    
-//    if ([segue.identifier isEqualToString:@"showCard"]) {
-//        
-//        UITabBarController  *tabBarController = segue.destinationViewController;
-//        
-//        LTCardViewController *detailPage = (LTCardViewController *)[[tabBarController customizableViewControllers] objectAtIndex:0];
-//        detailPage.cid = [NSNumber numberWithInt:self.cardIds[indexPath.row]];
-//    }
-//    
-//}
 
 @end
