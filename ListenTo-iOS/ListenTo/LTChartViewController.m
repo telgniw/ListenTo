@@ -8,29 +8,7 @@
 
 #import "LTChartViewController.h"
 
-@interface LTChartViewController ()
-
-@end
-
 @implementation LTChartViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-//- (id)initWithData:(NSDIctionary)data
-//{
-//    self = [super initWithNibName:@"LTChartViewController" bundle:nil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
 
 - (void)viewDidLoad
 {
@@ -50,7 +28,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -74,24 +52,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
-    
     return cell;
 }
 
-
-
-#pragma mark - Table view delegate
+#pragma mark - Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
 }
 
 @end

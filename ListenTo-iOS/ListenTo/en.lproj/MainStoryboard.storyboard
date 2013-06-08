@@ -116,7 +116,7 @@
                                                             <connections>
                                                                 <outlet property="countLabel" destination="sY8-CT-oOo" id="dOx-jN-NcO"/>
                                                                 <outlet property="imageView" destination="WFw-aG-cdv" id="Z4g-Kn-xTK"/>
-                                                                <segue destination="10w-V6-t63" kind="modal" identifier="displayCard" id="1cJ-ot-wvv"/>
+                                                                <segue destination="10w-V6-t63" kind="modal" identifier="displayCard" modalTransitionStyle="coverVertical" id="1cJ-ot-wvv"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -455,18 +455,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMm-p7-Amv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="10w-V6-t63" customClass="LTCardViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TiD-Xh-fsE">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="675"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="svX-Cj-B7a">
-                                <rect key="frame" x="0.0" y="0.0" width="823" height="675"/>
+                                <rect key="frame" x="0.0" y="0.0" width="823" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11.兔子.jpg" id="3UE-rn-Jwq">
-                                        <rect key="frame" x="98" y="38" width="625" height="625"/>
+                                        <rect key="frame" x="111" y="84" width="600" height="600"/>
                                     </imageView>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="X0m-Wa-rJ4">
-                                        <rect key="frame" x="335" y="276" width="150" height="150"/>
+                                        <rect key="frame" x="336" y="309" width="150" height="150"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="play.png">
@@ -481,20 +481,16 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="兔子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8fh-ei-rtV">
-                                        <rect key="frame" x="98" y="563" width="625" height="100"/>
+                                        <rect key="frame" x="111" y="609" width="600" height="75"/>
                                         <color key="backgroundColor" white="0.65071852189781032" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="65"/>
                                         <color key="textColor" red="0.94117653369999998" green="0.65882354970000001" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" id="nss-nr-4DD">
-                                        <rect key="frame" x="392" y="5" width="38" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </pageControl>
                                 </subviews>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="a0G-QR-gZa">
-                                <rect key="frame" x="831" y="0.0" width="200" height="675"/>
+                                <rect key="frame" x="831" y="0.0" width="200" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -576,17 +572,15 @@
                     <navigationItem key="navigationItem" id="qHU-0m-3aB"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="btnPlayStound" destination="X0m-Wa-rJ4" id="cEa-6e-Hao"/>
                         <outlet property="imgCard" destination="3UE-rn-Jwq" id="bPI-nm-Z6G"/>
                         <outlet property="lblCardName" destination="8fh-ei-rtV" id="ueb-9h-sd2"/>
-                        <outlet property="paging" destination="nss-nr-4DD" id="Y4c-gE-P03"/>
                         <outlet property="scrollview" destination="svX-Cj-B7a" id="1lq-IX-Gdr"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="4452" y="-191"/>
+            <point key="canvasLocation" x="4464" y="-237"/>
         </scene>
     </scenes>
     <resources>
@@ -615,7 +609,6 @@
                 <relationship kind="outlet" name="btnPlayStound" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imgCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lblCardName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="paging" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollview" candidateClass="UIScrollView"/>
             </relationships>
         </class>

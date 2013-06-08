@@ -10,20 +10,7 @@
 #import "LTDatabase.h"
 #import "LTChartViewController.h"
 
-@interface LTCardViewController ()
-
-@end
-
 @implementation LTCardViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initializati
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -32,12 +19,6 @@
     [self fetchCardInfo:cardId ];
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"chart.png"]]];
-    
-    LTChartViewController *chart = [LTChartViewController alloc];
-    
-    
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +44,8 @@
     });
 }
 
-- (IBAction)playSound:(id)sender {
+- (IBAction)playSound:(id)sender
+{
     NSString *audioName = [self.card valueForKey:@"name"];
     NSURL* url = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"]];
     NSError* error = nil;
