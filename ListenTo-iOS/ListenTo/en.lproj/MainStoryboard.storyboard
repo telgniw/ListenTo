@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Xsv-z5-rhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Xsv-z5-rhV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="e40-PV-pDb" customClass="LTMainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="The-FN-RrL">
-                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CrN-aj-ARd" customClass="OBShapedButton">
@@ -66,7 +66,7 @@
             <objects>
                 <tableViewController id="Uob-iI-jog" customClass="LTRecordViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="210" sectionHeaderHeight="22" sectionFooterHeight="22" id="hYe-Es-kzj">
-                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -154,24 +154,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="gQN-hM-4oI">
                         <nil key="title"/>
-                        <barButtonItem key="backBarButtonItem" title="首頁" id="pbc-lM-aVL"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="PCQ-vl-0Lr">
-                            <rect key="frame" x="307" y="7" width="409" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="今天"/>
-                                <segment title="本週"/>
-                                <segment title="全部"/>
-                            </segments>
-                            <connections>
-                                <action selector="changeRange:" destination="Uob-iI-jog" eventType="valueChanged" id="XNs-nf-I9x"/>
-                            </connections>
-                        </segmentedControl>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="myTableView" destination="hYe-Es-kzj" id="WtP-C1-AvU"/>
-                        <outlet property="rangeControl" destination="PCQ-vl-0Lr" id="sKk-SW-AZf"/>
                         <segue destination="10w-V6-t63" kind="modal" identifier="displayCard" modalTransitionStyle="partialCurl" id="l8e-gi-QPj"/>
                     </connections>
                 </tableViewController>
@@ -184,23 +170,23 @@
             <objects>
                 <viewController id="NxP-62-vW3" customClass="LTGameLevelViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZA-99-GeM">
-                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="connectdots-background.png" id="jxj-xw-zZM">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="connectdots-level-1.png" id="dMx-97-J6c">
-                                <rect key="frame" x="0.0" y="-22" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="connectdots-level-2.png" id="SNB-RZ-6tG">
-                                <rect key="frame" x="0.0" y="-22" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="connectdots-level-others.png" id="DcU-bb-mg2">
-                                <rect key="frame" x="0.0" y="-22" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Bdt-SE-1Ac">
-                                <rect key="frame" x="75" y="58" width="176" height="181"/>
+                                <rect key="frame" x="75" y="62" width="176" height="181"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +200,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Os8-H4-DmY">
-                                <rect key="frame" x="259" y="58" width="176" height="181"/>
+                                <rect key="frame" x="259" y="62" width="176" height="181"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QaA-Rj-Idk">
-                                <rect key="frame" x="424" y="58" width="177" height="181"/>
+                                <rect key="frame" x="424" y="62" width="177" height="181"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -239,7 +225,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Vh-pL-srs">
-                                <rect key="frame" x="586" y="58" width="176" height="181"/>
+                                <rect key="frame" x="586" y="62" width="176" height="181"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -250,7 +236,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nCc-CN-hnu">
-                                <rect key="frame" x="770" y="58" width="176" height="181"/>
+                                <rect key="frame" x="770" y="62" width="176" height="181"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -261,7 +247,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tcb-y0-oPf">
-                                <rect key="frame" x="75" y="295" width="176" height="177"/>
+                                <rect key="frame" x="75" y="318" width="176" height="177"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -272,7 +258,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yUm-iq-PNv">
-                                <rect key="frame" x="240" y="295" width="176" height="177"/>
+                                <rect key="frame" x="240" y="318" width="176" height="177"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,7 +269,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3sy-wd-oDG">
-                                <rect key="frame" x="424" y="295" width="177" height="177"/>
+                                <rect key="frame" x="424" y="318" width="177" height="177"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -294,7 +280,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gXA-bo-QnB">
-                                <rect key="frame" x="586" y="295" width="176" height="177"/>
+                                <rect key="frame" x="586" y="318" width="176" height="177"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -305,7 +291,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cbr-9n-5sP">
-                                <rect key="frame" x="770" y="295" width="176" height="177"/>
+                                <rect key="frame" x="770" y="318" width="176" height="177"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -330,24 +316,18 @@
             <objects>
                 <viewController id="LY1-b3-gAl" customClass="LTGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BSM-le-cvY">
-                        <rect key="frame" x="0.0" y="44" width="1024" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="jTD-uv-vM1">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H1f-fU-vl9">
-                        <barButtonItem key="rightBarButtonItem" title="Play" id="pmK-QV-zmA">
-                            <connections>
-                                <action selector="btnPlayAudio:" destination="LY1-b3-gAl" id="eCT-Vs-Fxi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="H1f-fU-vl9"/>
                     <connections>
                         <outlet property="GameView" destination="jTD-uv-vM1" id="PPn-mZ-Aj9"/>
                     </connections>
@@ -359,8 +339,9 @@
         <!--Navigation Controller-->
         <scene sceneID="rPI-TE-tqi">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Xsv-z5-rhV" customClass="LTNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Xsv-z5-rhV" customClass="LTNavigationController" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6PC-eR-xOH">
                         <autoresizingMask key="autoresizingMask"/>
@@ -524,6 +505,78 @@
         <image name="icon-record.png" width="173" height="173"/>
         <image name="play.png" width="195" height="195"/>
     </resources>
+    <classes>
+        <class className="LTCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="playSound:"/>
+                <relationship kind="outlet" name="btnPlayStound" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblCardName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="paging" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollview" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="LTGameLevelViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTGameLevelViewController.h"/>
+        </class>
+        <class className="LTGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnChooseImageCard:"/>
+                <relationship kind="action" name="btnPlayAudio:"/>
+                <relationship kind="action" name="btnRestart:"/>
+                <relationship kind="action" name="btnSetLocation:"/>
+                <relationship kind="outlet" name="GameView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="LTMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="rabbitImgView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LTNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTNavigationController.h"/>
+        </class>
+        <class className="LTRecordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cardImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardVoiceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="LTRecordErrorImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordErrorImageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LTRecordViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeRange:"/>
+                <relationship kind="action" name="openCard:"/>
+                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="navigationController" candidateClass="UINavigationController"/>
+                <relationship kind="outlet" name="rangeControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="OBShapedButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OBShapedButton.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
