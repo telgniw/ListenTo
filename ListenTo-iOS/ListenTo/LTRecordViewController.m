@@ -16,16 +16,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSDate *today = [NSDate today];
-    [self fetchDataSetAfter:today];
 
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     [self.myTableView setBackgroundView:background];
     
-    
-    self.selectedID = nil;
-    
+    [self changeRange:self.todayButton];
 }
 
 #pragma mark - Data Source
@@ -101,25 +96,30 @@
 
 #pragma mark - IBActions
 
+- (IBAction)home:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)changeRange:(id)sender
 {
-    if([sender isKindOfClass:[UISegmentedControl class]]) {
-        NSDate *date;
+    if([sender isKindOfClass:[OBShapedButton class]]) {
+        [self.selectedButton setSelected:NO];
+        [self setSelectedButton:sender];
         
-        UISegmentedControl *control = sender;
-        switch([control selectedSegmentIndex]) {
-            case 0:
-                date = [NSDate today];
-                break;
-            case 1:
-                date = [NSDate firstDayOfTheWeek];
-                break;
-            default:
-                date = [NSDate dateWithTimeIntervalSince1970:0];
-                break;
+        NSDate *date;
+        if(self.selectedButton == self.todayButton) {
+            date = [NSDate today];
+        }
+        else if(self.selectedButton == self.thisweekButton) {
+            date = [NSDate firstDayOfTheWeek];
+        }
+        else {
+            date = [NSDate dateWithTimeIntervalSince1970:0];
         }
         
         [self fetchDataSetAfter:date];
+        [self.selectedButton setSelected:YES];
     }
 }
 
