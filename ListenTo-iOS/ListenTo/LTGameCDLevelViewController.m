@@ -23,16 +23,18 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSNumber *level;
-    if ([[segue identifier] isEqualToString:@"level1"]) {
-        level=[NSNumber numberWithInt:1];
+    NSString *identifier = [segue identifier];
+    if([identifier hasPrefix:@"CDLevel"]) {
+        LTGameCDViewController *controller = (LTGameCDViewController *)[segue destinationViewController];
+        [controller setLevel:[NSNumber numberWithInt:[[identifier substringFromIndex:7] intValue]]];
     }
-    if ([[segue identifier] isEqualToString:@"level2"]) {
-        level=[NSNumber numberWithInt:2];
-    }
-    LTGameCDViewController *gvc = (LTGameCDViewController *)[segue destinationViewController];
-    gvc.level=level;
     
 }
 
+#pragma mark - IBActions
+
+- (IBAction)back:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

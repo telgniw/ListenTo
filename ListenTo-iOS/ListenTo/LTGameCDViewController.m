@@ -8,6 +8,7 @@
 
 #import "LTGameCDViewController.h"
 #import "LTDatabase.h"
+#import <OBShapedButton/OBShapedButton.h>
 #import <QuartzCore/QuartzCore.h>
 
 #define imageCard_width     175
@@ -34,7 +35,7 @@
     anserRight = false;
     int cardTag = 0;
     
-    self.GameView.delegate = self;
+    [self.GameView setDelegate:self];
     
     NSString *plistPath = [[NSBundle mainBundle]
                            pathForResource:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"connect"] ofType:@"plist"];
@@ -47,7 +48,7 @@
 
     //create correct cards list
     for (NSDictionary *point in pointArray) {
-        UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeCustom];
+        OBShapedButton *ImageCard = [OBShapedButton buttonWithType:UIButtonTypeCustom];
         ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
         [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
         ImageCard.tag = cardTag;
@@ -70,7 +71,7 @@
     }
     //create error cards list
     for (NSDictionary *point in errorPointArray) {
-        UIButton *ImageCard = [UIButton buttonWithType:UIButtonTypeCustom];
+        OBShapedButton *ImageCard = [OBShapedButton buttonWithType:UIButtonTypeCustom];
         ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
         [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
         ImageCard.tag = cardTag;
@@ -89,30 +90,35 @@
     UIImage *backgroundImage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
     [self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:backgroundImage]];
     
-    [self.GameView setContentSize:backgroundImage.size];
-    
-    float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"x"] floatValue];
-    float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"y"] floatValue];
-    [self.GameView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
-    
     self.overLay = [[SPLockOverlay alloc]initWithFrame:CGRectMake(0.0f, 0.0f, backgroundImage.size.width, backgroundImage.size.height)];
 	[self.overLay setUserInteractionEnabled:NO];
 	[self.GameView addSubview:self.overLay];
     
+    [self.view bringSubviewToFront:self.backButton];
+    [self.view bringSubviewToFront:self.playButton];
+    
+    float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"x"] floatValue];
+    float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"y"] floatValue];
+    [self.GameView setContentSize:backgroundImage.size];
+    [self.GameView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
+    
+    [self setErrorImageView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-error.png"]]];
+    
+    [myPlayer setDelegate:self];
     anserPoint = 1;
+    
     //play game start animation
-    UIImage *image = [UIImage imageNamed:@"game-start"];
-    UIImageView *startView = [[UIImageView alloc] initWithImage:image];
-    [self.view addSubview:startView];
-    startView.transform = CGAffineTransformMakeScale(0.01, 0.01);
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        startView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-    } completion:^(BOOL finished){
-        [NSThread sleepForTimeInterval:0.7];
-        [startView removeFromSuperview];
+    UIImageView *startView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-start.png"]];
+    [self animatedPopOutImageView:startView completion:^(BOOL finished) {
         [self playAudio:[db cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
-        [myPlayer setDelegate:self];
-    }];    
+    }];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)back:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)btnSetLocation:(id)sender
@@ -237,17 +243,23 @@
         [self playAudio:@"error" fileType:@"mp3"];
         
         //play animation
-        UIImage *image = [UIImage imageNamed:@"error"];
-        UIImageView *errorView = [[UIImageView alloc] initWithImage:image];
-        [self.view addSubview:errorView];
-        errorView.transform = CGAffineTransformMakeScale(0.01, 0.01);
-        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            errorView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-        } completion:^(BOOL finished){
-            [errorView removeFromSuperview];
-        }];
+        [self animatedPopOutImageView:self.errorImageView completion:nil];
 
     }
+}
+
+- (void)animatedPopOutImageView:(UIImageView *)imageView completion:(void (^)(BOOL finished))completion
+{
+    [self.view addSubview:imageView];
+    [imageView setTransform:CGAffineTransformMakeScale(0.01, 0.01)];
+    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [imageView setTransform:CGAffineTransformMakeScale(0.5, 0.5)];
+    } completion:^(BOOL finished){
+        [NSThread sleepForTimeInterval:0.7];
+        [imageView removeFromSuperview];
+        
+        completion(finished);
+    }];
 }
 
 //This is the delegate method called after the sound finished playing, there are also other methods be sure to implement them for avoiding possible errors
@@ -260,8 +272,4 @@
         anserRight = false;
     }
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-}
-
 @end

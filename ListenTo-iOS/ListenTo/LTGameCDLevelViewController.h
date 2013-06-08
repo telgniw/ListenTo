@@ -10,4 +10,8 @@
 
 @interface LTGameCDLevelViewController : UIViewController
 
+#pragma mark - IBActions
+
+- (IBAction)back:(id)sender;
+
 @end

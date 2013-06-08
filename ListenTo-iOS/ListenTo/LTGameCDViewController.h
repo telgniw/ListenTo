@@ -22,8 +22,16 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *GameView;
-@property (weak,readwrite) NSNumber *level;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UIButton *playButton;
 
+@property (strong, nonatomic) UIImageView *errorImageView;
+
+@property (strong, nonatomic) NSNumber *level;
+
+#pragma mark - IBActions
+
+- (IBAction)back:(id)sender;
 - (IBAction)btnSetLocation:(id)sender;
 - (IBAction)btnRestart:(id)sender;
 - (IBAction)btnPlayAudio:(id)sender;
