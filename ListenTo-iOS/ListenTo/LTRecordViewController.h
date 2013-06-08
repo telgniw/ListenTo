@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSNumber *selectedID;
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 
+@property (strong, nonatomic) IBOutlet UIView *tableHeaderView;
+
 @property (strong, nonatomic) OBShapedButton *selectedButton;
 @property (strong, nonatomic) IBOutlet OBShapedButton *todayButton;
 @property (strong, nonatomic) IBOutlet OBShapedButton *thisweekButton;

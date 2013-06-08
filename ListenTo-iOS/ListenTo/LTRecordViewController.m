@@ -19,6 +19,7 @@
 
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     [self.myTableView setBackgroundView:background];
+    [self.tableHeaderView setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-table-header.png"]]];
     
     [self changeRange:self.todayButton];
 }
@@ -98,7 +99,7 @@
 
 - (IBAction)home:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)changeRange:(id)sender
