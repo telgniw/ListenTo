@@ -103,10 +103,11 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="WFw-aG-cdv">
                                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sY8-CT-oOo">
-                                                                        <rect key="frame" x="108" y="108" width="36" height="36"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MpH-vN-2Qi">
+                                                                        <rect key="frame" x="99" y="103" width="45" height="41"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                                        <color key="textColor" red="0.51372549020000002" green="0.82745098039999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -114,7 +115,7 @@
                                                             </view>
                                                             <size key="customSize" width="144" height="144"/>
                                                             <connections>
-                                                                <outlet property="countLabel" destination="sY8-CT-oOo" id="dOx-jN-NcO"/>
+                                                                <outlet property="countLabel" destination="MpH-vN-2Qi" id="eQy-VT-o6b"/>
                                                                 <outlet property="imageView" destination="WFw-aG-cdv" id="Z4g-Kn-xTK"/>
                                                                 <segue destination="10w-V6-t63" kind="modal" identifier="displayCard" modalTransitionStyle="flipHorizontal" id="1cJ-ot-wvv"/>
                                                             </connections>

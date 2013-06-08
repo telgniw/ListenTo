@@ -18,6 +18,12 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"LTErrorCell";
+    static UIColor *errorBackgroundImage;
+    
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        errorBackgroundImage = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-error-background.png"]];
+    });
     
     NSNumber *cid = self.cardIds[indexPath.row];
     
@@ -26,6 +32,7 @@
     
     LTRecordErrorImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     [cell.imageView setImage:[UIImage imageNamed:_card[@"image"]]];
+    [cell.countLabel setBackgroundColor:errorBackgroundImage];
     [cell.countLabel setText:[self.cardErrors[indexPath.row] stringValue]];
     
     return cell;
