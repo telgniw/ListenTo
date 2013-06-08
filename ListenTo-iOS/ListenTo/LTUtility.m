@@ -35,4 +35,15 @@
     return image;
 }
 
++ (UIColor *)cardBorderColor
+{
+    static UIColor *color;
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        color = [UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.7];
+    });
+    
+    return color;
+}
+
 @end

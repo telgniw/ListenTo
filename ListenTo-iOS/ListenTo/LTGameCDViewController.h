@@ -10,7 +10,7 @@
 #import "SPLockOverlay.h"
 #import <AVFoundation/AVAudioPlayer.h>
 
-@interface LTGameCDViewController : UIViewController <UIScrollViewDelegate,AVAudioPlayerDelegate>
+@interface LTGameCDViewController : UIViewController <UIScrollViewDelegate, AVAudioPlayerDelegate>
 {
     NSMutableArray *pointArray;
     NSMutableArray *errorPointArray;
@@ -20,6 +20,8 @@
     BOOL anserRight;
     AVAudioPlayer *myPlayer;
 }
+
+@property (nonatomic, strong) SPLockOverlay *overLay;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *GameView;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;

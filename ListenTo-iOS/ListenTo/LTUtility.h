@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+static const float CARD_BORDER_WIDTH = 5.0f;
+
 @interface LTUtility : NSObject
 
 + (UIImage *)transparentImage;
 + (UIImage *)emptyImage;
++ (UIColor *)cardBorderColor;
 
 @end

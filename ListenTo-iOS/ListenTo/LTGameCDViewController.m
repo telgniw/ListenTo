@@ -6,21 +6,17 @@
 //  Copyright (c) 2013年 林 奇賦. All rights reserved.
 //
 
-#import "LTGameCDViewController.h"
-#import "LTDatabase.h"
 #import <OBShapedButton/OBShapedButton.h>
 #import <QuartzCore/QuartzCore.h>
+#import "LTGameCDViewController.h"
+#import "LTDatabase.h"
+#import "LTUtility.h"
 
-#define imageCard_width     175
-#define imageCard_height    175
-
-@interface LTGameCDViewController ()
-@property (nonatomic, strong) SPLockOverlay *overLay;
-
-@end
+static NSString *const X = @"x";
+static NSString *const Y = @"y";
+static const int IMAGE_BUTTON_SIZE = 175;
 
 @implementation LTGameCDViewController
-@synthesize overLay;
 
 - (void)viewDidLoad
 {
@@ -47,43 +43,27 @@
     cardsArray = [db arrayWithAllCards];
 
     //create correct cards list
-    for (NSDictionary *point in pointArray) {
-        OBShapedButton *ImageCard = [OBShapedButton buttonWithType:UIButtonTypeCustom];
-        ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
-        [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
-        ImageCard.tag = cardTag;
-        if(ImageCard.tag == 0) {
-            [ImageCard setImage:[UIImage imageNamed:@"start.png"]
-                       forState:UIControlStateNormal];
+    for (NSDictionary *position in pointArray) {
+        CGPoint point = CGPointMake([[position objectForKey:X] floatValue], [[position objectForKey:Y] floatValue]);
+        OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
+        
+        if(cardTag == 0) {
+            [imageButton setImage:[UIImage imageNamed:@"connectdots-startpoint.png"] forState:UIControlStateNormal];
         }
         else {
-            NSDictionary *card = [db cardForId:cardsArray[ImageCard.tag]];
-            [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
-                       forState:UIControlStateNormal];
-            //add cards Border
-            [ImageCard.layer setBorderColor:[[UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.7] CGColor]];
-            [ImageCard.layer setCornerRadius:87.5f];
-            [ImageCard.layer setBorderWidth: 5.0];
-            [ImageCard.layer setMasksToBounds:YES];
+            [self addBorderToButton:imageButton];
         }
-        [self.GameView addSubview:ImageCard];
+        
+        [self.GameView addSubview:imageButton];
         cardTag++;
     }
     //create error cards list
-    for (NSDictionary *point in errorPointArray) {
-        OBShapedButton *ImageCard = [OBShapedButton buttonWithType:UIButtonTypeCustom];
-        ImageCard.frame = CGRectMake([[point objectForKey:@"x"] floatValue], [[point objectForKey:@"y"] floatValue], imageCard_width, imageCard_height);
-        [ImageCard addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
-        ImageCard.tag = cardTag;
-        NSDictionary *card = [db cardForId:cardsArray[ImageCard.tag]];
-        [ImageCard setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]]
-                   forState:UIControlStateNormal];
-        //add cards Border
-        [ImageCard.layer setBorderColor:[[UIColor colorWithRed:128.0/255.0 green:128.0/255.0 blue:128.0/255.0 alpha:0.7] CGColor]];
-        [ImageCard.layer setCornerRadius:87.5f];
-        [ImageCard.layer setBorderWidth: 5.0];
-        [ImageCard.layer setMasksToBounds:YES];
-        [self.GameView addSubview:ImageCard];
+    for (NSDictionary *position in errorPointArray) {
+        CGPoint point = CGPointMake([[position objectForKey:X] floatValue], [[position objectForKey:Y] floatValue]);
+        OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
+        [self addBorderToButton:imageButton];
+        
+        [self.GameView addSubview:imageButton];
         cardTag++;
     }
     
@@ -97,8 +77,8 @@
     [self.view bringSubviewToFront:self.backButton];
     [self.view bringSubviewToFront:self.playButton];
     
-    float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"x"] floatValue];
-    float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"y"] floatValue];
+    float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:X] floatValue];
+    float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:Y] floatValue];
     [self.GameView setContentSize:backgroundImage.size];
     [self.GameView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
     
@@ -172,23 +152,19 @@
         
         anserRight = true;
         int tag=[[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"tag"] intValue];
-        float t_x = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"x"] floatValue];
-        float t_y = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"y"] floatValue];
+        float t_x = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:X] floatValue];
+        float t_y = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:Y] floatValue];
         //level-1:4, level-2:7
         if ([sender tag]==tag) {
             [self.GameView setContentOffset:CGPointMake(t_x, t_y) animated:YES];
         }
         anserPoint++;
-        float prev_point_x= [[[pointArray objectAtIndex:[sender tag]-1]objectForKey:@"x"]floatValue];
-        float prev_point_y= [[[pointArray objectAtIndex:[sender tag]-1]objectForKey:@"y"]floatValue];
-        float curr_point_x= [[[pointArray objectAtIndex:[sender tag]]objectForKey:@"x"]floatValue];
-        float curr_point_y= [[[pointArray objectAtIndex:[sender tag]]objectForKey:@"y"]floatValue];
+        NSDictionary *previousP = [pointArray objectAtIndex:[sender tag]-1];
+        CGPoint previousPoint = CGPointMake([[previousP objectForKey:X] floatValue], [[previousP objectForKey:Y] floatValue]);
+        NSDictionary *currentP = [pointArray objectAtIndex:[sender tag]];
+        CGPoint currentPoint = CGPointMake([[currentP objectForKey:X] floatValue], [[currentP objectForKey:Y] floatValue]);
         
-        SPLine *aLine = [[SPLine alloc]initWithFromPoint:CGPointMake(prev_point_x+imageCard_width/2, prev_point_y+imageCard_height/2)
-                                                 toPoint:CGPointMake(curr_point_x+imageCard_width/2, curr_point_y+imageCard_height/2)
-                                         AndIsFullLength:NO];
-        [self.overLay.pointsToDraw addObject:aLine];
-        [self.overLay setNeedsDisplay];
+        [self drawLineFromPoint:previousPoint toPoint:currentPoint];
         [self playAudio:@"correct" fileType:@"mp3"];
         
         UIButton *childView =sender;
@@ -200,6 +176,11 @@
         
         //過關
         if(anserPoint == pointArray.count) {
+            NSDictionary *startP = [pointArray objectAtIndex:0];
+            CGPoint startPoint = CGPointMake([[startP objectForKey:X] floatValue], [[startP objectForKey:Y] floatValue]);
+            
+            [self drawLineFromPoint:currentPoint toPoint:startPoint];
+            
             self.overLay.transform = CGAffineTransformMakeScale(1.0, 1.0);
             UIImage *passimage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"pass-image"]];
             UIImageView *passView = [[UIImageView alloc] initWithImage:passimage];
@@ -214,9 +195,9 @@
                 self.overLay.frame = CGRectMake(270,100, self.overLay.frame.size.width, self.overLay.frame.size.height);
             
             } completion:^(BOOL finished){
-                
                 [NSThread sleepForTimeInterval:2.0];
                 [self.overLay removeFromSuperview];
+                
                 passView.alpha = 0.9;
                 passView.backgroundColor = [UIColor blackColor];
                 UIImage *image = [UIImage imageNamed:@"end-3"];
@@ -248,6 +229,8 @@
     }
 }
 
+#pragma mark - Utility Methods
+
 - (void)animatedPopOutImageView:(UIImageView *)imageView completion:(void (^)(BOOL finished))completion
 {
     [self.view addSubview:imageView];
@@ -258,11 +241,44 @@
         [NSThread sleepForTimeInterval:0.7];
         [imageView removeFromSuperview];
         
-        completion(finished);
+        if(completion != nil) {
+            completion(finished);
+        }
     }];
 }
 
-//This is the delegate method called after the sound finished playing, there are also other methods be sure to implement them for avoiding possible errors
+- (void)drawLineFromPoint:(CGPoint)p1 toPoint:(CGPoint)p2
+{
+    SPLine *aLine = [[SPLine alloc]initWithFromPoint:CGPointMake(p1.x + IMAGE_BUTTON_SIZE * 0.5, p1.y + IMAGE_BUTTON_SIZE * 0.5)
+                                             toPoint:CGPointMake(p2.x + IMAGE_BUTTON_SIZE * 0.5, p2.y + IMAGE_BUTTON_SIZE * 0.5)
+                                     AndIsFullLength:NO];
+    [self.overLay.pointsToDraw addObject:aLine];
+    [self.overLay setNeedsDisplay];
+}
+
+- (OBShapedButton *)imageButtonWithIndex:(int)idx position:(CGPoint)point
+{
+    NSDictionary *card = [[LTDatabase instance] cardForId:cardsArray[idx]];
+    
+    OBShapedButton *imageButton = [OBShapedButton buttonWithType:UIButtonTypeCustom];
+    [imageButton setFrame:CGRectMake(point.x, point.y, IMAGE_BUTTON_SIZE, IMAGE_BUTTON_SIZE)];
+    [imageButton addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
+    [imageButton setTag:idx];
+    [imageButton setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]] forState:UIControlStateNormal];
+    
+    return imageButton;
+}
+
+- (void)addBorderToButton:(UIButton *)button
+{
+    [button.layer setBorderColor:[[LTUtility cardBorderColor] CGColor]];
+    [button.layer setCornerRadius:IMAGE_BUTTON_SIZE * 0.5];
+    [button.layer setBorderWidth:CARD_BORDER_WIDTH];
+    [button.layer setMasksToBounds:YES];
+}
+
+#pragma mark - Audio Player Delegate
+
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     if(anserRight) {
