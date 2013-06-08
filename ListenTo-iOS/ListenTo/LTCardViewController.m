@@ -18,7 +18,7 @@
     NSNumber *cardId = self.cid;
     [self fetchCardInfo:cardId ];
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"chart.png"]]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"management-background.png"]]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +42,13 @@
         [self.imgCard setImage:card];
         [self.lblCardName setText:name];
     });
+}
+
+# pragma mark - IBActions
+
+- (IBAction)back:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)playSound:(id)sender
