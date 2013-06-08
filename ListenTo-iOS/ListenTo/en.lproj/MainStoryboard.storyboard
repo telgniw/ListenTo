@@ -368,7 +368,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnPlayAudio:" destination="LY1-b3-gAl" eventType="touchUpInside" id="lq4-hW-cup"/>
+                                    <action selector="playAudio:" destination="LY1-b3-gAl" eventType="touchUpInside" id="4KJ-LW-Q03"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,9 +377,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="H1f-fU-vl9"/>
                     <connections>
-                        <outlet property="GameView" destination="jTD-uv-vM1" id="PPn-mZ-Aj9"/>
-                        <outlet property="backButton" destination="AU6-2a-vfI" id="yGp-jO-bLh"/>
-                        <outlet property="playButton" destination="jfe-so-Sk5" id="kAK-mF-d2f"/>
+                        <outlet property="backButton" destination="AU6-2a-vfI" id="Jem-JX-3Tn"/>
+                        <outlet property="playButton" destination="jfe-so-Sk5" id="4Fc-FN-aOc"/>
+                        <outlet property="scrollView" destination="jTD-uv-vM1" id="Tgq-gt-MFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5J-uw-PHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,6 +573,90 @@
         <image name="icon-today.png" width="84" height="84"/>
         <image name="play.png" width="195" height="195"/>
     </resources>
+    <classes>
+        <class className="LTCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="playSound:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPlayStound" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblCardName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollview" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="LTGameCDLevelViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTGameCDLevelViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+            </relationships>
+        </class>
+        <class className="LTGameCDViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTGameCDViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="playAudio:"/>
+                <relationship kind="action" name="selectImageButton:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="LTMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="rabbitImgView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LTNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTNavigationController.h"/>
+        </class>
+        <class className="LTRecordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cardImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardVoiceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+            </relationships>
+        </class>
+        <class className="LTRecordErrorImageCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordErrorImageCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="LTRecordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeRange:"/>
+                <relationship kind="action" name="home:"/>
+                <relationship kind="outlet" name="alltimeButton" candidateClass="OBShapedButton"/>
+                <relationship kind="outlet" name="tableHeaderView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="thisweekButton" candidateClass="OBShapedButton"/>
+                <relationship kind="outlet" name="todayButton" candidateClass="OBShapedButton"/>
+            </relationships>
+        </class>
+        <class className="LTRecordViewTableController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordViewTableController.h"/>
+            <relationships>
+                <relationship kind="action" name="openCard:"/>
+            </relationships>
+        </class>
+        <class className="OBShapedButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OBShapedButton.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

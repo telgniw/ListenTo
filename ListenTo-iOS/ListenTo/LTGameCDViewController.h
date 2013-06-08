@@ -12,18 +12,18 @@
 
 @interface LTGameCDViewController : UIViewController <UIScrollViewDelegate, AVAudioPlayerDelegate>
 {
-    NSMutableArray *pointArray;
-    NSMutableArray *errorPointArray;
-    NSMutableArray *levelSettingArray;
-    NSArray *cardsArray;
     int anserPoint;
     BOOL anserRight;
-    AVAudioPlayer *myPlayer;
 }
 
 @property (nonatomic, strong) SPLockOverlay *overLay;
+@property (nonatomic, strong) AVAudioPlayer *player;
+@property (nonatomic, strong) NSArray *cardIds;
+@property (nonatomic, strong) NSArray *points;
+@property (nonatomic, strong) NSArray *errorPoints;
+@property (nonatomic, strong) NSArray *settings;
 
-@property (strong, nonatomic) IBOutlet UIScrollView *GameView;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
 
@@ -34,9 +34,7 @@
 #pragma mark - IBActions
 
 - (IBAction)back:(id)sender;
-- (IBAction)btnSetLocation:(id)sender;
-- (IBAction)btnRestart:(id)sender;
-- (IBAction)btnPlayAudio:(id)sender;
-- (IBAction)btnChooseImageCard:(id)sender;
+- (IBAction)playAudio:(id)sender;
+- (IBAction)selectImageButton:(id)sender;
 
 @end

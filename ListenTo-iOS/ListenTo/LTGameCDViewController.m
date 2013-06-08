@@ -27,23 +27,23 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [db newRecordWithType:0];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    levelSettingArray = [NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
+    self.settings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
     anserRight = false;
     int cardTag = 0;
     
-    [self.GameView setDelegate:self];
+    [self.scrollView setDelegate:self];
     
     NSString *plistPath = [[NSBundle mainBundle]
-                           pathForResource:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"connect"] ofType:@"plist"];
+                           pathForResource:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"connect"] ofType:@"plist"];
     
-    pointArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
+    self.points = [NSArray arrayWithContentsOfFile:plistPath];
     plistPath = [[NSBundle mainBundle]
-                 pathForResource:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"connect-fuzzy"]  ofType:@"plist"];
-    errorPointArray = [NSMutableArray arrayWithContentsOfFile:plistPath];
-    cardsArray = [db arrayWithAllCards];
+                 pathForResource:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"connect-fuzzy"]  ofType:@"plist"];
+    self.errorPoints = [NSArray arrayWithContentsOfFile:plistPath];
+    self.cardIds = [db arrayWithAllCards];
 
     //create correct cards list
-    for (NSDictionary *position in pointArray) {
+    for (NSDictionary *position in self.points) {
         CGPoint point = CGPointMake([[position objectForKey:X] floatValue], [[position objectForKey:Y] floatValue]);
         OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
         
@@ -54,43 +54,43 @@ static const int IMAGE_BUTTON_SIZE = 175;
             [self addBorderToButton:imageButton];
         }
         
-        [self.GameView addSubview:imageButton];
+        [self.scrollView addSubview:imageButton];
         cardTag++;
     }
     //create error cards list
-    for (NSDictionary *position in errorPointArray) {
+    for (NSDictionary *position in self.errorPoints) {
         CGPoint point = CGPointMake([[position objectForKey:X] floatValue], [[position objectForKey:Y] floatValue]);
         OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
         [self addBorderToButton:imageButton];
         
-        [self.GameView addSubview:imageButton];
+        [self.scrollView addSubview:imageButton];
         cardTag++;
     }
     
-    UIImage *backgroundImage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
+    UIImage *backgroundImage = [UIImage imageNamed:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
     [self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:backgroundImage]];
     
     self.overLay = [[SPLockOverlay alloc]initWithFrame:CGRectMake(0.0f, 0.0f, backgroundImage.size.width, backgroundImage.size.height)];
 	[self.overLay setUserInteractionEnabled:NO];
-	[self.GameView addSubview:self.overLay];
+	[self.scrollView addSubview:self.overLay];
     
     [self.view bringSubviewToFront:self.backButton];
     [self.view bringSubviewToFront:self.playButton];
     
-    float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:X] floatValue];
-    float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:Y] floatValue];
-    [self.GameView setContentSize:backgroundImage.size];
-    [self.GameView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
+    float s_x =[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:X] floatValue];
+    float s_y =[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:Y] floatValue];
+    [self.scrollView setContentSize:backgroundImage.size];
+    [self.scrollView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
     
     [self setErrorImageView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-error.png"]]];
     
-    [myPlayer setDelegate:self];
+    [self.player setDelegate:self];
     anserPoint = 1;
     
     //play game start animation
     UIImageView *startView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-start.png"]];
     [self animatedPopOutImageView:startView completion:^(BOOL finished) {
-        [self playAudio:[db cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
+        [self playAudio:[db cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
     }];
 }
 
@@ -101,49 +101,35 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)btnSetLocation:(id)sender
-{
-    [self.GameView setContentOffset:CGPointMake(320, 2360) animated:YES];
-
-}
-
-- (IBAction)btnRestart:(id)sender
-{
-    anserPoint = 1;
-    [self.overLay.pointsToDraw removeAllObjects];
-    [self.overLay setNeedsDisplay];
-    [self.GameView setContentOffset:CGPointMake(0, 1105/2) animated:YES];
-}
-
 - (void)playAudio:(NSString *)filleName fileType:(NSString *)type
 {
     NSURL* url = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:filleName ofType:type]];
     NSError* error = nil;
-    myPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     if (!url || error) {
         //錯誤處理常式
     }
-    [myPlayer setDelegate:self];
-    [myPlayer prepareToPlay]; //This is not always needed, but good to include
-    [myPlayer play];
+    [self.player setDelegate:self];
+    [self.player prepareToPlay]; //This is not always needed, but good to include
+    [self.player play];
 }
 
-- (IBAction)btnPlayAudio:(id)sender
+- (IBAction)playAudio:(id)sender
 {
-    if(anserPoint == pointArray.count)
+    if(anserPoint == self.points.count)
         return;
-    [self playAudio:[[LTDatabase instance] cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
+    [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
 }
 
 
-- (IBAction)btnChooseImageCard:(id)sender
+- (IBAction)selectImageButton:(id)sender
 {
     if ([sender tag]==0) {
         return;
     }
     LTDatabase *db = [LTDatabase instance];
-    NSNumber *cid_voice = cardsArray[anserPoint];
-    NSNumber *cid_image = cardsArray[[sender tag]];
+    NSNumber *cid_voice = self.cardIds[anserPoint];
+    NSNumber *cid_image = self.cardIds[[sender tag]];
     
     //答對
     if ([sender tag] == anserPoint) {
@@ -151,17 +137,17 @@ static const int IMAGE_BUTTON_SIZE = 175;
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_voice];
         
         anserRight = true;
-        int tag=[[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"tag"] intValue];
-        float t_x = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:X] floatValue];
-        float t_y = [[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:Y] floatValue];
+        int tag=[[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"tag"] intValue];
+        float t_x = [[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:X] floatValue];
+        float t_y = [[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:Y] floatValue];
         //level-1:4, level-2:7
         if ([sender tag]==tag) {
-            [self.GameView setContentOffset:CGPointMake(t_x, t_y) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(t_x, t_y) animated:YES];
         }
         anserPoint++;
-        NSDictionary *previousP = [pointArray objectAtIndex:[sender tag]-1];
+        NSDictionary *previousP = [self.points objectAtIndex:[sender tag]-1];
         CGPoint previousPoint = CGPointMake([[previousP objectForKey:X] floatValue], [[previousP objectForKey:Y] floatValue]);
-        NSDictionary *currentP = [pointArray objectAtIndex:[sender tag]];
+        NSDictionary *currentP = [self.points objectAtIndex:[sender tag]];
         CGPoint currentPoint = CGPointMake([[currentP objectForKey:X] floatValue], [[currentP objectForKey:Y] floatValue]);
         
         [self drawLineFromPoint:previousPoint toPoint:currentPoint];
@@ -175,14 +161,14 @@ static const int IMAGE_BUTTON_SIZE = 175;
         }];
         
         //過關
-        if(anserPoint == pointArray.count) {
-            NSDictionary *startP = [pointArray objectAtIndex:0];
+        if(anserPoint == self.points.count) {
+            NSDictionary *startP = [self.points objectAtIndex:0];
             CGPoint startPoint = CGPointMake([[startP objectForKey:X] floatValue], [[startP objectForKey:Y] floatValue]);
             
             [self drawLineFromPoint:currentPoint toPoint:startPoint];
             
             self.overLay.transform = CGAffineTransformMakeScale(1.0, 1.0);
-            UIImage *passimage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"pass-image"]];
+            UIImage *passimage = [UIImage imageNamed:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"pass-image"]];
             UIImageView *passView = [[UIImageView alloc] initWithImage:passimage];
             passView.frame = CGRectMake(0, 0, 1024, 768);
             passView.transform = CGAffineTransformMakeScale(1.5, 1.5);
@@ -258,11 +244,11 @@ static const int IMAGE_BUTTON_SIZE = 175;
 
 - (OBShapedButton *)imageButtonWithIndex:(int)idx position:(CGPoint)point
 {
-    NSDictionary *card = [[LTDatabase instance] cardForId:cardsArray[idx]];
+    NSDictionary *card = [[LTDatabase instance] cardForId:self.cardIds[idx]];
     
     OBShapedButton *imageButton = [OBShapedButton buttonWithType:UIButtonTypeCustom];
     [imageButton setFrame:CGRectMake(point.x, point.y, IMAGE_BUTTON_SIZE, IMAGE_BUTTON_SIZE)];
-    [imageButton addTarget:self action:@selector(btnChooseImageCard:) forControlEvents:UIControlEventTouchUpInside];
+    [imageButton addTarget:self action:@selector(selectImageButton:) forControlEvents:UIControlEventTouchUpInside];
     [imageButton setTag:idx];
     [imageButton setImage:[UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]] forState:UIControlStateNormal];
     
@@ -282,9 +268,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     if(anserRight) {
-        if(anserPoint == pointArray.count)
+        if(anserPoint == self.points.count)
             return;
-        [self playAudio:[[LTDatabase instance] cardForId:cardsArray[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
+        [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
         anserRight = false;
     }
 }
