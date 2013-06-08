@@ -2,22 +2,18 @@
 //  LTRecordViewController.h
 //  ListenTo
 //
-//  Created by Yi Huang on 13/5/21.
+//  Created by Yi Huang on 13/6/8.
 //  Copyright (c) 2013年 Rabbit Wears Pants. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <OBShapedButton/OBShapedButton.h>
-#import "LTRecordCell.h"
+#import "LTRecordViewTableController.h"
 
-@interface LTRecordViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, LTRecordCellDelegate, UINavigationControllerDelegate>
-
-@property (strong, nonatomic) NSArray *cardIds;
-@property (strong, nonatomic) NSDictionary *errorCards;
-@property (strong, nonatomic) NSNumber *selectedID;
-@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+@interface LTRecordViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIView *tableHeaderView;
+@property (strong, nonatomic) LTRecordViewTableController *tableViewController;
 
 @property (strong, nonatomic) OBShapedButton *selectedButton;
 @property (strong, nonatomic) IBOutlet OBShapedButton *todayButton;
@@ -28,7 +24,5 @@
 
 - (IBAction)home:(id)sender;
 - (IBAction)changeRange:(id)sender;
-- (IBAction)openCard:(id)sender;
-
 
 @end
