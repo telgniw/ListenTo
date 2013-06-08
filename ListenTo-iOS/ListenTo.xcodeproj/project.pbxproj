@@ -18,7 +18,6 @@
 		013EA07D175FAECA00AFDFD3 /* level-1-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA07C175FAEC900AFDFD3 /* level-1-pass.png */; };
 		013EA080175FB27500AFDFD3 /* LTGameLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013EA07F175FB27500AFDFD3 /* LTGameLevelViewController.m */; };
 		013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA081175FC09900AFDFD3 /* level-2-pass.png */; };
-		013EA084175FC34400AFDFD3 /* level-2-final.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA083175FC34300AFDFD3 /* level-2-final.png */; };
 		013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA085175FC69C00AFDFD3 /* connectdots-background.png */; };
 		013EA08A175FC6A000AFDFD3 /* connectdots-level-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA086175FC69D00AFDFD3 /* connectdots-level-1.png */; };
 		013EA08B175FC6A000AFDFD3 /* connectdots-level-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA087175FC69E00AFDFD3 /* connectdots-level-2.png */; };
@@ -55,6 +54,8 @@
 		AA96B4AA1762EE8800D9E0F2 /* homescreen-rabbit-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4A61762EE8700D9E0F2 /* homescreen-rabbit-2.png */; };
 		AA96B4AB1762EE8800D9E0F2 /* homescreen-rabbit-3.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4A71762EE8700D9E0F2 /* homescreen-rabbit-3.png */; };
 		AA96B4AC1762EE8800D9E0F2 /* homescreen-rabbit-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4A81762EE8700D9E0F2 /* homescreen-rabbit-4.png */; };
+		AA96B4B01762F05200D9E0F2 /* homescreen-enter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4AF1762F05200D9E0F2 /* homescreen-enter@2x.png */; };
+		AA96B4B21762F05A00D9E0F2 /* homescreen-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4B11762F05A00D9E0F2 /* homescreen-background@2x.png */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -225,7 +226,6 @@
 		013EA07E175FB27400AFDFD3 /* LTGameLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameLevelViewController.h; sourceTree = "<group>"; };
 		013EA07F175FB27500AFDFD3 /* LTGameLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameLevelViewController.m; sourceTree = "<group>"; };
 		013EA081175FC09900AFDFD3 /* level-2-pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-2-pass.png"; sourceTree = "<group>"; };
-		013EA083175FC34300AFDFD3 /* level-2-final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-2-final.png"; sourceTree = "<group>"; };
 		013EA085175FC69C00AFDFD3 /* connectdots-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-background.png"; sourceTree = "<group>"; };
 		013EA086175FC69D00AFDFD3 /* connectdots-level-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-level-1.png"; sourceTree = "<group>"; };
 		013EA087175FC69E00AFDFD3 /* connectdots-level-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-level-2.png"; sourceTree = "<group>"; };
@@ -267,6 +267,8 @@
 		AA96B4A61762EE8700D9E0F2 /* homescreen-rabbit-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homescreen-rabbit-2.png"; path = "ListenTo/Images/homescreen-rabbit-2.png"; sourceTree = SOURCE_ROOT; };
 		AA96B4A71762EE8700D9E0F2 /* homescreen-rabbit-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homescreen-rabbit-3.png"; path = "ListenTo/Images/homescreen-rabbit-3.png"; sourceTree = SOURCE_ROOT; };
 		AA96B4A81762EE8700D9E0F2 /* homescreen-rabbit-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homescreen-rabbit-4.png"; path = "ListenTo/Images/homescreen-rabbit-4.png"; sourceTree = SOURCE_ROOT; };
+		AA96B4AF1762F05200D9E0F2 /* homescreen-enter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homescreen-enter@2x.png"; path = "ListenTo/Images/homescreen-enter@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA96B4B11762F05A00D9E0F2 /* homescreen-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homescreen-background@2x.png"; path = "ListenTo/Images/homescreen-background@2x.png"; sourceTree = SOURCE_ROOT; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -506,34 +508,13 @@
 		AA25B40B174B122700A88C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA96B4AD1762EF5800D9E0F2 /* Homescreen */,
+				AA96B4AE1762EF6700D9E0F2 /* Management */,
+				AA96B4B31762F07A00D9E0F2 /* Icons */,
 				AA4D3FEB175F690200C418BC /* ConnectDots */,
-				AAED14FD17548EC70091C182 /* cards */,
-				AA96B4A51762EE8600D9E0F2 /* homescreen-rabbit-1.png */,
-				AA96B4A61762EE8700D9E0F2 /* homescreen-rabbit-2.png */,
-				AA96B4A71762EE8700D9E0F2 /* homescreen-rabbit-3.png */,
-				AA96B4A81762EE8700D9E0F2 /* homescreen-rabbit-4.png */,
-				AA96B49D1762E62800D9E0F2 /* management-even-row-background.png */,
-				AA96B49E1762E62800D9E0F2 /* management-even-row-background@2x.png */,
-				AA96B49F1762E62800D9E0F2 /* management-odd-row-background.png */,
-				AA96B4A01762E62800D9E0F2 /* management-odd-row-background@2x.png */,
-				AA96B4961762D8C800D9E0F2 /* management-background.png */,
-				AA96B4971762D8C800D9E0F2 /* management-background@2x.png */,
+				AAED14FD17548EC70091C182 /* Cards */,
 				AA96B4921762D82C00D9E0F2 /* play.png */,
 				AA96B4931762D82C00D9E0F2 /* play@2x.png */,
-				AA96B48C1762D3DE00D9E0F2 /* icon-home@2x.png */,
-				AA96B48D1762D3DE00D9E0F2 /* icon-today@2x.png */,
-				AA96B48E1762D3DE00D9E0F2 /* management-table-header@2x.png */,
-				AA96B47B1762D04600D9E0F2 /* icon-all-time-selected.png */,
-				AA96B47C1762D04600D9E0F2 /* icon-all-time.png */,
-				AA96B47D1762D04600D9E0F2 /* icon-home.png */,
-				AA96B47E1762D04600D9E0F2 /* icon-this-week-selected.png */,
-				AA96B47F1762D04600D9E0F2 /* icon-this-week.png */,
-				AA96B4801762D04600D9E0F2 /* icon-today-selected.png */,
-				AA96B4811762D04600D9E0F2 /* icon-today.png */,
-				AA96B4821762D04600D9E0F2 /* management-table-header.png */,
-				AA4D3FF8175F8BCD00C418BC /* homescreen-background.png */,
-				AAED14F51754875D0091C182 /* icon-record.png */,
-				AAF1EEFA17546565004420BA /* homescreen-enter.png */,
 			);
 			name = Images;
 			path = ../images;
@@ -577,7 +558,6 @@
 				013EA07C175FAEC900AFDFD3 /* level-1-pass.png */,
 				013EA081175FC09900AFDFD3 /* level-2-pass.png */,
 				013EA074175FA8FC00AFDFD3 /* level-2.png */,
-				013EA083175FC34300AFDFD3 /* level-2-final.png */,
 				013EA08D175FC83100AFDFD3 /* game-start.png */,
 				013EA06C175F9DDD00AFDFD3 /* error.png */,
 				013EA06E175F9E1600AFDFD3 /* end-3.png */,
@@ -587,6 +567,53 @@
 			name = ConnectDots;
 			path = ListenTo/Images/ConnectDots;
 			sourceTree = SOURCE_ROOT;
+		};
+		AA96B4AD1762EF5800D9E0F2 /* Homescreen */ = {
+			isa = PBXGroup;
+			children = (
+				AA96B4B11762F05A00D9E0F2 /* homescreen-background@2x.png */,
+				AA4D3FF8175F8BCD00C418BC /* homescreen-background.png */,
+				AA96B4AF1762F05200D9E0F2 /* homescreen-enter@2x.png */,
+				AAF1EEFA17546565004420BA /* homescreen-enter.png */,
+				AA96B4A51762EE8600D9E0F2 /* homescreen-rabbit-1.png */,
+				AA96B4A61762EE8700D9E0F2 /* homescreen-rabbit-2.png */,
+				AA96B4A71762EE8700D9E0F2 /* homescreen-rabbit-3.png */,
+				AA96B4A81762EE8700D9E0F2 /* homescreen-rabbit-4.png */,
+			);
+			name = Homescreen;
+			sourceTree = "<group>";
+		};
+		AA96B4AE1762EF6700D9E0F2 /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				AA96B4821762D04600D9E0F2 /* management-table-header.png */,
+				AA96B48E1762D3DE00D9E0F2 /* management-table-header@2x.png */,
+				AA96B49D1762E62800D9E0F2 /* management-even-row-background.png */,
+				AA96B49E1762E62800D9E0F2 /* management-even-row-background@2x.png */,
+				AA96B49F1762E62800D9E0F2 /* management-odd-row-background.png */,
+				AA96B4A01762E62800D9E0F2 /* management-odd-row-background@2x.png */,
+				AA96B4961762D8C800D9E0F2 /* management-background.png */,
+				AA96B4971762D8C800D9E0F2 /* management-background@2x.png */,
+			);
+			name = Management;
+			sourceTree = "<group>";
+		};
+		AA96B4B31762F07A00D9E0F2 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				AA96B48C1762D3DE00D9E0F2 /* icon-home@2x.png */,
+				AA96B48D1762D3DE00D9E0F2 /* icon-today@2x.png */,
+				AA96B47B1762D04600D9E0F2 /* icon-all-time-selected.png */,
+				AA96B47C1762D04600D9E0F2 /* icon-all-time.png */,
+				AA96B47D1762D04600D9E0F2 /* icon-home.png */,
+				AA96B47E1762D04600D9E0F2 /* icon-this-week-selected.png */,
+				AA96B47F1762D04600D9E0F2 /* icon-this-week.png */,
+				AA96B4801762D04600D9E0F2 /* icon-today-selected.png */,
+				AA96B4811762D04600D9E0F2 /* icon-today.png */,
+				AAED14F51754875D0091C182 /* icon-record.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
 		};
 		AAACE182174124D700F143C3 = {
 			isa = PBXGroup;
@@ -704,14 +731,14 @@
 		AAD52E2D175F65AF0016B70A /* Voices */ = {
 			isa = PBXGroup;
 			children = (
-				AAD52E2E175F67850016B70A /* cards */,
+				AAD52E2E175F67850016B70A /* Cards */,
 				AAD52E61175F67850016B70A /* correct.mp3 */,
 				AAD52E62175F67850016B70A /* error.mp3 */,
 			);
 			name = Voices;
 			sourceTree = "<group>";
 		};
-		AAD52E2E175F67850016B70A /* cards */ = {
+		AAD52E2E175F67850016B70A /* Cards */ = {
 			isa = PBXGroup;
 			children = (
 				AAD52E2F175F67850016B70A /* 傘.mp3 */,
@@ -765,11 +792,11 @@
 				AAD52E5F175F67850016B70A /* 鳳梨.mp3 */,
 				AAD52E60175F67850016B70A /* 鴨子.mp3 */,
 			);
-			name = cards;
+			name = Cards;
 			path = ListenTo/Voices/cards;
 			sourceTree = SOURCE_ROOT;
 		};
-		AAED14FD17548EC70091C182 /* cards */ = {
+		AAED14FD17548EC70091C182 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
 				AAED14FE17548EC70091C182 /* 1.蝦子.jpg */,
@@ -823,6 +850,7 @@
 				AAED152E17548EC80091C182 /* 8.桌子.JPG */,
 				AAED152F17548EC80091C182 /* 9.獅子.jpg */,
 			);
+			name = Cards;
 			path = cards;
 			sourceTree = "<group>";
 		};
@@ -1083,7 +1111,6 @@
 				013EA07B175FACC400AFDFD3 /* level-settings.plist in Resources */,
 				013EA07D175FAECA00AFDFD3 /* level-1-pass.png in Resources */,
 				013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */,
-				013EA084175FC34400AFDFD3 /* level-2-final.png in Resources */,
 				013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */,
 				013EA08A175FC6A000AFDFD3 /* connectdots-level-1.png in Resources */,
 				013EA08B175FC6A000AFDFD3 /* connectdots-level-2.png in Resources */,
@@ -1116,6 +1143,8 @@
 				AA96B4AA1762EE8800D9E0F2 /* homescreen-rabbit-2.png in Resources */,
 				AA96B4AB1762EE8800D9E0F2 /* homescreen-rabbit-3.png in Resources */,
 				AA96B4AC1762EE8800D9E0F2 /* homescreen-rabbit-4.png in Resources */,
+				AA96B4B01762F05200D9E0F2 /* homescreen-enter@2x.png in Resources */,
+				AA96B4B21762F05A00D9E0F2 /* homescreen-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

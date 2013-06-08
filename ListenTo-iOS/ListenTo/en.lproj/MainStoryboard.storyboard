@@ -594,7 +594,7 @@
         <image name="connectdots-level-1.png" width="2048" height="1536"/>
         <image name="connectdots-level-2.png" width="2048" height="1536"/>
         <image name="connectdots-level-others.png" width="2048" height="1536"/>
-        <image name="homescreen-enter.png" width="444" height="512"/>
+        <image name="homescreen-enter.png" width="222" height="256"/>
         <image name="homescreen-rabbit-1.png" width="684" height="672"/>
         <image name="icon-all-time-selected.png" width="182" height="199"/>
         <image name="icon-all-time.png" width="165" height="171"/>
@@ -683,9 +683,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
