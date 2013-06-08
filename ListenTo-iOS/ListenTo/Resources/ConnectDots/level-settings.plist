@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>background</key>
-		<string>level-1.png</string>
+		<string>level-background.png</string>
 		<key>connect</key>
 		<string>connect-level-1</string>
 		<key>connect-fuzzy</key>
@@ -32,7 +32,7 @@
 	</dict>
 	<dict>
 		<key>background</key>
-		<string>level-2.png</string>
+		<string>level-background.png</string>
 		<key>connect</key>
 		<string>connect-level-2</string>
 		<key>connect-fuzzy</key>

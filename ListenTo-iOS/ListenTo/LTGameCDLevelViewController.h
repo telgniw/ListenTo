@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTGameLevelViewController : UIViewController
+@interface LTGameCDLevelViewController : UIViewController
 
 @end

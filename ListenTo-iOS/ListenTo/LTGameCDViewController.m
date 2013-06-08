@@ -6,19 +6,19 @@
 //  Copyright (c) 2013年 林 奇賦. All rights reserved.
 //
 
-#import "LTGameViewController.h"
+#import "LTGameCDViewController.h"
 #import "LTDatabase.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define imageCard_width     175
 #define imageCard_height    175
 
-@interface LTGameViewController ()
+@interface LTGameCDViewController ()
 @property (nonatomic, strong) SPLockOverlay *overLay;
 
 @end
 
-@implementation LTGameViewController
+@implementation LTGameCDViewController
 @synthesize overLay;
 
 - (void)viewDidLoad
@@ -34,7 +34,6 @@
     anserRight = false;
     int cardTag = 0;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"background"]]];
     self.GameView.delegate = self;
     
     NSString *plistPath = [[NSBundle mainBundle]
@@ -87,15 +86,16 @@
         cardTag++;
     }
     
-    [self.GameView insertSubview:imageView atIndex:0];
-    //[self.GameView setContentSize:imageView.frame.size];
-    [self.GameView setContentSize:imageView.frame.size];
+    UIImage *backgroundImage = [UIImage imageNamed:[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
+    [self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:backgroundImage]];
+    
+    [self.GameView setContentSize:backgroundImage.size];
     
     float s_x =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"x"] floatValue];
     float s_y =[[[[levelSettingArray objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:@"y"] floatValue];
     [self.GameView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
     
-    self.overLay = [[SPLockOverlay alloc]initWithFrame:imageView.frame];
+    self.overLay = [[SPLockOverlay alloc]initWithFrame:CGRectMake(0.0f, 0.0f, backgroundImage.size.width, backgroundImage.size.height)];
 	[self.overLay setUserInteractionEnabled:NO];
 	[self.GameView addSubview:self.overLay];
     

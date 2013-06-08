@@ -10,7 +10,7 @@
 #import "SPLockOverlay.h"
 #import <AVFoundation/AVAudioPlayer.h>
 
-@interface LTGameViewController : UIViewController <UIScrollViewDelegate,AVAudioPlayerDelegate>
+@interface LTGameCDViewController : UIViewController <UIScrollViewDelegate,AVAudioPlayerDelegate>
 {
     NSMutableArray *pointArray;
     NSMutableArray *errorPointArray;
