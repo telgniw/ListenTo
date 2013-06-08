@@ -28,7 +28,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     static NSString *cellIdentifier = @"LTRecordCell";
     
     NSNumber *cid = self.cardIds[indexPath.row];
