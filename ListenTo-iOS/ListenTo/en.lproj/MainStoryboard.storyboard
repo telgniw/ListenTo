@@ -277,7 +277,7 @@
                                 <rect key="frame" x="20" y="19" width="86" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" backgroundImage="icon-home.png">
                                     <color key="titleColor" red="0.0" green="1" blue="0.62745100259999997" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
