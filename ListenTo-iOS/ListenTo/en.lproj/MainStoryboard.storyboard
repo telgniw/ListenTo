@@ -27,8 +27,8 @@
                                     <segue destination="Xct-Ta-aEa" kind="modal" modalTransitionStyle="flipHorizontal" id="N9s-4x-Ar1"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homescreen-rabbit.png" id="ART-J2-TZo">
-                                <rect key="frame" x="412" y="372" width="201" height="271"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homescreen-rabbit-1.png" id="ART-J2-TZo">
+                                <rect key="frame" x="341" y="391" width="342" height="336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W88-f0-Uyp" customClass="OBShapedButton">
@@ -595,7 +595,7 @@
         <image name="connectdots-level-2.png" width="2048" height="1536"/>
         <image name="connectdots-level-others.png" width="2048" height="1536"/>
         <image name="homescreen-enter.png" width="444" height="512"/>
-        <image name="homescreen-rabbit.png" width="402" height="542"/>
+        <image name="homescreen-rabbit-1.png" width="684" height="672"/>
         <image name="icon-all-time-selected.png" width="182" height="199"/>
         <image name="icon-all-time.png" width="165" height="171"/>
         <image name="icon-home.png" width="106" height="106"/>
@@ -683,6 +683,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

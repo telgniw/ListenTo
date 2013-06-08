@@ -17,21 +17,19 @@
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"homescreen-background.png"]]];
     
-    //UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     NSArray *gifArray = [NSArray arrayWithObjects:
-                         [UIImage imageNamed:@"rabbit-1"],
-                         [UIImage imageNamed:@"rabbit-2"],
-                         [UIImage imageNamed:@"rabbit-3"],
-                         [UIImage imageNamed:@"rabbit-4"],
-                         [UIImage imageNamed:@"rabbit-3"],
-                         [UIImage imageNamed:@"rabbit-2"],
-                         [UIImage imageNamed:@"rabbit-1"],
+                         [UIImage imageNamed:@"homescreen-rabbit-1.png"],
+                         [UIImage imageNamed:@"homescreen-rabbit-2.png"],
+                         [UIImage imageNamed:@"homescreen-rabbit-3.png"],
+                         [UIImage imageNamed:@"homescreen-rabbit-4.png"],
+                         [UIImage imageNamed:@"homescreen-rabbit-3.png"],
+                         [UIImage imageNamed:@"homescreen-rabbit-2.png"],
+                         [UIImage imageNamed:@"homescreen-rabbit-1.png"],
                          nil];
-    self.rabbitImgView.animationImages = gifArray;
-    self.rabbitImgView.animationDuration = 3;
-    self.rabbitImgView.animationRepeatCount = -1;
+    [self.rabbitImgView setAnimationImages:gifArray];
+    [self.rabbitImgView setAnimationDuration:3];
+    [self.rabbitImgView setAnimationRepeatCount:-1];
     [self.rabbitImgView startAnimating];
-
 }
 
 @end
