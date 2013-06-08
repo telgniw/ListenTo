@@ -11,6 +11,9 @@
 
 @interface LTRecordViewTableController : UITableViewController <UITableViewDataSource, UITableViewDelegate, LTRecordCellDelegate>
 
+@property (strong, nonatomic) UIColor *oddRowBackground;
+@property (strong, nonatomic) UIColor *evenRowBackground;
+
 @property (strong, nonatomic) NSArray *cardIds;
 @property (strong, nonatomic) NSDictionary *errorCards;
 @property (strong, nonatomic) NSNumber *selectedID;

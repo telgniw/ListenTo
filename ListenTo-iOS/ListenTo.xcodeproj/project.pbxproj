@@ -52,6 +52,10 @@
 		AA96B4981762D8C800D9E0F2 /* management-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4961762D8C800D9E0F2 /* management-background.png */; };
 		AA96B4991762D8C800D9E0F2 /* management-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4971762D8C800D9E0F2 /* management-background@2x.png */; };
 		AA96B49C1762DFC300D9E0F2 /* LTRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA96B49B1762DFC300D9E0F2 /* LTRecordViewController.m */; };
+		AA96B4A11762E62800D9E0F2 /* management-even-row-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B49D1762E62800D9E0F2 /* management-even-row-background.png */; };
+		AA96B4A21762E62800D9E0F2 /* management-even-row-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B49E1762E62800D9E0F2 /* management-even-row-background@2x.png */; };
+		AA96B4A31762E62800D9E0F2 /* management-odd-row-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B49F1762E62800D9E0F2 /* management-odd-row-background.png */; };
+		AA96B4A41762E62800D9E0F2 /* management-odd-row-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4A01762E62800D9E0F2 /* management-odd-row-background@2x.png */; };
 		AAACE192174124D700F143C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE191174124D700F143C3 /* UIKit.framework */; };
 		AAACE194174124D700F143C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE193174124D700F143C3 /* Foundation.framework */; };
 		AAACE196174124D700F143C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAACE195174124D700F143C3 /* CoreGraphics.framework */; };
@@ -261,6 +265,10 @@
 		AA96B4971762D8C800D9E0F2 /* management-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-background@2x.png"; path = "ListenTo/Images/management-background@2x.png"; sourceTree = SOURCE_ROOT; };
 		AA96B49A1762DFC300D9E0F2 /* LTRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewController.h; sourceTree = "<group>"; };
 		AA96B49B1762DFC300D9E0F2 /* LTRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewController.m; sourceTree = "<group>"; };
+		AA96B49D1762E62800D9E0F2 /* management-even-row-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-even-row-background.png"; path = "ListenTo/Images/management-even-row-background.png"; sourceTree = SOURCE_ROOT; };
+		AA96B49E1762E62800D9E0F2 /* management-even-row-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-even-row-background@2x.png"; path = "ListenTo/Images/management-even-row-background@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA96B49F1762E62800D9E0F2 /* management-odd-row-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-odd-row-background.png"; path = "ListenTo/Images/management-odd-row-background.png"; sourceTree = SOURCE_ROOT; };
+		AA96B4A01762E62800D9E0F2 /* management-odd-row-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-odd-row-background@2x.png"; path = "ListenTo/Images/management-odd-row-background@2x.png"; sourceTree = SOURCE_ROOT; };
 		AAACE18D174124D700F143C3 /* ListenTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListenTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAACE191174124D700F143C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAACE193174124D700F143C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -502,6 +510,10 @@
 			children = (
 				AA4D3FEB175F690200C418BC /* ConnectDots */,
 				AAED14FD17548EC70091C182 /* cards */,
+				AA96B49D1762E62800D9E0F2 /* management-even-row-background.png */,
+				AA96B49E1762E62800D9E0F2 /* management-even-row-background@2x.png */,
+				AA96B49F1762E62800D9E0F2 /* management-odd-row-background.png */,
+				AA96B4A01762E62800D9E0F2 /* management-odd-row-background@2x.png */,
 				AA96B4961762D8C800D9E0F2 /* management-background.png */,
 				AA96B4971762D8C800D9E0F2 /* management-background@2x.png */,
 				AA96B4921762D82C00D9E0F2 /* play.png */,
@@ -1104,6 +1116,10 @@
 				AA96B4951762D82C00D9E0F2 /* play@2x.png in Resources */,
 				AA96B4981762D8C800D9E0F2 /* management-background.png in Resources */,
 				AA96B4991762D8C800D9E0F2 /* management-background@2x.png in Resources */,
+				AA96B4A11762E62800D9E0F2 /* management-even-row-background.png in Resources */,
+				AA96B4A21762E62800D9E0F2 /* management-even-row-background@2x.png in Resources */,
+				AA96B4A31762E62800D9E0F2 /* management-odd-row-background.png in Resources */,
+				AA96B4A41762E62800D9E0F2 /* management-odd-row-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

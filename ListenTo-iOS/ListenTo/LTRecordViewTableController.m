@@ -13,6 +13,14 @@
 
 @implementation LTRecordViewTableController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self setOddRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-odd-row-background.png"]]];
+    [self setEvenRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-even-row-background.png"]]];
+}
+
 #pragma mark - Data Source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -27,19 +35,25 @@
     LTRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSDictionary *card = [db cardForId:cid];
     
-    cell.delegate = self;
+    [cell setDelegate:self];
+    
+    UIImage *image = [UIImage imageNamed:card[@"image"]];
+    [cell.cardImage setImage:image];
+    [cell.cardImage setTag:[cid intValue]];
+    [cell.cardVoiceLabel setText:card[@"name"]];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
+    [cell.cardImage addGestureRecognizer:tapGesture];
+    
+    if(indexPath.row % 2 != 0)
+        [cell.contentView setBackgroundColor:self.oddRowBackground];
+    else
+        [cell.contentView setBackgroundColor:self.evenRowBackground];
     
     // Reload data immediately after data set is updated.
     dispatch_async(dispatch_get_main_queue(), ^{
-        [cell.cardVoiceLabel setText:card[@"name"]];
-        UIImage *image = [UIImage imageNamed:card[@"image"]];
-        cell.cardImage.image = image;
         [cell setCardIds:errorCards[@"ids"]];
         [cell setCardErrors:errorCards[@"errors"]];
-        cell.cardImage.tag = [cid intValue];
-        
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
-        [cell.cardImage addGestureRecognizer:tapGesture];
 
         [cell.collectionView reloadData];
     });

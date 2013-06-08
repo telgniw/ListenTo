@@ -66,7 +66,7 @@
             <objects>
                 <tableViewController id="FQz-vg-gdw" customClass="LTRecordViewTableController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="210" sectionHeaderHeight="22" sectionFooterHeight="22" id="NbX-fi-Lzj">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="593"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="601"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -236,8 +236,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" id="aNC-py-FqJ">
-                                <rect key="frame" x="0.0" y="175" width="1024" height="593"/>
+                            <containerView contentMode="scaleToFill" id="aNC-py-FqJ">
+                                <rect key="frame" x="0.0" y="167" width="1024" height="601"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
