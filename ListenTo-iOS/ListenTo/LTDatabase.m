@@ -16,7 +16,7 @@
     
     static dispatch_once_t token;
     dispatch_once(&token, ^{
-        instance = [[LTDatabase alloc] initWithFakeRecords];
+        instance = [[LTDatabase alloc] init];//WithFakeRecords];
     });
     
     return instance;
