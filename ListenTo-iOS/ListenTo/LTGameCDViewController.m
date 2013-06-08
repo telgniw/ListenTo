@@ -197,6 +197,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
                     [cards setEnabled:NO];
                 }
                 
+                [self.view bringSubviewToFront:self.backButton];
             }];
 
         }
