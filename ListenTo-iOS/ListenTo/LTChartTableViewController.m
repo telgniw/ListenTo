@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     dataManager_=[DataManager new];
-    [myTableView reloadData];
+    [self.tableView reloadData];
 
 }
 
@@ -55,10 +55,10 @@
     return  1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return @"Basic Wall Charts";
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return @"Basic Wall Charts";
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -89,7 +89,7 @@
     [dataManager_ createCustomWallData];
     
     
-    mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, myTableView.frame.size.width - 50, myTableView.frame.size.width * 0.5)];
+    mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, self.tableView.frame.size.width - 50, self.tableView.frame.size.width * 0.5)];
     mWallGraph.delegate=self;
     
     mWallGraph.titleLabel = nil;
@@ -152,7 +152,7 @@
 
 -(UILabel *)createLabelWithText:(NSString *)text
 {
-    UILabel *a=[[UILabel alloc]initWithFrame:CGRectMake(5, myTableView.frame.size.width * 0.5 + 20, 310, 20)];
+    UILabel *a=[[UILabel alloc]initWithFrame:CGRectMake(5, self.tableView.frame.size.width * 0.5 + 20, 310, 20)];
     [a setBackgroundColor:[UIColor clearColor]];
     [a setText:text];
     a.numberOfLines=5;

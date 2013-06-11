@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <OBShapedButton/OBShapedButton.h>
 
-@interface LTCardViewController : UIViewController
+@interface LTCardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet OBShapedButton *backButton;
 

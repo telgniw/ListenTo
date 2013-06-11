@@ -14,7 +14,6 @@
 @interface LTChartTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, WallGraphDelegate>
 {
     
-    IBOutlet UITableView *myTableView;
     MIMWallGraph *mWallGraph;
     
     NSMutableArray *dataArrayFromCSV;
