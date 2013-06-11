@@ -220,10 +220,16 @@
 		F43E3340175E930C00E71490 /* MultiWallLongGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E333A175E930C00E71490 /* MultiWallLongGraph.m */; };
 		F43E3341175E930C00E71490 /* WallTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E333D175E930C00E71490 /* WallTestClass.m */; };
 		F43E3342175E930C00E71490 /* WallTestClass.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43E333E175E930C00E71490 /* WallTestClass.xib */; };
-		F43E3346175E999200E71490 /* LTChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E3344175E999100E71490 /* LTChartViewController.m */; };
-		F43E3347175E999200E71490 /* LTChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43E3345175E999200E71490 /* LTChartViewController.xib */; };
 		F46E23DC175FC719009D60F2 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F46E23DB175FC719009D60F2 /* AppIcon@2x.png */; };
 		F46E23DE175FC720009D60F2 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F46E23DD175FC720009D60F2 /* AppIcon.png */; };
+		F477641D176685E4002D70BC /* management_review_cards.png in Resources */ = {isa = PBXBuildFile; fileRef = F477641B176685E4002D70BC /* management_review_cards.png */; };
+		F477641E176685E4002D70BC /* management_review_cards@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F477641C176685E4002D70BC /* management_review_cards@2x.png */; };
+		F47764211766973C002D70BC /* review_cards_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F477641F1766973C002D70BC /* review_cards_background.png */; };
+		F47764221766973C002D70BC /* review_cards_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F47764201766973C002D70BC /* review_cards_background@2x.png */; };
+		F47764251766A7C3002D70BC /* LTChartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F47764241766A7C2002D70BC /* LTChartTableViewController.m */; };
+		F47764281766B630002D70BC /* groundhog.png in Resources */ = {isa = PBXBuildFile; fileRef = F47764261766B630002D70BC /* groundhog.png */; };
+		F47764291766B630002D70BC /* racoon.png in Resources */ = {isa = PBXBuildFile; fileRef = F47764271766B630002D70BC /* racoon.png */; };
+		F477642B1766B72F002D70BC /* carrots_basket.png in Resources */ = {isa = PBXBuildFile; fileRef = F477642A1766B72F002D70BC /* carrots_basket.png */; };
 		F4A07D67175E29C400F76C5F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A07D66175E29C400F76C5F /* CoreText.framework */; };
 		F4A07D69175E29F400F76C5F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A07D68175E29F400F76C5F /* QuartzCore.framework */; };
 		F4A07DBC175E4CD400F76C5F /* LTCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */; };
@@ -244,6 +250,7 @@
 		F4A07E04175E850C00F76C5F /* MIMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE6175E850300F76C5F /* MIMColor.m */; };
 		F4A07E05175E850C00F76C5F /* MIMColorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE8175E850300F76C5F /* MIMColorClass.m */; };
 		F4A07E08175E850C00F76C5F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DEC175E850900F76C5F /* DataManager.m */; };
+		F4A9A1301764EBBE00EFFC2F /* LTChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -482,11 +489,17 @@
 		F43E333C175E930C00E71490 /* WallTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallTestClass.h; sourceTree = "<group>"; };
 		F43E333D175E930C00E71490 /* WallTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallTestClass.m; sourceTree = "<group>"; };
 		F43E333E175E930C00E71490 /* WallTestClass.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallTestClass.xib; sourceTree = "<group>"; };
-		F43E3343175E999100E71490 /* LTChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTChartViewController.h; sourceTree = "<group>"; };
-		F43E3344175E999100E71490 /* LTChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTChartViewController.m; sourceTree = "<group>"; };
-		F43E3345175E999200E71490 /* LTChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTChartViewController.xib; sourceTree = "<group>"; };
 		F46E23DB175FC719009D60F2 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
 		F46E23DD175FC720009D60F2 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		F477641B176685E4002D70BC /* management_review_cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = management_review_cards.png; path = ListenTo/Images/management_review_cards.png; sourceTree = SOURCE_ROOT; };
+		F477641C176685E4002D70BC /* management_review_cards@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management_review_cards@2x.png"; path = "ListenTo/Images/management_review_cards@2x.png"; sourceTree = SOURCE_ROOT; };
+		F477641F1766973C002D70BC /* review_cards_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = review_cards_background.png; path = ListenTo/Images/review_cards_background.png; sourceTree = SOURCE_ROOT; };
+		F47764201766973C002D70BC /* review_cards_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "review_cards_background@2x.png"; path = "ListenTo/Images/review_cards_background@2x.png"; sourceTree = SOURCE_ROOT; };
+		F47764231766A7C2002D70BC /* LTChartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTChartTableViewController.h; sourceTree = "<group>"; };
+		F47764241766A7C2002D70BC /* LTChartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTChartTableViewController.m; sourceTree = "<group>"; };
+		F47764261766B630002D70BC /* groundhog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groundhog.png; path = ListenTo/Images/groundhog.png; sourceTree = SOURCE_ROOT; };
+		F47764271766B630002D70BC /* racoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racoon.png; path = ListenTo/Images/racoon.png; sourceTree = SOURCE_ROOT; };
+		F477642A1766B72F002D70BC /* carrots_basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carrots_basket.png; path = ListenTo/Images/carrots_basket.png; sourceTree = SOURCE_ROOT; };
 		F4A07D66175E29C400F76C5F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		F4A07D68175E29F400F76C5F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardViewController.h; sourceTree = "<group>"; };
@@ -527,6 +540,8 @@
 		F4A07DE8175E850300F76C5F /* MIMColorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMColorClass.m; sourceTree = "<group>"; };
 		F4A07DEB175E850700F76C5F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		F4A07DEC175E850900F76C5F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		F4A9A12D1764EBBE00EFFC2F /* LTChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTChartViewController.h; sourceTree = "<group>"; };
+		F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTChartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,9 +579,10 @@
 			children = (
 				F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */,
 				F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */,
-				F43E3343175E999100E71490 /* LTChartViewController.h */,
-				F43E3344175E999100E71490 /* LTChartViewController.m */,
-				F43E3345175E999200E71490 /* LTChartViewController.xib */,
+				F4A9A12D1764EBBE00EFFC2F /* LTChartViewController.h */,
+				F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */,
+				F47764231766A7C2002D70BC /* LTChartTableViewController.h */,
+				F47764241766A7C2002D70BC /* LTChartTableViewController.m */,
 			);
 			name = "Card & Chart";
 			sourceTree = "<group>";
@@ -645,6 +661,9 @@
 		AA96B4AD1762EF5800D9E0F2 /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
+				F477642A1766B72F002D70BC /* carrots_basket.png */,
+				F47764261766B630002D70BC /* groundhog.png */,
+				F47764271766B630002D70BC /* racoon.png */,
 				AA96B4B11762F05A00D9E0F2 /* homescreen-background@2x.png */,
 				AA4D3FF8175F8BCD00C418BC /* homescreen-background.png */,
 				AA96B4AF1762F05200D9E0F2 /* homescreen-enter@2x.png */,
@@ -660,6 +679,10 @@
 		AA96B4AE1762EF6700D9E0F2 /* Management */ = {
 			isa = PBXGroup;
 			children = (
+				F477641F1766973C002D70BC /* review_cards_background.png */,
+				F47764201766973C002D70BC /* review_cards_background@2x.png */,
+				F477641B176685E4002D70BC /* management_review_cards.png */,
+				F477641C176685E4002D70BC /* management_review_cards@2x.png */,
 				AA96B4D5176320D500D9E0F2 /* management-error-background.png */,
 				AA96B4D6176320D500D9E0F2 /* management-error-background@2x.png */,
 				AA96B4821762D04600D9E0F2 /* management-table-header.png */,
@@ -725,7 +748,6 @@
 		AAACE182174124D700F143C3 = {
 			isa = PBXGroup;
 			children = (
-				AAD52E12175F62550016B70A /* AVFoundation.framework */,
 				F46E23DD175FC720009D60F2 /* AppIcon.png */,
 				F46E23DB175FC719009D60F2 /* AppIcon@2x.png */,
 				AAACE197174124D700F143C3 /* ListenTo */,
@@ -746,6 +768,7 @@
 		AAACE190174124D700F143C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAD52E12175F62550016B70A /* AVFoundation.framework */,
 				F4A07D68175E29F400F76C5F /* QuartzCore.framework */,
 				F4A07D66175E29C400F76C5F /* CoreText.framework */,
 				AAACE191174124D700F143C3 /* UIKit.framework */,
@@ -1217,7 +1240,6 @@
 				013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */,
 				013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */,
 				F43E3342175E930C00E71490 /* WallTestClass.xib in Resources */,
-				F43E3347175E999200E71490 /* LTChartViewController.xib in Resources */,
 				F46E23DC175FC719009D60F2 /* AppIcon@2x.png in Resources */,
 				F46E23DE175FC720009D60F2 /* AppIcon.png in Resources */,
 				AA96B48A1762D04600D9E0F2 /* management-table-header.png in Resources */,
@@ -1285,6 +1307,13 @@
 				AA2642A61764269A00E7E200 /* icon-today-selected.png in Resources */,
 				AA2642A71764269A00E7E200 /* icon-today-selected@2x.png in Resources */,
 				AA2642A81764269A00E7E200 /* icon-today@2x.png in Resources */,
+				F477641D176685E4002D70BC /* management_review_cards.png in Resources */,
+				F477641E176685E4002D70BC /* management_review_cards@2x.png in Resources */,
+				F47764211766973C002D70BC /* review_cards_background.png in Resources */,
+				F47764221766973C002D70BC /* review_cards_background@2x.png in Resources */,
+				F47764281766B630002D70BC /* groundhog.png in Resources */,
+				F47764291766B630002D70BC /* racoon.png in Resources */,
+				F477642B1766B72F002D70BC /* carrots_basket.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,8 +1390,9 @@
 				F43E333F175E930C00E71490 /* MIMWallGraph.m in Sources */,
 				F43E3340175E930C00E71490 /* MultiWallLongGraph.m in Sources */,
 				F43E3341175E930C00E71490 /* WallTestClass.m in Sources */,
-				F43E3346175E999200E71490 /* LTChartViewController.m in Sources */,
 				AA96B49C1762DFC300D9E0F2 /* LTRecordViewController.m in Sources */,
+				F4A9A1301764EBBE00EFFC2F /* LTChartViewController.m in Sources */,
+				F47764251766A7C3002D70BC /* LTChartTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,64 +2,80 @@
 //  LTChartViewController.m
 //  ListenTo
 //
-//  Created by Johnny Bee on 13/6/5.
+//  Created by Johnny Bee on 13/6/10.
 //  Copyright (c) 2013年 Rabbit Wears Pants. All rights reserved.
 //
 
 #import "LTChartViewController.h"
+#import "LTDatabase.h"
+
+@interface LTChartViewController ()
+
+@end
 
 @implementation LTChartViewController
 
-- (void)viewDidLoad
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+-(void) viewDidLoad{
     [super viewDidLoad];
-    dataManager_ =[DataManager new];
+    
+    LTDatabase *db = [LTDatabase instance];
+    
+    NSDictionary *card = [db cardForId:self.cid];
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"review_cards_background.png"]]];
+    UIImage *image = [UIImage imageNamed:card[@"image"]];
+    [self.cardImage setImage:image];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-#pragma mark - Data Source
+#pragma mark - Utility Methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+- (void)fetchDataSetAfter:(NSDate *)date {
+    LTDatabase *db = [LTDatabase instance];
+    NSArray *unsortedIds = [db arrayWithCardAfterDate:date];
+    
+    int nCards = [unsortedIds count];
+    NSMutableDictionary *mappings = [NSMutableDictionary dictionaryWithCapacity:nCards];
+    NSMutableDictionary *errorRates = [NSMutableDictionary dictionaryWithCapacity:nCards];
+    
+    for(NSNumber *cid in unsortedIds) {
+        NSArray *ids = [db arrayWithErrorCardsForCard:cid afterDate:date];
+        NSMutableArray *errors = [NSMutableArray arrayWithCapacity:[ids count]];
+        for(NSNumber *errorCid in ids) {
+            [errors addObject:[NSNumber numberWithInt:[db errorForCard:cid withErrorCard:errorCid afterDate:date]]];
+        }
+        
+        [mappings setObject:@{@"ids": ids, @"errors": [NSArray arrayWithArray:errors]} forKey:cid];
+        
+        int count = [db errorForCard:cid afterDate:date],
+        error = [db errorForCard:cid afterDate:date];
+        [errorRates setObject:[NSNumber numberWithDouble:((double)error / count)] forKey:cid];
     }
     
-    return cell;
+    // Reload data immediately after data set is updated.
+    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.tableViewController setErrorCards:[NSDictionary dictionaryWithDictionary:mappings]];
+//        [self.tableViewController setCardIds:[unsortedIds sortedArrayUsingComparator:^NSComparisonResult(id cid1, id cid2) {
+//            NSNumber *rate1 = errorRates[cid1], *rate2 = errorRates[cid2];
+//            
+//            // Sorted with descending order.
+//            return [rate2 compare:rate1];
+//        }]];
+        
+        [self.tableViewController.tableView reloadData];
+    });
 }
 
-#pragma mark - Delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
 
 @end

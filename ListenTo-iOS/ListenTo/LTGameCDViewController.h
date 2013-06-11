@@ -28,7 +28,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
 
 @property (strong, nonatomic) UIImageView *errorImageView;
-@property (strong, nonatomic) UIView *disableViewOverlay;
 
 @property (strong, nonatomic) NSNumber *level;
 

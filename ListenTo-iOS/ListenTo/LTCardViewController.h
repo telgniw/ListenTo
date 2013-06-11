@@ -8,10 +8,11 @@
 
 #import <AVFoundation/AVAudioPlayer.h>
 #import <UIKit/UIKit.h>
+#import <OBShapedButton/OBShapedButton.h>
 
 @interface LTCardViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet OBShapedButton *backButton;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgCard;
 @property (strong, nonatomic) IBOutlet UIButton *btnPlayStound;

@@ -24,6 +24,7 @@
 
 #pragma mark - IBActions
 
+- (IBAction)openChart:(id)sender;
 - (IBAction)openCard:(id)sender;
 
 @end

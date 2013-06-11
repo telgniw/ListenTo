@@ -18,7 +18,7 @@
     NSNumber *cardId = self.cid;
     [self fetchCardInfo:cardId ];
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"management-background.png"]]];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"review_cards_background.png"]]];
 }
 
 - (void)didReceiveMemoryWarning

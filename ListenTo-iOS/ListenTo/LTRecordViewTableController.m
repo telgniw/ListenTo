@@ -10,8 +10,10 @@
 #import "LTRecordCell.h"
 #import "LTDatabase.h"
 #import "LTCardViewController.h"
+#import "LTChartViewController.h"
 
 static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
+static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
 
 @implementation LTRecordViewTableController
 
@@ -21,26 +23,31 @@ static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
     
     [self setOddRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-odd-row-background.png"]]];
     [self setEvenRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-even-row-background.png"]]];
+    
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    if([identifier isEqualToString:SEGUE_DISPLAY_CARD_ID]) {
-        return self.selectedID != nil;
-    }
-    return YES;
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:SEGUE_DISPLAY_CARD_ID]) {
-        if(self.selectedID == nil)
+        if(self.selectedID == nil){
             return;
-        
+        }
+        NSLog(@"selectedID: %@", _selectedID);
         LTCardViewController *detailPage = segue.destinationViewController;
         [detailPage setCid:self.selectedID];
         [self setSelectedID:nil];
         [self.navigationController pushViewController:detailPage animated:YES];
+        
+    }else if([segue.identifier isEqualToString:SEGUE_DISPLAY_CHART_ID]){
+        if(self.selectedID == nil){
+            return;
+        }
+        NSLog(@"selectedID: %@", _selectedID);
+        LTChartViewController *chartPage = segue.destinationViewController;
+        [chartPage setCid:self.selectedID];
+        [self setSelectedID:nil];
+        [self.navigationController pushViewController:chartPage animated:YES];
     }
     
 }
@@ -64,10 +71,21 @@ static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
     UIImage *image = [UIImage imageNamed:card[@"image"]];
     [cell.cardImage setImage:image];
     [cell.cardImage setTag:[cid intValue]];
+//    NSLog(@"%ld",(long)[cell.cardImage tag]);
     [cell.cardVoiceLabel setText:card[@"name"]];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCard:)];
-    [cell.cardImage addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *tapGestureOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openChart:)];
+    [cell.cardImage addGestureRecognizer:tapGestureOnCard];
+    
+    UIButton *reviewCards = [UIButton buttonWithType:UIButtonTypeCustom];
+    reviewCards.frame = CGRectMake(cell.contentView.frame.size.width-80,cell.contentView.frame.size.height-120,70,70);
+    [reviewCards setTitle:@"複習" forState:UIControlStateNormal];
+    [reviewCards setTitleEdgeInsets:UIEdgeInsetsMake(-7, -6, 0, 0)];
+    [reviewCards setBackgroundImage:[UIImage imageNamed:@"management_review_cards.png"] forState:UIControlStateNormal];
+    [reviewCards setTag:[cid intValue]];
+    [reviewCards addTarget:self action:@selector(openCard:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
+    NSLog(@"CID: %@, Button tag: %ld, Cell tag: %ld", cid, (long)[reviewCards tag], (long)[cell.cardImage tag]);
+    [cell.contentView addSubview: reviewCards];
     
     if(indexPath.row % 2 != 0)
         [cell.contentView setBackgroundColor:self.oddRowBackground];
@@ -104,10 +122,17 @@ static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
 
 #pragma mark - IBActions
 
-- (IBAction)openCard:(id)sender
+- (IBAction)openChart:(id)sender
 {
     UIGestureRecognizer *gesture = (UIGestureRecognizer *)sender;
     [self setSelectedID:[NSNumber numberWithInt:[gesture.view tag]]];
+    [self performSegueWithIdentifier:SEGUE_DISPLAY_CHART_ID sender:self];
+}
+
+- (IBAction)openCard:(UIButton *)sender
+{
+     NSLog(@"Tag: %d", [sender tag]);
+    [self setSelectedID:[NSNumber numberWithInteger:sender.tag]];
     [self performSegueWithIdentifier:SEGUE_DISPLAY_CARD_ID sender:self];
 }
 
@@ -117,7 +142,8 @@ static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
 - (void)cellSelectedWithIdentity:(NSNumber*)cid
 {
     [self setSelectedID:cid];
-    [self performSegueWithIdentifier:SEGUE_DISPLAY_CARD_ID sender:self];
+    [self performSegueWithIdentifier:SEGUE_DISPLAY_CHART_ID sender:self];
+
 }
 
 

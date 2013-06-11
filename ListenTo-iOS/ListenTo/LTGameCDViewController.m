@@ -86,11 +86,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     
     [self.player setDelegate:self];
     anserPoint = 1;
-
-    self.disableViewOverlay = [[UIView alloc]
-                          initWithFrame:CGRectMake(0.0f,0.0f,1024.0f,768.0f)];
-    self.disableViewOverlay.backgroundColor=[UIColor blackColor];
-
+    
     //play game start animation
     UIImageView *startView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-start.png"]];
     [self animatedPopOutImageView:startView completion:^(BOOL finished) {
@@ -224,14 +220,6 @@ static const int IMAGE_BUTTON_SIZE = 175;
 
 - (void)animatedPopOutImageView:(UIImageView *)imageView completion:(void (^)(BOOL finished))completion
 {
-    //add disableViewOverlay
-    self.disableViewOverlay.alpha = 0;
-    [self.view addSubview:self.disableViewOverlay];
-    [UIView beginAnimations:@"FadeIn" context:nil];
-    [UIView setAnimationDuration:0.5];
-    self.disableViewOverlay.alpha = 0.6;
-    [UIView commitAnimations];
-
     [self.view addSubview:imageView];
     [imageView setTransform:CGAffineTransformMakeScale(0.01, 0.01)];
     [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
@@ -239,7 +227,6 @@ static const int IMAGE_BUTTON_SIZE = 175;
     } completion:^(BOOL finished){
         [NSThread sleepForTimeInterval:0.7];
         [imageView removeFromSuperview];
-        [self.disableViewOverlay removeFromSuperview];
         
         if(completion != nil) {
             completion(finished);

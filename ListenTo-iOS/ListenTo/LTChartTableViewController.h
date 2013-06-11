@@ -1,8 +1,8 @@
 //
-//  LTChartViewController.h
+//  LTChartTableViewController.h
 //  ListenTo
 //
-//  Created by Johnny Bee on 13/6/10.
+//  Created by Johnny Bee on 13/6/11.
 //  Copyright (c) 2013年 Rabbit Wears Pants. All rights reserved.
 //
 
@@ -10,12 +10,16 @@
 #import "MIMColor.h"
 #import "MIMWallGraph.h"
 #import "DataManager.h"
-#import "LTChartTableViewController.h"
 
-@interface LTChartViewController : UIViewController <WallGraphDelegate>
-
+@interface LTChartTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, WallGraphDelegate>
 {
+    
+    IBOutlet UITableView *myTableView;
     MIMWallGraph *mWallGraph;
+    
+    NSMutableArray *dataArrayFromCSV;
+    NSMutableArray *xDataArrayFromCSV;
+    
     
     NSArray *yValuesArray;
     NSArray *xValuesArray;
@@ -28,14 +32,12 @@
     NSDictionary *horizontalLinesProperties;
     NSDictionary *verticalLinesProperties;
     
-    DataManager *dataManager;
-    IBOutlet UIView *chartView;
+    
+    DataManager *dataManager_;
 
 }
 
-@property (strong, nonatomic) IBOutlet UIImageView *cardImage;
-@property (strong, nonatomic ) NSNumber *cid;
-@property (strong, nonatomic) LTChartTableViewController *tableViewController;
+@property (strong, nonatomic) NSNumber *cid;
 
 
 @end
