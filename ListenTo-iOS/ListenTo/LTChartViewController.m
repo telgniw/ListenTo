@@ -9,20 +9,7 @@
 #import "LTChartViewController.h"
 #import "LTDatabase.h"
 
-@interface LTChartViewController ()
-
-@end
-
 @implementation LTChartViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -36,6 +23,8 @@
     UIImage *image = [UIImage imageNamed:card[@"image"]];
     [self.cardImage setImage:image];
 
+    [self setTableViewController:self.childViewControllers[0]];
+    [self.tableViewController initializeDataWithCid:self.cid];
 }
 
 #pragma mark - Utility Methods

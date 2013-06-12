@@ -77,34 +77,36 @@
     if(self = [self init]) {
         // Insert fake records into database for today.
         [self newRecordWithType:0];
-        [self insertRowWithVoiceCard:@11 andImageCard:@12];
-        [self insertRowWithVoiceCard:@11 andImageCard:@12];
-        [self insertRowWithVoiceCard:@11 andImageCard:@12];
-        [self insertRowWithVoiceCard:@11 andImageCard:@11];
-        [self insertRowWithVoiceCard:@19 andImageCard:@20];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19];
         [self insertRowWithVoiceCard:@19 andImageCard:@21];
-        [self insertRowWithVoiceCard:@19 andImageCard:@21];
-        [self insertRowWithVoiceCard:@9 andImageCard:@10];
         
-        // Insert fake records into database for last week.
+        // Insert fake records into database for yesterday.
         [self newRecordWithType:0];
-        [self insertRowWithVoiceCard:@15 andImageCard:@16 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@15 andImageCard:@15 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@22 andImageCard:@22 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@9 andImageCard:@10 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@9 andImageCard:@10 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@9 andImageCard:@9 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@4 andImageCard:@5 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@4 andImageCard:@5 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@4 andImageCard:@5 andTimestamp:[NSDate firstDayOfTheWeek]];
-        [self insertRowWithVoiceCard:@4 andImageCard:@4 andTimestamp:[NSDate firstDayOfTheWeek]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19 andTimestamp:[[NSDate today] dateBySubtractingDays:1]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@20 andTimestamp:[[NSDate today] dateBySubtractingDays:1]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@20 andTimestamp:[[NSDate today] dateBySubtractingDays:1]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@21 andTimestamp:[[NSDate today] dateBySubtractingDays:1]];
+        
+        // Insert fake records into database for three days ago.
+        [self newRecordWithType:0];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19 andTimestamp:[[NSDate today] dateBySubtractingDays:3]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19 andTimestamp:[[NSDate today] dateBySubtractingDays:3]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19 andTimestamp:[[NSDate today] dateBySubtractingDays:3]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19 andTimestamp:[[NSDate today] dateBySubtractingDays:3]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@21 andTimestamp:[[NSDate today] dateBySubtractingDays:3]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@21 andTimestamp:[[NSDate today] dateBySubtractingDays:3]];
         
         // Insert fake records into database for two weeks ago.
         [self newRecordWithType:0];
         [self insertRowWithVoiceCard:@6 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
         [self insertRowWithVoiceCard:@6 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
-        [self insertRowWithVoiceCard:@8 andImageCard:@8 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
-        [self insertRowWithVoiceCard:@8 andImageCard:@6 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@19 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
+        [self insertRowWithVoiceCard:@19 andImageCard:@21 andTimestamp:[[NSDate today] dateBySubtractingDays:14]];
     }
     return self;
 }

@@ -440,7 +440,6 @@
         NSArray *valueArray_=[delegate valuesForXAxis:self];
         NSAssert(([valueArray_ count] !=0),@"WARNING::No values available for x-Axis Labels.");
         
-        
         if([valueArray_ count]>0)
         {
             _xValElements=[[NSMutableArray alloc]initWithArray:valueArray_];
@@ -454,9 +453,6 @@
         {
             xIsString=[MIM_MathClass checkIfStringIsAlphaNumericOnly:[[_xValElements objectAtIndex:0]objectAtIndex:0]];
         }
-        
-        
-        
     }
     else
     {
@@ -1433,7 +1429,7 @@
     floatingView.barColor=[UIColor colorWithRed:l.red green:l.green blue:l.blue alpha:1.0];
 
     
-    NSString *s = @"總共玩了＃次";
+    NSString *s = [NSString stringWithFormat:@"總共玩了%d次", [[_yValElements objectAtIndex:tagVal] intValue]];
     
         if([_xTitles count]>0)
             [floatingView setLabelsOnView:[_yValElements objectAtIndex:tagVal] total:s subtitle:[_xTitles objectAtIndex:tagVal]];

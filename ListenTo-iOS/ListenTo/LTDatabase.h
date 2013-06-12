@@ -13,6 +13,10 @@ static NSString *const LT_DB_KEY_CARD_NAME = @"name";
 static NSString *const LT_DB_KEY_CARD_IMAGE = @"image";
 static NSString *const LT_DB_KEY_CARD_VOICE = @"voice";
 
+static NSString *const LT_DB_STAT_KEY_COUNT = @"count";
+static NSString *const LT_DB_STAT_KEY_ERROR = @"error";
+static NSString *const LT_DB_STAT_KEY_DATE = @"date";
+
 @interface LTDatabase: NSObject
 
 @property (nonatomic, strong) FMDatabase *database;

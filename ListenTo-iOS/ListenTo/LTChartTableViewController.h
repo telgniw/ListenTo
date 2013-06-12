@@ -9,26 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "MIMColor.h"
 #import "MIMWallGraph.h"
-#import "DataManager.h"
+#import "LTDatabase.h"
 
 @interface LTChartTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, WallGraphDelegate>
 {
     MIMWallGraph *mWallGraph;
     
-    NSArray *yValuesArray;
-    NSArray *xValuesArray;
-    NSArray *xTitlesArray;
     NSArray *wallPropertiesArray;
-    
-    NSDictionary *xProperty;
-    NSDictionary *yProperty;
-    
-    NSDictionary *horizontalLinesProperties;
-    NSDictionary *verticalLinesProperties;
-    
-    DataManager *dataManager_;
 }
 
 @property (strong, nonatomic) NSNumber *cid;
+
+@property (strong, nonatomic) LTDatabase *db;
+@property (strong, nonatomic) NSArray *xTitles;
+@property (strong, nonatomic) NSArray *xValues;
+@property (strong, nonatomic) NSArray *yTitles;
+@property (strong, nonatomic) NSArray *yValues;
+
+- (void)initializeDataWithCid:(NSNumber *)cid;
 
 @end

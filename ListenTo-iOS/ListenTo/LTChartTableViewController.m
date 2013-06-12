@@ -8,27 +8,42 @@
 
 #import "LTChartTableViewController.h"
 
-@interface LTChartTableViewController ()
-
-@end
-
 @implementation LTChartTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (void)initializeDataWithCid:(NSNumber *)cid;
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    [self setCid:cid];
+    
+    // Initialize data.
+    [self setDb:[LTDatabase instance]];
+    
+    NSArray *stats = [self.db statisticsForCard:self.cid withNumberOfDays:7];
+    
+    // Generate x-axis data.
+    [self setXValues:[stats valueForKey:LT_DB_STAT_KEY_DATE]];
+    
+    NSMutableArray *titles = [NSMutableArray arrayWithCapacity:[stats count]];
+    for(NSDate *date in self.xValues) {
+        [titles addObject:[date stringWithAbbrFormat]];
     }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    dataManager_ = [DataManager new];
+    
+    [self setXTitles:[NSArray arrayWithArray:titles]];
+    
+    // Generate y-axis data.
+    NSMutableArray *values = [NSMutableArray arrayWithCapacity:[stats count]];
+    [titles removeAllObjects];
+    
+    for(NSDictionary *record in stats) {
+        NSLog(@"%@", record);
+        float rate = (1.0f - [[record objectForKey:LT_DB_STAT_KEY_ERROR] floatValue] / [[record objectForKey:LT_DB_STAT_KEY_COUNT] floatValue]) * 100.0;
+        [values addObject:[NSNumber numberWithFloat:rate]];
+        [titles addObject:[NSString stringWithFormat:@"%.0f", rate]];
+    }
+    
+    [self setYTitles:[NSArray arrayWithArray:titles]];
+    [self setYValues:@[[NSArray arrayWithArray:values]]];
+    
     [self.tableView reloadData];
-
 }
 
 #pragma mark - TABLE View
@@ -37,15 +52,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *deviceType = [UIDevice currentDevice].model;
-    if(![deviceType isEqualToString:@"iPhone"])
-        return 500;
-    
-    return 200;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
@@ -62,23 +68,13 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    xProperty=nil;
-    yProperty=nil;
-    horizontalLinesProperties=nil;
-    verticalLinesProperties=nil;
-    wallPropertiesArray=nil;
-    
-    
     UITableViewCell *cell;
     
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
     wallPropertiesArray=@[@{@"edgecolor": @"100,170,150", @"wallcolor": @"100,170,150,50"}];
     
-    [dataManager_ createCustomWallData];
-    
-    
-    mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, self.tableView.frame.size.width - 50, self.tableView.frame.size.heightg)];
+    mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, self.tableView.frame.size.width - 50, self.tableView.frame.size.height)];
     mWallGraph.delegate=self;
     
     mWallGraph.titleLabel = nil;
@@ -88,7 +84,6 @@
     [mWallGraph drawMIMWallGraph];
     [cell.contentView addSubview:mWallGraph];
     
-    
     return cell;
 }
 
@@ -96,39 +91,22 @@
 
 - (NSArray *)valuesForGraph:(id)graph
 {
-    return dataManager_.yValuesArray;
+    return self.yValues;
 }
 
 - (NSArray *)valuesForXAxis:(id)graph
 {
-    return dataManager_.xValuesArray;
+    return self.xTitles;
 }
 
 - (NSArray *)titlesForXAxis:(id)graph
 {
-    return dataManager_.xTitlesArray;
+    return self.xTitles;
 }
 
-
-- (NSDictionary *)xAxisProperties:(id)graph
+- (NSArray *)titlesForYAxis:(id)graph
 {
-    return xProperty;
-}
-
-- (NSDictionary *)yAxisProperties:(id)graph
-{
-    return yProperty;
-}
-
-- (NSDictionary *)horizontalLinesProperties:(id)graph
-{
-    return horizontalLinesProperties;
-    
-}
-
-- (NSDictionary*)verticalLinesProperties:(id)graph
-{
-    return verticalLinesProperties;
+    return self.yTitles;
 }
 
 - (NSArray *)WallProperties:(id)graph

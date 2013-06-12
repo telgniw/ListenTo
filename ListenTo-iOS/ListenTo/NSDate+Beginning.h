@@ -16,6 +16,7 @@
 
 + (NSDate *)dateFromString:(NSString *)dateString WithFormat:(NSString *)format;
 - (NSString *)stringWithSqliteFormat;
+- (NSString *)stringWithAbbrFormat;
 
 - (NSDate *)dateByAddingDays:(NSInteger)nDays;
 - (NSDate *)dateBySubtractingDays:(NSInteger)nDays;

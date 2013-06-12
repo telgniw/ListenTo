@@ -9,26 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MIMColor.h"
 #import "MIMWallGraph.h"
-#import "DataManager.h"
 #import "LTChartTableViewController.h"
 
-@interface LTChartViewController : UIViewController <WallGraphDelegate>
-{
-    MIMWallGraph *mWallGraph;
-    
-    NSArray *yValuesArray;
-    NSArray *xValuesArray;
-    NSArray *xTitlesArray;
-    NSArray *wallPropertiesArray;
-    
-    NSDictionary *xProperty;
-    NSDictionary *yProperty;
-    
-    NSDictionary *horizontalLinesProperties;
-    NSDictionary *verticalLinesProperties;
-    
-    DataManager *dataManager;
-}
+@interface LTChartViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *cardImage;
 @property (strong, nonatomic) NSNumber *cid;

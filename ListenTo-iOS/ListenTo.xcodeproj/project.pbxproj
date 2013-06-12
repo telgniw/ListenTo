@@ -248,7 +248,6 @@
 		F4A07E03175E850C00F76C5F /* YAxisBand.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE3175E850100F76C5F /* YAxisBand.m */; };
 		F4A07E04175E850C00F76C5F /* MIMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE6175E850300F76C5F /* MIMColor.m */; };
 		F4A07E05175E850C00F76C5F /* MIMColorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DE8175E850300F76C5F /* MIMColorClass.m */; };
-		F4A07E08175E850C00F76C5F /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DEC175E850900F76C5F /* DataManager.m */; };
 		F4A9A1301764EBBE00EFFC2F /* LTChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -536,8 +535,6 @@
 		F4A07DE6175E850300F76C5F /* MIMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMColor.m; sourceTree = "<group>"; };
 		F4A07DE7175E850300F76C5F /* MIMColorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIMColorClass.h; sourceTree = "<group>"; };
 		F4A07DE8175E850300F76C5F /* MIMColorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIMColorClass.m; sourceTree = "<group>"; };
-		F4A07DEB175E850700F76C5F /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
-		F4A07DEC175E850900F76C5F /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		F4A9A12D1764EBBE00EFFC2F /* LTChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTChartViewController.h; sourceTree = "<group>"; };
 		F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTChartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -566,8 +563,6 @@
 				F4A07DC5175E84FF00F76C5F /* Accessories */,
 				F4A07DE4175E850100F76C5F /* Colors */,
 				F43E3336175E930C00E71490 /* Wall Graph */,
-				F4A07DEB175E850700F76C5F /* DataManager.h */,
-				F4A07DEC175E850900F76C5F /* DataManager.m */,
 			);
 			name = "3rd-party Lib";
 			sourceTree = "<group>";
@@ -1382,7 +1377,6 @@
 				F4A07E03175E850C00F76C5F /* YAxisBand.m in Sources */,
 				F4A07E04175E850C00F76C5F /* MIMColor.m in Sources */,
 				F4A07E05175E850C00F76C5F /* MIMColorClass.m in Sources */,
-				F4A07E08175E850C00F76C5F /* DataManager.m in Sources */,
 				F43E333F175E930C00E71490 /* MIMWallGraph.m in Sources */,
 				F43E3340175E930C00E71490 /* MultiWallLongGraph.m in Sources */,
 				AA96B49C1762DFC300D9E0F2 /* LTRecordViewController.m in Sources */,

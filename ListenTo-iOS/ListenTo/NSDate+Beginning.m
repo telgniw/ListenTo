@@ -48,6 +48,13 @@
     return [formatter stringFromDate:self];
 }
 
+- (NSString *)stringWithAbbrFormat
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM-dd"];
+    return [formatter stringFromDate:self];
+}
+
 - (NSDate *)dateByAddingDays:(NSInteger)nDays
 {
     NSDate *today = [NSDate today];
