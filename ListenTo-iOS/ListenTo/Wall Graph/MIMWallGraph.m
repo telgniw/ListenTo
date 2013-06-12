@@ -1241,6 +1241,9 @@
     if([[yLProperties allKeys] count]==0)
         yLProperties=[[NSMutableDictionary alloc] init];
     
+    // Added by Yi: set font color.
+    [yLProperties setValue:@"102,102,102" forKey:@"color"];
+    
     [yLProperties setValue:[NSNumber numberWithFloat:pixelsPerTile] forKey:@"pxpertile"];
     [yLProperties setValue:[NSNumber numberWithInt:numOfHLines] forKey:@"num"];
     [yLProperties setValue:[NSNumber numberWithFloat:minimumOnY] forKey:@"minY"];

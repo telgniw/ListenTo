@@ -40,6 +40,7 @@
     
     // Generate y-axis data.
     [self setYCounts:[stats valueForKey:LT_DB_STAT_KEY_COUNT]];
+    [self setYErrors:[stats valueForKey:LT_DB_STAT_KEY_ERROR]];
     
     NSMutableArray *values = [NSMutableArray arrayWithCapacity:[stats count]];
     for(NSDictionary *record in stats) {
@@ -90,6 +91,7 @@
     mWallGraph.meterLineYOffset = 0;
     
     mWallGraph.yValCounts = self.yCounts;
+    mWallGraph.yValErrors = self.yErrors;
     
     [mWallGraph drawMIMWallGraph];
     [cell.contentView addSubview:mWallGraph];
