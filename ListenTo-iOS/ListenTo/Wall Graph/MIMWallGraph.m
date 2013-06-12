@@ -1187,9 +1187,6 @@
 
 -(void)_displayXAxisLabels
 {
-   
-    
-    
     if([[xLProperties allKeys] count]==0)
         xLProperties=[[NSMutableDictionary alloc] init];
     
@@ -1199,6 +1196,11 @@
         [xLProperties setValue:[NSNumber numberWithInt:xTitleStyle] forKey:@"style"];
     
     
+    // Added by Yi: set font color and size.
+    [xLProperties setValue:@18 forKey:@"fontSize"];
+    [xLProperties setValue:@"0,153,44" forKey:@"color"];
+    [xLProperties setValue:[NSNumber numberWithInt:XTitleStyle3] forKey:@"style"];
+    
     [xLProperties setValue:[NSNumber numberWithBool:xIsString] forKey:@"xisstring"];
     [xLProperties setValue:[NSNumber numberWithBool:YES] forKey:@"linechart"];
     [xLProperties setValue:[NSNumber numberWithFloat:_scalingX] forKey:@"xscaling"];
@@ -1206,14 +1208,8 @@
     [xLProperties setValue:[NSNumber numberWithFloat:xAxisHeight] forKey:@"xheight"];
     
     XAxisBand *_xBand;
-//    if(_isLongGraph)
-//        _xBand=[[XAxisBand alloc]initWithFrame:CGRectMake(0,_gridHeight, _contentWidth, xAxisHeight)];
-//    else 
-//        _xBand=[[XAxisBand alloc]initWithFrame:CGRectMake(leftMargin+yAxisWidth,_gridHeight+topMargin, _gridWidth, xAxisHeight)];
-//    
-//    
     if(_isLongGraph)
-        _xBand=[[XAxisBand alloc]initWithFrame:CGRectMake(0,_gridHeight, _contentWidth+offsetXLabelOnLongGraph,xAxisHeight)];//
+        _xBand=[[XAxisBand alloc]initWithFrame:CGRectMake(0,_gridHeight, _contentWidth+offsetXLabelOnLongGraph,xAxisHeight)];
     else
         _xBand=[[XAxisBand alloc]initWithFrame:CGRectMake(leftMargin+yAxisWidth,_gridHeight+topMargin, _gridWidth, xAxisHeight)];
     

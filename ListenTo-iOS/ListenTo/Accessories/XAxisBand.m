@@ -60,8 +60,6 @@
     if([[properties allKeys] containsObject:@"color"])
         c=[MIMColorClass colorWithComponent:[properties valueForKey:@"color"]];
     
-    NSLog(@"lineColor=%f,%f,%f,%f",c.red,c.green,c.blue,c.alpha);
-    
     lineColor=[UIColor colorWithRed:c.red green:c.green blue:c.blue alpha:c.alpha];
     
     
