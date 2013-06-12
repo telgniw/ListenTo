@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTLabel.h"
 
 @interface LTRecordErrorImageCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) IBOutlet UILabel *countLabel;
+@property (strong, nonatomic) IBOutlet LTLabel *countLabel;
 
 @end

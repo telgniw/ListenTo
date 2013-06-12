@@ -18,6 +18,7 @@
 		013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA081175FC09900AFDFD3 /* level-2-pass.png */; };
 		013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA085175FC69C00AFDFD3 /* connectdots-background.png */; };
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
+		AA0E33971768282400E474AC /* LTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0E33961768282400E474AC /* LTLabel.m */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewTableController.m */; };
 		AA2642871764269A00E7E200 /* icon-all-time.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2642651764269900E7E200 /* icon-all-time.png */; };
 		AA2642881764269A00E7E200 /* icon-all-time-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2642661764269900E7E200 /* icon-all-time-selected.png */; };
@@ -267,6 +268,8 @@
 		013EA085175FC69C00AFDFD3 /* connectdots-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-background.png"; sourceTree = "<group>"; };
 		5654E21E1EC1482695A9883E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AA0E33951768282400E474AC /* LTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLabel.h; sourceTree = "<group>"; };
+		AA0E33961768282400E474AC /* LTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLabel.m; sourceTree = "<group>"; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewTableController.h; sourceTree = "<group>"; };
 		AA25B430174B24E400A88C82 /* LTRecordViewTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewTableController.m; sourceTree = "<group>"; };
 		AA2642651764269900E7E200 /* icon-all-time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-all-time.png"; path = "ListenTo/Images/icon-all-time.png"; sourceTree = SOURCE_ROOT; };
@@ -625,6 +628,8 @@
 			children = (
 				AA448FD51755DE0D00877B06 /* NSDate+Beginning.h */,
 				AA448FD61755DE0D00877B06 /* NSDate+Beginning.m */,
+				AA0E33951768282400E474AC /* LTLabel.h */,
+				AA0E33961768282400E474AC /* LTLabel.m */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -1393,6 +1398,7 @@
 				AA96B49C1762DFC300D9E0F2 /* LTRecordViewController.m in Sources */,
 				F4A9A1301764EBBE00EFFC2F /* LTChartViewController.m in Sources */,
 				F47764251766A7C3002D70BC /* LTChartTableViewController.m in Sources */,
+				AA0E33971768282400E474AC /* LTLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

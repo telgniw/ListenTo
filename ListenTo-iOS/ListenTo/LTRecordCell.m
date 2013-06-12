@@ -32,6 +32,7 @@
     
     LTRecordErrorImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     [cell.imageView setImage:[UIImage imageNamed:_card[@"image"]]];
+    [cell.countLabel setInsets:UIEdgeInsetsMake(8.0f, 10.0f, 0.0f, 0.0f)];
     [cell.countLabel setBackgroundColor:errorBackgroundImage];
     [cell.countLabel setText:[self.cardErrors[indexPath.row] stringValue]];
     
