@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    dataManager_=[DataManager new];
+    dataManager_ = [DataManager new];
     [self.tableView reloadData];
 
 }
@@ -45,7 +45,6 @@
     if(![deviceType isEqualToString:@"iPhone"])
         return 500;
     
-    
     return 200;
 }
 
@@ -56,9 +55,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return  1;
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,9 +73,7 @@
     
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
-    wallPropertiesArray=[NSArray arrayWithObjects:
-                         [NSDictionary dictionaryWithObjectsAndKeys:@"0,255,0",@"edgecolor",@"0,255,0,50",@"wallcolor", nil]
-                         ,nil];
+    wallPropertiesArray=@[@{@"edgecolor": @"100,170,150", @"wallcolor": @"100,170,150,50"}];
     
     [dataManager_ createCustomWallData];
     
@@ -95,8 +90,6 @@
     
     
     return cell;
-    
-    
 }
 
 #pragma mark - Delegate Methods
@@ -138,7 +131,7 @@
     return verticalLinesProperties;
 }
 
-- (NSArray *)WallProperties:(id)graph; //hide,borderwidth (of wall border),patternStyle,gradient,color
+- (NSArray *)WallProperties:(id)graph
 {
     return wallPropertiesArray;
 }
@@ -154,7 +147,6 @@
     [a setFont:[UIFont fontWithName:@"Helvetica" size:12]];
     [a setMinimumScaleFactor:8];
     return a;
-    
 }
 
 @end

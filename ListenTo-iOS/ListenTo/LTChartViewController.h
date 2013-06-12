@@ -28,13 +28,12 @@
     NSDictionary *verticalLinesProperties;
     
     DataManager *dataManager;
-    IBOutlet UIView *chartView;
-
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *cardImage;
 @property (strong, nonatomic) NSNumber *cid;
 @property (strong, nonatomic) LTChartTableViewController *tableViewController;
 
+- (IBAction)back:(id)sender;
 
 @end

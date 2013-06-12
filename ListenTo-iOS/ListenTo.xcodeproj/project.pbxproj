@@ -219,8 +219,6 @@
 		AAFA57F7175DB77800743430 /* AppIcon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA57F6175DB77700743430 /* AppIcon-1024x1024.png */; };
 		F43E333F175E930C00E71490 /* MIMWallGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E3338175E930C00E71490 /* MIMWallGraph.m */; };
 		F43E3340175E930C00E71490 /* MultiWallLongGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E333A175E930C00E71490 /* MultiWallLongGraph.m */; };
-		F43E3341175E930C00E71490 /* WallTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E333D175E930C00E71490 /* WallTestClass.m */; };
-		F43E3342175E930C00E71490 /* WallTestClass.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43E333E175E930C00E71490 /* WallTestClass.xib */; };
 		F46E23DC175FC719009D60F2 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F46E23DB175FC719009D60F2 /* AppIcon@2x.png */; };
 		F46E23DE175FC720009D60F2 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F46E23DD175FC720009D60F2 /* AppIcon.png */; };
 		F477641D176685E4002D70BC /* management_review_cards.png in Resources */ = {isa = PBXBuildFile; fileRef = F477641B176685E4002D70BC /* management_review_cards.png */; };
@@ -489,9 +487,6 @@
 		F43E3339175E930C00E71490 /* MultiWallLongGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiWallLongGraph.h; sourceTree = "<group>"; };
 		F43E333A175E930C00E71490 /* MultiWallLongGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiWallLongGraph.m; sourceTree = "<group>"; };
 		F43E333B175E930C00E71490 /* WallGraphDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallGraphDelegate.h; sourceTree = "<group>"; };
-		F43E333C175E930C00E71490 /* WallTestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallTestClass.h; sourceTree = "<group>"; };
-		F43E333D175E930C00E71490 /* WallTestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallTestClass.m; sourceTree = "<group>"; };
-		F43E333E175E930C00E71490 /* WallTestClass.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallTestClass.xib; sourceTree = "<group>"; };
 		F46E23DB175FC719009D60F2 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@2x.png"; sourceTree = "<group>"; };
 		F46E23DD175FC720009D60F2 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		F477641B176685E4002D70BC /* management_review_cards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = management_review_cards.png; path = ListenTo/Images/management_review_cards.png; sourceTree = SOURCE_ROOT; };
@@ -1011,9 +1006,6 @@
 				F43E3339175E930C00E71490 /* MultiWallLongGraph.h */,
 				F43E333A175E930C00E71490 /* MultiWallLongGraph.m */,
 				F43E333B175E930C00E71490 /* WallGraphDelegate.h */,
-				F43E333C175E930C00E71490 /* WallTestClass.h */,
-				F43E333D175E930C00E71490 /* WallTestClass.m */,
-				F43E333E175E930C00E71490 /* WallTestClass.xib */,
 			);
 			path = "Wall Graph";
 			sourceTree = "<group>";
@@ -1244,7 +1236,6 @@
 				013EA07D175FAECA00AFDFD3 /* level-1-pass.png in Resources */,
 				013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */,
 				013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */,
-				F43E3342175E930C00E71490 /* WallTestClass.xib in Resources */,
 				F46E23DC175FC719009D60F2 /* AppIcon@2x.png in Resources */,
 				F46E23DE175FC720009D60F2 /* AppIcon.png in Resources */,
 				AA96B48A1762D04600D9E0F2 /* management-table-header.png in Resources */,
@@ -1394,7 +1385,6 @@
 				F4A07E08175E850C00F76C5F /* DataManager.m in Sources */,
 				F43E333F175E930C00E71490 /* MIMWallGraph.m in Sources */,
 				F43E3340175E930C00E71490 /* MultiWallLongGraph.m in Sources */,
-				F43E3341175E930C00E71490 /* WallTestClass.m in Sources */,
 				AA96B49C1762DFC300D9E0F2 /* LTRecordViewController.m in Sources */,
 				F4A9A1301764EBBE00EFFC2F /* LTChartViewController.m in Sources */,
 				F47764251766A7C3002D70BC /* LTChartTableViewController.m in Sources */,
