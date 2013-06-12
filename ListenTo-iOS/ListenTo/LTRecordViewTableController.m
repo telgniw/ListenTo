@@ -23,7 +23,6 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
     
     [self setOddRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-odd-row-background.png"]]];
     [self setEvenRowBackground:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"management-even-row-background.png"]]];
-    
 }
 
 
@@ -33,23 +32,21 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
         if(self.selectedID == nil){
             return;
         }
-        NSLog(@"selectedID: %@", _selectedID);
         LTCardViewController *detailPage = segue.destinationViewController;
         [detailPage setCid:self.selectedID];
         [self setSelectedID:nil];
         [self.navigationController pushViewController:detailPage animated:YES];
         
-    }else if([segue.identifier isEqualToString:SEGUE_DISPLAY_CHART_ID]){
+    }
+    else if([segue.identifier isEqualToString:SEGUE_DISPLAY_CHART_ID]){
         if(self.selectedID == nil){
             return;
         }
-        NSLog(@"selectedID: %@", _selectedID);
         LTChartViewController *chartPage = segue.destinationViewController;
         [chartPage setCid:self.selectedID];
         [self setSelectedID:nil];
         [self.navigationController pushViewController:chartPage animated:YES];
     }
-    
 }
 
 #pragma mark - Data Source
@@ -71,7 +68,6 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
     UIImage *image = [UIImage imageNamed:card[@"image"]];
     [cell.cardImage setImage:image];
     [cell.cardImage setTag:[cid intValue]];
-//    NSLog(@"%ld",(long)[cell.cardImage tag]);
     [cell.cardVoiceLabel setText:card[@"name"]];
     
     UITapGestureRecognizer *tapGestureOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openChart:)];
@@ -84,7 +80,6 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
     [reviewCards setBackgroundImage:[UIImage imageNamed:@"management_review_cards.png"] forState:UIControlStateNormal];
     [reviewCards setTag:[cid intValue]];
     [reviewCards addTarget:self action:@selector(openCard:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
-    NSLog(@"CID: %@, Button tag: %ld, Cell tag: %ld", cid, (long)[reviewCards tag], (long)[cell.cardImage tag]);
     [cell.contentView addSubview: reviewCards];
     
     if(indexPath.row % 2 != 0)
@@ -131,7 +126,6 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
 
 - (IBAction)openCard:(UIButton *)sender
 {
-     NSLog(@"Tag: %d", [sender tag]);
     [self setSelectedID:[NSNumber numberWithInteger:sender.tag]];
     [self performSegueWithIdentifier:SEGUE_DISPLAY_CARD_ID sender:self];
 }
