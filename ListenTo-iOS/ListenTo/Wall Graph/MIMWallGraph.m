@@ -1254,8 +1254,6 @@
     YAxisBand *_yBand=[[YAxisBand alloc]initWithFrame:CGRectMake(leftMargin,topMargin-10, yAxisWidth, _gridHeight+20)];
     _yBand.properties=yLProperties;
     [self addSubview:_yBand];
-    
-    
 }
 
 
