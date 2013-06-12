@@ -23,7 +23,6 @@
 @property (strong, nonatomic) LTDatabase *db;
 @property (strong, nonatomic) NSArray *xTitles;
 @property (strong, nonatomic) NSArray *xValues;
-@property (strong, nonatomic) NSArray *yTitles;
 @property (strong, nonatomic) NSArray *yValues;
 @property (strong, nonatomic) NSArray *yCounts;
 

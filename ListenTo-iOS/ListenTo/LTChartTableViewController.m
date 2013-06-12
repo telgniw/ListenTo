@@ -42,18 +42,14 @@
     [self setYCounts:[stats valueForKey:LT_DB_STAT_KEY_COUNT]];
     
     NSMutableArray *values = [NSMutableArray arrayWithCapacity:[stats count]];
-    [titles removeAllObjects];
-    
     for(NSDictionary *record in stats) {
         float error = [[record objectForKey:LT_DB_STAT_KEY_ERROR] floatValue];
         float count = [[record objectForKey:LT_DB_STAT_KEY_COUNT] floatValue];
         float rate = (count > 0)? (1.0f - error / count) * 100.0f : 0.0f;
-        [values addObject:[NSNumber numberWithFloat:rate]];
-        [titles addObject:[NSString stringWithFormat:@"%.0f", rate]];
+        [values addObject:[NSString stringWithFormat:@"%.0f", rate]];//[NSNumber numberWithFloat:rate]];
     }
     
-    [self setYTitles:[NSArray arrayWithArray:titles]];
-    [self setYValues:@[[NSArray arrayWithArray:values]]];
+    [self setYValues:[NSArray arrayWithArray:values]];
     
     [self.tableView reloadData];
 }
@@ -101,6 +97,16 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Keep this to have a working meter line.
+    NSString *deviceType = [UIDevice currentDevice].model;
+    if(![deviceType isEqualToString:@"iPhone"])
+        return 500;
+    
+    return 200;
+}
+
 #pragma mark - Delegate Methods
 
 - (NSArray *)valuesForGraph:(id)graph
@@ -118,14 +124,29 @@
     return self.xTitles;
 }
 
-- (NSArray *)titlesForYAxis:(id)graph
-{
-    return self.yTitles;
-}
-
 - (NSArray *)WallProperties:(id)graph
 {
     return wallPropertiesArray;
+}
+
+- (NSDictionary *)xAxisProperties:(id)graph
+{
+    return nil;
+}
+
+- (NSDictionary *)yAxisProperties:(id)graph
+{
+    return nil;
+}
+
+- (NSDictionary *)horizontalLinesProperties:(id)graph
+{
+    return nil;
+}
+
+- (NSDictionary *)verticalLinesProperties:(id)graph
+{
+    return nil;
 }
 
 -(UILabel *)createLabelWithText:(NSString *)text
