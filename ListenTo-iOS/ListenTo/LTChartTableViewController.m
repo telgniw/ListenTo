@@ -78,7 +78,7 @@
     [dataManager_ createCustomWallData];
     
     
-    mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, self.tableView.frame.size.width - 50, self.tableView.frame.size.width * 0.5)];
+    mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, self.tableView.frame.size.width - 50, self.tableView.frame.size.heightg)];
     mWallGraph.delegate=self;
     
     mWallGraph.titleLabel = nil;
