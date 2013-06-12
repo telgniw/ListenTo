@@ -38,13 +38,13 @@
 {
     
     
-    MIMColorClass *c=[MIMColorClass colorWithRed:1 Green:0 Blue:0 Alpha:1.0];
+    MIMColorClass *c=[MIMColorClass colorWithRed:0.43 Green:0.8 Blue:0.76 Alpha:0.9];
     if([mProperties valueForKey:@"color"]) 
         c=[MIMColorClass colorWithComponent:[mProperties valueForKey:@"color"]];
     lineColor=[UIColor colorWithRed:c.red green:c.green blue:c.blue alpha:c.alpha];
     
     
-    c=[MIMColorClass colorWithRed:0 Green:0 Blue:0 Alpha:1.0];
+    c=[MIMColorClass colorWithRed:0.3 Green:0.3 Blue:0.3 Alpha:0.9];
     if([mProperties valueForKey:@"hcolor"]) 
         c=[MIMColorClass colorWithComponent:[mProperties valueForKey:@"hcolor"]];
     handleColor=[UIColor colorWithRed:c.red green:c.green blue:c.blue alpha:c.alpha];

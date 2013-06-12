@@ -1198,7 +1198,7 @@
     
     // Added by Yi: set font color and size.
     [xLProperties setValue:@18 forKey:@"fontSize"];
-    [xLProperties setValue:@"0,153,44" forKey:@"color"];
+    [xLProperties setValue:@"51,102,85" forKey:@"color"];
     [xLProperties setValue:[NSNumber numberWithInt:XTitleStyle3] forKey:@"style"];
     
     [xLProperties setValue:[NSNumber numberWithBool:xIsString] forKey:@"xisstring"];

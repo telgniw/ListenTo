@@ -91,7 +91,7 @@
     mWallGraph.titleLabel = nil;
     
     mWallGraph.displayMeterline = TRUE;
-    mWallGraph.meterLineYOffset = 40;
+    mWallGraph.meterLineYOffset = 0;
     
     mWallGraph.yValCounts = self.yCounts;
     
