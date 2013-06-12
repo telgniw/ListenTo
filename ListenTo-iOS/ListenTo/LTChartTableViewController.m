@@ -19,6 +19,15 @@
     
     NSArray *stats = [self.db statisticsForCard:self.cid withNumberOfDays:7];
     
+    // Handle empty data.
+    if([stats count] == 0) {
+        stats = @[@{
+            LT_DB_STAT_KEY_COUNT: @0,
+            LT_DB_STAT_KEY_ERROR: @0,
+            LT_DB_STAT_KEY_DATE: [NSDate today]
+        }];
+    }
+    
     // Generate x-axis data.
     [self setXValues:[stats valueForKey:LT_DB_STAT_KEY_DATE]];
     
@@ -34,8 +43,9 @@
     [titles removeAllObjects];
     
     for(NSDictionary *record in stats) {
-        NSLog(@"%@", record);
-        float rate = (1.0f - [[record objectForKey:LT_DB_STAT_KEY_ERROR] floatValue] / [[record objectForKey:LT_DB_STAT_KEY_COUNT] floatValue]) * 100.0;
+        float error = [[record objectForKey:LT_DB_STAT_KEY_ERROR] floatValue];
+        float count = [[record objectForKey:LT_DB_STAT_KEY_COUNT] floatValue];
+        float rate = (count > 0)? (1.0f - error / count) * 100.0f : 0.0f;
         [values addObject:[NSNumber numberWithFloat:rate]];
         [titles addObject:[NSString stringWithFormat:@"%.0f", rate]];
     }
