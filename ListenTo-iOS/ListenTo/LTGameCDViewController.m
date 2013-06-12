@@ -90,7 +90,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [self toggleTouchable:NO];
     
     // Switch the width/height for landscape orientation.
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    screenBounds = [[UIScreen mainScreen] bounds];
     screenBounds.size = CGSizeMake(screenBounds.size.height, screenBounds.size.width);
     
     [self setDisableViewOverlay:[[UIView alloc] initWithFrame:screenBounds]];
@@ -110,34 +110,6 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)playAudio:(NSString *)filleName fileType:(NSString *)type
-{
-    return [self playAudio:filleName fileType:type withDelay:NO];
-}
-
-- (void)playAudio:(NSString *)filleName fileType:(NSString *)type shouldContinuePlayingCard:(BOOL)shouldContinue
-{
-    shouldContinuePlayingCard = shouldContinue;
-    return [self playAudio:filleName fileType:type withDelay:NO];
-}
-
-- (void)playAudio:(NSString *)filleName fileType:(NSString *)type withDelay:(BOOL)shouldDelay
-{
-    if(shouldDelay) {
-        [NSThread sleepForTimeInterval:1.0f];
-    }
-    
-    NSURL* url = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:filleName ofType:type]];
-    NSError* error = nil;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    if (!url || error) {
-        //錯誤處理常式
-    }
-    [self.player setDelegate:self];
-    [self.player prepareToPlay]; //This is not always needed, but good to include
-    [self.player play];
-}
-
 - (IBAction)playAudio:(id)sender
 {
     if(anserPoint == self.points.count)
@@ -146,6 +118,10 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
 }
 
+- (IBAction)replayGame:(id)sender
+{
+    // TODO: restart game.
+}
 
 - (IBAction)selectImageButton:(id)sender
 {
@@ -160,7 +136,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     NSNumber *cid_image = self.cardIds[[sender tag]];
     
     //答對
-    if ([sender tag] == anserPoint) {
+    if([sender tag] == anserPoint) {
         // Insert a row into database.
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_voice];
         
@@ -190,6 +166,8 @@ static const int IMAGE_BUTTON_SIZE = 175;
         if(anserPoint == self.points.count) {
             [self toggleTouchable:YES];
             
+            [self playAudio:@"level-complete" fileType:@"mp3"];
+            
             NSDictionary *startP = [self.points objectAtIndex:0];
             CGPoint startPoint = CGPointMake([[startP objectForKey:X] floatValue], [[startP objectForKey:Y] floatValue]);
             
@@ -198,8 +176,8 @@ static const int IMAGE_BUTTON_SIZE = 175;
             self.overLay.transform = CGAffineTransformMakeScale(1.0, 1.0);
             UIImage *passimage = [UIImage imageNamed:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"pass-image"]];
             UIImageView *passView = [[UIImageView alloc] initWithImage:passimage];
-            passView.frame = CGRectMake(0, 0, 1024, 768);
-            passView.transform = CGAffineTransformMakeScale(1.5, 1.5);
+            [passView setFrame:screenBounds];
+            [passView setTransform:CGAffineTransformMakeScale(1.5, 1.5)];
             [self.view addSubview:passView];
             [passView addSubview:self.overLay];
 
@@ -207,25 +185,38 @@ static const int IMAGE_BUTTON_SIZE = 175;
                 self.overLay.transform = CGAffineTransformMakeScale(0.5, 0.5);
                 passView.transform = CGAffineTransformMakeScale(1, 1);
                 self.overLay.frame = CGRectMake(270,100, self.overLay.frame.size.width, self.overLay.frame.size.height);
-            
             } completion:^(BOOL finished){
                 [NSThread sleepForTimeInterval:2.0];
                 [self.overLay removeFromSuperview];
                 
-                passView.alpha = 0.9;
-                passView.backgroundColor = [UIColor blackColor];
-                UIImage *image = [UIImage imageNamed:@"end-3"];
-                UIImageView *passView = [[UIImageView alloc] initWithImage:image];
-                passView.frame = CGRectMake(0, 0, 1024, 768);
-                [self.view addSubview:passView];
-                
-                //disabled all cards buttom
+                // Disabled all card buttons.
                 UIScrollView *tempView = [self.view.subviews objectAtIndex:0];
                 for (UIButton *cards in tempView.subviews) {
                     [cards setEnabled:NO];
                 }
                 
-                [self.view bringSubviewToFront:self.backButton];
+                [passView setAlpha:0.9f];
+                [passView setBackgroundColor:[UIColor blackColor]];
+                
+                UIImage *image = [UIImage imageNamed:@"game-end.png"];
+                UIImageView *passView = [[UIImageView alloc] initWithImage:image];
+                [passView setAlpha:0.0f];
+                [passView setFrame:screenBounds];
+                [self.view addSubview:passView];
+                
+                [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseOut animations:^{
+                    [passView setAlpha:1.0f];
+                } completion:^(BOOL finished) {
+                    // Change the "play sound" button to "replay button".
+                    [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon-restart.png"] forState:UIControlStateNormal];
+                    [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon-restart-selected.png"] forState:UIControlStateHighlighted];
+                    [self.playButton removeTarget:self action:@selector(playAudio:) forControlEvents:UIControlEventTouchUpInside];
+                    [self.playButton addTarget:self action:@selector(replayGame:) forControlEvents:UIControlEventTouchUpInside];
+                    
+                    // Brings the buttons up.
+                    [self.view bringSubviewToFront:self.backButton];
+                    [self.view bringSubviewToFront:self.playButton];
+                }];
             }];
 
         }
@@ -282,6 +273,34 @@ static const int IMAGE_BUTTON_SIZE = 175;
     }];
 }
 
+- (void)playAudio:(NSString *)filleName fileType:(NSString *)type
+{
+    return [self playAudio:filleName fileType:type withDelay:NO];
+}
+
+- (void)playAudio:(NSString *)filleName fileType:(NSString *)type shouldContinuePlayingCard:(BOOL)shouldContinue
+{
+    shouldContinuePlayingCard = shouldContinue;
+    return [self playAudio:filleName fileType:type withDelay:NO];
+}
+
+- (void)playAudio:(NSString *)filleName fileType:(NSString *)type withDelay:(BOOL)shouldDelay
+{
+    if(shouldDelay) {
+        [NSThread sleepForTimeInterval:1.0f];
+    }
+    
+    NSURL* url = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:filleName ofType:type]];
+    NSError* error = nil;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if (!url || error) {
+        //錯誤處理常式
+    }
+    [self.player setDelegate:self];
+    [self.player prepareToPlay]; //This is not always needed, but good to include
+    [self.player play];
+}
+
 - (void)drawLineFromPoint:(CGPoint)p1 toPoint:(CGPoint)p2
 {
     SPLine *aLine = [[SPLine alloc]initWithFromPoint:CGPointMake(p1.x + IMAGE_BUTTON_SIZE * 0.5, p1.y + IMAGE_BUTTON_SIZE * 0.5)
@@ -313,11 +332,11 @@ static const int IMAGE_BUTTON_SIZE = 175;
 }
 
 - (void)toggleTouchable:(BOOL)touchable
-{
+{/*
     if(touchable == NO)
         [self.scrollView setUserInteractionEnabled:NO];
     else
-        [self.scrollView setUserInteractionEnabled:YES];
+        [self.scrollView setUserInteractionEnabled:YES];*/
 }
 
 - (void)replayCurrentCard

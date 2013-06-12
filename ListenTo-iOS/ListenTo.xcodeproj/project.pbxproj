@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		013EA071175F9E1600AFDFD3 /* end-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06E175F9E1600AFDFD3 /* end-3.png */; };
-		013EA072175F9E1600AFDFD3 /* end-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA06F175F9E1600AFDFD3 /* end-2.png */; };
-		013EA073175F9E1600AFDFD3 /* end-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA070175F9E1600AFDFD3 /* end-1.png */; };
 		013EA077175FA96700AFDFD3 /* connect-level-2-fuzzy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013EA076175FA96600AFDFD3 /* connect-level-2-fuzzy.plist */; };
 		013EA079175FA97D00AFDFD3 /* connect-level-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013EA078175FA97D00AFDFD3 /* connect-level-2.plist */; };
 		013EA07B175FACC400AFDFD3 /* level-settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 013EA07A175FACC400AFDFD3 /* level-settings.plist */; };
@@ -19,6 +16,9 @@
 		013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA085175FC69C00AFDFD3 /* connectdots-background.png */; };
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
 		AA0E33971768282400E474AC /* LTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0E33961768282400E474AC /* LTLabel.m */; };
+		AA0E339A1768586D00E474AC /* level-complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33991768586D00E474AC /* level-complete.mp3 */; };
+		AA0E339D17685B2500E474AC /* game-end.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E339B17685B2500E474AC /* game-end.png */; };
+		AA0E339E17685B2500E474AC /* game-end@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E339C17685B2500E474AC /* game-end@2x.png */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewTableController.m */; };
 		AA2642871764269A00E7E200 /* icon-all-time.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2642651764269900E7E200 /* icon-all-time.png */; };
 		AA2642881764269A00E7E200 /* icon-all-time-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2642661764269900E7E200 /* icon-all-time-selected.png */; };
@@ -252,9 +252,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		013EA06E175F9E1600AFDFD3 /* end-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-3.png"; sourceTree = "<group>"; };
-		013EA06F175F9E1600AFDFD3 /* end-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-2.png"; sourceTree = "<group>"; };
-		013EA070175F9E1600AFDFD3 /* end-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "end-1.png"; sourceTree = "<group>"; };
 		013EA076175FA96600AFDFD3 /* connect-level-2-fuzzy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-2-fuzzy.plist"; sourceTree = "<group>"; };
 		013EA078175FA97D00AFDFD3 /* connect-level-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-2.plist"; sourceTree = "<group>"; };
 		013EA07A175FACC400AFDFD3 /* level-settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "level-settings.plist"; sourceTree = "<group>"; };
@@ -267,6 +264,9 @@
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AA0E33951768282400E474AC /* LTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLabel.h; sourceTree = "<group>"; };
 		AA0E33961768282400E474AC /* LTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLabel.m; sourceTree = "<group>"; };
+		AA0E33991768586D00E474AC /* level-complete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "level-complete.mp3"; path = "ListenTo/Voices/level-complete.mp3"; sourceTree = SOURCE_ROOT; };
+		AA0E339B17685B2500E474AC /* game-end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end.png"; path = "ListenTo/Images/game-end.png"; sourceTree = SOURCE_ROOT; };
+		AA0E339C17685B2500E474AC /* game-end@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end@2x.png"; path = "ListenTo/Images/game-end@2x.png"; sourceTree = SOURCE_ROOT; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewTableController.h; sourceTree = "<group>"; };
 		AA25B430174B24E400A88C82 /* LTRecordViewTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewTableController.m; sourceTree = "<group>"; };
 		AA2642651764269900E7E200 /* icon-all-time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-all-time.png"; path = "ListenTo/Images/icon-all-time.png"; sourceTree = SOURCE_ROOT; };
@@ -645,9 +645,6 @@
 				AA4D3FEC175F690200C418BC /* level-background.png */,
 				013EA07C175FAEC900AFDFD3 /* level-1-pass.png */,
 				013EA081175FC09900AFDFD3 /* level-2-pass.png */,
-				013EA06E175F9E1600AFDFD3 /* end-3.png */,
-				013EA06F175F9E1600AFDFD3 /* end-2.png */,
-				013EA070175F9E1600AFDFD3 /* end-1.png */,
 			);
 			name = ConnectDots;
 			path = ListenTo/Images/ConnectDots;
@@ -734,6 +731,8 @@
 		AA96B4B81762FBA500D9E0F2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				AA0E339B17685B2500E474AC /* game-end.png */,
+				AA0E339C17685B2500E474AC /* game-end@2x.png */,
 				AA96B4B91762FBCE00D9E0F2 /* game-error.png */,
 				AA96B4BA1762FBCE00D9E0F2 /* game-start.png */,
 			);
@@ -857,6 +856,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD52E2E175F67850016B70A /* Cards */,
+				AA0E33991768586D00E474AC /* level-complete.mp3 */,
 				AAD52E61175F67850016B70A /* correct.mp3 */,
 				AAD52E62175F67850016B70A /* error.mp3 */,
 			);
@@ -1222,9 +1222,6 @@
 				AA4D3FED175F690200C418BC /* level-background.png in Resources */,
 				AA4D3FF7175F751A00C418BC /* connectdots-startpoint.png in Resources */,
 				AA4D3FF9175F8BCD00C418BC /* homescreen-background.png in Resources */,
-				013EA071175F9E1600AFDFD3 /* end-3.png in Resources */,
-				013EA072175F9E1600AFDFD3 /* end-2.png in Resources */,
-				013EA073175F9E1600AFDFD3 /* end-1.png in Resources */,
 				013EA077175FA96700AFDFD3 /* connect-level-2-fuzzy.plist in Resources */,
 				013EA079175FA97D00AFDFD3 /* connect-level-2.plist in Resources */,
 				013EA07B175FACC400AFDFD3 /* level-settings.plist in Resources */,
@@ -1305,6 +1302,9 @@
 				F47764281766B630002D70BC /* groundhog.png in Resources */,
 				F47764291766B630002D70BC /* racoon.png in Resources */,
 				F477642B1766B72F002D70BC /* carrots_basket.png in Resources */,
+				AA0E339A1768586D00E474AC /* level-complete.mp3 in Resources */,
+				AA0E339D17685B2500E474AC /* game-end.png in Resources */,
+				AA0E339E17685B2500E474AC /* game-end@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

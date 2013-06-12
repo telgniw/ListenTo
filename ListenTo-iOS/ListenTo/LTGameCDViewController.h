@@ -14,6 +14,8 @@
 {
     int anserPoint;
     BOOL shouldContinuePlayingCard;
+    
+    CGRect screenBounds;
 }
 
 @property (nonatomic, strong) SPLockOverlay *overLay;
@@ -36,6 +38,7 @@
 
 - (IBAction)back:(id)sender;
 - (IBAction)playAudio:(id)sender;
+- (IBAction)replayGame:(id)sender;
 - (IBAction)selectImageButton:(id)sender;
 
 @end
