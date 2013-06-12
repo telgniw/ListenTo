@@ -18,5 +18,5 @@
 @property(nonatomic,retain)UIColor *barColor;
 
 
--(void)setLabelsOnView:(NSString *)title total:(NSString *)total subtitle:(NSString *)subtitle;
+-(void)setLabelsOnView:(NSString *)title total:(NSString *)total;
 @end

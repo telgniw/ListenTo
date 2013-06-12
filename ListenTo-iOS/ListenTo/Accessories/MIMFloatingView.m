@@ -19,24 +19,20 @@
         [self setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.6]];
         
         
-        title_=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, CGRectGetWidth(self.frame), 20)];
+        title_=[[UILabel alloc]initWithFrame:CGRectMake(15, 2, CGRectGetWidth(self.frame)-20, 20)];
         [title_ setBackgroundColor:[UIColor clearColor]];
-        [title_ setFont:[UIFont fontWithName:@"Helvetica" size:13]];
+        [title_ setFont:[UIFont fontWithName:@"Helvetica" size:14]];
         [title_ setTextColor:[UIColor blackColor]];
         [self addSubview:title_];
         
         
-        total_=[[UILabel alloc]initWithFrame:CGRectMake(15, 22, CGRectGetWidth(self.frame), 20)];
+        total_=[[UILabel alloc]initWithFrame:CGRectMake(15, 22, CGRectGetWidth(self.frame)-20, 40)];
         [total_ setBackgroundColor:[UIColor clearColor]];
-        [total_ setFont:[UIFont fontWithName:@"Helvetica" size:13]];
+        [total_ setFont:[UIFont fontWithName:@"Helvetica" size:14]];
         [total_ setTextColor:[UIColor blackColor]];
+        [total_ setNumberOfLines:3];
+        [total_ setLineBreakMode:NSLineBreakByCharWrapping];
         [self addSubview:total_];
-        
-        subtitle_=[[UILabel alloc]initWithFrame:CGRectMake(15, 42, CGRectGetWidth(self.frame), 20)];
-        [subtitle_ setBackgroundColor:[UIColor clearColor]];
-        [subtitle_ setFont:[UIFont fontWithName:@"Helvetica" size:10]];
-        [subtitle_ setTextColor:[UIColor blackColor]];        
-        [self addSubview:subtitle_];
     }
     return self;
 }
@@ -61,12 +57,11 @@
      
 }
 
--(void)setLabelsOnView:(NSString *)title total:(NSString *)total subtitle:(NSString *)subtitle 
+-(void)setLabelsOnView:(NSString *)title total:(NSString *)total
 {
  
     [title_ setText:title];
     [total_ setText:total];
-    [subtitle_ setText:subtitle];
 
 }
 

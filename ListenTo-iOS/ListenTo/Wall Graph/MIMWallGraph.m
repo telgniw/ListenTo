@@ -1413,25 +1413,21 @@
     Anchor *bView=(Anchor *)view;
     int tagVal=bView.anchorTag;
     
-    
     if(!floatingView)
     {
-        floatingView=[[MIMFloatingView alloc]initWithFrame:CGRectMake(0, 0, 100, 70)];
-        
+        floatingView=[[MIMFloatingView alloc]initWithFrame:CGRectMake(0, 0, 140, 70)];
     }
   
-    
     MIMColorClass *l=[_wallColorArray objectAtIndex:0];
     floatingView.barColor=[UIColor colorWithRed:l.red green:l.green blue:l.blue alpha:1.0];
 
-    
-    NSString *s = [NSString stringWithFormat:@"總共玩了%d次", [[self.yValCounts objectAtIndex:tagVal] intValue]];
+    // Changed by Yi: detail message for each dots, do not display date.
+    NSString *s = [NSString stringWithFormat:@"總共玩了%d次，其中有%d次答錯了", [[self.yValCounts objectAtIndex:tagVal] intValue], [[self.yValErrors objectAtIndex:tagVal] intValue]];
     
         if([_xTitles count]>0)
-            [floatingView setLabelsOnView:[_yValElements objectAtIndex:tagVal] total:s subtitle:[_xTitles objectAtIndex:tagVal]];
+            [floatingView setLabelsOnView:[_yValElements objectAtIndex:tagVal] total:s];
         else
-            [floatingView setLabelsOnView:[_yValElements objectAtIndex:tagVal] total:s subtitle:[_xValElements objectAtIndex:tagVal]];
-    
+            [floatingView setLabelsOnView:[_yValElements objectAtIndex:tagVal] total:s];
     
     if(_gridWidth>CGRectGetWidth(self.frame))[lineGScrollView addSubview:floatingView];
     else 
@@ -1441,7 +1437,7 @@
     CALayer *layer=floatingView.layer;
     layer.borderWidth=1;
     layer.borderColor=[UIColor darkGrayColor].CGColor;
-    layer.cornerRadius=3;
+    layer.cornerRadius=5;
     
     
     if(_gridWidth>CGRectGetWidth(self.frame))
@@ -1459,9 +1455,6 @@
         a.origin.y=CGRectGetMinY(bView.frame)-40;
         floatingView.frame=a;
     }
-    
-    
-    
 }
 
 @end

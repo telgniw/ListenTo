@@ -56,6 +56,7 @@
 
 // Added by Yi.
 @property(nonatomic, strong) NSArray *yValCounts;
+@property(nonatomic, strong) NSArray *yValErrors;
 
 -(void)drawMIMWallGraph;
 
