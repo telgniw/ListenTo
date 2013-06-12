@@ -93,7 +93,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     //play game start animation
     UIImageView *startView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-start.png"]];
     [self animatedPopOutImageView:startView completion:^(BOOL finished) {
-        [self playAudio:[db cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
+        [self playAudio:[db cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3" withDelay:YES];
     }];
 }
 
@@ -106,6 +106,15 @@ static const int IMAGE_BUTTON_SIZE = 175;
 
 - (void)playAudio:(NSString *)filleName fileType:(NSString *)type
 {
+    return [self playAudio:filleName fileType:type withDelay:NO];
+}
+
+- (void)playAudio:(NSString *)filleName fileType:(NSString *)type withDelay:(BOOL)shouldDelay
+{
+    if(shouldDelay) {
+        [NSThread sleepForTimeInterval:1.0f];
+    }
+    
     NSURL* url = [[NSURL alloc] initFileURLWithPath:[[NSBundle mainBundle] pathForResource:filleName ofType:type]];
     NSError* error = nil;
     self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
@@ -158,10 +167,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
         
         UIButton *childView =sender;
         childView.transform = CGAffineTransformMakeScale(1.5, 1.5);
-        [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
             childView.transform = CGAffineTransformMakeScale(1, 1);
-        } completion:^(BOOL finished){
-        }];
+        } completion:nil];
         
         //過關
         if(anserPoint == self.points.count) {
@@ -178,7 +186,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
             [self.view addSubview:passView];
             [passView addSubview:self.overLay];
 
-            [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.overLay.transform = CGAffineTransformMakeScale(0.5, 0.5);
                 passView.transform = CGAffineTransformMakeScale(1, 1);
                 self.overLay.frame = CGRectMake(270,100, self.overLay.frame.size.width, self.overLay.frame.size.height);
@@ -234,18 +242,23 @@ static const int IMAGE_BUTTON_SIZE = 175;
     // image animation
     [self.view addSubview:imageView];
     [imageView setTransform:CGAffineTransformMakeScale(0.01f, 0.01f)];
-    [UIView animateWithDuration:1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
         [imageView setTransform:CGAffineTransformMakeScale(0.5f, 0.5f)];
     } completion:^(BOOL finished){
         [NSThread sleepForTimeInterval:0.7f];
         
-        // remove overlay and image
-        [imageView removeFromSuperview];
-        [self.disableViewOverlay removeFromSuperview];
-        
-        if(completion != nil) {
-            completion(finished);
-        }
+        [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseOut animations:^{
+            [imageView setAlpha:0.0f];
+            [self.disableViewOverlay setAlpha:0.0f];
+        } completion:^(BOOL finished) {
+            // remove overlay and image
+            [imageView removeFromSuperview];
+            [self.disableViewOverlay removeFromSuperview];
+            
+            if(completion != nil) {
+                completion(finished);
+            }
+        }];
     }];
 }
 
@@ -286,7 +299,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     if(anserRight) {
         if(anserPoint == self.points.count)
             return;
-        [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
+        [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3" withDelay:YES];
         anserRight = false;
     }
 }
