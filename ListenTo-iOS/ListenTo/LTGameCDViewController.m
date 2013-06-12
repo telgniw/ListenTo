@@ -315,9 +315,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
 - (void)toggleTouchable:(BOOL)touchable
 {
     if(touchable == NO)
-        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+        [self.scrollView setUserInteractionEnabled:NO];
     else
-        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+        [self.scrollView setUserInteractionEnabled:YES];
 }
 
 - (void)replayCurrentCard
