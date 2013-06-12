@@ -51,7 +51,7 @@
 - (NSString *)stringWithAbbrFormat
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MM/gdd"];
+    [formatter setDateFormat:@"MM/dd"];
     return [formatter stringFromDate:self];
 }
 
