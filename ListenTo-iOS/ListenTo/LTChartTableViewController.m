@@ -124,7 +124,7 @@
 - (NSArray *)titlesForXAxis:(id)graph
 {
     return self.xTitles;
-}g
+}
 
 - (NSArray *)WallProperties:(id)graph
 {
