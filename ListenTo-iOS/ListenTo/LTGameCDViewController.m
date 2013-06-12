@@ -28,7 +28,6 @@ static const int IMAGE_BUTTON_SIZE = 175;
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.settings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
-    anserRight = false;
     int cardTag = 0;
     
     [self.scrollView setDelegate:self];
@@ -86,11 +85,17 @@ static const int IMAGE_BUTTON_SIZE = 175;
     
     [self.player setDelegate:self];
     anserPoint = 1;
+    shouldContinuePlayingCard = NO;
+    [self toggleTouchable:NO];
     
-    [self setDisableViewOverlay:[[UIView alloc] initWithFrame:CGRectMake(0.0f,0.0f,1024.0f,768.0f)]];
+    // Switch the width/height for landscape orientation.
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    screenBounds.size = CGSizeMake(screenBounds.size.height, screenBounds.size.width);
+    
+    [self setDisableViewOverlay:[[UIView alloc] initWithFrame:screenBounds]];
     [self.disableViewOverlay setBackgroundColor:[UIColor blackColor]];
     
-    //play game start animation
+    // Play game start animation
     UIImageView *startView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-start.png"]];
     [self animatedPopOutImageView:startView completion:^(BOOL finished) {
         [self playAudio:[db cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3" withDelay:YES];
@@ -106,6 +111,12 @@ static const int IMAGE_BUTTON_SIZE = 175;
 
 - (void)playAudio:(NSString *)filleName fileType:(NSString *)type
 {
+    return [self playAudio:filleName fileType:type withDelay:NO];
+}
+
+- (void)playAudio:(NSString *)filleName fileType:(NSString *)type shouldContinuePlayingCard:(BOOL)shouldContinue
+{
+    shouldContinuePlayingCard = shouldContinue;
     return [self playAudio:filleName fileType:type withDelay:NO];
 }
 
@@ -130,6 +141,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
 {
     if(anserPoint == self.points.count)
         return;
+    
     [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3"];
 }
 
@@ -139,6 +151,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
     if ([sender tag]==0) {
         return;
     }
+    
+    [self toggleTouchable:NO];
+    
     LTDatabase *db = [LTDatabase instance];
     NSNumber *cid_voice = self.cardIds[anserPoint];
     NSNumber *cid_image = self.cardIds[[sender tag]];
@@ -148,7 +163,6 @@ static const int IMAGE_BUTTON_SIZE = 175;
         // Insert a row into database.
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_voice];
         
-        anserRight = true;
         int tag=[[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"tag"] intValue];
         float t_x = [[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:X] floatValue];
         float t_y = [[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:Y] floatValue];
@@ -163,7 +177,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
         CGPoint currentPoint = CGPointMake([[currentP objectForKey:X] floatValue], [[currentP objectForKey:Y] floatValue]);
         
         [self drawLineFromPoint:previousPoint toPoint:currentPoint];
-        [self playAudio:@"correct" fileType:@"mp3"];
+        [self playAudio:@"correct" fileType:@"mp3" shouldContinuePlayingCard:YES];
         
         UIButton *childView =sender;
         childView.transform = CGAffineTransformMakeScale(1.5, 1.5);
@@ -173,6 +187,8 @@ static const int IMAGE_BUTTON_SIZE = 175;
         
         //過關
         if(anserPoint == self.points.count) {
+            [self toggleTouchable:YES];
+            
             NSDictionary *startP = [self.points objectAtIndex:0];
             CGPoint startPoint = CGPointMake([[startP objectForKey:X] floatValue], [[startP objectForKey:Y] floatValue]);
             
@@ -222,7 +238,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
         [self playAudio:@"error" fileType:@"mp3"];
         
         //play animation
-        [self animatedPopOutImageView:self.errorImageView completion:nil];
+        [self animatedPopOutImageView:self.errorImageView completion:^(BOOL finished) {
+            [self replayCurrentCard];
+        }];
 
     }
 }
@@ -240,8 +258,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [UIView commitAnimations];
     
     // image animation
-    [self.view addSubview:imageView];
+    [imageView setAlpha:1.0f];
     [imageView setTransform:CGAffineTransformMakeScale(0.01f, 0.01f)];
+    [self.view addSubview:imageView];
     [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveEaseOut animations:^{
         [imageView setTransform:CGAffineTransformMakeScale(0.5f, 0.5f)];
     } completion:^(BOOL finished){
@@ -292,15 +311,34 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [button.layer setMasksToBounds:YES];
 }
 
+- (void)toggleTouchable:(BOOL)touchable
+{
+    if(touchable == NO)
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    else
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+}
+
+- (void)replayCurrentCard
+{
+    [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3" withDelay:YES];
+}
+
 #pragma mark - Audio Player Delegate
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
-    if(anserRight) {
+    if(shouldContinuePlayingCard) {
+        // Playing the "correct" sound.
         if(anserPoint == self.points.count)
             return;
-        [self playAudio:[[LTDatabase instance] cardForId:self.cardIds[anserPoint]][LT_DB_KEY_CARD_NAME] fileType:@"mp3" withDelay:YES];
-        anserRight = false;
+        [self replayCurrentCard];
+        
+        shouldContinuePlayingCard = NO;
+    }
+    else {
+        // Playing the "card" sound.
+        [self toggleTouchable:YES];
     }
 }
 @end

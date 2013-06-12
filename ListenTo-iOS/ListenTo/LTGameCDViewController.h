@@ -13,7 +13,7 @@
 @interface LTGameCDViewController : UIViewController <UIScrollViewDelegate, AVAudioPlayerDelegate>
 {
     int anserPoint;
-    BOOL anserRight;
+    BOOL shouldContinuePlayingCard;
 }
 
 @property (nonatomic, strong) SPLockOverlay *overLay;
