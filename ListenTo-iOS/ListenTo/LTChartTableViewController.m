@@ -49,16 +49,10 @@
     return 200;
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
     return  1;
 }
-
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    return @"Basic Wall Charts";
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -105,47 +99,46 @@
     
 }
 
+#pragma mark - Delegate Methods
 
-
-#pragma mark - DELEGATE METHODS
--(NSArray *)valuesForGraph:(id)graph
+- (NSArray *)valuesForGraph:(id)graph
 {
     return dataManager_.yValuesArray;
 }
 
--(NSArray *)valuesForXAxis:(id)graph
+- (NSArray *)valuesForXAxis:(id)graph
 {
     return dataManager_.xValuesArray;
 }
 
--(NSArray *)titlesForXAxis:(id)graph
+- (NSArray *)titlesForXAxis:(id)graph
 {
-    
     return dataManager_.xTitlesArray;
 }
 
 
--(NSDictionary *)xAxisProperties:(id)graph
+- (NSDictionary *)xAxisProperties:(id)graph
 {
     return xProperty;
 }
--(NSDictionary *)yAxisProperties:(id)graph
+
+- (NSDictionary *)yAxisProperties:(id)graph
 {
     return yProperty;
 }
 
--(NSDictionary *)horizontalLinesProperties:(id)graph
+- (NSDictionary *)horizontalLinesProperties:(id)graph
 {
     return horizontalLinesProperties;
     
 }
 
--(NSDictionary*)verticalLinesProperties:(id)graph
+- (NSDictionary*)verticalLinesProperties:(id)graph
 {
     return verticalLinesProperties;
 }
 
--(NSArray *)WallProperties:(id)graph; //hide,borderwidth (of wall border),patternStyle,gradient,color
+- (NSArray *)WallProperties:(id)graph; //hide,borderwidth (of wall border),patternStyle,gradient,color
 {
     return wallPropertiesArray;
 }

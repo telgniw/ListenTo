@@ -13,12 +13,7 @@
 
 @interface LTChartTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, WallGraphDelegate>
 {
-    
     MIMWallGraph *mWallGraph;
-    
-    NSMutableArray *dataArrayFromCSV;
-    NSMutableArray *xDataArrayFromCSV;
-    
     
     NSArray *yValuesArray;
     NSArray *xValuesArray;
@@ -31,12 +26,9 @@
     NSDictionary *horizontalLinesProperties;
     NSDictionary *verticalLinesProperties;
     
-    
     DataManager *dataManager_;
-
 }
 
 @property (strong, nonatomic) NSNumber *cid;
-
 
 @end

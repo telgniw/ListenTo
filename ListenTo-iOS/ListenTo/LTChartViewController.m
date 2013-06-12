@@ -24,7 +24,8 @@
     return self;
 }
 
--(void) viewDidLoad{
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     LTDatabase *db = [LTDatabase instance];
@@ -37,10 +38,10 @@
 
 }
 
-
 #pragma mark - Utility Methods
 
-- (void)fetchDataSetAfter:(NSDate *)date {
+- (void)fetchDataSetAfter:(NSDate *)date
+{
     LTDatabase *db = [LTDatabase instance];
     NSArray *unsortedIds = [db arrayWithCardAfterDate:date];
     
@@ -64,18 +65,8 @@
     
     // Reload data immediately after data set is updated.
     dispatch_async(dispatch_get_main_queue(), ^{
-//        [self.tableViewController setErrorCards:[NSDictionary dictionaryWithDictionary:mappings]];
-//        [self.tableViewController setCardIds:[unsortedIds sortedArrayUsingComparator:^NSComparisonResult(id cid1, id cid2) {
-//            NSNumber *rate1 = errorRates[cid1], *rate2 = errorRates[cid2];
-//            
-//            // Sorted with descending order.
-//            return [rate2 compare:rate1];
-//        }]];
-        
         [self.tableViewController.tableView reloadData];
     });
 }
-
-
 
 @end

@@ -13,7 +13,6 @@
 #import "LTChartTableViewController.h"
 
 @interface LTChartViewController : UIViewController <WallGraphDelegate>
-
 {
     MIMWallGraph *mWallGraph;
     
@@ -34,7 +33,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *cardImage;
-@property (strong, nonatomic ) NSNumber *cid;
+@property (strong, nonatomic) NSNumber *cid;
 @property (strong, nonatomic) LTChartTableViewController *tableViewController;
 
 
