@@ -48,6 +48,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
         
         if(cardTag == 0) {
             [imageButton setImage:[UIImage imageNamed:@"connectdots-startpoint.png"] forState:UIControlStateNormal];
+            [imageButton setAdjustsImageWhenHighlighted:NO];
         }
         else {
             [self addBorderToButton:imageButton];
