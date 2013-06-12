@@ -346,12 +346,12 @@ static const int IMAGE_BUTTON_SIZE = 175;
 }
 
 - (void)toggleTouchable:(BOOL)touchable
-{/*
+{
     if(touchable == NO)
         [self.scrollView setUserInteractionEnabled:NO];
     else
         [self.scrollView setUserInteractionEnabled:YES];
-*/}
+}
 
 - (void)replayCurrentCard
 {
