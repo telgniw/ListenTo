@@ -1429,7 +1429,7 @@
     floatingView.barColor=[UIColor colorWithRed:l.red green:l.green blue:l.blue alpha:1.0];
 
     
-    NSString *s = [NSString stringWithFormat:@"總共玩了%d次", [[_yValElements objectAtIndex:tagVal] intValue]];
+    NSString *s = [NSString stringWithFormat:@"總共玩了%d次", [[self.yValCounts objectAtIndex:tagVal] intValue]];
     
         if([_xTitles count]>0)
             [floatingView setLabelsOnView:[_yValElements objectAtIndex:tagVal] total:s subtitle:[_xTitles objectAtIndex:tagVal]];

@@ -54,6 +54,9 @@
 
 @property(nonatomic,assign)MIMMargin margin;
 
+// Added by Yi.
+@property(nonatomic, strong) NSArray *yValCounts;
+
 -(void)drawMIMWallGraph;
 
 @end

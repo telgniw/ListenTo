@@ -39,6 +39,8 @@
     [self setXTitles:[NSArray arrayWithArray:titles]];
     
     // Generate y-axis data.
+    [self setYCounts:[stats valueForKey:LT_DB_STAT_KEY_COUNT]];
+    
     NSMutableArray *values = [NSMutableArray arrayWithCapacity:[stats count]];
     [titles removeAllObjects];
     
@@ -85,12 +87,14 @@
     wallPropertiesArray=@[@{@"edgecolor": @"100,170,150", @"wallcolor": @"100,170,150,50"}];
     
     mWallGraph=[[MIMWallGraph alloc]initWithFrame:CGRectMake(5, 20, self.tableView.frame.size.width - 50, self.tableView.frame.size.height)];
-    mWallGraph.delegate=self;
-    
+    mWallGraph.delegate = self;
     mWallGraph.titleLabel = nil;
     
-    mWallGraph.displayMeterline=TRUE;
-    mWallGraph.meterLineYOffset=40; //Set the offset as per your need so that it doesnt appear stuck to far left with x-axis.
+    mWallGraph.displayMeterline = TRUE;
+    mWallGraph.meterLineYOffset = 40;
+    
+    mWallGraph.yValCounts = self.yCounts;
+    
     [mWallGraph drawMIMWallGraph];
     [cell.contentView addSubview:mWallGraph];
     
