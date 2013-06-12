@@ -19,6 +19,16 @@
 		AA0E339A1768586D00E474AC /* level-complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33991768586D00E474AC /* level-complete.mp3 */; };
 		AA0E339D17685B2500E474AC /* game-end.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E339B17685B2500E474AC /* game-end.png */; };
 		AA0E339E17685B2500E474AC /* game-end@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E339C17685B2500E474AC /* game-end@2x.png */; };
+		AA0E33A017685CB000E474AC /* LTLevelCompleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA0E339F17685CB000E474AC /* LTLevelCompleteView.xib */; };
+		AA0E33A917685E8E00E474AC /* game-end-carrot-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A117685E8E00E474AC /* game-end-carrot-1.png */; };
+		AA0E33AA17685E8E00E474AC /* game-end-carrot-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A217685E8E00E474AC /* game-end-carrot-1@2x.png */; };
+		AA0E33AB17685E8E00E474AC /* game-end-carrot-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A317685E8E00E474AC /* game-end-carrot-2.png */; };
+		AA0E33AC17685E8E00E474AC /* game-end-carrot-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A417685E8E00E474AC /* game-end-carrot-2@2x.png */; };
+		AA0E33AD17685E8E00E474AC /* game-end-carrot-border-1.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A517685E8E00E474AC /* game-end-carrot-border-1.png */; };
+		AA0E33AE17685E8E00E474AC /* game-end-carrot-border-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A617685E8E00E474AC /* game-end-carrot-border-1@2x.png */; };
+		AA0E33AF17685E8E00E474AC /* game-end-carrot-border-2.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A717685E8E00E474AC /* game-end-carrot-border-2.png */; };
+		AA0E33B017685E8E00E474AC /* game-end-carrot-border-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33A817685E8E00E474AC /* game-end-carrot-border-2@2x.png */; };
+		AA0E33B31768634200E474AC /* LTGameEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0E33B21768634200E474AC /* LTGameEndView.m */; };
 		AA25B431174B24E400A88C82 /* LTRecordViewTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA25B430174B24E400A88C82 /* LTRecordViewTableController.m */; };
 		AA2642871764269A00E7E200 /* icon-all-time.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2642651764269900E7E200 /* icon-all-time.png */; };
 		AA2642881764269A00E7E200 /* icon-all-time-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2642661764269900E7E200 /* icon-all-time-selected.png */; };
@@ -267,6 +277,17 @@
 		AA0E33991768586D00E474AC /* level-complete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "level-complete.mp3"; path = "ListenTo/Voices/level-complete.mp3"; sourceTree = SOURCE_ROOT; };
 		AA0E339B17685B2500E474AC /* game-end.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end.png"; path = "ListenTo/Images/game-end.png"; sourceTree = SOURCE_ROOT; };
 		AA0E339C17685B2500E474AC /* game-end@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end@2x.png"; path = "ListenTo/Images/game-end@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA0E339F17685CB000E474AC /* LTLevelCompleteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTLevelCompleteView.xib; sourceTree = "<group>"; };
+		AA0E33A117685E8E00E474AC /* game-end-carrot-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-1.png"; path = "ListenTo/Images/game-end-carrot-1.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A217685E8E00E474AC /* game-end-carrot-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-1@2x.png"; path = "ListenTo/Images/game-end-carrot-1@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A317685E8E00E474AC /* game-end-carrot-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-2.png"; path = "ListenTo/Images/game-end-carrot-2.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A417685E8E00E474AC /* game-end-carrot-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-2@2x.png"; path = "ListenTo/Images/game-end-carrot-2@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A517685E8E00E474AC /* game-end-carrot-border-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-border-1.png"; path = "ListenTo/Images/game-end-carrot-border-1.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A617685E8E00E474AC /* game-end-carrot-border-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-border-1@2x.png"; path = "ListenTo/Images/game-end-carrot-border-1@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A717685E8E00E474AC /* game-end-carrot-border-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-border-2.png"; path = "ListenTo/Images/game-end-carrot-border-2.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33A817685E8E00E474AC /* game-end-carrot-border-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "game-end-carrot-border-2@2x.png"; path = "ListenTo/Images/game-end-carrot-border-2@2x.png"; sourceTree = SOURCE_ROOT; };
+		AA0E33B11768634200E474AC /* LTGameEndView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGameEndView.h; sourceTree = "<group>"; };
+		AA0E33B21768634200E474AC /* LTGameEndView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGameEndView.m; sourceTree = "<group>"; };
 		AA25B42F174B24E400A88C82 /* LTRecordViewTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecordViewTableController.h; sourceTree = "<group>"; };
 		AA25B430174B24E400A88C82 /* LTRecordViewTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecordViewTableController.m; sourceTree = "<group>"; };
 		AA2642651764269900E7E200 /* icon-all-time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-all-time.png"; path = "ListenTo/Images/icon-all-time.png"; sourceTree = SOURCE_ROOT; };
@@ -731,6 +752,14 @@
 		AA96B4B81762FBA500D9E0F2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				AA0E33A117685E8E00E474AC /* game-end-carrot-1.png */,
+				AA0E33A217685E8E00E474AC /* game-end-carrot-1@2x.png */,
+				AA0E33A317685E8E00E474AC /* game-end-carrot-2.png */,
+				AA0E33A417685E8E00E474AC /* game-end-carrot-2@2x.png */,
+				AA0E33A517685E8E00E474AC /* game-end-carrot-border-1.png */,
+				AA0E33A617685E8E00E474AC /* game-end-carrot-border-1@2x.png */,
+				AA0E33A717685E8E00E474AC /* game-end-carrot-border-2.png */,
+				AA0E33A817685E8E00E474AC /* game-end-carrot-border-2@2x.png */,
 				AA0E339B17685B2500E474AC /* game-end.png */,
 				AA0E339C17685B2500E474AC /* game-end@2x.png */,
 				AA96B4B91762FBCE00D9E0F2 /* game-error.png */,
@@ -814,6 +843,9 @@
 			children = (
 				AAD52E15175F62A70016B70A /* 3rd-Party Lib */,
 				AAD52E1C175F63450016B70A /* ConnectDots */,
+				AA0E339F17685CB000E474AC /* LTLevelCompleteView.xib */,
+				AA0E33B11768634200E474AC /* LTGameEndView.h */,
+				AA0E33B21768634200E474AC /* LTGameEndView.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -1305,6 +1337,15 @@
 				AA0E339A1768586D00E474AC /* level-complete.mp3 in Resources */,
 				AA0E339D17685B2500E474AC /* game-end.png in Resources */,
 				AA0E339E17685B2500E474AC /* game-end@2x.png in Resources */,
+				AA0E33A017685CB000E474AC /* LTLevelCompleteView.xib in Resources */,
+				AA0E33A917685E8E00E474AC /* game-end-carrot-1.png in Resources */,
+				AA0E33AA17685E8E00E474AC /* game-end-carrot-1@2x.png in Resources */,
+				AA0E33AB17685E8E00E474AC /* game-end-carrot-2.png in Resources */,
+				AA0E33AC17685E8E00E474AC /* game-end-carrot-2@2x.png in Resources */,
+				AA0E33AD17685E8E00E474AC /* game-end-carrot-border-1.png in Resources */,
+				AA0E33AE17685E8E00E474AC /* game-end-carrot-border-1@2x.png in Resources */,
+				AA0E33AF17685E8E00E474AC /* game-end-carrot-border-2.png in Resources */,
+				AA0E33B017685E8E00E474AC /* game-end-carrot-border-2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1383,6 +1424,7 @@
 				F4A9A1301764EBBE00EFFC2F /* LTChartViewController.m in Sources */,
 				F47764251766A7C3002D70BC /* LTChartTableViewController.m in Sources */,
 				AA0E33971768282400E474AC /* LTLabel.m in Sources */,
+				AA0E33B31768634200E474AC /* LTGameEndView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

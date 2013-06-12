@@ -9,6 +9,7 @@
 #import <OBShapedButton/OBShapedButton.h>
 #import <QuartzCore/QuartzCore.h>
 #import "LTGameCDViewController.h"
+#import "LTGameEndView.h"
 #import "LTDatabase.h"
 #import "LTUtility.h"
 
@@ -87,6 +88,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [self.player setDelegate:self];
     anserPoint = 1;
     shouldContinuePlayingCard = NO;
+    errorCount = 0;
     [self toggleTouchable:NO];
     
     // Switch the width/height for landscape orientation.
@@ -198,15 +200,25 @@ static const int IMAGE_BUTTON_SIZE = 175;
                 [passView setAlpha:0.9f];
                 [passView setBackgroundColor:[UIColor blackColor]];
                 
-                UIImage *image = [UIImage imageNamed:@"game-end.png"];
-                UIImageView *passView = [[UIImageView alloc] initWithImage:image];
+                LTGameEndView *passView = [[LTGameEndView alloc] initWithFrame:screenBounds];
                 [passView setAlpha:0.0f];
-                [passView setFrame:screenBounds];
                 [self.view addSubview:passView];
                 
                 [UIView animateWithDuration:0.5f delay:0.0f options:UIViewAnimationCurveEaseOut animations:^{
                     [passView setAlpha:1.0f];
                 } completion:^(BOOL finished) {
+                    int carrots = 0;
+                    if(errorCount < [self.points count]) {
+                        carrots++;
+                        if(errorCount < [self.points count] * 0.2) {
+                            carrots++;
+                            if(errorCount == 0) {
+                                carrots++;
+                            }
+                        }
+                    }
+                    [passView showCarrots:carrots];
+                    
                     // Change the "play sound" button to "replay button".
                     [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon-restart.png"] forState:UIControlStateNormal];
                     [self.playButton setBackgroundImage:[UIImage imageNamed:@"icon-restart-selected.png"] forState:UIControlStateHighlighted];
@@ -224,6 +236,8 @@ static const int IMAGE_BUTTON_SIZE = 175;
     }
     //答錯,將錯誤記錄到資料庫,並秀出錯誤訊息
     else {
+        errorCount++;
+        
         // Insert a row into database.
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_image];
         
@@ -332,12 +346,12 @@ static const int IMAGE_BUTTON_SIZE = 175;
 }
 
 - (void)toggleTouchable:(BOOL)touchable
-{
+{/*
     if(touchable == NO)
         [self.scrollView setUserInteractionEnabled:NO];
     else
         [self.scrollView setUserInteractionEnabled:YES];
-}
+*/}
 
 - (void)replayCurrentCard
 {

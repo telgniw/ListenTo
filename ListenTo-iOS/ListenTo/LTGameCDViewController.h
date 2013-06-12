@@ -15,6 +15,8 @@
     int anserPoint;
     BOOL shouldContinuePlayingCard;
     
+    int errorCount;
+    
     CGRect screenBounds;
 }
 
