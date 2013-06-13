@@ -78,11 +78,11 @@
     UITapGestureRecognizer *tapGestureOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reloadCards:)];
     [cell addGestureRecognizer:tapGestureOnCard];
 
-    [imgName setBackgroundColor:[UIColor colorWithRed:181/255.f green:181/255.f blue:181/255.f alpha:0.5]];
+    [imgName setBackgroundColor:[UIColor colorWithRed:180/255.f green:180/255.f blue:180/255.f alpha:0.5]];
     [imgName setText:errCard[@"name"]];
     [imgName setTextAlignment:NSTextAlignmentCenter];
-    [imgName setTextColor:[UIColor colorWithRed:240/255.f green:168/255.f blue:48/255.f alpha:1]];
-    [imgName setFont:[UIFont fontWithName:@"Heiti TC" size:25.f]];
+    [imgName setTextColor:[UIColor colorWithRed:0/255.f green:0/255.f blue:0/255.f alpha:1]];
+    [imgName setFont:[UIFont fontWithName:@"Heiti TC" size:28.f]];
     [imgErrCard setImage:image];
     [cell.contentView addSubview:imgErrCard];
     [cell.contentView addSubview:imgName];
