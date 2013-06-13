@@ -61,7 +61,7 @@
 {
     
     
-    MIMColorClass *c=[MIMColorClass colorWithRed:0.7 Green:0.7 Blue:0.7 Alpha:1.0];
+    MIMColorClass *c=[MIMColorClass colorWithRed:105 Green:105 Blue:105 Alpha:1.0];
     if([properties valueForKey:@"color"]) 
         c=[MIMColorClass colorWithComponent:[properties valueForKey:@"color"]];
     
@@ -162,7 +162,7 @@
             CFAttributedStringSetAttribute(attrString, CFRangeMake(0, _stringLength),kCTForegroundColorAttributeName, _red);    
             
             
-            CTFontRef font = CTFontCreateWithName((CFStringRef)@"GillSans", 12.0f, nil);
+            CTFontRef font = CTFontCreateWithName((CFStringRef)@"GillSans", 13.0f, nil);
             CFAttributedStringSetAttribute(attrString,CFRangeMake(0, _stringLength),kCTFontAttributeName,font);
             
             //Set the paragrapgh attribute

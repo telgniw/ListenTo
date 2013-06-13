@@ -9,6 +9,7 @@
 #import "LTCardViewController.h"
 #import "LTDatabase.h"
 #import "LTChartViewController.h"
+#import "LTCardReviewCell.h"
 
 @implementation LTCardViewController
 
@@ -17,8 +18,8 @@
     [super viewDidLoad];
     NSNumber *cardId = self.cid;
     [self fetchCardInfo:cardId ];
-    
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"review_cards_background.png"]]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,14 +30,15 @@
 
 - (void)fetchCardInfo:(NSNumber *)id {
     LTDatabase *db = [LTDatabase instance];
-    NSDictionary *card = [db cardForId:id];
-
+    self.card = [db cardForId:id];
+    self.errorCards = [db arrayWithErrorCardsForCard:id afterDate:self.dateAfter];
+    
     // Reload data immediately after data set is updated.
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.card = [NSDictionary dictionaryWithDictionary:card];
+        self.card = [NSDictionary dictionaryWithDictionary:self.card];
         
-        NSString *image = [card valueForKey:@"image"];
-        NSString *name = [card valueForKey:@"name"];
+        NSString *image = [self.card valueForKey:@"image"];
+        NSString *name = [self.card valueForKey:@"name"];
         UIImage *card = [UIImage imageNamed:image];
         
         [self.imgCard setImage:card];
@@ -44,11 +46,76 @@
     });
 }
 
+//# pramga mark - Table View Delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return  [self.errorCards count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    
+    NSNumber *cid = self.errorCards[indexPath.row];
+    [self.allCards addObject:cid];
+    LTDatabase *db = [LTDatabase instance];
+    NSDictionary *errCard = [db cardForId:cid];
+    [cell setTag:[cid intValue]];
+    
+    UIImage *image = [UIImage imageNamed:errCard[@"image"]];
+    UIImageView *imgErrCard = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 180, 180)];
+//    [imgErrCard setTag:self.errorCards[indexPath.row]];
+    UILabel *imgName = [[UILabel alloc] initWithFrame:CGRectMake(20, imgErrCard.frame.size.height-40, imgErrCard.frame.size.width, imgErrCard.frame.size.height*0.2)];
+    [imgErrCard setTag:10];
+    [imgName setTag:20];
+    
+    UITapGestureRecognizer *tapGestureOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(reloadCards:)];
+    [cell addGestureRecognizer:tapGestureOnCard];
+
+    [imgName setBackgroundColor:[UIColor colorWithRed:181/255.f green:181/255.f blue:181/255.f alpha:0.5]];
+    [imgName setText:errCard[@"name"]];
+    [imgName setTextAlignment:NSTextAlignmentCenter];
+    [imgName setTextColor:[UIColor colorWithRed:240/255.f green:168/255.f blue:48/255.f alpha:1]];
+    [imgName setFont:[UIFont fontWithName:@"Heiti TC" size:30.f]];
+    [imgErrCard setImage:image];
+    [cell.contentView addSubview:imgErrCard];
+    [cell.contentView addSubview:imgName];
+    
+    return cell;
+}
+
+
 # pragma mark - IBActions
 
 - (IBAction)back:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)reloadCards:(id)sender
+{
+     UIGestureRecognizer *cell = (UIGestureRecognizer *) sender;
+     LTDatabase *db = [LTDatabase instance];
+     NSInteger *selectedCardId = cell.view.tag;
+    
+     UIImageView *img = (UIImageView*) [cell.view viewWithTag:10];
+    [self.imgCard setImage:img.image];
+     UILabel *lbl = (UILabel *) [cell.view viewWithTag:20];
+    [self.lblCardName setText:lbl.text];
+    
+    [img setImage:[UIImage imageNamed:self.card[@"image"]]];
+    [lbl setText:self.card[@"name"]];
+    [cell.view setTag: [self.card[@"id"] intValue]];
+    
+     self.card = [db cardForId:[NSNumber numberWithInt:selectedCardId]];
+    NSLog(@"Selected cell tag: %d, new cell tag: %d \n new card: %@", selectedCardId, cell.view.tag, self.card);
+    
 }
 
 - (IBAction)playSound:(id)sender

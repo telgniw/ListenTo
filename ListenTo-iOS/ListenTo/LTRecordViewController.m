@@ -46,6 +46,7 @@
             date = [NSDate dateWithTimeIntervalSince1970:0];
         }
         
+        [self.tableViewController setSelectedRange:date];
         [self fetchDataSetAfter:date];
         [self.selectedButton setSelected:YES];
     }

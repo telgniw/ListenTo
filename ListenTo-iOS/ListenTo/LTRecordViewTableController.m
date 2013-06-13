@@ -34,6 +34,7 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
         }
         LTCardViewController *detailPage = segue.destinationViewController;
         [detailPage setCid:self.selectedID];
+        [detailPage setDateAfter:self.selectedRange];
         [self setSelectedID:nil];
         [self.navigationController pushViewController:detailPage animated:YES];
         

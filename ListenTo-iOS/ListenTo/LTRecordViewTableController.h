@@ -17,6 +17,8 @@
 @property (strong, nonatomic) NSArray *cardIds;
 @property (strong, nonatomic) NSDictionary *errorCards;
 @property (strong, nonatomic) NSNumber *selectedID;
+@property (strong, nonatomic) NSDate *selectedRange;
+
 
 #pragma mark - RecordCell Delegate
 

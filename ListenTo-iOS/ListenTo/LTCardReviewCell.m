@@ -15,6 +15,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+//        [self.contentView addSubview: self.imgErrCard];
+//        [self.contentView addSubview: self.lblErrCard];
+    
     }
     return self;
 }

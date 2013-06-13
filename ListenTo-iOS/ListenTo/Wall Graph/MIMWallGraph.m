@@ -1271,7 +1271,7 @@
     else 
     {
         meterLine=[[MIMMeter alloc]initWithFrame:CGRectMake(leftMargin+yAxisWidth, topMargin, 40,_gridHeight+meterLineYOffset)];
-        meterLine.maxPointX=leftMargin+yAxisWidth+_gridWidth;
+        meterLine.maxPointX=leftMargin+yAxisWidth+_gridWidth-100;
         meterLine.minPointX=leftMargin+yAxisWidth;
         meterLine.delegate=self;
         if(xIsString)meterLine.tileWidth=_scalingX;

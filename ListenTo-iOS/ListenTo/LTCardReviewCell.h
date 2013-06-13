@@ -10,4 +10,7 @@
 
 @interface LTCardReviewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView  *imgErrCard;
+@property (strong, nonatomic) IBOutlet UILabel      *lblErrCard;
+
 @end

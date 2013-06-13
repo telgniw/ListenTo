@@ -239,6 +239,7 @@
 		F47764281766B630002D70BC /* groundhog.png in Resources */ = {isa = PBXBuildFile; fileRef = F47764261766B630002D70BC /* groundhog.png */; };
 		F47764291766B630002D70BC /* racoon.png in Resources */ = {isa = PBXBuildFile; fileRef = F47764271766B630002D70BC /* racoon.png */; };
 		F477642B1766B72F002D70BC /* carrots_basket.png in Resources */ = {isa = PBXBuildFile; fileRef = F477642A1766B72F002D70BC /* carrots_basket.png */; };
+		F4965EF21768A9DE003CC1B7 /* LTCardReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4965EF11768A9DD003CC1B7 /* LTCardReviewCell.m */; };
 		F4A07D67175E29C400F76C5F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A07D66175E29C400F76C5F /* CoreText.framework */; };
 		F4A07D69175E29F400F76C5F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A07D68175E29F400F76C5F /* QuartzCore.framework */; };
 		F4A07DBC175E4CD400F76C5F /* LTCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */; };
@@ -518,6 +519,8 @@
 		F47764261766B630002D70BC /* groundhog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groundhog.png; path = ListenTo/Images/groundhog.png; sourceTree = SOURCE_ROOT; };
 		F47764271766B630002D70BC /* racoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racoon.png; path = ListenTo/Images/racoon.png; sourceTree = SOURCE_ROOT; };
 		F477642A1766B72F002D70BC /* carrots_basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carrots_basket.png; path = ListenTo/Images/carrots_basket.png; sourceTree = SOURCE_ROOT; };
+		F4965EF01768A9DD003CC1B7 /* LTCardReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardReviewCell.h; sourceTree = "<group>"; };
+		F4965EF11768A9DD003CC1B7 /* LTCardReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardReviewCell.m; sourceTree = "<group>"; };
 		F4A07D66175E29C400F76C5F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		F4A07D68175E29F400F76C5F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardViewController.h; sourceTree = "<group>"; };
@@ -597,6 +600,8 @@
 				F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */,
 				F47764231766A7C2002D70BC /* LTChartTableViewController.h */,
 				F47764241766A7C2002D70BC /* LTChartTableViewController.m */,
+				F4965EF01768A9DD003CC1B7 /* LTCardReviewCell.h */,
+				F4965EF11768A9DD003CC1B7 /* LTCardReviewCell.m */,
 			);
 			name = "Card & Chart";
 			sourceTree = "<group>";
@@ -1425,6 +1430,7 @@
 				F47764251766A7C3002D70BC /* LTChartTableViewController.m in Sources */,
 				AA0E33971768282400E474AC /* LTLabel.m in Sources */,
 				AA0E33B31768634200E474AC /* LTGameEndView.m in Sources */,
+				F4965EF21768A9DE003CC1B7 /* LTCardReviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
