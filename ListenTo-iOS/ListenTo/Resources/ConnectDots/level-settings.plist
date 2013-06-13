@@ -11,24 +11,6 @@
 		<string>connect-level-1-fuzzy</string>
 		<key>pass-image</key>
 		<string>level-1-pass.png</string>
-		<key>transition</key>
-		<array>
-			<dict>
-				<key>tag</key>
-				<integer>4</integer>
-				<key>x</key>
-				<integer>0</integer>
-				<key>y</key>
-				<integer>0</integer>
-			</dict>
-		</array>
-		<key>scrollview-start</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>552</integer>
-		</dict>
 	</dict>
 	<dict>
 		<key>background</key>
@@ -39,24 +21,16 @@
 		<string>connect-level-2-fuzzy</string>
 		<key>pass-image</key>
 		<string>level-2-pass.png</string>
-		<key>transition</key>
-		<array>
-			<dict>
-				<key>tag</key>
-				<integer>7</integer>
-				<key>x</key>
-				<integer>0</integer>
-				<key>y</key>
-				<integer>550</integer>
-			</dict>
-		</array>
-		<key>scrollview-start</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>0</integer>
-		</dict>
+	</dict>
+	<dict>
+		<key>background</key>
+		<string>level-background.png</string>
+		<key>connect</key>
+		<string>connect-level-3</string>
+		<key>connect-fuzzy</key>
+		<string>connect-level-3-fuzzy</string>
+		<key>pass-image</key>
+		<string>level-3-pass.png</string>
 	</dict>
 </array>
 </plist>

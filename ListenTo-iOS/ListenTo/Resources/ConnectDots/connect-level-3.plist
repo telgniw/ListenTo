@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Item 0</key>
+	<dict>
+		<key>x</key>
+		<integer>365</integer>
+		<key>y</key>
+		<integer>680</integer>
+	</dict>
+	<key>Item 1</key>
+	<dict>
+		<key>x</key>
+		<integer>180</integer>
+		<key>y</key>
+		<integer>640</integer>
+	</dict>
+	<key>Item 2</key>
+	<dict>
+		<key>x</key>
+		<integer>225</integer>
+		<key>y</key>
+		<integer>350</integer>
+	</dict>
+	<key>Item 3</key>
+	<dict>
+		<key>x</key>
+		<integer>450</integer>
+		<key>y</key>
+		<integer>300</integer>
+	</dict>
+	<key>Item 4</key>
+	<dict>
+		<key>x</key>
+		<integer>615</integer>
+		<key>y</key>
+		<integer>150</integer>
+	</dict>
+	<key>Item 5</key>
+	<dict>
+		<key>x</key>
+		<integer>800</integer>
+		<key>y</key>
+		<integer>300</integer>
+	</dict>
+	<key>Item 6</key>
+	<dict>
+		<key>x</key>
+		<integer>900</integer>
+		<key>y</key>
+		<integer>500</integer>
+	</dict>
+	<key>Item 7</key>
+	<dict>
+		<key>x</key>
+		<integer>750</integer>
+		<key>y</key>
+		<integer>680</integer>
+	</dict>
+	<key>Item 8</key>
+	<dict>
+		<key>x</key>
+		<integer>890</integer>
+		<key>y</key>
+		<integer>900</integer>
+	</dict>
+	<key>Item 9</key>
+	<dict>
+		<key>x</key>
+		<integer>750</integer>
+		<key>y</key>
+		<integer>1150</integer>
+	</dict>
+	<key>Item 10</key>
+	<dict>
+		<key>x</key>
+		<integer>500</integer>
+		<key>y</key>
+		<integer>1050</integer>
+	</dict>
+	<key>Item 11</key>
+	<dict>
+		<key>x</key>
+		<integer>200</integer>
+		<key>y</key>
+		<integer>1150</integer>
+	</dict>
+	<key>Item 12</key>
+	<dict>
+		<key>x</key>
+		<integer>225</integer>
+		<key>y</key>
+		<integer>890</integer>
+	</dict>
+</dict>
+</plist>

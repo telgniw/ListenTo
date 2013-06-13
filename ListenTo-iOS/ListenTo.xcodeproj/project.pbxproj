@@ -15,6 +15,9 @@
 		013EA082175FC09900AFDFD3 /* level-2-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA081175FC09900AFDFD3 /* level-2-pass.png */; };
 		013EA089175FC6A000AFDFD3 /* connectdots-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 013EA085175FC69C00AFDFD3 /* connectdots-background.png */; };
 		7AE2F94D9359444FAE707329 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5654E21E1EC1482695A9883E /* libPods.a */; };
+		AA08B0F417697375008FAAB1 /* connect-level-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA08B0F317697375008FAAB1 /* connect-level-3.plist */; };
+		AA08B0F717697673008FAAB1 /* connect-level-3-fuzzy.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA08B0F617697673008FAAB1 /* connect-level-3-fuzzy.plist */; };
+		AA08B0F9176977A5008FAAB1 /* level-3-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = AA08B0F8176977A5008FAAB1 /* level-3-pass.png */; };
 		AA0E33971768282400E474AC /* LTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0E33961768282400E474AC /* LTLabel.m */; };
 		AA0E339A1768586D00E474AC /* level-complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA0E33991768586D00E474AC /* level-complete.mp3 */; };
 		AA0E339D17685B2500E474AC /* game-end.png in Resources */ = {isa = PBXBuildFile; fileRef = AA0E339B17685B2500E474AC /* game-end.png */; };
@@ -275,6 +278,9 @@
 		013EA085175FC69C00AFDFD3 /* connectdots-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-background.png"; sourceTree = "<group>"; };
 		5654E21E1EC1482695A9883E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B39ED2F95504E479809C7D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AA08B0F317697375008FAAB1 /* connect-level-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-3.plist"; sourceTree = "<group>"; };
+		AA08B0F617697673008FAAB1 /* connect-level-3-fuzzy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-3-fuzzy.plist"; sourceTree = "<group>"; };
+		AA08B0F8176977A5008FAAB1 /* level-3-pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-3-pass.png"; sourceTree = "<group>"; };
 		AA0E33951768282400E474AC /* LTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLabel.h; sourceTree = "<group>"; };
 		AA0E33961768282400E474AC /* LTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLabel.m; sourceTree = "<group>"; };
 		AA0E33991768586D00E474AC /* level-complete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "level-complete.mp3"; path = "ListenTo/Voices/level-complete.mp3"; sourceTree = SOURCE_ROOT; };
@@ -615,7 +621,6 @@
 				AA96B4AD1762EF5800D9E0F2 /* Homescreen */,
 				AA96B4AE1762EF6700D9E0F2 /* Management */,
 				AA96B4B31762F07A00D9E0F2 /* Icons */,
-				AA4D3FEB175F690200C418BC /* ConnectDots */,
 				AAED14FD17548EC70091C182 /* Cards */,
 				AA96B4921762D82C00D9E0F2 /* play.png */,
 				AA96B4931762D82C00D9E0F2 /* play@2x.png */,
@@ -675,6 +680,7 @@
 				AA4D3FEC175F690200C418BC /* level-background.png */,
 				013EA07C175FAEC900AFDFD3 /* level-1-pass.png */,
 				013EA081175FC09900AFDFD3 /* level-2-pass.png */,
+				AA08B0F8176977A5008FAAB1 /* level-3-pass.png */,
 			);
 			name = ConnectDots;
 			path = ListenTo/Images/ConnectDots;
@@ -763,6 +769,7 @@
 		AA96B4B81762FBA500D9E0F2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				AA4D3FEB175F690200C418BC /* ConnectDots */,
 				AA0E33A117685E8E00E474AC /* game-end-carrot-1.png */,
 				AA0E33A217685E8E00E474AC /* game-end-carrot-1@2x.png */,
 				AA0E33A317685E8E00E474AC /* game-end-carrot-2.png */,
@@ -891,6 +898,8 @@
 				AAD52E29175F65A80016B70A /* connect-level-1.plist */,
 				013EA078175FA97D00AFDFD3 /* connect-level-2.plist */,
 				013EA07A175FACC400AFDFD3 /* level-settings.plist */,
+				AA08B0F317697375008FAAB1 /* connect-level-3.plist */,
+				AA08B0F617697673008FAAB1 /* connect-level-3-fuzzy.plist */,
 			);
 			path = ConnectDots;
 			sourceTree = "<group>";
@@ -1359,6 +1368,9 @@
 				AA0E33B017685E8E00E474AC /* game-end-carrot-border-2@2x.png in Resources */,
 				AAB0C78E1768A620007E4273 /* title-learning-history.png in Resources */,
 				AAB0C78F1768A620007E4273 /* title-learning-history@2x.png in Resources */,
+				AA08B0F417697375008FAAB1 /* connect-level-3.plist in Resources */,
+				AA08B0F717697673008FAAB1 /* connect-level-3-fuzzy.plist in Resources */,
+				AA08B0F9176977A5008FAAB1 /* level-3-pass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
