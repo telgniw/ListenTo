@@ -116,8 +116,6 @@
     [cell.view setTag: [self.card[@"id"] intValue]];
     
      self.card = [db cardForId:[NSNumber numberWithInt:selectedCardId]];
-    NSLog(@"Selected cell tag: %d, new cell tag: %d \n new card: %@", selectedCardId, cell.view.tag, self.card);
-    
 }
 
 - (IBAction)playSound:(id)sender

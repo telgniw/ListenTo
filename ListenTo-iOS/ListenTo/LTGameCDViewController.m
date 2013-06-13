@@ -36,33 +36,41 @@ static const int IMAGE_BUTTON_SIZE = 175;
     NSString *plistPath = [[NSBundle mainBundle]
                            pathForResource:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"connect"] ofType:@"plist"];
     
+    NSMutableArray *pointsArray;
+    
     self.points = [NSArray arrayWithContentsOfFile:plistPath];
     plistPath = [[NSBundle mainBundle]
                  pathForResource:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"connect-fuzzy"]  ofType:@"plist"];
     self.errorPoints = [NSArray arrayWithContentsOfFile:plistPath];
     self.cardIds = [db arrayWithAllCards];
 
-    //create correct cards list
-    for (NSDictionary *position in self.points) {
-        CGPoint point = CGPointMake([[position objectForKey:X] floatValue], [[position objectForKey:Y] floatValue]);
+    // Select random start point.
+    int start = arc4random() % [self.points count];
+    if(start > 0) {
+        pointsArray = [NSMutableArray arrayWithArray:[self.points subarrayWithRange:NSMakeRange(start, [self.points count] - start)]];
+        [pointsArray addObjectsFromArray:[self.points subarrayWithRange:NSMakeRange(0, start)]];
+        
+        self.points = [NSArray arrayWithArray:pointsArray];
+    }
+    
+    pointsArray = [NSMutableArray arrayWithCapacity:[self.points count] + [self.errorPoints count]];
+    [pointsArray addObjectsFromArray:self.points];
+    [pointsArray addObjectsFromArray:self.errorPoints];
+    
+    // Create card buttons.
+    cardTag = 0;
+    for(NSDictionary *p in self.points) {
+        CGPoint point = CGPointMake([[p objectForKey:X] floatValue], [[p objectForKey:Y] floatValue]);
         OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
         
-        if(cardTag == 0) {
-            [imageButton setImage:[UIImage imageNamed:@"connectdots-startpoint.png"] forState:UIControlStateNormal];
-            [imageButton setAdjustsImageWhenHighlighted:NO];
-        }
-        else {
+        if(cardTag > 0) {
             [self addBorderToButton:imageButton];
         }
-        
-        [self.scrollView addSubview:imageButton];
-        cardTag++;
-    }
-    //create error cards list
-    for (NSDictionary *position in self.errorPoints) {
-        CGPoint point = CGPointMake([[position objectForKey:X] floatValue], [[position objectForKey:Y] floatValue]);
-        OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
-        [self addBorderToButton:imageButton];
+        else {
+            UIImage *startImage = [UIImage imageNamed:@"connectdots-startpoint.png"];
+            [imageButton setImage:startImage forState:UIControlStateNormal];
+            [imageButton setAdjustsImageWhenHighlighted:NO];
+        }
         
         [self.scrollView addSubview:imageButton];
         cardTag++;
@@ -78,15 +86,14 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [self.view bringSubviewToFront:self.backButton];
     [self.view bringSubviewToFront:self.playButton];
     
-    float s_x =[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:X] floatValue];
-    float s_y =[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"scrollview-start"] objectForKey:Y] floatValue];
     [self.scrollView setContentSize:backgroundImage.size];
-    [self.scrollView setContentOffset:CGPointMake(s_x, s_y) animated:YES];
+    
+    anserPoint = 1;
+    [self adjustScrollPosition];
     
     [self setErrorImageView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"game-error.png"]]];
     
     [self.player setDelegate:self];
-    anserPoint = 1;
     shouldContinuePlayingCard = NO;
     errorCount = 0;
     [self toggleTouchable:NO];
@@ -142,14 +149,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
         // Insert a row into database.
         [db insertRowWithVoiceCard:cid_voice andImageCard:cid_voice];
         
-        int tag=[[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:@"tag"] intValue];
-        float t_x = [[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:X] floatValue];
-        float t_y = [[[[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"transition"] objectAtIndex:0] objectForKey:Y] floatValue];
-        //level-1:4, level-2:7
-        if ([sender tag]==tag) {
-            [self.scrollView setContentOffset:CGPointMake(t_x, t_y) animated:YES];
-        }
         anserPoint++;
+        [self adjustScrollPosition];
+        
         NSDictionary *previousP = [self.points objectAtIndex:[sender tag]-1];
         CGPoint previousPoint = CGPointMake([[previousP objectForKey:X] floatValue], [[previousP objectForKey:Y] floatValue]);
         NSDictionary *currentP = [self.points objectAtIndex:[sender tag]];
@@ -165,7 +167,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
         } completion:nil];
         
         //過關
-        if(anserPoint == self.points.count) {
+        if(anserPoint == [self.points count]) {
             [self toggleTouchable:YES];
             
             [self playAudio:@"level-complete" fileType:@"mp3"];
@@ -285,6 +287,41 @@ static const int IMAGE_BUTTON_SIZE = 175;
             }
         }];
     }];
+}
+
+- (void)adjustScrollPosition
+{
+    CGRect bounds = self.scrollView.bounds;
+    
+    // For landscape orientation.
+    bounds.size = screenBounds.size;
+    
+    if(anserPoint >= [self.points count]) {
+        // Game end.
+        return;
+    }
+    
+    NSDictionary *p = [self.points objectAtIndex:anserPoint];
+    CGPoint point = CGPointMake([[p objectForKey:X] floatValue], [[p objectForKey:Y] floatValue]);
+    
+    if(CGRectContainsPoint(bounds, point)) {
+        if(CGRectContainsPoint(bounds, CGPointMake(point.x + IMAGE_BUTTON_SIZE, point.y + IMAGE_BUTTON_SIZE))) {
+            // No need to adjust.
+            return;
+        }
+    }
+    
+    CGPoint newPoint = CGPointMake(0.0f, 0.0f);
+    if(bounds.origin.y > point.y) {
+        // Move up.
+        newPoint.y = point.y + 2 * IMAGE_BUTTON_SIZE - bounds.size.height;
+    }
+    else {
+        // Move down.
+        newPoint.y = point.y - IMAGE_BUTTON_SIZE;
+    }
+    
+    [self.scrollView setContentOffset:newPoint animated:YES];
 }
 
 - (void)playAudio:(NSString *)filleName fileType:(NSString *)type
