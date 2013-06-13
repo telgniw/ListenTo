@@ -9,13 +9,14 @@
 #import <AVFoundation/AVAudioPlayer.h>
 #import <UIKit/UIKit.h>
 #import <OBShapedButton/OBShapedButton.h>
+#import "LTImageView.h"
 
 @interface LTCardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *errCardTable;
 @property (strong, nonatomic) IBOutlet OBShapedButton *backButton;
 
-@property (strong, nonatomic) IBOutlet UIImageView *imgCard;
+@property (strong, nonatomic) IBOutlet LTImageView *imgCard;
 @property (strong, nonatomic) IBOutlet UIButton *btnPlayStound;
 @property (strong, nonatomic) IBOutlet UILabel *lblCardName;
 

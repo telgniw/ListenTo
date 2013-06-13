@@ -9,8 +9,6 @@
 #import "LTCardViewController.h"
 #import "LTDatabase.h"
 #import "LTChartViewController.h"
-#import "LTCardReviewCell.h"
-
 @implementation LTCardViewController
 
 - (void)viewDidLoad
@@ -18,6 +16,7 @@
     [super viewDidLoad];
     NSNumber *cardId = self.cid;
     [self fetchCardInfo:cardId ];
+    
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"review_cards_background.png"]]];
     
 }
@@ -67,11 +66,12 @@
     LTDatabase *db = [LTDatabase instance];
     NSDictionary *errCard = [db cardForId:cid];
     [cell setTag:[cid intValue]];
-    
+    cell.textLabel.text = @"";
+    [cell.textLabel setTag:15];
     UIImage *image = [UIImage imageNamed:errCard[@"image"]];
-    UIImageView *imgErrCard = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 180, 180)];
+    LTImageView *imgErrCard = [[LTImageView alloc] initWithFrame:CGRectMake(20, 0, 180, 180)];
 //    [imgErrCard setTag:self.errorCards[indexPath.row]];
-    UILabel *imgName = [[UILabel alloc] initWithFrame:CGRectMake(20, imgErrCard.frame.size.height-40, imgErrCard.frame.size.width, imgErrCard.frame.size.height*0.2)];
+    UILabel *imgName = [[UILabel alloc] initWithFrame:CGRectMake(25, imgErrCard.frame.size.height-45, imgErrCard.frame.size.width-10, imgErrCard.frame.size.height*0.15)];
     [imgErrCard setTag:10];
     [imgName setTag:20];
     
@@ -82,7 +82,7 @@
     [imgName setText:errCard[@"name"]];
     [imgName setTextAlignment:NSTextAlignmentCenter];
     [imgName setTextColor:[UIColor colorWithRed:240/255.f green:168/255.f blue:48/255.f alpha:1]];
-    [imgName setFont:[UIFont fontWithName:@"Heiti TC" size:30.f]];
+    [imgName setFont:[UIFont fontWithName:@"Heiti TC" size:25.f]];
     [imgErrCard setImage:image];
     [cell.contentView addSubview:imgErrCard];
     [cell.contentView addSubview:imgName];
@@ -104,10 +104,12 @@
      LTDatabase *db = [LTDatabase instance];
      NSInteger *selectedCardId = cell.view.tag;
     
-     UIImageView *img = (UIImageView*) [cell.view viewWithTag:10];
+     LTImageView *img = (LTImageView*) [cell.view viewWithTag:10];
     [self.imgCard setImage:img.image];
      UILabel *lbl = (UILabel *) [cell.view viewWithTag:20];
     [self.lblCardName setText:lbl.text];
+    UILabel *cellLabel = (UILabel *) [cell.view viewWithTag:15];
+    [cellLabel setText:@""];
     
     [img setImage:[UIImage imageNamed:self.card[@"image"]]];
     [lbl setText:self.card[@"name"]];
