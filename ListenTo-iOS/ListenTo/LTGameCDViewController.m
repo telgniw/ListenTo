@@ -53,9 +53,16 @@ static const int IMAGE_BUTTON_SIZE = 175;
         self.points = [NSArray arrayWithArray:pointsArray];
     }
     
+    if(arc4random() % 2 == 1) {
+        // Reverse the whole array.
+        self.points = [[self.points reverseObjectEnumerator] allObjects];
+    }
+    
     pointsArray = [NSMutableArray arrayWithCapacity:[self.points count] + [self.errorPoints count]];
     [pointsArray addObjectsFromArray:self.points];
     [pointsArray addObjectsFromArray:self.errorPoints];
+    
+    self.points = [NSArray arrayWithArray:pointsArray];
     
     // Create card buttons.
     cardTag = 0;
