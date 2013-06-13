@@ -14,6 +14,7 @@
 @interface LTChartViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *cardImage;
+@property (strong, nonatomic) IBOutlet UILabel *cardName;
 @property (strong, nonatomic) NSNumber *cid;
 @property (strong, nonatomic) LTChartTableViewController *tableViewController;
 
