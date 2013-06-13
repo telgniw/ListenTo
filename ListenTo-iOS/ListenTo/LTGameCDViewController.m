@@ -62,11 +62,9 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [pointsArray addObjectsFromArray:self.points];
     [pointsArray addObjectsFromArray:self.errorPoints];
     
-    self.points = [NSArray arrayWithArray:pointsArray];
-    
     // Create card buttons.
     cardTag = 0;
-    for(NSDictionary *p in self.points) {
+    for(NSDictionary *p in pointsArray) {
         CGPoint point = CGPointMake([[p objectForKey:X] floatValue], [[p objectForKey:Y] floatValue]);
         OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
         
