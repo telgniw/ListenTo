@@ -1241,6 +1241,9 @@
     if([[yLProperties allKeys] count]==0)
         yLProperties=[[NSMutableDictionary alloc] init];
     
+    // Added by Yi: set font color.
+    [yLProperties setValue:@"102,102,102" forKey:@"color"];
+    
     [yLProperties setValue:[NSNumber numberWithFloat:pixelsPerTile] forKey:@"pxpertile"];
     [yLProperties setValue:[NSNumber numberWithInt:numOfHLines] forKey:@"num"];
     [yLProperties setValue:[NSNumber numberWithFloat:minimumOnY] forKey:@"minY"];
@@ -1251,8 +1254,6 @@
     YAxisBand *_yBand=[[YAxisBand alloc]initWithFrame:CGRectMake(leftMargin,topMargin-10, yAxisWidth, _gridHeight+20)];
     _yBand.properties=yLProperties;
     [self addSubview:_yBand];
-    
-    
 }
 
 
