@@ -330,7 +330,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     }
     else {
         // Move down.
-        newPoint.y = MIN(maxY + IMAGE_BUTTON_SIZE - bounds.size.height, point.y - 0.5 * IMAGE_BUTTON_SIZE);
+        newPoint.y = MIN(maxY - bounds.size.height, point.y - 0.5 * IMAGE_BUTTON_SIZE);
     }
     
     [self.scrollView setContentOffset:newPoint animated:YES];
