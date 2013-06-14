@@ -71,6 +71,8 @@
 		AA4D3FED175F690200C418BC /* level-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4D3FEC175F690200C418BC /* level-background.png */; };
 		AA4D3FF7175F751A00C418BC /* connectdots-startpoint.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4D3FF6175F751A00C418BC /* connectdots-startpoint.png */; };
 		AA4D3FF9175F8BCD00C418BC /* homescreen-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4D3FF8175F8BCD00C418BC /* homescreen-background.png */; };
+		AA58BA22176AB98C001EB208 /* LTCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BA21176AB98C001EB208 /* LTCardCell.m */; };
+		AA58BA34176AFF13001EB208 /* LTErrorCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BA33176AFF13001EB208 /* LTErrorCardsTableViewController.m */; };
 		AA96B48A1762D04600D9E0F2 /* management-table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4821762D04600D9E0F2 /* management-table-header.png */; };
 		AA96B4911762D3DE00D9E0F2 /* management-table-header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B48E1762D3DE00D9E0F2 /* management-table-header@2x.png */; };
 		AA96B4941762D82C00D9E0F2 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4921762D82C00D9E0F2 /* play.png */; };
@@ -247,7 +249,7 @@
 		F477642B1766B72F002D70BC /* carrots_basket.png in Resources */ = {isa = PBXBuildFile; fileRef = F477642A1766B72F002D70BC /* carrots_basket.png */; };
 		F4A07D67175E29C400F76C5F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A07D66175E29C400F76C5F /* CoreText.framework */; };
 		F4A07D69175E29F400F76C5F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A07D68175E29F400F76C5F /* QuartzCore.framework */; };
-		F4A07DBC175E4CD400F76C5F /* LTCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */; };
+		F4A07DBC175E4CD400F76C5F /* LTCardReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DBB175E4CD400F76C5F /* LTCardReviewViewController.m */; };
 		F4A07DF6175E850C00F76C5F /* Anchor.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DC7175E850000F76C5F /* Anchor.m */; };
 		F4A07DF7175E850C00F76C5F /* AnchorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DCA175E850100F76C5F /* AnchorInfo.m */; };
 		F4A07DF8175E850C00F76C5F /* CustomBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A07DCD175E850100F76C5F /* CustomBox.m */; };
@@ -340,6 +342,10 @@
 		AA4D3FEC175F690200C418BC /* level-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-background.png"; sourceTree = "<group>"; };
 		AA4D3FF6175F751A00C418BC /* connectdots-startpoint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connectdots-startpoint.png"; sourceTree = "<group>"; };
 		AA4D3FF8175F8BCD00C418BC /* homescreen-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "homescreen-background.png"; path = "ListenTo/Images/homescreen-background.png"; sourceTree = SOURCE_ROOT; };
+		AA58BA20176AB98C001EB208 /* LTCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardCell.h; sourceTree = "<group>"; };
+		AA58BA21176AB98C001EB208 /* LTCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardCell.m; sourceTree = "<group>"; };
+		AA58BA32176AFF13001EB208 /* LTErrorCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTErrorCardsTableViewController.h; sourceTree = "<group>"; };
+		AA58BA33176AFF13001EB208 /* LTErrorCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTErrorCardsTableViewController.m; sourceTree = "<group>"; };
 		AA96B4821762D04600D9E0F2 /* management-table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-table-header.png"; path = "ListenTo/Images/management-table-header.png"; sourceTree = SOURCE_ROOT; };
 		AA96B48E1762D3DE00D9E0F2 /* management-table-header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-table-header@2x.png"; path = "ListenTo/Images/management-table-header@2x.png"; sourceTree = SOURCE_ROOT; };
 		AA96B4921762D82C00D9E0F2 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ListenTo/Images/play.png; sourceTree = SOURCE_ROOT; };
@@ -533,8 +539,8 @@
 		F477642A1766B72F002D70BC /* carrots_basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carrots_basket.png; path = ListenTo/Images/carrots_basket.png; sourceTree = SOURCE_ROOT; };
 		F4A07D66175E29C400F76C5F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		F4A07D68175E29F400F76C5F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardViewController.h; sourceTree = "<group>"; };
-		F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardViewController.m; sourceTree = "<group>"; };
+		F4A07DBA175E4CD300F76C5F /* LTCardReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCardReviewViewController.h; sourceTree = "<group>"; };
+		F4A07DBB175E4CD400F76C5F /* LTCardReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardReviewViewController.m; sourceTree = "<group>"; };
 		F4A07DC6175E850000F76C5F /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anchor.h; sourceTree = "<group>"; };
 		F4A07DC7175E850000F76C5F /* Anchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anchor.m; sourceTree = "<group>"; };
 		F4A07DC8175E850000F76C5F /* AnchorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnchorDelegate.h; sourceTree = "<group>"; };
@@ -604,12 +610,16 @@
 		AA05523117605C5600BD1B2B /* Card & Chart */ = {
 			isa = PBXGroup;
 			children = (
-				F4A07DBA175E4CD300F76C5F /* LTCardViewController.h */,
-				F4A07DBB175E4CD400F76C5F /* LTCardViewController.m */,
+				AA58BA20176AB98C001EB208 /* LTCardCell.h */,
+				AA58BA21176AB98C001EB208 /* LTCardCell.m */,
+				F4A07DBA175E4CD300F76C5F /* LTCardReviewViewController.h */,
+				F4A07DBB175E4CD400F76C5F /* LTCardReviewViewController.m */,
 				F4A9A12D1764EBBE00EFFC2F /* LTChartViewController.h */,
 				F4A9A12E1764EBBE00EFFC2F /* LTChartViewController.m */,
 				F47764231766A7C2002D70BC /* LTChartTableViewController.h */,
 				F47764241766A7C2002D70BC /* LTChartTableViewController.m */,
+				AA58BA32176AFF13001EB208 /* LTErrorCardsTableViewController.h */,
+				AA58BA33176AFF13001EB208 /* LTErrorCardsTableViewController.m */,
 			);
 			name = "Card & Chart";
 			sourceTree = "<group>";
@@ -1426,7 +1436,7 @@
 				AAD52E1B175F62EC0016B70A /* SPLockOverlay.m in Sources */,
 				AAD52E1F175F63550016B70A /* LTGameCDViewController.m in Sources */,
 				013EA080175FB27500AFDFD3 /* LTGameCDLevelViewController.m in Sources */,
-				F4A07DBC175E4CD400F76C5F /* LTCardViewController.m in Sources */,
+				F4A07DBC175E4CD400F76C5F /* LTCardReviewViewController.m in Sources */,
 				F4A07DF6175E850C00F76C5F /* Anchor.m in Sources */,
 				F4A07DF7175E850C00F76C5F /* AnchorInfo.m in Sources */,
 				F4A07DF8175E850C00F76C5F /* CustomBox.m in Sources */,
@@ -1451,6 +1461,8 @@
 				AA0E33971768282400E474AC /* LTLabel.m in Sources */,
 				AA0E33B31768634200E474AC /* LTGameEndView.m in Sources */,
 				AA0E33CE1768915C00E474AC /* LTImageView.m in Sources */,
+				AA58BA22176AB98C001EB208 /* LTCardCell.m in Sources */,
+				AA58BA34176AFF13001EB208 /* LTErrorCardsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

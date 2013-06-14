@@ -22,6 +22,7 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"review_cards_background.png"]]];
     UIImage *image = [UIImage imageNamed:card[@"image"]];
     [self.cardImage setImage:image];
+    [self.cardName setText:card[@"name"]];
 
     [self setTableViewController:self.childViewControllers[0]];
     [self.tableViewController initializeDataWithCid:self.cid];

@@ -9,7 +9,7 @@
 #import "LTRecordViewTableController.h"
 #import "LTRecordCell.h"
 #import "LTDatabase.h"
-#import "LTCardViewController.h"
+#import "LTCardReviewViewController.h"
 #import "LTChartViewController.h"
 
 static NSString *const SEGUE_DISPLAY_CARD_ID = @"displayCard";
@@ -32,9 +32,9 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
         if(self.selectedID == nil){
             return;
         }
-        LTCardViewController *detailPage = segue.destinationViewController;
+        LTCardReviewViewController *detailPage = segue.destinationViewController;
         [detailPage setCid:self.selectedID];
-        [detailPage setDateAfter:self.selectedRange];
+        [detailPage setStartDate:self.selectedRange];
         [self setSelectedID:nil];
         [self.navigationController pushViewController:detailPage animated:YES];
         
@@ -66,20 +66,20 @@ static NSString *const SEGUE_DISPLAY_CHART_ID = @"displayChart";
     
     [cell setDelegate:self];
     
-    UIImage *image = [UIImage imageNamed:card[@"image"]];
-    [cell.cardImage setImage:image];
-    [cell.cardImage setTag:[cid intValue]];
-    [cell.cardVoiceLabel setText:card[@"name"]];
+    UIImage *image = [UIImage imageNamed:card[LT_DB_KEY_CARD_IMAGE]];
+    [cell.cardImageView setImage:image];
+    [cell.cardImageView setTag:[cid integerValue]];
+    [cell.cardVoiceLabel setText:card[LT_DB_KEY_CARD_NAME]];
     
     UITapGestureRecognizer *tapGestureOnCard = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openChart:)];
-    [cell.cardImage addGestureRecognizer:tapGestureOnCard];
+    [cell.cardImageView addGestureRecognizer:tapGestureOnCard];
     
     UIButton *reviewCards = [UIButton buttonWithType:UIButtonTypeCustom];
     reviewCards.frame = CGRectMake(cell.contentView.frame.size.width-80,cell.contentView.frame.size.height-120,70,70);
     [reviewCards setTitle:@"複習" forState:UIControlStateNormal];
     [reviewCards setTitleEdgeInsets:UIEdgeInsetsMake(-7, -6, 0, 0)];
     [reviewCards setBackgroundImage:[UIImage imageNamed:@"management_review_cards.png"] forState:UIControlStateNormal];
-    [reviewCards setTag:[cid intValue]];
+    [reviewCards setTag:[cid integerValue]];
     [reviewCards addTarget:self action:@selector(openCard:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
     [cell.contentView addSubview: reviewCards];
     

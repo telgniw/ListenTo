@@ -18,6 +18,7 @@
     int errorCount;
     
     CGRect screenBounds;
+    float minY, maxY;
 }
 
 @property (nonatomic, strong) SPLockOverlay *overLay;

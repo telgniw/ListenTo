@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" id="ZnJ-Xs-vcr">
-                                <rect key="frame" x="112" y="124" width="800" height="520"/>
+                                <rect key="frame" x="112" y="144" width="800" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -112,6 +112,14 @@
                                 <rect key="frame" x="292" y="20" width="440" height="212"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="蝦子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ELs-jo-ern">
+                                <rect key="frame" x="788" y="624" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -119,6 +127,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cardImage" destination="S1d-Ac-bCB" id="Yr3-zd-zSy"/>
+                        <outlet property="cardName" destination="ELs-jo-ern" id="LAB-Ll-TfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dZr-UG-dhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,22 +139,10 @@
             <objects>
                 <tableViewController id="yEl-Yh-M4Q" customClass="LTChartTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="97n-4N-x5D">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="520"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RI3-Yk-hgY">
-                                <rect key="frame" x="0.0" y="22" width="800" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="800" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="yEl-Yh-M4Q" id="oRo-X3-La4"/>
                             <outlet property="delegate" destination="yEl-Yh-M4Q" id="o4y-6K-UlV"/>
@@ -229,7 +226,7 @@
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="蝦子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BOX-Ax-TCS">
                                             <rect key="frame" x="38" y="127" width="144" height="30"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -238,7 +235,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <outlet property="cardImage" destination="9cq-v1-P3X" id="LMb-OE-AJ0"/>
+                                    <outlet property="cardImageView" destination="9cq-v1-P3X" id="Bn0-qY-fZN"/>
                                     <outlet property="cardVoiceLabel" destination="BOX-Ax-TCS" id="RaL-OC-D4h"/>
                                     <outlet property="collectionView" destination="uOa-H1-NOU" id="ebA-cq-x1d"/>
                                 </connections>
@@ -452,7 +449,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="jTD-uv-vM1">
+                            <scrollView clipsSubviews="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="jTD-uv-vM1">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
@@ -519,10 +516,10 @@
             </objects>
             <point key="canvasLocation" x="-607" y="-237"/>
         </scene>
-        <!--Card View Controller-->
+        <!--Card Review View Controller-->
         <scene sceneID="7La-mn-mGv">
             <objects>
-                <viewController id="10w-V6-t63" customClass="LTCardViewController" sceneMemberID="viewController">
+                <viewController id="10w-V6-t63" customClass="LTCardReviewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TiD-Xh-fsE">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -530,7 +527,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="11.兔子.jpg" id="3UE-rn-Jwq" customClass="LTImageView">
                                 <rect key="frame" x="120" y="115" width="570" height="570"/>
                             </imageView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="X0m-Wa-rJ4">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="X0m-Wa-rJ4" customClass="OBShapedButton">
                                 <rect key="frame" x="330" y="309" width="150" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -546,10 +543,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="兔子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8fh-ei-rtV">
-                                <rect key="frame" x="125" y="552" width="560" height="75"/>
-                                <color key="backgroundColor" white="0.65071852189781032" alpha="0.5" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="65"/>
-                                <color key="textColor" red="0.94117653369999998" green="0.65882354970000001" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                                <rect key="frame" x="120" y="552" width="570" height="75"/>
+                                <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bUV-OJ-osi" customClass="OBShapedButton">
@@ -567,28 +563,14 @@
                                     <action selector="back:" destination="10w-V6-t63" eventType="touchUpInside" id="r1B-nn-V4D"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" id="lCw-vk-1hh">
+                            <containerView opaque="NO" contentMode="scaleToFill" id="pyn-pl-ZQA">
                                 <rect key="frame" x="704" y="115" width="180" height="570"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="top" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="144" id="H9U-4W-vkr">
-                                        <rect key="frame" x="0.0" y="22" width="180" height="144"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="143"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
                                 <connections>
-                                    <outlet property="dataSource" destination="10w-V6-t63" id="wMo-Zc-nYC"/>
-                                    <outlet property="delegate" destination="10w-V6-t63" id="3tH-fH-ziU"/>
+                                    <segue destination="kDg-gf-v9o" kind="embed" id="S5n-CA-jDF"/>
                                 </connections>
-                            </tableView>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -598,20 +580,67 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="backButton" destination="bUV-OJ-osi" id="Vu4-gl-JRo"/>
-                        <outlet property="btnPlayStound" destination="X0m-Wa-rJ4" id="cEa-6e-Hao"/>
-                        <outlet property="errCardTable" destination="lCw-vk-1hh" id="GkF-jn-eFd"/>
-                        <outlet property="imgCard" destination="3UE-rn-Jwq" id="bPI-nm-Z6G"/>
-                        <outlet property="lblCardName" destination="8fh-ei-rtV" id="sme-Rh-Tlc"/>
+                        <outlet property="imageView" destination="3UE-rn-Jwq" id="cBs-wX-r4b"/>
+                        <outlet property="label" destination="8fh-ei-rtV" id="5DB-ou-uQ3"/>
+                        <outlet property="playButton" destination="X0m-Wa-rJ4" id="CMO-vi-6wg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMm-p7-Amv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4394" y="-237"/>
         </scene>
+        <!--Error Cards Table View Controller-->
+        <scene sceneID="otJ-2l-d8P">
+            <objects>
+                <tableViewController id="kDg-gf-v9o" customClass="LTErrorCardsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2tY-Yf-1x6">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="570"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LTCardCell" rowHeight="160" id="0fq-UN-6t9" customClass="LTCardCell">
+                                <rect key="frame" x="0.0" y="22" width="180" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="159"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleToFill" image="12.褲子.JPG" id="xA0-F9-j0j" customClass="LTImageView">
+                                            <rect key="frame" x="18" y="0.0" width="144" height="144"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="蝦子" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D0Y-Do-i5Z">
+                                            <rect key="frame" x="18" y="104" width="144" height="30"/>
+                                            <color key="backgroundColor" white="0.75" alpha="0.5" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="cardImageView" destination="xA0-F9-j0j" id="umY-Uq-XOJ"/>
+                                    <outlet property="cardLabel" destination="D0Y-Do-i5Z" id="AZ3-dh-gQ2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kDg-gf-v9o" id="8Bg-WG-1kW"/>
+                            <outlet property="delegate" destination="kDg-gf-v9o" id="qfm-yV-Ryd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iq5-IY-wzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5578" y="-138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.蝦子.jpg" width="529" height="530"/>
         <image name="11.兔子.jpg" width="752" height="752"/>
+        <image name="12.褲子.JPG" width="599" height="599"/>
         <image name="2.鴨子.jpg" width="988" height="988"/>
         <image name="carrots_basket.png" width="310" height="308"/>
         <image name="connectdots-level-1-selected.png" width="166" height="200"/>
@@ -641,18 +670,23 @@
         <image name="title-learning-history.png" width="440" height="212"/>
     </resources>
     <classes>
-        <class className="LTCardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardViewController.h"/>
+        <class className="LTCardCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cardImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LTCardReviewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTCardReviewViewController.h"/>
             <relationships>
                 <relationship kind="action" name="back:"/>
                 <relationship kind="action" name="playSound:"/>
                 <relationship kind="action" name="reloadCards:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="OBShapedButton"/>
-                <relationship kind="outlet" name="btnPlayStound" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="errCardTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="imgCard" candidateClass="LTImageView"/>
-                <relationship kind="outlet" name="lblCardName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scrollview" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="LTImageView"/>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playButton" candidateClass="OBShapedButton"/>
             </relationships>
         </class>
         <class className="LTChartTableViewController" superclassName="UITableViewController">
@@ -663,7 +697,11 @@
             <relationships>
                 <relationship kind="action" name="back:"/>
                 <relationship kind="outlet" name="cardImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardName" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="LTErrorCardsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LTErrorCardsTableViewController.h"/>
         </class>
         <class className="LTGameCDLevelViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTGameCDLevelViewController.h"/>
@@ -701,7 +739,7 @@
         <class className="LTRecordCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LTRecordCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="cardImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="cardVoiceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
             </relationships>
