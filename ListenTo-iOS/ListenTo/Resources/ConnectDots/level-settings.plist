@@ -32,5 +32,15 @@
 		<key>pass-image</key>
 		<string>level-3-pass.png</string>
 	</dict>
+	<dict>
+		<key>background</key>
+		<string>level-background.png</string>
+		<key>connect</key>
+		<string>connect-level-4</string>
+		<key>connect-fuzzy</key>
+		<string>connect-level-4-fuzzy</string>
+		<key>pass-image</key>
+		<string>level-4-pass.png</string>
+	</dict>
 </array>
 </plist>

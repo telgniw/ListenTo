@@ -73,6 +73,9 @@
 		AA4D3FF9175F8BCD00C418BC /* homescreen-background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4D3FF8175F8BCD00C418BC /* homescreen-background.png */; };
 		AA58BA22176AB98C001EB208 /* LTCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BA21176AB98C001EB208 /* LTCardCell.m */; };
 		AA58BA34176AFF13001EB208 /* LTErrorCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA58BA33176AFF13001EB208 /* LTErrorCardsTableViewController.m */; };
+		AA73EEF5176B644D00326720 /* connect-level-4-fuzzy.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA73EEF3176B644D00326720 /* connect-level-4-fuzzy.plist */; };
+		AA73EEF6176B644D00326720 /* connect-level-4.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA73EEF4176B644D00326720 /* connect-level-4.plist */; };
+		AA73EEF9176B655A00326720 /* level-4-pass.png in Resources */ = {isa = PBXBuildFile; fileRef = AA73EEF8176B655A00326720 /* level-4-pass.png */; };
 		AA96B48A1762D04600D9E0F2 /* management-table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4821762D04600D9E0F2 /* management-table-header.png */; };
 		AA96B4911762D3DE00D9E0F2 /* management-table-header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B48E1762D3DE00D9E0F2 /* management-table-header@2x.png */; };
 		AA96B4941762D82C00D9E0F2 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AA96B4921762D82C00D9E0F2 /* play.png */; };
@@ -346,6 +349,9 @@
 		AA58BA21176AB98C001EB208 /* LTCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCardCell.m; sourceTree = "<group>"; };
 		AA58BA32176AFF13001EB208 /* LTErrorCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTErrorCardsTableViewController.h; sourceTree = "<group>"; };
 		AA58BA33176AFF13001EB208 /* LTErrorCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTErrorCardsTableViewController.m; sourceTree = "<group>"; };
+		AA73EEF3176B644D00326720 /* connect-level-4-fuzzy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-4-fuzzy.plist"; sourceTree = "<group>"; };
+		AA73EEF4176B644D00326720 /* connect-level-4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "connect-level-4.plist"; sourceTree = "<group>"; };
+		AA73EEF8176B655A00326720 /* level-4-pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "level-4-pass.png"; sourceTree = "<group>"; };
 		AA96B4821762D04600D9E0F2 /* management-table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-table-header.png"; path = "ListenTo/Images/management-table-header.png"; sourceTree = SOURCE_ROOT; };
 		AA96B48E1762D3DE00D9E0F2 /* management-table-header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "management-table-header@2x.png"; path = "ListenTo/Images/management-table-header@2x.png"; sourceTree = SOURCE_ROOT; };
 		AA96B4921762D82C00D9E0F2 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = ListenTo/Images/play.png; sourceTree = SOURCE_ROOT; };
@@ -672,6 +678,7 @@
 		AA4D3FEB175F690200C418BC /* ConnectDots */ = {
 			isa = PBXGroup;
 			children = (
+				AA73EEF8176B655A00326720 /* level-4-pass.png */,
 				AA96B4BD1763040300D9E0F2 /* connectdots-level-1-selected.png */,
 				AA96B4BE1763040300D9E0F2 /* connectdots-level-1-selected@2x.png */,
 				AA96B4BF1763040300D9E0F2 /* connectdots-level-1-title.png */,
@@ -903,6 +910,8 @@
 		AAD52E27175F65A80016B70A /* ConnectDots */ = {
 			isa = PBXGroup;
 			children = (
+				AA73EEF3176B644D00326720 /* connect-level-4-fuzzy.plist */,
+				AA73EEF4176B644D00326720 /* connect-level-4.plist */,
 				AAD52E28175F65A80016B70A /* connect-level-1-fuzzy.plist */,
 				013EA076175FA96600AFDFD3 /* connect-level-2-fuzzy.plist */,
 				AAD52E29175F65A80016B70A /* connect-level-1.plist */,
@@ -1381,6 +1390,9 @@
 				AA08B0F417697375008FAAB1 /* connect-level-3.plist in Resources */,
 				AA08B0F717697673008FAAB1 /* connect-level-3-fuzzy.plist in Resources */,
 				AA08B0F9176977A5008FAAB1 /* level-3-pass.png in Resources */,
+				AA73EEF5176B644D00326720 /* connect-level-4-fuzzy.plist in Resources */,
+				AA73EEF6176B644D00326720 /* connect-level-4.plist in Resources */,
+				AA73EEF9176B655A00326720 /* level-4-pass.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
