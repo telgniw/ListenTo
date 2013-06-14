@@ -47,7 +47,7 @@
         float error = [[record objectForKey:LT_DB_STAT_KEY_ERROR] floatValue];
         float count = [[record objectForKey:LT_DB_STAT_KEY_COUNT] floatValue];
         float rate = (count > 0)? (1.0f - error / count) * 100.0f : 0.0f;
-        [values addObject:[NSString stringWithFormat:@"%.0f%%", rate]];//[NSNumber numberWithFloat:rate]];
+        [values addObject:[NSString stringWithFormat:@"%.0f%%", rate]];
     }
     
     [self setYValues:[NSArray arrayWithArray:values]];

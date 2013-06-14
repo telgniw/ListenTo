@@ -9,7 +9,7 @@
 #import "LTRecordCell.h"
 #import "LTRecordErrorImageCell.h"
 #import "LTDatabase.h"
-#import "LTCardViewController.h"
+#import "LTCardReviewViewController.h"
 
 @implementation LTRecordCell
 
