@@ -31,6 +31,11 @@ static const int IMAGE_BUTTON_SIZE = 175;
     self.settings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
     int cardTag = 0;
     
+    UIImage *backgroundImage = [UIImage imageNamed:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
+    [self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:backgroundImage]];
+    
+    [self.scrollView setContentSize:backgroundImage.size];
+    
     [self.scrollView setDelegate:self];
     
     NSString *plistPath = [[NSBundle mainBundle]
@@ -62,12 +67,21 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [pointsArray addObjectsFromArray:self.points];
     [pointsArray addObjectsFromArray:self.errorPoints];
     
+    minY = 0, maxY = [backgroundImage size].height;
+    
     // Create card buttons.
     cardTag = 0;
     for(NSDictionary *p in pointsArray) {
         CGPoint point = CGPointMake([[p objectForKey:X] floatValue], [[p objectForKey:Y] floatValue]);
         OBShapedButton *imageButton = [self imageButtonWithIndex:cardTag position:point];
         
+        // Update y bounds.
+        if(point.y < minY)
+            minY = point.y;
+        if(point.y > maxY)
+            maxY = point.y;
+        
+        // Handle the start image.
         if(cardTag > 0) {
             [self addBorderToButton:imageButton];
         }
@@ -81,17 +95,12 @@ static const int IMAGE_BUTTON_SIZE = 175;
         cardTag++;
     }
     
-    UIImage *backgroundImage = [UIImage imageNamed:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
-    [self.view setBackgroundColor:[[UIColor alloc] initWithPatternImage:backgroundImage]];
-    
     self.overLay = [[SPLockOverlay alloc]initWithFrame:CGRectMake(0.0f, 0.0f, backgroundImage.size.width, backgroundImage.size.height)];
 	[self.overLay setUserInteractionEnabled:NO];
 	[self.scrollView addSubview:self.overLay];
     
     [self.view bringSubviewToFront:self.backButton];
     [self.view bringSubviewToFront:self.playButton];
-    
-    [self.scrollView setContentSize:backgroundImage.size];
     
     anserPoint = 1;
     [self adjustScrollPosition];
@@ -319,11 +328,11 @@ static const int IMAGE_BUTTON_SIZE = 175;
     CGPoint newPoint = CGPointMake(0.0f, 0.0f);
     if(bounds.origin.y > point.y) {
         // Move up.
-        newPoint.y = point.y + 2 * IMAGE_BUTTON_SIZE - bounds.size.height;
+        newPoint.y = MAX(minY, point.y + 1.5 * IMAGE_BUTTON_SIZE - bounds.size.height);
     }
     else {
         // Move down.
-        newPoint.y = point.y - IMAGE_BUTTON_SIZE;
+        newPoint.y = MIN(maxY + IMAGE_BUTTON_SIZE - bounds.size.height, point.y - 0.5 * IMAGE_BUTTON_SIZE);
     }
     
     [self.scrollView setContentOffset:newPoint animated:YES];
