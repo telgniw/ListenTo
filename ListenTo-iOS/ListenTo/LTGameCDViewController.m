@@ -28,7 +28,7 @@ static const int IMAGE_BUTTON_SIZE = 175;
     [db newRecordWithType:0];
     
 	// Do any additional setup after loading the view, typically from a nib.
-    self.settings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"level-settings" ofType:@"plist"]];
+    self.settings = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"connect-level-settings" ofType:@"plist"]];
     
     UIImage *backgroundImage = [UIImage imageNamed:[[self.settings objectAtIndex:_level.intValue-1] objectForKey:@"background"]];
     [self.scrollView setBackgroundColor:[[UIColor alloc] initWithPatternImage:backgroundImage]];

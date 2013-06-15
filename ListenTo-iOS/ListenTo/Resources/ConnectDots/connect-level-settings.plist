@@ -4,43 +4,43 @@
 <array>
 	<dict>
 		<key>background</key>
-		<string>level-background.png</string>
+		<string>connectdots-level-background.png</string>
 		<key>connect</key>
 		<string>connect-level-1</string>
 		<key>connect-fuzzy</key>
 		<string>connect-level-1-fuzzy</string>
 		<key>pass-image</key>
-		<string>level-1-pass.png</string>
+		<string>connectdots-level-1-pass.png</string>
 	</dict>
 	<dict>
 		<key>background</key>
-		<string>level-background.png</string>
+		<string>connectdots-level-background.png</string>
 		<key>connect</key>
 		<string>connect-level-2</string>
 		<key>connect-fuzzy</key>
 		<string>connect-level-2-fuzzy</string>
 		<key>pass-image</key>
-		<string>level-2-pass.png</string>
+		<string>connectdots-level-2-pass.png</string>
 	</dict>
 	<dict>
 		<key>background</key>
-		<string>level-background.png</string>
+		<string>connectdots-level-background.png</string>
 		<key>connect</key>
 		<string>connect-level-3</string>
 		<key>connect-fuzzy</key>
 		<string>connect-level-3-fuzzy</string>
 		<key>pass-image</key>
-		<string>level-3-pass.png</string>
+		<string>connectdots-level-3-pass.png</string>
 	</dict>
 	<dict>
 		<key>background</key>
-		<string>level-background.png</string>
+		<string>connectdots-level-background.png</string>
 		<key>connect</key>
 		<string>connect-level-4</string>
 		<key>connect-fuzzy</key>
 		<string>connect-level-4-fuzzy</string>
 		<key>pass-image</key>
-		<string>level-4-pass.png</string>
+		<string>connectdots-level-4-pass.png</string>
 	</dict>
 </array>
 </plist>

@@ -419,12 +419,12 @@
                                 <rect key="frame" x="436" y="114" width="166" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" backgroundImage="connectdots-level-3.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" backgroundImage="connectdots-level-2-selected.png"/>
-                                <state key="highlighted">
+                                <state key="selected" backgroundImage="connectdots-level-3-selected.png"/>
+                                <state key="highlighted" backgroundImage="connectdots-level-3-selected.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -435,12 +435,12 @@
                                 <rect key="frame" x="610" y="114" width="166" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
+                                <state key="normal" backgroundImage="connectdots-level-4.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="selected" backgroundImage="connectdots-level-2-selected.png"/>
-                                <state key="highlighted">
+                                <state key="selected" backgroundImage="connectdots-level-4-selected.png"/>
+                                <state key="highlighted" backgroundImage="connectdots-level-4-selected.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -663,6 +663,10 @@
         <image name="connectdots-level-1.png" width="166" height="200"/>
         <image name="connectdots-level-2-selected.png" width="166" height="200"/>
         <image name="connectdots-level-2.png" width="166" height="200"/>
+        <image name="connectdots-level-3-selected.png" width="166" height="200"/>
+        <image name="connectdots-level-3.png" width="166" height="200"/>
+        <image name="connectdots-level-4-selected.png" width="166" height="200"/>
+        <image name="connectdots-level-4.png" width="166" height="200"/>
         <image name="connectdots-level-remains.png" width="848" height="434"/>
         <image name="groundhog.png" width="211" height="186"/>
         <image name="homescreen-enter.png" width="222" height="256"/>
@@ -796,6 +800,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
